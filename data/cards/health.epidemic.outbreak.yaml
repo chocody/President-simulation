@@ -1,0 +1,43 @@
+id: health.epidemic.outbreak
+category: health
+severity: major
+titleTh: "โรคระบาดทางเดินหายใจชนิดใหม่"
+situationTh: "โรงพยาบาลหลายแห่งรายงานผู้ป่วยโรคระบบทางเดินหายใจชนิดใหม่เพิ่มขึ้นอย่างรวดเร็ว โรคแพร่ผ่านการไอและการสัมผัส และพบการระบาดในตลาด โรงเรียน และขนส่งสาธารณะ ผู้สูงอายุและผู้มีโรคประจำตัวมีอาการรุนแรงกว่าคนอื่น ห้องปฏิบัติการยังไม่ทราบอัตราการแพร่ที่แน่นอน ผู้เชี่ยวชาญด้านสาธารณสุขเสนอหลายแนวทางที่ให้ผลต่างกัน ขณะที่ภาคธุรกิจกลัวว่าการปิดเมืองจะทำให้รายได้หายไปมาก"
+conditions:
+  - { target: health, op: "<", value: 80 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: health, delta: -8, over_quarters: 4 }
+  - { target: gdpGrowth, delta: -0.8, over_quarters: 4 }
+  - { target: "group:urban", delta: -5, over_quarters: 3 }
+  - { target: stability, delta: -2, over_quarters: 3 }
+sourceIds: [design.level-scale, review.cochrane-respiratory-2023, wdi.SH.UHC.SRVS.CV.XD]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "ประกาศปิดเมืองและจำกัดการเดินทาง"
+    descTh: "สั่งปิดสถานที่เสี่ยงและจำกัดการเคลื่อนย้ายของคนชั่วคราว ลดการแพร่ได้เร็ว แต่กระทบรายได้ของร้านค้ารายเล็กและแรงงานรายวันอย่างหนัก"
+    costHint: L
+    affectedGroups: [urban, business, youth]
+    evidenceIds: [ev.epidemic.003]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: targeted
+    titleTh: "แจกหน้ากากและรณรงค์ล้างมือในชุมชน"
+    descTh: "แจกหน้ากากฟรีพร้อมรณรงค์ในชุมชนผ่านผู้นำท้องถิ่นและบุคลากรสาธารณสุข ต้นทุนไม่สูงและกระทบเศรษฐกิจน้อย แต่ผลขึ้นกับว่าประชาชนทำตามหรือไม่ จึงอาจควบคุมโรคได้ไม่เต็มที่"
+    costHint: S
+    affectedGroups: [urban, farmers, youth]
+    evidenceIds: [ev.epidemic.001, ev.epidemic.002]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: market-led
+    titleTh: "แนะนำให้ระวังตัวและเปิดเศรษฐกิจตามปกติ"
+    descTh: "ออกคำแนะนำให้ประชาชนตัดสินใจเองและไม่ออกคำสั่งปิดสถานที่ ประหยัดงบและรักษากิจกรรมเศรษฐกิจ แต่ผู้สูงอายุและผู้ป่วยโรคประจำตัวเสี่ยงสูง และโรคอาจแพร่ได้เร็วกว่า"
+    costHint: XS
+    affectedGroups: [business, urban]
+    evidenceIds: [ev.epidemic.003]
+    judgment: null
+    reviewedBy: null

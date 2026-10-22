@@ -1,0 +1,43 @@
+id: society.strike.general
+category: society
+severity: major
+titleTh: "สหภาพแรงงานนัดหยุดงานทั่วประเทศ"
+situationTh: "สหภาพแรงงานหลายภาคส่วนประกาศหยุดงานพร้อมกันทั้งขนส่งสาธารณะ โรงงาน และโรงเรียน เรียกร้องค่าจ้างที่ตามทันค่าครองชีพและความมั่นคงในการจ้างงาน ถนนในเมืองหลวงมีการชุมนุมใหญ่ ท่าเรือและตลาดสินค้าเริ่มชะงัก ผู้ประกอบการเตือนว่าการขึ้นค่าจ้างจะทำให้ต้องเลิกจ้าง ขณะที่ผู้นำแรงงานยืนยันว่าคนทำงานไม่มีทางเลือก รัฐมนตรีแรงงานขอให้ประธานาธิบดีตัดสินใจก่อนความวุ่นวายลุกลาม"
+conditions:
+  - { target: unemployment, op: ">", value: 8 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: gdpGrowth, delta: -0.3, over_quarters: 3 }
+  - { target: stability, delta: -5, over_quarters: 3 }
+  - { target: "group:urban", delta: -5, over_quarters: 3 }
+  - { target: unemployment, delta: 0.3, over_quarters: 3 }
+sourceIds: [design.level-scale, paper.cengiz-2019, wdi.SL.UEM.TOTL.ZS]
+choices:
+  - id: a
+    approach: negotiated
+    titleTh: "เจรจาสามฝ่ายและปรับค่าจ้างขั้นต่ำ"
+    descTh: "เปิดเจรจาร่วมกับนายจ้างและสหภาพแล้วขึ้นค่าจ้างขั้นต่ำเป็นขั้นตอน รายได้แรงงานดีขึ้นโดยจำนวนงานไม่ลดลงตามหลักฐานที่มี แต่ธุรกิจรายเล็กมีต้นทุนสูงขึ้นและราคาสินค้าอาจขยับ"
+    costHint: S
+    affectedGroups: [urban, business]
+    evidenceIds: [ev.minimum-wage.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: state-led
+    titleTh: "สร้างงานสาธารณะและโครงการฝึกอาชีพ"
+    descTh: "รัฐจ้างงานชั่วคราวและเปิดโครงการฝึกทักษะ ช่วยผู้ว่างงานโดยตรง แต่ใช้งบมาก และผลของการฝึกอาชีพมักเห็นชัดหลังผ่านไปสองถึงสามปี"
+    costHint: L
+    affectedGroups: [urban, youth]
+    evidenceIds: [ev.public-works.001, ev.youth-jobs.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: enforcement
+    titleTh: "ประกาศบริการจำเป็นและสั่งให้กลับเข้าทำงาน"
+    descTh: "ใช้กฎหมายบังคับให้บริการที่จำเป็นกลับมาเดินรถและเปิดท่าเรือ ลดความเสียหายต่อเศรษฐกิจได้ทันที แต่แรงงานโกรธและความเสี่ยงที่จะเกิดการชุมนุมใหญ่สูงขึ้น"
+    costHint: XS
+    affectedGroups: [business, military, urban]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null

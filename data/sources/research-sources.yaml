@@ -1,0 +1,291 @@
+# Research sources cited by data/evidence/evidence.yaml (worker D1). The Lead merges these into sources.yaml.
+# Every entry was found with web search on 2026-10-22. The pages were NOT opened from the build session:
+# the finding text comes from search-result snippets. verifiedBy stays null until a human opens each page.
+- id: paper.egger-2022
+  kind: research
+  title: "General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya"
+  publisher: "NBER Working Paper 26600 (Egger, Haushofer, Miguel, Niehaus, Walker; Econometrica 2022)"
+  indicatorCode: null
+  url: "https://www.nber.org/system/files/working_papers/w26600/w26600.pdf"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results report a local multiplier of about 2.5 in the published version and little price inflation."
+- id: paper.olken-2007
+  kind: research
+  title: "Monitoring Corruption: Evidence from a Field Experiment in Indonesia"
+  publisher: "NBER Working Paper 11753 (Olken; Journal of Political Economy 2007)"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w11753"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: raising audit probability from 4% to 100% cut missing expenditures by about 8 percentage points."
+- id: paper.cengiz-2019
+  kind: research
+  title: "The Effect of Minimum Wages on Low-Wage Jobs"
+  publisher: "Quarterly Journal of Economics 134(3) (Cengiz, Dube, Lindner, Zipperer)"
+  indicatorCode: null
+  url: "https://academic.oup.com/qje/article-abstract/134/3/1405/5484905"
+  license: citation
+  commercialOk: true
+  coverage: "138 state minimum wage increases, 1979-2016"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: number of low-wage jobs essentially unchanged over five years after an increase."
+- id: review.braga-hotspots
+  kind: research
+  title: "The Effects of Hot Spots Policing on Crime: An Updated Systematic Review and Meta-Analysis"
+  publisher: "Campbell Collaboration review series (Braga and colleagues); NCJRS/OJP abstract"
+  indicatorCode: null
+  url: "https://www.ojp.gov/ncjrs/virtual-library/abstracts/effects-hot-spots-policing-crime-updated-systematic-review-and-meta"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. The search summary dates the update with small but noteworthy crime reductions and diffusion of benefits to 2014; a human must confirm which edition this NCJRS page describes."
+- id: paper.heller-2014
+  kind: research
+  title: "Summer jobs reduce violence among disadvantaged youth"
+  publisher: "Science 346(6214), 1219-1223 (Heller)"
+  indicatorCode: null
+  url: "https://www.phila.gov/bestpractices/PDF/Science-2014-Heller-1219-23.pdf"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: randomized trial, violent-crime arrests down 43% over 16 months."
+- id: eval.jpal-mask-bangladesh
+  kind: research
+  title: "The Impact of Mask Distribution and Promotion on Mask Uptake and Covid-19 in Bangladesh"
+  publisher: "J-PAL / Innovations for Poverty Action evaluation summary"
+  indicatorCode: null
+  url: "https://povertyactionlab.org/node/7800225"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: cluster-randomized trial in 600 villages; promotion tripled mask use and reduced symptomatic infection."
+- id: review.cochrane-respiratory-2023
+  kind: research
+  title: "Physical interventions to interrupt or reduce the spread of respiratory viruses"
+  publisher: "Cochrane Database of Systematic Reviews (2023 update, CD006207.pub6)"
+  indicatorCode: null
+  url: "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD006207.pub6"
+  license: citation
+  commercialOk: true
+  coverage: "78 randomised trials"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: hand hygiene gave a 14% relative reduction in acute respiratory infections; evidence on masks inconclusive."
+- id: paper.goolsbee-syverson-2021
+  kind: research
+  title: "Fear, Lockdown, and Diversion: Comparing Drivers of Pandemic Economic Decline 2020"
+  publisher: "NBER Working Paper 27432 (Goolsbee, Syverson; Journal of Public Economics 2021); NBER Digest"
+  indicatorCode: null
+  url: "https://www.nber.org/digest/aug20/consumers-fear-virus-outweighs-lockdowns-impact-business"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: of a 60-point fall in consumer traffic, legal restrictions explain about 7 points."
+- id: report.cdc-hospital-strain
+  kind: research
+  title: "Impact of Hospital Strain on Excess Deaths During the COVID-19 Pandemic - United States, July 2020-July 2021"
+  publisher: "CDC Morbidity and Mortality Weekly Report"
+  indicatorCode: null
+  url: "https://www.cdc.gov/mmwr/volumes/70/wr/mm7046a5.htm?cb=12963"
+  license: citation
+  commercialOk: true
+  coverage: "United States, July 2020-July 2021"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Observational/modelling study: higher hospital strain went with more excess deaths."
+- id: review.lagarde-user-fees
+  kind: research
+  title: "The impact of user fees on access to health services in low- and middle-income countries"
+  publisher: "Cochrane Database of Systematic Reviews (Lagarde, Palmer), review CD009094"
+  indicatorCode: null
+  url: "https://www.cochrane.org/evidence/CD009094_impact-user-fees-access-health-services-low-and-middle-income-countries"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: dropping fees raises use of some services, but certainty is very low."
+- id: book.imf-energy-subsidy-2013
+  kind: research
+  title: "Energy Subsidy Reform: Lessons and Implications"
+  publisher: "International Monetary Fund (Clements, Coady, Fabrizio, Gupta, Alleyne, Sdralevich), 2013"
+  indicatorCode: null
+  url: "https://www.imf.org/en/publications/books/issues/2016/12/31/energy-subsidy-reform-lessons-and-implications-40410"
+  license: citation
+  commercialOk: true
+  coverage: "176 countries; 22 case studies"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: subsidies worsen fiscal deficits and most benefits go to higher-income households."
+- id: paper.karlan-2012
+  kind: research
+  title: "Agricultural Decisions after Relaxing Credit and Risk Constraints"
+  publisher: "NBER Working Paper 18463 (Karlan, Osei, Osei-Akoto, Udry), 2012"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w18463.pdf"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: randomized rainfall index insurance raised farm investment and riskier production choices."
+- id: paper.knippenberg-hoddinott-2017
+  kind: research
+  title: "Shocks, social protection, and resilience: Evidence from Ethiopia"
+  publisher: "IFPRI ESSP Working Paper 109 (Knippenberg, Hoddinott), 2017"
+  indicatorCode: null
+  url: "https://essp.ifpri.info/2017/09/07/shocks-social-protection-and-resilience-evidence-from-ethiopia-2/"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: safety-net payments cut the initial drought impact on food security by 57% and erased it within two years."
+- id: paper.kocornik-mina-2020
+  kind: research
+  title: "Flooded Cities"
+  publisher: "American Economic Journal: Applied Economics 12(2), 35-66 (Kocornik-Mina, McDermott, Michaels, Rauch)"
+  indicatorCode: null
+  url: "https://www.aeaweb.org/doi/10.1257/app.20170066"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: flooded areas recover about as fast as higher ground; little lasting relocation of activity."
+- id: paper.muralidharan-2023
+  kind: research
+  title: "General Equilibrium Effects of (Improving) Public Employment Programs: Experimental Evidence from India"
+  publisher: "NBER Working Paper 23838 (Muralidharan, Niehaus, Sukhtankar); Econometrica 2023"
+  indicatorCode: null
+  url: "https://econpapers.repec.org/paper/nbrnberwo/23838.htm"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: improved public employment raised household earnings by 14% and cut poverty by 26%."
+- id: paper.amiti-2019
+  kind: research
+  title: "The Impact of the 2018 Trade War on U.S. Prices and Welfare"
+  publisher: "CEP / CEPR discussion paper, NBER Working Paper 25672 (Amiti, Redding, Weinstein)"
+  indicatorCode: null
+  url: "https://cep.lse.ac.uk/_NEW/PUBLICATIONS/abstract.asp?index=6160"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: complete pass-through of tariffs into domestic prices; domestic consumers bore the incidence."
+- id: paper.fajgelbaum-2020
+  kind: research
+  title: "The Return to Protectionism"
+  publisher: "Quarterly Journal of Economics 135(1), 1-55 (Fajgelbaum, Goldberg, Kennedy, Khandelwal)"
+  indicatorCode: null
+  url: "https://egc.yale.edu/research/return-protectionism"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: tariffs fully passed through; losses to buyers of imports about 0.27% of GDP, smaller net aggregate loss."
+- id: paper.imf-tax-incentives
+  kind: research
+  title: "Empirical Evidence on the Effects of Tax Incentives"
+  publisher: "IMF Working Paper"
+  indicatorCode: null
+  url: "https://www.imf.org/en/publications/wp/issues/2016/12/31/empirical-evidenceon-the-effects-of-tax-incentives-23053"
+  license: citation
+  commercialOk: true
+  coverage: "40+ Latin American, Caribbean and African countries"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: lower corporate tax rates and longer tax holidays attract FDI but do not raise fixed capital formation or growth. Authors and year not shown in the results."
+- id: paper.alfaro-2004
+  kind: research
+  title: "FDI and Economic Growth: The Role of Local Financial Markets"
+  publisher: "Journal of International Economics 64(1), 89-112 (Alfaro, Chanda, Kalemli-Ozcan, Sayek)"
+  indicatorCode: null
+  url: "https://www.econ.umd.edu/publication/fdi-and-economic-growth-role-local-financial-markets"
+  license: citation
+  commercialOk: true
+  coverage: "cross-country, 1975-1995"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: FDI alone has an ambiguous effect on growth; countries with developed financial markets gain significantly."
+- id: eval.jpal-ferraz-finan
+  kind: research
+  title: "Politicians, Publicly-Released Audits of Corruption, and Electoral Outcomes in Brazil"
+  publisher: "J-PAL evaluation summary of Ferraz and Finan (Quarterly Journal of Economics 2008)"
+  indicatorCode: null
+  url: "https://www.povertyactionlab.org/evaluation/politicians-publicly-released-audits-corruption-and-electoral-outcomes-brazil"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: public release of audit findings lowered re-election chances of corrupt incumbents, more where local radio existed."
+- id: paper.card-kluve-weber-2018
+  kind: research
+  title: "What Works? A Meta Analysis of Recent Active Labor Market Program Evaluations"
+  publisher: "NBER Working Paper 21431; Journal of the European Economic Association 2018 (Card, Kluve, Weber)"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w21431"
+  license: citation
+  commercialOk: true
+  coverage: "200+ studies"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: effects near zero in the short run, more positive after two to three years; human-capital programs do better."
+- id: paper.blattman-annan-2016
+  kind: research
+  title: "Can Employment Reduce Lawlessness and Rebellion? A Field Experiment with High-Risk Men in a Fragile State"
+  publisher: "NBER Working Paper 21289; American Political Science Review 2016 (Blattman, Annan)"
+  indicatorCode: null
+  url: "https://nber.org/papers/w21289"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: agricultural employment package shifted hours from illicit work to farming; training alone had small effects."
+- id: paper.banerjee-2010
+  kind: research
+  title: "Improving immunisation coverage in rural India: randomised evaluation of reliable immunisation camps with and without incentives"
+  publisher: "BMJ 340, c2220 (Banerjee, Duflo, Glennerster, Kothari), 2010"
+  indicatorCode: null
+  url: "https://dspace.mit.edu/handle/1721.1/57503"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: full immunisation 39% with reliable camps plus incentives, 18% with camps alone, 6% in control villages. The exact page title was not shown in the results; the title here describes the study from the search summary."
+- id: paper.gopinath-2010
+  kind: research
+  title: "Currency Choice and Exchange Rate Pass-through"
+  publisher: "NBER Working Paper 13432; American Economic Review 2010 (Gopinath, Itskhoki, Rigobon)"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w13432"
+  license: citation
+  commercialOk: true
+  coverage: "US import transaction data"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-22, page not opened. Search results: pass-through about 95% for goods priced in non-dollar currencies versus about 25% for dollar-priced goods."

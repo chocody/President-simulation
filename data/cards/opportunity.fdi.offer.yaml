@@ -1,0 +1,43 @@
+id: opportunity.fdi.offer
+category: opportunity
+severity: minor
+titleTh: "บริษัทข้ามชาติเสนอตั้งโรงงานใหญ่"
+situationTh: "บริษัทข้ามชาติรายใหญ่เสนอตั้งโรงงานผลิตขนาดใหญ่ในประเทศ โดยสัญญาว่าจะจ้างงานคนในพื้นที่และนำเทคโนโลยีใหม่เข้ามา แต่ขอสิทธิประโยชน์ทางภาษีหลายปีและที่ดินราคาพิเศษ ผู้ประกอบการท้องถิ่นกังวลว่าจะแข่งขันไม่ได้ ส่วนชุมชนรอบพื้นที่ตั้งโรงงานเป็นห่วงเรื่องที่ดินและสิ่งแวดล้อม คู่แข่งในภูมิภาคกำลังเสนอเงื่อนไขที่คล้ายกันเพื่อดึงบริษัทนี้ไปลงทุนแทน"
+conditions:
+  - { target: stability, op: ">", value: 40 }
+baseWeight: 1
+cooldownQ: 8
+# ifIgnored deliberately has no gdpGrowth effect: ev.fdi.001 found incentives did not raise growth.
+# Missing the offer only costs some jobs, so the two effects are small (index level 1).
+ifIgnored:
+  - { target: "group:youth", delta: -2, over_quarters: 4 }
+  - { target: "group:business", delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.imf-tax-incentives, paper.alfaro-2004]
+choices:
+  - id: a
+    approach: incentives
+    titleTh: "ให้สิทธิประโยชน์ทางภาษีเต็มรูปแบบ"
+    descTh: "เสนอช่วงปลอดภาษีและที่ดินราคาพิเศษเพื่อชนะคู่แข่ง ได้ข้อตกลงเร็ว แต่รัฐเสียรายได้ภาษี และหลักฐานชี้ว่าสิทธิประโยชน์ดึงเงินลงทุนได้ แต่ไม่ได้ทำให้เศรษฐกิจโตขึ้นเสมอไป"
+    costHint: M
+    affectedGroups: [business, urban, farmers]
+    evidenceIds: [ev.fdi.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: conditions
+    titleTh: "รับข้อเสนอพร้อมเงื่อนไขเชื่อมกับผู้ผลิตและแรงงานในประเทศ"
+    descTh: "ให้สิทธิประโยชน์ระดับปานกลางโดยกำหนดให้ซื้อวัตถุดิบและฝึกอบรมแรงงานในประเทศ เศรษฐกิจท้องถิ่นได้ประโยชน์มากกว่า แต่บริษัทอาจถอนตัวไปลงทุนที่อื่น"
+    costHint: S
+    affectedGroups: [business, youth, urban]
+    evidenceIds: [ev.fdi.002]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: domestic-first
+    titleTh: "ปฏิเสธและสนับสนุนผู้ประกอบการในประเทศ"
+    descTh: "ไม่รับข้อเสนอ แล้วนำงบไปช่วยธุรกิจท้องถิ่นขยายกิจการ ปกป้องผู้ประกอบการเดิมและสิ่งแวดล้อม แต่เสียโอกาสการจ้างงานและเทคโนโลยีจากต่างประเทศ"
+    costHint: S
+    affectedGroups: [business, youth, farmers]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null

@@ -1,0 +1,42 @@
+id: health.vaccination.decline
+category: health
+severity: minor
+titleTh: "เด็กได้รับวัคซีนครบน้อยลง"
+situationTh: "หน่วยงานสาธารณสุขรายงานว่าสัดส่วนเด็กที่ได้รับวัคซีนครบลดลงต่อเนื่อง โดยเฉพาะในหมู่บ้านห่างไกลที่หน่วยฉีดวัคซีนมาไม่ตรงเวลา และผู้ปกครองต้องเสียค่าเดินทางและขาดรายได้จากการพาลูกไปฉีด พบการระบาดของโรคที่ป้องกันได้ด้วยวัคซีนในบางพื้นที่ นักวิชาการเตือนว่าหากปล่อยไว้ จะเกิดการระบาดใหญ่ในปีถัดไป ขณะที่ข่าวลือเรื่องผลข้างเคียงทำให้ผู้ปกครองบางส่วนลังเล"
+conditions:
+  - { target: health, op: "<", value: 85 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: health, delta: -5, over_quarters: 4 }
+  - { target: "group:farmers", delta: -2, over_quarters: 4 }
+  - { target: "group:youth", delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.banerjee-2010, wdi.SH.UHC.SRVS.CV.XD]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "จัดหน่วยฉีดวัคซีนเคลื่อนที่ตามนัดประจำเดือน"
+    descTh: "ส่งหน่วยฉีดวัคซีนไปทุกหมู่บ้านตามวันที่แน่นอนทุกเดือน ผู้ปกครองวางแผนได้และความครอบคลุมเพิ่มขึ้น แต่ต้องจ้างบุคลากรและรถเพิ่ม และเด็กที่ไม่มาในวันนัดยังตกหล่น"
+    costHint: M
+    affectedGroups: [farmers, youth]
+    evidenceIds: [ev.immunization.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: targeted
+    titleTh: "ให้ของจูงใจเล็ก ๆ แก่ครอบครัวที่พาเด็กมาฉีดครบ"
+    descTh: "แจกของใช้จำเป็นเล็ก ๆ ให้ครอบครัวที่พาเด็กมาฉีดวัคซีนครบ ชดเชยค่าเดินทางและรายได้ที่เสียไป แต่ต้องซื้อของและบริหารจัดการ และครอบครัวที่อยู่ไกลที่สุดยังเข้าถึงยาก"
+    costHint: M
+    affectedGroups: [farmers, urban]
+    evidenceIds: [ev.immunization.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: mandate
+    titleTh: "บังคับฉีดวัคซีนเป็นเงื่อนไขเข้าโรงเรียน"
+    descTh: "กำหนดให้เด็กต้องมีสมุดวัคซีนครบก่อนเข้าเรียน ต้นทุนต่ำและได้ผลเร็วในโรงเรียน แต่เด็กในพื้นที่ห่างไกลอาจถูกกันออกจากโรงเรียน และผู้ปกครองที่ไม่เห็นด้วยจะต่อต้าน"
+    costHint: XS
+    affectedGroups: [youth, urban, farmers]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
