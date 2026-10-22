@@ -1,0 +1,12 @@
+{
+  "name": "@ps/ai-gm",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@ps/shared": "workspace:*",
+    "@anthropic-ai/sdk": "^1.1.0",
+    "yaml": "^2.6.0",
+    "zod": "^4.0.0"
+  }
+}
