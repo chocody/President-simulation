@@ -29,6 +29,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@ps/ai-gm':
+        specifier: workspace:*
+        version: link:../../packages/ai-gm
       '@ps/engine':
         specifier: workspace:*
         version: link:../../packages/engine

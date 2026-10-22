@@ -4,6 +4,9 @@ import type {
   Action, Card, Choice, Evidence, GameState, GroupKey, Judgment, Target, TurnReport,
 } from "@ps/shared";
 import { OUTCOME_LABEL, targetLabel } from "../lib/labels";
+import { createClient } from "@ps/ai-gm";
+import { getContent } from "./content";
+import { RealGameMaster } from "./real-game-master";
 
 export interface GameMaster {
   judge(input: { state: GameState; card: Card; playerText: string; evidence: Evidence[] }): Promise<Judgment>;
@@ -172,7 +175,16 @@ export class MockGameMaster implements GameMaster {
   }
 }
 
-/** The Lead replaces this to select the real game master (lane A). */
-export function getGameMaster(): GameMaster {
-  return new MockGameMaster();
+/**
+ * Real game master when GAME_ANTHROPIC_API_KEY is set, unless GAME_MASTER=mock forces the mock.
+ * Without a key the app runs on the mock (every mock output is tagged).
+ */
+export function getGameMaster(env: Record<string, string | undefined> = process.env): GameMaster {
+  if (env.GAME_MASTER === "mock" || !env.GAME_ANTHROPIC_API_KEY) return new MockGameMaster();
+  return realGameMaster(env);
+}
+
+function realGameMaster(env: Record<string, string | undefined>): GameMaster {
+  const client = createClient(env);
+  return new RealGameMaster(client, (iso3) => getContent().countries.find((c) => c.iso3 === iso3));
 }

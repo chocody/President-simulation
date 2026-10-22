@@ -11,7 +11,8 @@ import {
 } from "@ps/shared";
 import { advanceQuarter, EngineError, grades, legacyScore, newGame, resolveTurn } from "@ps/engine";
 import type { Content } from "./content";
-import { mockPresetJudgment, type GameMaster } from "./game-master";
+import { MockGameMaster, mockPresetJudgment, type GameMaster } from "./game-master";
+import { GameMasterError } from "./real-game-master";
 import type {
   AdvanceResponse, DecideResult, EndResponse, GameInfo, InfoResponse, NewResponse, PublicCard,
 } from "../lib/api-types";
@@ -172,7 +173,9 @@ export async function handleDecide(body: unknown, deps: Deps): Promise<ApiResult
     answerTitle = text.length > 40 ? `${text.slice(0, 40)}…` : text;
     try {
       judgment = Judgment.parse(await gm.judge({ state, card, playerText: text, evidence }));
-    } catch {
+    } catch (e) {
+      // A refusal is an in-game outcome with its own message; other failures are retryable.
+      if (e instanceof GameMasterError && e.reason === "refused") return fail(422, e.message);
       return fail(502, "ผู้ตัดสินคำตอบ (game master) ทำงานผิดพลาด ลองใหม่อีกครั้ง");
     }
   }
@@ -189,7 +192,8 @@ export async function handleDecide(body: unknown, deps: Deps): Promise<ApiResult
   try {
     narration = await gm.narrate({ state: turn.state, card, report: turn.report, answerTitle });
   } catch {
-    return fail(502, "ผู้เล่าเรื่อง (game master) ทำงานผิดพลาด ลองใหม่อีกครั้ง");
+    // The turn is already resolved; do not lose it. Fall back to the template narration (tagged as such).
+    narration = await new MockGameMaster().narrate({ state: turn.state, card, report: turn.report, answerTitle });
   }
 
   const res: DecideResult = {
@@ -216,7 +220,7 @@ export async function handleEnd(body: unknown, deps: Deps): Promise<ApiResult> {
   try {
     historian = await deps.gm.historian({ state, grades: g, legacy });
   } catch {
-    return fail(502, "นักประวัติศาสตร์ (game master) ทำงานผิดพลาด ลองใหม่อีกครั้ง");
+    historian = await new MockGameMaster().historian({ state, grades: g, legacy });
   }
   const groups = GROUP_KEYS.map((group) => {
     const { share, satisfaction } = state.groups[group];

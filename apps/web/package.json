@@ -17,7 +17,8 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "yaml": "^2.6.0",
-    "zod": "^4.0.0"
+    "zod": "^4.0.0",
+    "@ps/ai-gm": "workspace:*"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",

@@ -69,7 +69,7 @@ describe("loadContent with the real data directory", () => {
 describe("countries from data/countries", () => {
   it("loads a valid country json", () => {
     const d = tmpData();
-    mkdirSync(join(d, "countries"));
+    mkdirSync(join(d, "countries"), { recursive: true });
     writeFileSync(join(d, "countries", "TST.json"), JSON.stringify(testCountry()));
     const c = loadContent({ dataDir: d, devFixtures: false });
     expect(c.countries.map((x) => x.iso3)).toEqual(["TST"]);
@@ -77,7 +77,7 @@ describe("countries from data/countries", () => {
 
   it("rejects group shares that do not sum to 1", () => {
     const d = tmpData();
-    mkdirSync(join(d, "countries"));
+    mkdirSync(join(d, "countries"), { recursive: true });
     writeFileSync(join(d, "countries", "TST.json"), JSON.stringify(testCountry({
       groupShares: { farmers: 0.5, urban: 0.5, business: 0.5, youth: 0.5, military: 0.5 },
     })));
@@ -86,7 +86,7 @@ describe("countries from data/countries", () => {
 
   it("rejects a country that cites an unknown source id", () => {
     const d = tmpData();
-    mkdirSync(join(d, "countries"));
+    mkdirSync(join(d, "countries"), { recursive: true });
     const c = testCountry();
     (c.baselineSrc as Record<string, unknown>).gdpGrowth = { sourceId: "nope.nothing", year: 2020, raw: 1 };
     writeFileSync(join(d, "countries", "TST.json"), JSON.stringify(c));
@@ -95,7 +95,7 @@ describe("countries from data/countries", () => {
 
   it("rejects a file that does not match the CountryData schema", () => {
     const d = tmpData();
-    mkdirSync(join(d, "countries"));
+    mkdirSync(join(d, "countries"), { recursive: true });
     writeFileSync(join(d, "countries", "bad.json"), JSON.stringify({ iso3: "XX" }));
     expect(() => loadContent({ dataDir: d, devFixtures: false })).toThrow(ContentError);
   });
@@ -129,7 +129,7 @@ describe("pre-judged choices", () => {
 
   it("merges judgment into the matching choice", () => {
     const d = tmpData();
-    mkdirSync(join(d, "prejudged"));
+    mkdirSync(join(d, "prejudged"), { recursive: true });
     writeFileSync(join(d, "prejudged", "economy.oil.spike.json"), JSON.stringify([entry()]));
     const c = loadContent({ dataDir: d, devFixtures: false });
     const card = c.cards.find((x) => x.id === "economy.oil.spike")!;
@@ -139,7 +139,7 @@ describe("pre-judged choices", () => {
 
   it("rejects an entry for an unknown card or choice", () => {
     const d = tmpData();
-    mkdirSync(join(d, "prejudged"));
+    mkdirSync(join(d, "prejudged"), { recursive: true });
     writeFileSync(join(d, "prejudged", "x.json"), JSON.stringify([entry({ cardId: "no.such.card" })]));
     expect(() => loadContent({ dataDir: d, devFixtures: false })).toThrow(ContentError);
     writeFileSync(join(d, "prejudged", "x.json"), JSON.stringify([entry({ choiceId: "z" })]));
@@ -148,7 +148,7 @@ describe("pre-judged choices", () => {
 
   it("rejects an invalid judgment", () => {
     const d = tmpData();
-    mkdirSync(join(d, "prejudged"));
+    mkdirSync(join(d, "prejudged"), { recursive: true });
     writeFileSync(join(d, "prejudged", "x.json"), JSON.stringify([entry({ judgment: { nope: 1 } })]));
     expect(() => loadContent({ dataDir: d, devFixtures: false })).toThrow(ContentError);
   });
