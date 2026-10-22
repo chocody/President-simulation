@@ -8,5 +8,5 @@ export default defineConfig({
       "@ps/engine": fileURLToPath(new URL("./packages/engine/src/index.ts", import.meta.url)),
     },
   },
-  test: { include: ["packages/*/test/**/*.test.ts", "scripts/**/*.test.ts"] },
+  test: { include: ["packages/*/test/**/*.test.ts", "scripts/**/*.test.ts", "apps/web/test/**/*.test.ts"] },
 });

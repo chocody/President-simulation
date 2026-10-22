@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": false,
+    "noEmit": true,
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": {
+      "@ps/shared": ["../../packages/shared/src/index.ts"],
+      "@ps/engine": ["../../packages/engine/src/index.ts"]
+    }
+  },
+  "include": ["next-env.d.ts", "app", "components", "lib", "server", "dev", "test", "e2e", "playwright.config.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
