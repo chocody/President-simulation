@@ -3,8 +3,7 @@ category: opportunity
 severity: minor
 titleTh: "บริษัทข้ามชาติเสนอตั้งโรงงานใหญ่"
 situationTh: "บริษัทข้ามชาติรายใหญ่เสนอตั้งโรงงานผลิตขนาดใหญ่ในประเทศ โดยสัญญาว่าจะจ้างงานคนในพื้นที่และนำเทคโนโลยีใหม่เข้ามา แต่ขอสิทธิประโยชน์ทางภาษีหลายปีและที่ดินราคาพิเศษ ผู้ประกอบการท้องถิ่นกังวลว่าจะแข่งขันไม่ได้ ส่วนชุมชนรอบพื้นที่ตั้งโรงงานเป็นห่วงเรื่องที่ดินและสิ่งแวดล้อม คู่แข่งในภูมิภาคกำลังเสนอเงื่อนไขที่คล้ายกันเพื่อดึงบริษัทนี้ไปลงทุนแทน"
-conditions:
-  - { target: stability, op: ">", value: 40 }
+conditions: []   # MVP: every card eligible. State-based weights come in v1 (plan's event table).
 baseWeight: 1
 cooldownQ: 8
 # ifIgnored deliberately has no gdpGrowth effect: ev.fdi.001 found incentives did not raise growth.

@@ -16,7 +16,7 @@ export const LEVEL_SCALE: Param<Record<"index" | "gdpGrowth" | "inflation" | "un
     unemployment: [0.3, 0.7, 1.2],
     inequality: [0.3, 0.6, 1.0], // Gini points
     debt: [1, 3, 6],           // % of GDP
-    budget: [0.1, 0.3, 0.6],   // % of GDP per year of discretionary room
+    budget: [0.1, 0.3, 0.6],   // % of GDP, total change to discretionary room over the effect's duration
   },
   rationale: "Levels 1–3 map to noticeable / significant / major changes within real yearly ranges.",
   basedOn: ["design.level-scale", "wdi.NY.GDP.MKTP.KD.ZG", "wdi.FP.CPI.TOTL.ZG"],
@@ -130,15 +130,15 @@ export const GROUP_INTERESTS: Param<Record<GroupKey, StatKey[]>> = {
     urban: ["inflation", "unemployment", "crime", "health"],
     business: ["gdpGrowth", "stability", "foreignRelations", "corruption"],
     youth: ["education", "unemployment", "pressFreedom", "environment"],
-    military: ["stability", "foreignRelations", "budget"],
+    military: ["stability", "foreignRelations"],
   },
-  rationale: "Interests listed in the design's voter-group table.",
+  rationale: "Interests listed in the design's voter-group table. Defence policy has no stat in the MVP, so military uses stability and foreign relations.",
   basedOn: ["design.groups"],
   calibration: "Playtest.",
 };
 
 export const PILLARS: Record<"economy" | "society" | "politics" | "other", StatKey[]> = {
-  economy: ["gdpGrowth", "inflation", "unemployment", "budget", "debt"],
+  economy: ["gdpGrowth", "inflation", "unemployment", "debt"],   // budget is spending room, not an outcome
   society: ["health", "education", "crime", "inequality"],
   politics: ["corruption", "pressFreedom", "stability", "parliament"],
   other: ["environment", "foreignRelations"],

@@ -22,8 +22,8 @@ function rollEarlyEnding(state: GameState, rng: Rng): EndReason | null {
   const coup = EARLY_ENDINGS.coup.value;
   const military = state.groups.military.satisfaction;
   if (military < coup.militaryBelow && state.stats.stability < coup.stabilityBelow) {
-    // `perPoint` is applied per point below the two thresholds, summed (design-params does not define the unit).
-    const points = (coup.militaryBelow - military) + (coup.stabilityBelow - state.stats.stability);
+    // Plan formula: base + (militaryBelow − military satisfaction) × perPoint.
+    const points = coup.militaryBelow - military;
     const chance = clamp(coup.base + coup.perPoint * points, 0, 1);
     if (rng.next() < chance) return "coup";
   }
