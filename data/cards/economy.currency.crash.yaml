@@ -1,0 +1,43 @@
+id: economy.currency.crash
+category: economy
+severity: major
+titleTh: "ค่าเงินอ่อนลงอย่างรวดเร็ว"
+situationTh: "ค่าเงินของประเทศอ่อนลงอย่างรวดเร็วหลังนักลงทุนต่างชาติถอนเงินออกพร้อมกัน ราคาสินค้านำเข้าทั้งน้ำมัน ปุ๋ย และเครื่องจักรเริ่มแพงขึ้น ผู้ประกอบการที่กู้เงินสกุลต่างประเทศมีภาระหนี้เพิ่มทันที ธนาคารกลางรายงานว่าทุนสำรองระหว่างประเทศลดลงเร็ว ประชาชนแห่ซื้อเงินตราต่างประเทศและทองคำ ตลาดหุ้นผันผวนหนัก รัฐมนตรีคลังต้องเลือกว่าจะปกป้องค่าเงิน ยอมให้ลอยตัว หรือช่วยประชาชนที่เดือดร้อนก่อน"
+conditions:
+  - { target: debt, op: ">", value: 60 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: inflation, delta: 3, over_quarters: 4 }
+  - { target: gdpGrowth, delta: -0.8, over_quarters: 4 }
+  - { target: debt, delta: 3, over_quarters: 4 }
+  - { target: "group:business", delta: -8, over_quarters: 3 }
+sourceIds: [design.level-scale, paper.gopinath-2010, wdi.GC.DOD.TOTL.GD.ZS, wdi.FP.CPI.TOTL.ZG]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "ใช้ทุนสำรองพยุงค่าเงินและควบคุมราคาสินค้า"
+    descTh: "ธนาคารกลางขายทุนสำรองเพื่อชะลอการอ่อนค่า และรัฐกำหนดเพดานราคาสินค้าจำเป็น ซื้อเวลาได้ระยะสั้น แต่ทุนสำรองหมดเร็วและสินค้าอาจขาดตลาด"
+    costHint: L
+    affectedGroups: [urban, business]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: market-led
+    titleTh: "ปล่อยค่าเงินลอยตัวและขึ้นดอกเบี้ย"
+    descTh: "ยอมให้ค่าเงินปรับตัวและขึ้นดอกเบี้ยเพื่อดึงเงินทุนกลับและคุมเงินเฟ้อ ฟื้นความเชื่อมั่นได้เร็วกว่า แต่ราคาสินค้านำเข้าแพงขึ้นและผู้กู้เงินเดือดร้อน"
+    costHint: S
+    affectedGroups: [business, urban, farmers]
+    evidenceIds: [ev.currency.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: targeted
+    titleTh: "ช่วยเงินสดครัวเรือนรายได้น้อยและค้ำประกันสินเชื่อผู้ส่งออก"
+    descTh: "โอนเงินสดให้ครัวเรือนรายได้น้อยและค้ำประกันสินเชื่อให้ผู้ส่งออกที่ต้องการเงินทุนหมุนเวียน ประคองคนที่เปราะบางที่สุด แต่ไม่แก้ต้นเหตุของค่าเงินและเพิ่มภาระงบประมาณ"
+    costHint: M
+    affectedGroups: [urban, business, farmers]
+    evidenceIds: [ev.cash-transfer.002]
+    judgment: null
+    reviewedBy: null

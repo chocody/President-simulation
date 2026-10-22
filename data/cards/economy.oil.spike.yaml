@@ -1,0 +1,42 @@
+id: economy.oil.spike
+category: economy
+severity: major
+titleTh: "ราคาน้ำมันโลกพุ่งสูง"
+situationTh: "ราคาน้ำมันในตลาดโลกพุ่งสูงขึ้นอย่างรวดเร็วจากความขัดแย้งในแหล่งผลิต ราคาขายปลีกในประเทศเริ่มขยับตามทำให้ค่าขนส่งและราคาสินค้าจำเป็นปรับขึ้น ผู้ประกอบการขนส่งและเกษตรกรเรียกร้องให้รัฐตรึงราคา ขณะที่รัฐมนตรีคลังเตือนว่ากองทุนน้ำมันเชื้อเพลิงมีเงินจำกัดและหนี้สาธารณะอยู่ในระดับที่ต้องระวัง ประชาชนในเมืองกังวลค่าครองชีพ สื่อถามว่ารัฐบาลจะช่วยใครและจะใช้เงินจากไหน"
+conditions: []
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: inflation, delta: 1.5, over_quarters: 3 }
+  - { target: gdpGrowth, delta: -0.3, over_quarters: 4 }
+  - { target: "group:urban", delta: -5, over_quarters: 3 }
+  - { target: budget, delta: -0.3, over_quarters: 4 }
+sourceIds: [design.level-scale, book.imf-energy-subsidy-2013, wdi.FP.CPI.TOTL.ZG]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "ตรึงราคาน้ำมันด้วยเงินอุดหนุนทั่วไป"
+    descTh: "รัฐรับภาระส่วนต่างราคาเพื่อให้ราคาหน้าปั๊มเท่าเดิม ลดแรงกดดันค่าครองชีพทันที แต่ใช้เงินจำนวนมาก และผู้มีรายได้สูงที่ใช้น้ำมันมากได้ประโยชน์มากกว่า"
+    costHint: L
+    affectedGroups: [urban, farmers, business]
+    evidenceIds: [ev.fuel-subsidy.001, ev.fuel-subsidy.002]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: market-led
+    titleTh: "ปล่อยราคาลอยตัวตามตลาด"
+    descTh: "ปล่อยให้ราคาในประเทศปรับตามตลาดโลก รัฐไม่ต้องเสียงบเพิ่มและผู้ใช้ประหยัดน้ำมันมากขึ้น แต่ค่าครองชีพและต้นทุนขนส่งพุ่ง ผู้มีรายได้น้อยและธุรกิจขนส่งได้รับผลกระทบหนัก"
+    costHint: XS
+    affectedGroups: [urban, business, farmers]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: targeted
+    titleTh: "ปล่อยราคาลอยตัวแต่โอนเงินช่วยครัวเรือนรายได้น้อย"
+    descTh: "ให้ราคาปรับตามตลาด แต่โอนเงินสดตรงให้ครัวเรือนรายได้น้อยเพื่อชดเชยค่าครองชีพ ช่วยคนที่เดือดร้อนจริงโดยใช้เงินน้อยกว่าการตรึงราคา แต่ชนชั้นกลางรู้สึกว่าไม่ได้รับการช่วยเหลือ"
+    costHint: M
+    affectedGroups: [urban, farmers, youth]
+    evidenceIds: [ev.cash-transfer.001, ev.cash-transfer.002]
+    judgment: null
+    reviewedBy: null

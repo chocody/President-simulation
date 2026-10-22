@@ -1,0 +1,42 @@
+id: health.hospitals.overwhelmed
+category: health
+severity: major
+titleTh: "โรงพยาบาลรัฐแออัดจนรับผู้ป่วยไม่ไหว"
+situationTh: "ผู้ป่วยหนักล้นโรงพยาบาลของรัฐในเมืองใหญ่ เตียงผู้ป่วยวิกฤตเต็มและต้องวางเตียงเสริมตามทางเดิน แพทย์และพยาบาลทำงานเกินเวลาติดต่อกันหลายสัปดาห์ บางคนเริ่มลาออก รถพยาบาลต้องรอรับผู้ป่วยนาน ญาติผู้ป่วยร้องเรียนผ่านสื่อ ขณะที่โรงพยาบาลเอกชนยังมีเตียงว่างแต่ค่ารักษาสูง รัฐมนตรีสาธารณสุขขออำนาจตัดสินใจเร่งด่วนเพื่อรองรับสถานการณ์ในสัปดาห์หน้า"
+conditions:
+  - { target: health, op: "<", value: 60 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: health, delta: -8, over_quarters: 4 }
+  - { target: stability, delta: -5, over_quarters: 3 }
+  - { target: "group:urban", delta: -5, over_quarters: 3 }
+sourceIds: [design.level-scale, report.cdc-hospital-strain, wdi.SH.UHC.SRVS.CV.XD]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "เพิ่มเตียงและจ้างบุคลากรชั่วคราวเร่งด่วน"
+    descTh: "ตั้งโรงพยาบาลสนาม จ้างบุคลากรเพิ่มและจ่ายค่าล่วงเวลา ลดความแออัดโดยตรง แต่ใช้งบมาก และหาบุคลากรที่มีทักษะได้ไม่ทันความต้องการ"
+    costHint: L
+    affectedGroups: [urban, youth]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: targeted
+    titleTh: "ส่งต่อผู้ป่วยวิกฤตและยกเว้นค่ารักษาฉุกเฉิน"
+    descTh: "รัฐจ่ายค่ารักษาฉุกเฉินแทนผู้ป่วยที่ถูกส่งไปโรงพยาบาลเอกชน ช่วยแบ่งภาระจากโรงพยาบาลรัฐ แต่ค่าใช้จ่ายสูง และผลของการยกเว้นค่าธรรมเนียมต่อสุขภาพโดยรวมยังไม่ชัดเจน"
+    costHint: M
+    affectedGroups: [urban, business]
+    evidenceIds: [ev.hospital.002]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: market-led
+    titleTh: "ให้ผู้ป่วยที่จ่ายไหวใช้บริการเอกชนเอง"
+    descTh: "รัฐไม่ลงทุนเพิ่ม ปล่อยให้ผู้ป่วยที่มีเงินใช้โรงพยาบาลเอกชน ประหยัดงบ แต่ผู้มีรายได้น้อยไม่ได้รับการรักษาทันเวลา และโรงพยาบาลรัฐยังคงแออัด"
+    costHint: XS
+    affectedGroups: [urban, business, youth]
+    evidenceIds: [ev.hospital.001, ev.hospital.002]
+    judgment: null
+    reviewedBy: null

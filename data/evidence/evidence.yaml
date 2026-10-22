@@ -1,0 +1,292 @@
+# Evidence library (worker D1). Every item points to a source in data/sources/research-sources.yaml.
+# Convention: `direction` is what the study found for `indicator` when the policy named FIRST in policyTags is used.
+# Game polarity: crime, corruption, inequality, inflation, unemployment: "down" is better. health, parliament, gdpGrowth, budget: "up" is better.
+# Summaries are written by the team from search-result snippets; the pages were not opened (see each Source.note).
+# verifiedBy stays null until a human opens the page.
+
+- id: ev.cash-transfer.001
+  sourceId: paper.egger-2022
+  url: "https://www.nber.org/system/files/working_papers/w26600/w26600.pdf"
+  policyTags: [cash-transfer, targeted-support]
+  indicator: gdpGrowth
+  direction: up
+  strength: rct
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "การทดลองสุ่มโอนเงินสดให้ครัวเรือนยากจนในหมู่บ้านชนบทพบว่าเงินที่ใส่เข้าไปหมุนต่อในเศรษฐกิจท้องถิ่น ทำให้รายได้ท้องถิ่นเพิ่มมากกว่าจำนวนเงินที่แจก (ตัวคูณประมาณ 2.5)"
+  summaryEn: "A randomized trial of one-off cash transfers to poor rural households found the money circulated through the local economy, raising local income by more than the amount transferred (multiplier about 2.5)."
+  verifiedBy: null
+- id: ev.cash-transfer.002
+  sourceId: paper.egger-2022
+  url: "https://www.nber.org/system/files/working_papers/w26600/w26600.pdf"
+  policyTags: [cash-transfer, targeted-support]
+  indicator: inflation
+  direction: none
+  strength: rct
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "ในการทดลองเดียวกัน การโอนเงินสดก้อนใหญ่ให้หมู่บ้านไม่ทำให้ราคาสินค้าในท้องถิ่นเพิ่มขึ้นมากนัก"
+  summaryEn: "In the same trial, large cash transfers to villages caused little local price inflation."
+  verifiedBy: null
+- id: ev.audit.001
+  sourceId: paper.olken-2007
+  url: "https://www.nber.org/papers/w11753"
+  policyTags: [random-audit, anti-corruption]
+  indicator: corruption
+  direction: down
+  strength: rct
+  regionTags: [East Asia & Pacific]
+  summaryTh: "การทดลองสุ่มกับโครงการสร้างถนนหมู่บ้านพบว่า การเพิ่มโอกาสถูกตรวจสอบบัญชีโดยหน่วยงานรัฐลดเงินที่หายไปจากโครงการลงราวแปดจุดร้อยละ แต่ผู้ทุจริตหันไปใช้ช่องทางที่ตรวจจับยากกว่า เช่น การเลือกพวกพ้อง"
+  summaryEn: "A randomized study of village road projects found that a higher chance of a government audit cut missing expenditures by about 8 percentage points, though some corruption shifted to harder-to-detect channels such as nepotism."
+  verifiedBy: null
+- id: ev.minimum-wage.001
+  sourceId: paper.cengiz-2019
+  url: "https://academic.oup.com/qje/article-abstract/134/3/1405/5484905"
+  policyTags: [minimum-wage]
+  indicator: unemployment
+  direction: none
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "การศึกษาการขึ้นค่าจ้างขั้นต่ำหลายครั้งในระดับรัฐพบว่า จำนวนงานค่าจ้างต่ำโดยรวมแทบไม่เปลี่ยนในห้าปีหลังขึ้นค่าจ้าง ขณะที่รายได้ของคนค่าจ้างต่ำเพิ่มขึ้น"
+  summaryEn: "A study of many state-level minimum wage increases found the total number of low-wage jobs was essentially unchanged over five years, while low-wage earnings rose."
+  verifiedBy: null
+- id: ev.policing.001
+  sourceId: review.braga-hotspots
+  url: "https://www.ojp.gov/ncjrs/virtual-library/abstracts/effects-hot-spots-policing-crime-updated-systematic-review-and-meta"
+  policyTags: [hot-spots-policing, policing]
+  indicator: crime
+  direction: down
+  strength: review
+  regionTags: []
+  summaryTh: "งานทบทวนอย่างเป็นระบบพบว่า การเพิ่มกำลังตำรวจในจุดที่เกิดเหตุบ่อยช่วยลดอาชญากรรมได้เล็กน้อยแต่มีนัยสำคัญ และผลดีกระจายไปยังพื้นที่ใกล้เคียงแทนที่จะย้ายอาชญากรรมไปที่อื่น"
+  summaryEn: "A systematic review found that focusing police in the small places where crime concentrates produces small but meaningful crime reductions, with benefits spreading to nearby areas rather than displacing crime."
+  verifiedBy: null
+- id: ev.policing.002
+  sourceId: paper.heller-2014
+  url: "https://www.phila.gov/bestpractices/PDF/Science-2014-Heller-1219-23.pdf"
+  policyTags: [youth-jobs, crime-prevention]
+  indicator: crime
+  direction: down
+  strength: rct
+  regionTags: [North America]
+  summaryTh: "การทดลองสุ่มโครงการจ้างงานวัยรุ่นช่วงฤดูร้อนในย่านที่มีความรุนแรงสูงพบว่า จำนวนการจับกุมคดีความรุนแรงของกลุ่มที่ได้งานลดลงราวร้อยละสี่สิบสามในสิบหกเดือน ส่วนคดียาเสพติดและทรัพย์สินไม่ต่างจากกลุ่มเปรียบเทียบ"
+  summaryEn: "A randomized trial of summer jobs for youths in high-violence neighbourhoods cut violent-crime arrests by about 43% over 16 months, with no difference in drug or property arrests."
+  verifiedBy: null
+- id: ev.epidemic.001
+  sourceId: eval.jpal-mask-bangladesh
+  url: "https://povertyactionlab.org/node/7800225"
+  policyTags: [mask-promotion, public-health-campaign]
+  indicator: health
+  direction: up
+  strength: rct
+  regionTags: [South Asia]
+  summaryTh: "การทดลองสุ่มระดับหมู่บ้านพบว่า การแจกหน้ากากพร้อมรณรงค์และให้ผู้นำชุมชนเป็นแบบอย่าง เพิ่มการสวมหน้ากากราวสามเท่า และลดการติดเชื้อที่มีอาการลงได้"
+  summaryEn: "A village-level randomized trial found that free masks combined with promotion and community role models roughly tripled mask use and reduced symptomatic infections."
+  verifiedBy: null
+- id: ev.epidemic.002
+  sourceId: review.cochrane-respiratory-2023
+  url: "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD006207.pub6"
+  policyTags: [hand-hygiene, public-health-campaign]
+  indicator: health
+  direction: up
+  strength: review
+  regionTags: []
+  summaryTh: "งานทบทวนการทดลองสุ่มจำนวนมากพบว่า การล้างหรือทำความสะอาดมือลดจำนวนผู้ติดเชื้อทางเดินหายใจเฉียบพลันลงราวร้อยละสิบสี่ ส่วนหลักฐานเรื่องหน้ากากยังสรุปไม่ได้"
+  summaryEn: "A review of many randomized trials found hand hygiene reduced acute respiratory infections by about 14%, while evidence on masks was inconclusive."
+  verifiedBy: null
+- id: ev.epidemic.003
+  sourceId: paper.goolsbee-syverson-2021
+  url: "https://www.nber.org/digest/aug20/consumers-fear-virus-outweighs-lockdowns-impact-business"
+  policyTags: [lockdown-order, voluntary-distancing]
+  indicator: gdpGrowth
+  direction: down
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "ข้อมูลโทรศัพท์มือถือของธุรกิจจำนวนมากแสดงว่า การลดลงของลูกค้าในช่วงโรคระบาดเกิดจากความกลัวติดเชื้อของประชาชนเป็นส่วนใหญ่ คำสั่งปิดเมืองอธิบายได้เพียงส่วนน้อย และการเลิกคำสั่งทำให้กิจกรรมฟื้นกลับเพียงเล็กน้อย"
+  summaryEn: "Phone-location data on many businesses showed most of the early-pandemic fall in customer traffic came from people's own fear of infection; legal orders explained only a small part, and lifting them brought a modest recovery."
+  verifiedBy: null
+- id: ev.hospital.001
+  sourceId: report.cdc-hospital-strain
+  url: "https://www.cdc.gov/mmwr/volumes/70/wr/mm7046a5.htm?cb=12963"
+  policyTags: [hospital-overload]
+  indicator: health
+  direction: down
+  strength: observational
+  regionTags: [North America]
+  summaryTh: "การวิเคราะห์ข้อมูลช่วงโรคระบาดพบว่า เมื่อโรงพยาบาลรับผู้ป่วยหนักจนเตียงเต็มและบุคลากรตึงมือ จะมีผู้เสียชีวิตส่วนเกินมากขึ้น (เป็นหลักฐานเชิงสังเกตและแบบจำลอง ไม่ใช่การทดลอง)"
+  summaryEn: "An analysis of pandemic data found more excess deaths when hospitals were strained by high occupancy and staffing pressure (observational and model-based, not an experiment)."
+  verifiedBy: null
+- id: ev.hospital.002
+  sourceId: review.lagarde-user-fees
+  url: "https://www.cochrane.org/evidence/CD009094_impact-user-fees-access-health-services-low-and-middle-income-countries"
+  policyTags: [user-fee-removal, health-financing]
+  indicator: health
+  direction: mixed
+  strength: review
+  regionTags: [Low- and middle-income countries]
+  summaryTh: "งานทบทวนของ Cochrane พบว่าการยกเลิกหรือลดค่าธรรมเนียมผู้ป่วยทำให้คนใช้บริการบางประเภทมากขึ้น แต่ผลต่อบริการป้องกันและคุณภาพยังไม่ชัด และความเชื่อมั่นของหลักฐานต่ำมาก"
+  summaryEn: "A Cochrane review found that dropping or cutting patient fees raises use of some services, but effects on preventive services and quality are unclear and the certainty of the evidence is very low."
+  verifiedBy: null
+- id: ev.fuel-subsidy.001
+  sourceId: book.imf-energy-subsidy-2013
+  url: "https://www.imf.org/en/publications/books/issues/2016/12/31/energy-subsidy-reform-lessons-and-implications-40410"
+  policyTags: [universal-fuel-subsidy, energy-subsidy]
+  indicator: budget
+  direction: down
+  strength: review
+  regionTags: []
+  summaryTh: "การรวบรวมของกองทุนการเงินระหว่างประเทศสรุปว่า การอุดหนุนราคาพลังงานทั่วไปทำให้งบประมาณขาดดุลหนักขึ้นและเบียดบังรายจ่ายที่จำเป็นอื่น"
+  summaryEn: "An IMF compilation of country cases concludes that broad energy subsidies worsen fiscal deficits and crowd out other priority spending."
+  verifiedBy: null
+- id: ev.fuel-subsidy.002
+  sourceId: book.imf-energy-subsidy-2013
+  url: "https://www.imf.org/en/publications/books/issues/2016/12/31/energy-subsidy-reform-lessons-and-implications-40410"
+  policyTags: [universal-fuel-subsidy, energy-subsidy]
+  indicator: inequality
+  direction: up
+  strength: review
+  regionTags: []
+  summaryTh: "งานเดียวกันพบว่าประโยชน์จากการอุดหนุนพลังงานทั่วไปตกอยู่กับครัวเรือนรายได้สูงเป็นส่วนใหญ่ จึงยิ่งเสริมความเหลื่อมล้ำ"
+  summaryEn: "The same work finds that most of the benefit of broad energy subsidies goes to higher-income households, reinforcing inequality."
+  verifiedBy: null
+- id: ev.drought.001
+  sourceId: paper.karlan-2012
+  url: "https://www.nber.org/papers/w18463.pdf"
+  policyTags: [index-insurance, agricultural-risk]
+  indicator: group:farmers
+  direction: up
+  strength: rct
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "การทดลองสุ่มกับเกษตรกรรายย่อยพบว่า ประกันภัยตามดัชนีปริมาณฝนทำให้เกษตรกรลงทุนในไร่นามากขึ้นและกล้าเลือกการผลิตที่เสี่ยงแต่ให้ผลตอบแทนสูงกว่า"
+  summaryEn: "A randomized trial with smallholder farmers found rainfall index insurance increased farm investment and riskier, higher-return production choices."
+  verifiedBy: null
+- id: ev.drought.002
+  sourceId: paper.knippenberg-hoddinott-2017
+  url: "https://essp.ifpri.info/2017/09/07/shocks-social-protection-and-resilience-evidence-from-ethiopia-2/"
+  policyTags: [safety-net, public-works]
+  indicator: group:farmers
+  direction: up
+  strength: quasi
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "การศึกษาโครงการเครือข่ายความปลอดภัยทางสังคมในชนบทพบว่า เงินจากโครงการลดผลกระทบของภัยแล้งต่อความมั่นคงทางอาหารลงราวร้อยละห้าสิบเจ็ด และผลเสียหมดไปภายในสองปี"
+  summaryEn: "A study of a rural safety-net programme found its payments cut the initial drought impact on household food security by about 57% and erased the adverse effect within two years."
+  verifiedBy: null
+- id: ev.flood.001
+  sourceId: paper.kocornik-mina-2020
+  url: "https://www.aeaweb.org/doi/10.1257/app.20170066"
+  policyTags: [flood-recovery, market-recovery]
+  indicator: gdpGrowth
+  direction: mixed
+  strength: observational
+  regionTags: []
+  summaryTh: "ข้อมูลภาพถ่ายดาวเทียมและแผนที่น้ำท่วมของเมืองทั่วโลกแสดงว่า กิจกรรมเศรษฐกิจลดลงเล็กน้อยในปีที่น้ำท่วม แล้วเกือบฟื้นเต็มที่ในปีถัดมา และพื้นที่ลุ่มต่ำฟื้นเร็วพอ ๆ กับที่สูง"
+  summaryEn: "Satellite night-light and flood-map data for cities worldwide show a small dip in economic activity in the flood year and a near-full recovery the next year, with low-lying areas rebounding about as fast as higher ground."
+  verifiedBy: null
+- id: ev.public-works.001
+  sourceId: paper.muralidharan-2023
+  url: "https://econpapers.repec.org/paper/nbrnberwo/23838.htm"
+  policyTags: [public-works, employment-guarantee]
+  indicator: inequality
+  direction: down
+  strength: rct
+  regionTags: [South Asia]
+  summaryTh: "การทดลองสุ่มระดับอำเภอในการปรับปรุงโครงการจ้างงานสาธารณะพบว่า รายได้ครัวเรือนเพิ่มราวร้อยละสิบสี่ และความยากจนลดลงราวร้อยละยี่สิบหก ส่วนใหญ่มาจากค่าจ้างภาคเอกชนที่สูงขึ้น"
+  summaryEn: "A randomized rollout of an improved public employment programme raised household earnings by about 14% and cut poverty by about 26%, mostly through higher private-sector earnings."
+  verifiedBy: null
+- id: ev.tariff.001
+  sourceId: paper.amiti-2019
+  url: "https://cep.lse.ac.uk/_NEW/PUBLICATIONS/abstract.asp?index=6160"
+  policyTags: [import-tariff, trade-war]
+  indicator: inflation
+  direction: up
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "การศึกษาสงครามภาษีศุลกากรครั้งหนึ่งพบว่า ภาษีนำเข้าถูกส่งผ่านไปยังราคาสินค้าในประเทศเกือบเต็มจำนวน ผู้บริโภคในประเทศเป็นผู้แบกรับต้นทุน"
+  summaryEn: "A study of a recent tariff war found tariffs were passed through almost completely to domestic prices, so domestic consumers bore the cost."
+  verifiedBy: null
+- id: ev.tariff.002
+  sourceId: paper.fajgelbaum-2020
+  url: "https://egc.yale.edu/research/return-protectionism"
+  policyTags: [import-tariff, trade-war]
+  indicator: gdpGrowth
+  direction: down
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "งานวิจัยอีกชิ้นเกี่ยวกับภาษีนำเข้าและภาษีตอบโต้พบว่า ผู้ซื้อสินค้านำเข้าสูญเสียราวร้อยละศูนย์จุดสองเจ็ดของผลผลิตรวม เมื่อหักรายได้ภาษีและกำไรผู้ผลิตแล้วเหลือความสูญเสียสุทธิที่น้อยกว่านั้นมาก และผลกระทบกระจุกที่ภาคส่งออกที่ถูกตอบโต้"
+  summaryEn: "Another study of import and retaliatory tariffs found buyers of imports lost about 0.27% of GDP; after tariff revenue and producer gains the net loss was much smaller, and the burden fell hardest on retaliation-hit export sectors."
+  verifiedBy: null
+- id: ev.fdi.001
+  sourceId: paper.imf-tax-incentives
+  url: "https://www.imf.org/en/publications/wp/issues/2016/12/31/empirical-evidenceon-the-effects-of-tax-incentives-23053"
+  policyTags: [fdi-tax-incentive, tax-holiday]
+  indicator: gdpGrowth
+  direction: none
+  strength: observational
+  regionTags: [Latin America & Caribbean, Sub-Saharan Africa]
+  summaryTh: "การวิเคราะห์ข้อมูลหลายสิบประเทศพบว่า ภาษีนิติบุคคลต่ำและช่วงปลอดภาษีที่ยาวขึ้นช่วยดึงดูดการลงทุนโดยตรงจากต่างประเทศ แต่ไม่ได้เพิ่มการลงทุนถาวรรวมหรือการเติบโตทางเศรษฐกิจ"
+  summaryEn: "A cross-country analysis found lower corporate tax rates and longer tax holidays attract foreign direct investment but do not raise total fixed investment or growth."
+  verifiedBy: null
+- id: ev.fdi.002
+  sourceId: paper.alfaro-2004
+  url: "https://www.econ.umd.edu/publication/fdi-and-economic-growth-role-local-financial-markets"
+  policyTags: [fdi-conditions, financial-development]
+  indicator: gdpGrowth
+  direction: mixed
+  strength: observational
+  regionTags: []
+  summaryTh: "ข้อมูลข้ามประเทศช่วงปลายศตวรรษก่อนแสดงว่า การลงทุนโดยตรงจากต่างประเทศเพียงอย่างเดียวให้ผลต่อการเติบโตไม่แน่นอน แต่ประเทศที่ตลาดการเงินในประเทศพัฒนาแล้วได้ประโยชน์จากการลงทุนนี้มากอย่างชัดเจน"
+  summaryEn: "Cross-country data from 1975-1995 show FDI alone has an ambiguous effect on growth, while countries with well-developed local financial markets gain significantly from it."
+  verifiedBy: null
+- id: ev.disclosure.001
+  sourceId: eval.jpal-ferraz-finan
+  url: "https://www.povertyactionlab.org/evaluation/politicians-publicly-released-audits-corruption-and-electoral-outcomes-brazil"
+  policyTags: [audit-disclosure, anti-corruption]
+  indicator: parliament
+  direction: down
+  strength: quasi
+  regionTags: [Latin America & Caribbean]
+  summaryTh: "เมื่อรัฐสุ่มตรวจบัญชีเทศบาลแล้วเปิดเผยผลต่อสาธารณะ นายกเทศมนตรีที่ถูกพบว่าทุจริตมีโอกาสได้รับเลือกซ้ำลดลง โดยเฉพาะในพื้นที่ที่มีวิทยุท้องถิ่น (ตัวชี้วัดในเกมใช้แทนฐานเสียงทางการเมืองของผู้ถูกเปิดโปง)"
+  summaryEn: "When randomly selected municipal audits were made public, mayors found to be corrupt had a lower chance of re-election, especially where local radio existed (mapped here to the exposed incumbent's political support)."
+  verifiedBy: null
+- id: ev.youth-jobs.001
+  sourceId: paper.card-kluve-weber-2018
+  url: "https://www.nber.org/papers/w21431"
+  policyTags: [active-labor-market, job-training]
+  indicator: unemployment
+  direction: down
+  strength: review
+  regionTags: []
+  summaryTh: "งานวิเคราะห์อภิมานของโครงการช่วยหางานและฝึกอาชีพกว่าสองร้อยการศึกษาพบว่า ผลใกล้ศูนย์ในระยะสั้นแต่ดีขึ้นหลังผ่านไปสองถึงสามปี โครงการที่เน้นพัฒนาทักษะให้ผลดีกว่า และมีโอกาสได้ผลมากขึ้นในช่วงเศรษฐกิจถดถอย"
+  summaryEn: "A meta-analysis of over 200 job-search and training programme evaluations found effects near zero in the short run that turn positive after two to three years; skills-focused programmes did better, and effects were larger in recessions."
+  verifiedBy: null
+- id: ev.employment-crime.001
+  sourceId: paper.blattman-annan-2016
+  url: "https://nber.org/papers/w21289"
+  policyTags: [employment-package, crime-prevention]
+  indicator: crime
+  direction: down
+  strength: rct
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "การทดลองสุ่มกับชายเสี่ยงสูงพบว่า ชุดช่วยทำเกษตรที่มีทั้งอบรมและทุน ทำให้ใช้เวลากับงานผิดกฎหมายน้อยลง แต่การอบรมอย่างเดียวไม่มีทุนให้ผลน้อย"
+  summaryEn: "A randomized trial with high-risk men found an agricultural package of training plus capital shifted time away from illicit work, while training alone without capital had small effects."
+  verifiedBy: null
+- id: ev.immunization.001
+  sourceId: paper.banerjee-2010
+  url: "https://dspace.mit.edu/handle/1721.1/57503"
+  policyTags: [immunization-camps, small-incentives]
+  indicator: health
+  direction: up
+  strength: rct
+  regionTags: [South Asia]
+  summaryTh: "การทดลองสุ่มในหมู่บ้านชนบทพบว่า หน่วยฉีดวัคซีนที่มาตามนัดเป็นประจำเพิ่มความครอบคลุมจากราวร้อยละหกเป็นร้อยละสิบแปด และเมื่อเพิ่มของจูงใจเล็ก ๆ เช่น ถั่วเลนทิล ความครอบคลุมสูงถึงราวร้อยละสามสิบเก้า"
+  summaryEn: "A randomized trial in rural villages found reliable monthly immunisation camps raised full immunisation from about 6% to 18%, and adding small incentives such as lentils raised it to about 39%."
+  verifiedBy: null
+- id: ev.currency.001
+  sourceId: paper.gopinath-2010
+  url: "https://www.nber.org/papers/w13432"
+  policyTags: [currency-depreciation, exchange-rate-pass-through]
+  indicator: inflation
+  direction: up
+  strength: observational
+  regionTags: [North America]
+  summaryTh: "ข้อมูลธุรกรรมนำเข้าพบว่า การเปลี่ยนแปลงอัตราแลกเปลี่ยนถูกส่งต่อไปยังราคานำเข้ามากน้อยต่างกันตามสกุลเงินที่ใช้ตั้งราคา สินค้าที่ตั้งราคาเป็นสกุลอื่นนอกเหนือจากดอลลาร์ส่งผ่านเกือบเต็มจำนวน (ผลนี้เป็นข้อมูลของประเทศผู้นำเข้ารายใหญ่ ไม่ใช่ประเทศที่ค่าเงินล่ม)"
+  summaryEn: "Import transaction data show how far exchange-rate moves reach import prices depends on the currency of pricing: goods priced in non-dollar currencies pass through almost fully (data are from a large importer, not a currency-crisis economy)."
+  verifiedBy: null

@@ -1,0 +1,43 @@
+id: foreign.tariff.raised
+category: foreign
+severity: major
+titleTh: "คู่ค้ารายใหญ่ขึ้นภาษีสินค้าส่งออกของเรา"
+situationTh: "ประเทศคู่ค้ารายใหญ่ประกาศขึ้นภาษีนำเข้าสินค้าส่งออกหลักของเราอย่างฉับพลัน อ้างว่าเพื่อปกป้องอุตสาหกรรมของตน ผู้ส่งออกรายงานว่าคำสั่งซื้อเริ่มถูกยกเลิก โรงงานบางแห่งชะลอการผลิต เกษตรกรที่ขายสินค้าให้ตลาดนั้นกังวลว่าราคาจะตก รัฐมนตรีต่างประเทศเตือนว่าการตอบโต้อาจทำให้ความสัมพันธ์แย่ลงและกระทบห่วงโซ่อุปทาน ขณะที่สมาคมการค้าเรียกร้องให้รัฐบาลทำบางอย่างทันที"
+conditions:
+  - { target: foreignRelations, op: "<", value: 70 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: gdpGrowth, delta: -0.3, over_quarters: 4 }
+  - { target: "group:business", delta: -5, over_quarters: 3 }
+  - { target: "group:farmers", delta: -5, over_quarters: 3 }
+  - { target: foreignRelations, delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.fajgelbaum-2020, paper.amiti-2019]
+choices:
+  - id: a
+    approach: protectionist
+    titleTh: "ขึ้นภาษีตอบโต้สินค้านำเข้า"
+    descTh: "ใช้ภาษีตอบโต้เพื่อกดดันให้กลับมาเจรจาและปกป้องผู้ผลิตในประเทศ แต่ราคาสินค้านำเข้าและต้นทุนการผลิตสูงขึ้น ผู้บริโภคและภาคธุรกิจต้องจ่ายเพิ่ม"
+    costHint: S
+    affectedGroups: [urban, business, farmers]
+    evidenceIds: [ev.tariff.001, ev.tariff.002]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: negotiation
+    titleTh: "เจรจาและกระจายตลาดส่งออก"
+    descTh: "ส่งคณะเจรจาและหาตลาดใหม่เพื่อลดการพึ่งพาตลาดเดียว รักษาความสัมพันธ์ไว้ แต่ผลมาช้า และผู้ส่งออกต้องทนรับผลกระทบในระหว่างนี้"
+    costHint: S
+    affectedGroups: [business, farmers]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: targeted
+    titleTh: "ช่วยเหลือชั่วคราวเฉพาะผู้ส่งออกที่ได้รับผลกระทบ"
+    descTh: "ให้สินเชื่อและเงินชดเชยชั่วคราวเฉพาะผู้ส่งออกและเกษตรกรที่เสียตลาด ช่วยประคองการจ้างงาน แต่ใช้งบรัฐ และกลุ่มอื่นอาจรู้สึกว่าไม่เป็นธรรม"
+    costHint: M
+    affectedGroups: [business, farmers, urban]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null

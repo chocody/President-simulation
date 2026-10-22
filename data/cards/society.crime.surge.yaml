@@ -1,0 +1,43 @@
+id: society.crime.surge
+category: society
+severity: major
+titleTh: "อาชญากรรมรุนแรงเพิ่มขึ้นในเมือง"
+situationTh: "ในช่วงไม่กี่เดือนที่ผ่านมา คดีทำร้ายร่างกายและปล้นทรัพย์ในย่านเมืองหลายแห่งเพิ่มขึ้นชัดเจน โดยกระจุกอยู่ในไม่กี่ย่านที่มีคนว่างงานจำนวนมาก ผู้ค้าและผู้อยู่อาศัยเริ่มปิดร้านเร็วและไม่กล้าเดินทางตอนกลางคืน กลุ่มพ่อค้าเรียกร้องให้เพิ่มกำลังตำรวจ ขณะที่องค์กรชุมชนเตือนว่าการปราบปรามอย่างเดียวจะทำให้เยาวชนยิ่งห่างเหินจากรัฐ ผู้บัญชาการตำรวจขอทรัพยากรเพิ่มเพื่อตอบสนองต่อความกดดันจากสื่อ"
+conditions:
+  - { target: crime, op: ">", value: 40 }
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: crime, delta: 5, over_quarters: 4 }
+  - { target: "group:urban", delta: -5, over_quarters: 3 }
+  - { target: "group:business", delta: -2, over_quarters: 3 }
+  - { target: stability, delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, review.braga-hotspots, wdi.VC.IHR.PSRC.P5]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "เพิ่มกำลังตำรวจเฉพาะจุดเสี่ยง"
+    descTh: "ส่งตำรวจลาดตระเวนเข้มข้นในไม่กี่ย่านที่เกิดเหตุบ่อย ลดอาชญากรรมได้โดยไม่ต้องกระจายกำลังทั่วประเทศ แต่ต้องจ่ายค่าล่วงเวลา และอาจเกิดความตึงเครียดกับคนในย่านนั้น"
+    costHint: M
+    affectedGroups: [urban, youth, business]
+    evidenceIds: [ev.policing.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: targeted
+    titleTh: "จ้างงานและฝึกอาชีพเยาวชนในย่านเสี่ยง"
+    descTh: "จ้างงานชั่วคราวและฝึกอาชีพให้เยาวชนที่มีความเสี่ยง แก้ที่ต้นเหตุมากกว่า แต่ผลต่อความรุนแรงเกิดช้ากว่าการส่งตำรวจและต้องใช้งบต่อเนื่อง"
+    costHint: M
+    affectedGroups: [youth, urban]
+    evidenceIds: [ev.policing.002, ev.employment-crime.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: punitive
+    titleTh: "เพิ่มโทษและตั้งด่านตรวจทั่วเมือง"
+    descTh: "ออกมาตรการเข้มทั้งเพิ่มโทษและตั้งด่านตรวจจำนวนมาก ได้ภาพความเด็ดขาดทันที แต่ใช้กำลังคนมาก กระทบเสรีภาพของประชาชน และเยาวชนจะไม่พอใจ"
+    costHint: S
+    affectedGroups: [youth, urban, military]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null

@@ -1,0 +1,41 @@
+id: disaster.drought.severe
+category: disaster
+severity: major
+titleTh: "ภัยแล้งรุนแรงต่อเนื่อง"
+situationTh: "ฝนทิ้งช่วงยาวนานผิดปกติติดต่อกันหลายฤดู อ่างเก็บน้ำหลายแห่งเหลือน้ำน้อยจนต้องจำกัดการส่งน้ำเพื่อการเกษตร พื้นที่เพาะปลูกจำนวนมากแห้งแล้งและต้นกล้าตายก่อนออกรวง เกษตรกรรายย่อยที่พึ่งน้ำฝนเริ่มขาดรายได้และเป็นหนี้เพิ่ม ราคาอาหารในตลาดเริ่มปรับตัวสูงขึ้น หมู่บ้านบางแห่งต้องใช้รถขนน้ำดื่มมาแจก รัฐมนตรีเกษตรเตือนว่าหากไม่มีมาตรการรองรับ ผู้คนจะอพยพเข้าเมืองเพื่อหางานทำ"
+conditions: []
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: "group:farmers", delta: -8, over_quarters: 4 }
+  - { target: gdpGrowth, delta: -0.3, over_quarters: 4 }
+  - { target: inflation, delta: 0.5, over_quarters: 3 }
+sourceIds: [design.level-scale, paper.knippenberg-hoddinott-2017, wdi.SL.AGR.EMPL.ZS]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "จ้างงานสาธารณะและแจกอาหารในพื้นที่แล้ง"
+    descTh: "รัฐจ้างเกษตรกรในพื้นที่แล้งทำงานขุดลอกแหล่งน้ำและซ่อมถนน พร้อมแจกอาหารให้ครัวเรือนที่ขาดแคลน ประคองรายได้ได้ทันที แต่ใช้งบมากและต้องมีเจ้าหน้าที่ดูแลทั่วพื้นที่"
+    costHint: L
+    affectedGroups: [farmers, youth]
+    evidenceIds: [ev.drought.002, ev.public-works.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: market-led
+    titleTh: "ส่งเสริมประกันภัยพืชผลตามดัชนีฝน"
+    descTh: "รัฐอุดหนุนเบี้ยประกันภัยตามปริมาณฝนให้เกษตรกร เพื่อให้กล้าลงทุนและได้เงินชดเชยเร็วเมื่อเกิดแล้งซ้ำ แต่ไม่ช่วยผู้ที่เสียหายไปแล้ว และเงินชดเชยอาจไม่ตรงกับความเสียหายจริง"
+    costHint: M
+    affectedGroups: [farmers, business]
+    evidenceIds: [ev.drought.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: targeted
+    titleTh: "โอนเงินสดให้เกษตรกรรายย่อยที่ขึ้นทะเบียน"
+    descTh: "จ่ายเงินสดตรงให้เกษตรกรรายย่อยตามทะเบียนเกษตรกร ใช้เร็วและเกษตรกรเลือกใช้เงินเอง แต่ผู้ที่ไม่ได้ขึ้นทะเบียนจะตกหล่น และผู้เสียภาษีในเมืองต้องรับภาระ"
+    costHint: M
+    affectedGroups: [farmers, urban]
+    evidenceIds: [ev.cash-transfer.001, ev.cash-transfer.002]
+    judgment: null
+    reviewedBy: null

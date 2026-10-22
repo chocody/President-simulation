@@ -1,0 +1,41 @@
+id: disaster.flood.major
+category: disaster
+severity: major
+titleTh: "น้ำท่วมใหญ่หลายจังหวัด"
+situationTh: "ฝนตกหนักต่อเนื่องหลายสัปดาห์ทำให้แม่น้ำสายหลักล้นตลิ่ง หลายจังหวัดน้ำท่วมสูงจนต้องอพยพประชาชนไปอยู่ศูนย์พักพิงชั่วคราว ถนนสายสำคัญถูกตัดขาด โรงงานและตลาดหลายแห่งหยุดดำเนินการ พื้นที่เกษตรจำนวนมากจมอยู่ใต้น้ำ ทำให้พืชผลก่อนเก็บเกี่ยวเสียหาย รัฐมนตรีคลังรายงานว่างบสำรองมีจำกัด ขณะที่รัฐมนตรีที่ดูแลการปกครองท้องถิ่นแจ้งว่าประชาชนต้องการอาหาร ยารักษาโรค และที่พักอย่างเร่งด่วน สื่อมวลชนจับตาว่ารัฐบาลจะตัดสินใจอย่างไรในสัปดาห์นี้"
+conditions: []
+baseWeight: 1
+cooldownQ: 8
+ifIgnored:
+  - { target: gdpGrowth, delta: -0.8, over_quarters: 4 }
+  - { target: health, delta: -5, over_quarters: 2 }
+  - { target: "group:farmers", delta: -8, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.kocornik-mina-2020, wdi.NY.GDP.MKTP.KD.ZG]
+choices:
+  - id: a
+    approach: state-led
+    titleTh: "จ้างงานฟื้นฟูและซ่อมสร้างโดยรัฐ"
+    descTh: "รัฐจ้างคนในพื้นที่ซ่อมถนน คันกั้นน้ำ และระบบระบายน้ำ ได้ทั้งงานและโครงสร้างพื้นฐาน แต่ใช้งบสูงและต้องใช้เวลานาน"
+    costHint: L
+    affectedGroups: [farmers, urban, youth]
+    evidenceIds: [ev.public-works.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: targeted
+    titleTh: "เงินช่วยเหลือเฉพาะครัวเรือนที่เสียหาย"
+    descTh: "จ่ายเงินสดให้ครัวเรือนที่ได้รับความเสียหายจริงตามการสำรวจ ช่วยให้ฟื้นตัวเร็วและหมุนเวียนในตลาดท้องถิ่น แต่การสำรวจล่าช้าและผู้ที่ตกสำรวจจะไม่พอใจ"
+    costHint: M
+    affectedGroups: [farmers, urban]
+    evidenceIds: [ev.cash-transfer.001, ev.cash-transfer.002]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: market-led
+    titleTh: "ให้ตลาดและประกันภัยฟื้นตัวเอง"
+    descTh: "รัฐช่วยเพียงสินเชื่อดอกเบี้ยต่ำและเร่งจ่ายประกันภัย ปล่อยให้ธุรกิจฟื้นตัวตามกลไกตลาด ประหยัดงบ แต่ครัวเรือนยากจนและเกษตรกรที่ไม่มีประกันต้องแบกภาระเอง"
+    costHint: S
+    affectedGroups: [farmers, business, urban]
+    evidenceIds: [ev.flood.001]
+    judgment: null
+    reviewedBy: null
