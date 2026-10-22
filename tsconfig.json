@@ -15,5 +15,5 @@
       "@ps/ai-gm": ["packages/ai-gm/src/index.ts"]
     }
   },
-  "include": ["packages/*/src", "packages/*/test", "scripts", "evals"]
+  "include": ["packages/*/src", "packages/*/test", "scripts", "evals", "apps/web/server", "apps/web/lib", "apps/web/dev", "apps/web/test", "apps/web/app/api"]
 }

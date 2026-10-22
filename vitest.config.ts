@@ -9,5 +9,5 @@ export default defineConfig({
       "@ps/ai-gm": fileURLToPath(new URL("./packages/ai-gm/src/index.ts", import.meta.url)),
     },
   },
-  test: { include: ["packages/*/test/**/*.test.ts", "scripts/**/*.test.ts"] },
+  test: { include: ["packages/*/test/**/*.test.ts", "scripts/**/*.test.ts", "apps/web/test/**/*.test.ts"] },
 });
