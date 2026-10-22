@@ -44,7 +44,7 @@ Log one JSON line per call to stdout: route, model, input/output/cache tokens, c
 cache read $0.20), latency, stop_reason.
 
 ## Judge prompt text (`prompts/judge.v1.ts`)
-Use the prompt in the plan (AI Game Master tab), including the `<evidence>` rule:
+The Lead already wrote it to `packages/ai-gm/src/prompts/judge.v1.ts` — use it as is. Original instruction: use the prompt in the plan (AI Game Master tab), including the `<evidence>` rule:
 "A level 2 or 3 effect must cite evidence_ids from <evidence> whose indicator and direction match it. If nothing in
 <evidence> supports the effect, use level 1. Never invent ids or cite research that is not in <evidence>."
 If you cannot open the plan, write it from these essentials: role (policy evaluator in an educational simulation,
