@@ -11,7 +11,8 @@
     "baseUrl": ".",
     "paths": {
       "@ps/shared": ["packages/shared/src/index.ts"],
-      "@ps/engine": ["packages/engine/src/index.ts"]
+      "@ps/engine": ["packages/engine/src/index.ts"],
+      "@ps/ai-gm": ["packages/ai-gm/src/index.ts"]
     }
   },
   "include": ["packages/*/src", "packages/*/test", "scripts"]

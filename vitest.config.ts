@@ -6,6 +6,7 @@ export default defineConfig({
     alias: {
       "@ps/shared": fileURLToPath(new URL("./packages/shared/src/index.ts", import.meta.url)),
       "@ps/engine": fileURLToPath(new URL("./packages/engine/src/index.ts", import.meta.url)),
+      "@ps/ai-gm": fileURLToPath(new URL("./packages/ai-gm/src/index.ts", import.meta.url)),
     },
   },
   test: { include: ["packages/*/test/**/*.test.ts", "scripts/**/*.test.ts"] },
