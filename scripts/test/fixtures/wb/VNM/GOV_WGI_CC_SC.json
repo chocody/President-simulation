@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2023",
+      "value": 52,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2022",
+      "value": 51.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2021",
+      "value": 51.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2020",
+      "value": 51.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2019",
+      "value": 51.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2018",
+      "value": 51,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2017",
+      "value": 50.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2016",
+      "value": 50.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2015",
+      "value": 50.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2014",
+      "value": 50.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2023",
+      "value": 7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2022",
+      "value": 6.995,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2021",
+      "value": 6.99,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2020",
+      "value": 6.985,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2019",
+      "value": 6.98,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2018",
+      "value": 6.975,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2017",
+      "value": 6.97,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2016",
+      "value": 6.965,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2015",
+      "value": 6.96,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2529.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2014",
+      "value": 6.955,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

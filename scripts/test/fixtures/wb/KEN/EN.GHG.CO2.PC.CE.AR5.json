@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2023",
+      "value": 6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2022",
+      "value": 5.98,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2021",
+      "value": 5.96,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2020",
+      "value": 5.94,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2019",
+      "value": 5.92,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2018",
+      "value": 5.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2017",
+      "value": 5.88,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2016",
+      "value": 5.86,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2015",
+      "value": 5.84,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2014",
+      "value": 5.82,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

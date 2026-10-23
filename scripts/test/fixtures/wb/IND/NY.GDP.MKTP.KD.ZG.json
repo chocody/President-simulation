@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 2.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 2.29,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 2.28,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 2.27,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 2.26,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 2.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 2.24,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 2.23,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 2.22,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 2.21,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

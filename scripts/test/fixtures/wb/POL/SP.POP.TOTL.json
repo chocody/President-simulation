@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2023",
+      "value": 9000000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2022",
+      "value": 8900000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2021",
+      "value": 8800000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2020",
+      "value": 8700000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2019",
+      "value": 8600000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2018",
+      "value": 8500000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2017",
+      "value": 8400000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2016",
+      "value": 8300000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2015",
+      "value": 8200000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2014",
+      "value": 8100000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2023",
+      "value": 58,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2022",
+      "value": 57.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2021",
+      "value": 57.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2020",
+      "value": 57.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2019",
+      "value": 57.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2018",
+      "value": 57,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2017",
+      "value": 56.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2016",
+      "value": 56.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2015",
+      "value": 56.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_PV_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2014",
+      "value": 56.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

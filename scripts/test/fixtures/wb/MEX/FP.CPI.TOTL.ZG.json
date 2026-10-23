@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2023",
+      "value": 4.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2022",
+      "value": 4.38,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2021",
+      "value": 4.36,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2020",
+      "value": 4.34,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2019",
+      "value": 4.32,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2018",
+      "value": 4.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2017",
+      "value": 4.28,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2016",
+      "value": 4.26,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2015",
+      "value": 4.24,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "FP.CPI.TOTL.ZG",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2014",
+      "value": 4.22,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

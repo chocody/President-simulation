@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2023",
+      "value": 57,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2022",
+      "value": 56.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2021",
+      "value": 56.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2020",
+      "value": 56.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2019",
+      "value": 56.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2018",
+      "value": 56,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2017",
+      "value": 55.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2016",
+      "value": 55.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2015",
+      "value": 55.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_VA_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2014",
+      "value": 55.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

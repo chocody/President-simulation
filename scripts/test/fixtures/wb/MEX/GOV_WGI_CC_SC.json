@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2023",
+      "value": 64,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2022",
+      "value": 63.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2021",
+      "value": 63.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2020",
+      "value": 63.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2019",
+      "value": 63.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2018",
+      "value": 63,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2017",
+      "value": 62.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2016",
+      "value": 62.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2015",
+      "value": 62.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_CC_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2014",
+      "value": 62.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

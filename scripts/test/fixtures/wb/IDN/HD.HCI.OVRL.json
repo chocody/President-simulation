@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2023",
+      "value": 0.52,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2022",
+      "value": 0.519,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2021",
+      "value": 0.518,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2020",
+      "value": 0.517,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2019",
+      "value": 0.516,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2018",
+      "value": 0.515,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2017",
+      "value": 0.514,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2016",
+      "value": 0.513,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2015",
+      "value": 0.512,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2014",
+      "value": 0.511,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]
