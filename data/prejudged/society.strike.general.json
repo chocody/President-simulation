@@ -1,0 +1,278 @@
+[
+  {
+    "cardId": "society.strike.general",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "เจรจาสามฝ่ายและขึ้นค่าจ้างขั้นต่ำเป็นขั้น",
+      "actions": [
+        {
+          "title": "เจรจาสามฝ่ายและปรับค่าจ้างขั้นต่ำ",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "inequality",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "รายได้แรงงานดีขึ้น",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "stability",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "การนัดหยุดงานยุติ",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "2",
+              "reason": "แรงงานได้ค่าจ้างเพิ่ม"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ธุรกิจรายเล็กต้นทุนสูงขึ้น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "inflation",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 4,
+              "note": "ราคาสินค้าอาจขยับ",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "unemployment",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 4,
+              "note": "หลักฐานชี้ว่าจำนวนงานแทบไม่เปลี่ยน จึงเป็นผลระดับเล็ก",
+              "evidence_ids": [
+                "ev.minimum-wage.001"
+              ]
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "5",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "3",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.strike.general",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "สร้างงานสาธารณะและฝึกอาชีพ",
+      "actions": [
+        {
+          "title": "งานสาธารณะและฝึกทักษะ",
+          "cost_size": "L",
+          "recurring_cost_size": "M",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "inequality",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "งานสาธารณะเพิ่มรายได้ครัวเรือนยากจน",
+              "evidence_ids": [
+                "ev.public-works.001"
+              ]
+            },
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 4,
+              "lasts_quarters": 8,
+              "note": "ผลการฝึกอาชีพเห็นหลังสองถึงสามปี",
+              "evidence_ids": [
+                "ev.youth-jobs.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "ผู้ว่างงานได้งาน"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้ฝึกทักษะ"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ภาษีสูงขึ้นในอนาคต"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "debt",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ใช้งบมาก",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.strike.general",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ประกาศบริการจำเป็นและสั่งให้กลับเข้าทำงาน",
+      "actions": [
+        {
+          "title": "คำสั่งกลับเข้าทำงานในบริการจำเป็น",
+          "cost_size": "XS",
+          "recurring_cost_size": "none",
+          "duration_quarters": 1,
+          "requires_legislation": true,
+          "legal_risk": "medium",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 1,
+              "note": "ท่าเรือและขนส่งกลับมาเดิน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "2",
+              "reason": "แรงงานโกรธ"
+            },
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "กิจการกลับมาเดิน"
+            },
+            {
+              "group": "military",
+              "direction": "up",
+              "level": "1",
+              "reason": "ความสงบเรียบร้อย"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "stability",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 3,
+              "note": "เสี่ยงการชุมนุมใหญ่",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "pressFreedom",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 3,
+              "note": "จำกัดสิทธิการรวมตัว",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

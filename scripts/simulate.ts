@@ -2,14 +2,15 @@
 // Usage: pnpm tsx scripts/simulate.ts --games 1000 [--real-countries]
 // --real-countries plays the real data/countries/*.json (fixture deck still, since real choices are not pre-judged yet).
 import { readdirSync, readFileSync } from "node:fs";
-import { CountryData, STAT_KEYS, type Card, type Evidence, type GameState, type StatKey } from "@ps/shared";
+import YAML from "yaml";
+import { Card as CardSchema, CountryData, Evidence as EvidenceSchema, Judgment, STAT_KEYS, type Card, type Evidence, type GameState, type StatKey } from "@ps/shared";
 import { advanceQuarter, newGame, resolveTurn, uniform } from "../packages/engine/src/index";
 import { fixtureCountry } from "../packages/engine/test/fixtures/country";
 import { fixtureDeck } from "../packages/engine/test/fixtures/cards";
 import { fixtureEvidence } from "../packages/engine/test/fixtures/evidence";
 
-type Bot = "always-a" | "always-b" | "always-c" | "random";
-const BOTS: Bot[] = ["always-a", "always-b", "always-c", "random"];
+type Bot = "always-a" | "always-b" | "always-c" | "random" | "best";
+const BOTS: Bot[] = ["always-a", "always-b", "always-c", "random", "best"];
 /** Quarters at which stats are snapshotted; consecutive differences are the yearly changes. */
 const YEAR_MARKS = [1, 5, 9, 13];
 
@@ -27,9 +28,19 @@ function percentile(sorted: number[], p: number): number {
   return sorted[lo]! + (sorted[hi]! - sorted[lo]!) * (idx - lo);
 }
 
-const evidenceById = new Map<string, Evidence>(fixtureEvidence.map((e) => [e.id, e]));
 
-function chooseId(bot: Bot, game: number, q: number): "a" | "b" | "c" {
+
+/** "best" stands in for a thoughtful player: the choice with the highest relevance + feasibility + tradeoffs. */
+function bestChoice(card: Card): "a" | "b" | "c" {
+  const score = (c: Card["choices"][number]) => {
+    const s = c.judgment!.scores;
+    return Number(s.relevance) + Number(s.feasibility) + Number(s.tradeoffs);
+  };
+  return [...card.choices].sort((x, y) => score(y) - score(x))[0]!.id as "a" | "b" | "c";
+}
+
+function chooseId(bot: Bot, game: number, q: number, card?: Card): "a" | "b" | "c" {
+  if (bot === "best" && card) return bestChoice(card);
   if (bot === "always-a") return "a";
   if (bot === "always-b") return "b";
   if (bot === "always-c") return "c";
@@ -43,6 +54,22 @@ interface Result {
 }
 
 const REAL = process.argv.includes("--real-countries");
+const REAL_DECK = process.argv.includes("--real-deck");
+/** Real cards with their pre-judged choices merged in (data/prejudged), and the real evidence library. */
+const realDeck = REAL_DECK ? loadRealDeck() : null;
+const evidenceById = new Map<string, Evidence>((realDeck?.evidence ?? fixtureEvidence).map((e) => [e.id, e]));
+const DECK: Card[] = realDeck?.deck ?? fixtureDeck;
+
+function loadRealDeck(): { deck: Card[]; evidence: Evidence[] } {
+  const deck = readdirSync("data/cards").map((f) => CardSchema.parse(YAML.parse(readFileSync(`data/cards/${f}`, "utf8"))));
+  for (const f of readdirSync("data/prejudged").filter((x) => x.endsWith(".json"))) {
+    for (const e of JSON.parse(readFileSync(`data/prejudged/${f}`, "utf8"))) {
+      deck.find((c) => c.id === e.cardId)!.choices.find((c) => c.id === e.choiceId)!.judgment = Judgment.parse(e.judgment);
+    }
+  }
+  const evidence = (YAML.parse(readFileSync("data/evidence/evidence.yaml", "utf8")) as unknown[]).map((e) => EvidenceSchema.parse(e));
+  return { deck, evidence };
+}
 const countries: CountryData[] = REAL
   ? readdirSync("data/countries").filter((f) => f.endsWith(".json") && !f.startsWith("_"))
       .map((f) => CountryData.parse(JSON.parse(readFileSync(`data/countries/${f}`, "utf8"))))
@@ -55,7 +82,7 @@ function playGame(bot: Bot, game: number, deck: Card[]): Result {
   for (let guard = 0; guard < 40 && s.phase !== "ended"; guard++) {
     if (s.phase === "decision") {
       const card = deck.find((c) => c.id === s.pendingCardId)!;
-      const choice = card.choices.find((c) => c.id === chooseId(bot, game, s.quarter))!;
+      const choice = card.choices.find((c) => c.id === chooseId(bot, game, s.quarter, card))!;
       s = resolveTurn(
         s, deck, { kind: "preset", judgment: choice.judgment! },
         { evidence: choice.evidenceIds.map((id) => evidenceById.get(id)).filter((e): e is Evidence => e !== undefined) },
@@ -80,7 +107,7 @@ function run(bot: Bot, games: number): void {
   let wins = 0;
   const changes = new Map<StatKey, number[]>(STAT_KEYS.map((k) => [k, []]));
   for (let g = 0; g < games; g++) {
-    const { final, yearly } = playGame(bot, g, fixtureDeck);
+    const { final, yearly } = playGame(bot, g, DECK);
     const reason = final.endReason ?? "none";
     endings.set(reason, (endings.get(reason) ?? 0) + 1);
     if (reason === "won_election") wins++;
@@ -102,5 +129,5 @@ function run(bot: Bot, games: number): void {
 }
 
 const games = argGames();
-console.log(`President Sim engine simulation: TEST FIXTURE country and deck (invented values, never shipped), difficulty normal.`);
+console.log(`President Sim engine simulation: ${REAL ? "real countries" : "TEST FIXTURE country"}, ${REAL_DECK ? "real deck (pre-judged)" : "TEST FIXTURE deck"}, difficulty normal.`);
 for (const bot of BOTS) run(bot, games);

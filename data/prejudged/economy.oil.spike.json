@@ -1,0 +1,248 @@
+[
+  {
+    "cardId": "economy.oil.spike",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ตรึงราคาน้ำมันด้วยเงินอุดหนุนทั่วไป",
+      "actions": [
+        {
+          "title": "อุดหนุนราคาน้ำมันทั่วไป",
+          "cost_size": "L",
+          "recurring_cost_size": "M",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "inflation",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ราคาหน้าปั๊มคงที่",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "2",
+              "reason": "ค่าครองชีพไม่ขึ้น"
+            },
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ต้นทุนขนส่งคงที่"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "อุดหนุนพลังงานทั่วไปกดดันงบประมาณ",
+              "evidence_ids": [
+                "ev.fuel-subsidy.001"
+              ]
+            },
+            {
+              "indicator": "inequality",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ประโยชน์ส่วนใหญ่ตกกับผู้มีรายได้สูง",
+              "evidence_ids": [
+                "ev.fuel-subsidy.002"
+              ]
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "economy.oil.spike",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ปล่อยราคาน้ำมันลอยตัวตามตลาด",
+      "actions": [
+        {
+          "title": "ปล่อยราคาลอยตัว",
+          "cost_size": "XS",
+          "recurring_cost_size": "none",
+          "duration_quarters": 2,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "budget",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "รัฐไม่ต้องใช้เงินอุดหนุน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "2",
+              "reason": "ค่าครองชีพพุ่ง"
+            },
+            {
+              "group": "farmers",
+              "direction": "down",
+              "level": "1",
+              "reason": "ต้นทุนการผลิตสูงขึ้น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "inflation",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 3,
+              "note": "ต้นทุนขนส่งส่งต่อไปที่ราคาสินค้า",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "economy.oil.spike",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ลอยตัวราคาแต่โอนเงินให้ครัวเรือนรายได้น้อย",
+      "actions": [
+        {
+          "title": "ลอยตัวพร้อมโอนเงินเฉพาะกลุ่ม",
+          "cost_size": "M",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 3,
+              "note": "เงินโอนช่วยพยุงการใช้จ่าย",
+              "evidence_ids": [
+                "ev.cash-transfer.001"
+              ]
+            },
+            {
+              "indicator": "inequality",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ช่วยคนรายได้น้อยตรงจุด",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ครัวเรือนรายได้น้อยได้เงินชดเชย"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ชนชั้นกลางไม่ได้รับความช่วยเหลือ"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "inflation",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ราคาน้ำมันยังส่งผ่านไปที่ราคาสินค้า",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

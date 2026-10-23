@@ -1,0 +1,246 @@
+[
+  {
+    "cardId": "politics.cabinet.scandal",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ตั้งคณะตรวจสอบอิสระและเปิดเผยผล",
+      "actions": [
+        {
+          "title": "ตรวจสอบอิสระและเปิดเผยผล",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 2,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "corruption",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "ความโปร่งใสเพิ่มความเชื่อมั่นระยะยาว",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "pressFreedom",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ข้อมูลเปิดต่อสาธารณะ",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "เห็นความโปร่งใส"
+            },
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ความเชื่อมั่นระยะยาว"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "parliament",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "การเปิดเผยการทุจริตลดเสียงสนับสนุนของผู้เกี่ยวข้อง",
+              "evidence_ids": [
+                "ev.disclosure.001"
+              ]
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "5",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "3",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "politics.cabinet.scandal",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ปรับคณะรัฐมนตรีเงียบ ๆ",
+      "actions": [
+        {
+          "title": "ย้ายรัฐมนตรีโดยไม่เปิดเผย",
+          "cost_size": "XS",
+          "recurring_cost_size": "none",
+          "duration_quarters": 1,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "stability",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ลดแรงกดดันได้ชั่วคราว",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "military",
+              "direction": "up",
+              "level": "1",
+              "reason": "ไม่มีความวุ่นวาย"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "สื่อตั้งคำถามมากขึ้น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "corruption",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "การทุจริตไม่ถูกแก้",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "pressFreedom",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ปิดข้อมูลต่อสาธารณะ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "2",
+        "feasibility": "5",
+        "specificity": "2",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "politics.cabinet.scandal",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ตรวจสอบสุ่มการจัดซื้อจัดจ้างทุกกระทรวง",
+      "actions": [
+        {
+          "title": "สุ่มตรวจสัญญาจัดซื้อจัดจ้าง",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "corruption",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "โอกาสถูกตรวจที่สูงขึ้นลดเงินที่รั่วไหล",
+              "evidence_ids": [
+                "ev.audit.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "การแข่งขันประมูลเป็นธรรมขึ้น"
+            },
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "เห็นการปราบทุจริต"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ต้องใช้งบและผู้ตรวจ ข้าราชการรู้สึกถูกจับตา",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

@@ -62,8 +62,15 @@ describe("loadContent with the real data directory", () => {
     expect(c.sources.some((s) => s.id === fx.baselineSrc.gdpGrowth.sourceId)).toBe(true);
   });
 
-  it("leaves choice.judgment null when nothing is pre-judged", () => {
+  it("merges the committed pre-judged choices into every card", () => {
     const c = loadContent({ dataDir: REAL, devFixtures: false });
+    expect(c.cards.every((card) => card.choices.every((ch) => ch.judgment !== null))).toBe(true);
+  });
+
+  it("leaves choice.judgment null when nothing is pre-judged", () => {
+    const d = tmpData();
+    rmSync(join(d, "prejudged"), { recursive: true, force: true });
+    const c = loadContent({ dataDir: d, devFixtures: false });
     expect(c.cards.every((card) => card.choices.every((ch) => ch.judgment === null))).toBe(true);
   });
 });

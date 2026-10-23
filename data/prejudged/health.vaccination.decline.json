@@ -1,0 +1,228 @@
+[
+  {
+    "cardId": "health.vaccination.decline",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "หน่วยฉีดวัคซีนเคลื่อนที่ตามนัดทุกเดือน",
+      "actions": [
+        {
+          "title": "หน่วยฉีดวัคซีนเคลื่อนที่รายเดือน",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "ค่ายฉีดวัคซีนสม่ำเสมอเพิ่มความครอบคลุมชัดเจน",
+              "evidence_ids": [
+                "ev.immunization.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "เข้าถึงวัคซีนใกล้บ้าน"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "ลูกได้วัคซีนครบ"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ต้องจ้างบุคลากรและรถเพิ่ม",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "5",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "3",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "health.vaccination.decline",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ให้ของจูงใจครอบครัวที่พาเด็กมาฉีดครบ",
+      "actions": [
+        {
+          "title": "ของจูงใจเล็ก ๆ สำหรับวัคซีนครบ",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "ของจูงใจเสริมการนัดที่แน่นอนเพิ่มความครอบคลุม",
+              "evidence_ids": [
+                "ev.immunization.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้ของชดเชยค่าเดินทาง"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "มองว่าเป็นการใช้งบไม่จำเป็น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ต้องซื้อของและบริหารจัดการ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "health.vaccination.decline",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "บังคับวัคซีนเป็นเงื่อนไขเข้าโรงเรียน",
+      "actions": [
+        {
+          "title": "ข้อบังคับวัคซีนก่อนเข้าเรียน",
+          "cost_size": "XS",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": true,
+          "legal_risk": "medium",
+          "effects": [
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "ความครอบคลุมในโรงเรียนเพิ่มขึ้น ยังไม่มีหลักฐานในคลัง",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "youth",
+              "direction": "down",
+              "level": "1",
+              "reason": "ผู้ปกครองบางส่วนต่อต้าน"
+            },
+            {
+              "group": "farmers",
+              "direction": "down",
+              "level": "1",
+              "reason": "เด็กห่างไกลเสี่ยงถูกกันออกจากโรงเรียน"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "education",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 4,
+              "note": "เด็กบางส่วนหลุดจากระบบโรงเรียน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

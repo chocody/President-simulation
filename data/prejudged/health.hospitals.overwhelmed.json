@@ -1,0 +1,237 @@
+[
+  {
+    "cardId": "health.hospitals.overwhelmed",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "เพิ่มเตียงและจ้างบุคลากรชั่วคราว",
+      "actions": [
+        {
+          "title": "โรงพยาบาลสนามและบุคลากรเพิ่ม",
+          "cost_size": "L",
+          "recurring_cost_size": "S",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ลดความแออัดโดยตรง ยังไม่มีหลักฐานในคลังว่าขยายเตียงช่วยมากแค่ไหน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "รอคิวน้อยลง"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "มีงานชั่วคราวด้านสาธารณสุข"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "หาบุคลากรมีทักษะได้ไม่ทัน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "5",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "3",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "health.hospitals.overwhelmed",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ส่งต่อผู้ป่วยวิกฤตและจ่ายค่ารักษาฉุกเฉินแทน",
+      "actions": [
+        {
+          "title": "ส่งต่อผู้ป่วยและยกเว้นค่ารักษาฉุกเฉิน",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "การยกเว้นค่าธรรมเนียมเพิ่มการใช้บริการ ผลต่อสุขภาพยังไม่ชัด",
+              "evidence_ids": [
+                "ev.hospital.002"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "เข้าถึงการรักษาฉุกเฉิน"
+            },
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "โรงพยาบาลเอกชนได้รายได้"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ค่าใช้จ่ายสูงต่อเนื่อง",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "health.hospitals.overwhelmed",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ปล่อยให้ผู้ที่จ่ายไหวใช้บริการเอกชน",
+      "actions": [
+        {
+          "title": "ไม่ลงทุนเพิ่ม",
+          "cost_size": "XS",
+          "recurring_cost_size": "none",
+          "duration_quarters": 2,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "budget",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ไม่ใช้งบเพิ่ม",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "2",
+              "reason": "ผู้มีรายได้น้อยรักษาไม่ทัน"
+            },
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "เอกชนได้ลูกค้าเพิ่ม"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "health",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "โรงพยาบาลแออัดสัมพันธ์กับการเสียชีวิตเกินที่มากขึ้น",
+              "evidence_ids": [
+                "ev.hospital.001"
+              ]
+            },
+            {
+              "indicator": "inequality",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "คนจนเข้าถึงการรักษาน้อยลง",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "2",
+        "feasibility": "5",
+        "specificity": "2",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

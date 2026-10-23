@@ -1,0 +1,250 @@
+[
+  {
+    "cardId": "opportunity.fdi.offer",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ให้สิทธิประโยชน์ภาษีเต็มรูปแบบ",
+      "actions": [
+        {
+          "title": "ยกเว้นภาษีและที่ดินราคาพิเศษ",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "โรงงานใหม่จ้างงาน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้ข้อตกลงเร็ว"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "มีงานในโรงงาน"
+            },
+            {
+              "group": "farmers",
+              "direction": "down",
+              "level": "1",
+              "reason": "ที่ดินถูกเปลี่ยนการใช้"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "รัฐเสียรายได้ภาษี สิทธิประโยชน์ไม่ได้ทำให้เศรษฐกิจโตเสมอไป",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "5",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "3",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "opportunity.fdi.offer",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "รับข้อเสนอพร้อมเงื่อนไขซื้อของและฝึกแรงงานในประเทศ",
+      "actions": [
+        {
+          "title": "สิทธิประโยชน์แบบมีเงื่อนไข",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "การลงทุนช่วยการเติบโตเมื่อเชื่อมกับทักษะและผู้ผลิตในประเทศ",
+              "evidence_ids": [
+                "ev.fdi.002"
+              ]
+            },
+            {
+              "indicator": "education",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "แรงงานได้ฝึกทักษะ",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ผู้ผลิตในประเทศได้ลูกค้า"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้ฝึกงาน"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "group:business",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "บริษัทอาจถอนตัวไปลงทุนที่อื่น",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "opportunity.fdi.offer",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ปฏิเสธและนำงบไปช่วยธุรกิจในประเทศ",
+      "actions": [
+        {
+          "title": "สนับสนุนผู้ประกอบการในประเทศ",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 6,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "group:business",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ผู้ประกอบการเดิมได้รับการปกป้อง",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "environment",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "ไม่มีโรงงานใหญ่เพิ่ม",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ธุรกิจท้องถิ่นได้งบช่วย"
+            },
+            {
+              "group": "youth",
+              "direction": "down",
+              "level": "1",
+              "reason": "เสียโอกาสงานใหม่"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "foreignRelations",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "นักลงทุนต่างชาติมองว่าเปิดรับน้อย",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "2",
+        "feasibility": "5",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

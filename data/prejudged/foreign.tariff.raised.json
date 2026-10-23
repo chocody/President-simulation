@@ -1,0 +1,251 @@
+[
+  {
+    "cardId": "foreign.tariff.raised",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ขึ้นภาษีตอบโต้สินค้านำเข้า",
+      "actions": [
+        {
+          "title": "ภาษีตอบโต้",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "group:business",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ผู้ผลิตบางรายได้รับการปกป้อง",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ราคาสินค้านำเข้าสูงขึ้น"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ต้นทุนวัตถุดิบสูงขึ้น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "inflation",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ภาษีถูกส่งผ่านไปที่ราคาในประเทศเกือบทั้งหมด",
+              "evidence_ids": [
+                "ev.tariff.001"
+              ]
+            },
+            {
+              "indicator": "gdpGrowth",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 4,
+              "note": "ผู้ซื้อสินค้านำเข้าเสียหายสุทธิ",
+              "evidence_ids": [
+                "ev.tariff.002"
+              ]
+            },
+            {
+              "indicator": "foreignRelations",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ความขัดแย้งทางการค้ายืดเยื้อ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "foreign.tariff.raised",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "เจรจาและกระจายตลาดส่งออก",
+      "actions": [
+        {
+          "title": "เจรจาและหาตลาดใหม่",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 6,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "foreignRelations",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "รักษาความสัมพันธ์กับคู่ค้า",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 3,
+              "lasts_quarters": 6,
+              "note": "ตลาดใหม่ช่วยในระยะต่อไป",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ต้องรับผลกระทบระหว่างรอผล"
+            },
+            {
+              "group": "farmers",
+              "direction": "down",
+              "level": "1",
+              "reason": "ราคาสินค้าส่งออกตก"
+            }
+          ],
+          "side_effects": []
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "foreign.tariff.raised",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ช่วยเหลือชั่วคราวผู้ส่งออกที่ได้รับผลกระทบ",
+      "actions": [
+        {
+          "title": "สินเชื่อและเงินชดเชยผู้ส่งออก",
+          "cost_size": "M",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ประคองการจ้างงานในภาคส่งออก",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ผู้ส่งออกได้เงินทุน"
+            },
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "เกษตรกรที่เสียตลาดได้ชดเชย"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "รู้สึกว่าไม่เป็นธรรม"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ใช้งบรัฐ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

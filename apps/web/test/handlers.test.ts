@@ -214,7 +214,8 @@ describe("POST decide", () => {
 
   it("returns a clear error for a null judgment when fixtures are off", async () => {
     const { state } = await toDecision();
-    const r = await handleDecide({ state, answer: { kind: "preset", choiceId: "a" } }, deps({ content: noFixtures }));
+    const unjudged: Content = { ...noFixtures, cards: noFixtures.cards.map((c) => ({ ...c, choices: c.choices.map((ch) => ({ ...ch, judgment: null })) })) };
+    const r = await handleDecide({ state, answer: { kind: "preset", choiceId: "a" } }, deps({ content: unjudged }));
     expect(r.status).toBe(422);
     expect((r.body as Body).error).toContain("ยังไม่ได้ตัดสิน");
   });

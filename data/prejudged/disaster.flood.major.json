@@ -1,0 +1,248 @@
+[
+  {
+    "cardId": "disaster.flood.major",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "จ้างคนในพื้นที่ซ่อมสร้างโครงสร้างพื้นฐาน",
+      "actions": [
+        {
+          "title": "จ้างงานฟื้นฟูและซ่อมสร้าง",
+          "cost_size": "L",
+          "recurring_cost_size": "none",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "inequality",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "งานสาธารณะเพิ่มรายได้ครัวเรือนยากจน",
+              "evidence_ids": [
+                "ev.public-works.001"
+              ]
+            },
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "โครงสร้างพื้นฐานกลับมาใช้งานได้",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "มีงานและคันกั้นน้ำ"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "มีงานในพื้นที่"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "debt",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ใช้งบสูงและใช้เวลานาน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "disaster.flood.major",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "จ่ายเงินสดเฉพาะครัวเรือนที่เสียหาย",
+      "actions": [
+        {
+          "title": "เงินช่วยเหลือครัวเรือนที่เสียหาย",
+          "cost_size": "M",
+          "recurring_cost_size": "none",
+          "duration_quarters": 2,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 3,
+              "note": "เงินหมุนในตลาดท้องถิ่น",
+              "evidence_ids": [
+                "ev.cash-transfer.001"
+              ]
+            },
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ครัวเรือนฟื้นตัวเร็วขึ้น",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "2",
+              "reason": "ได้เงินชดเชยตรง"
+            },
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "ครัวเรือนในเมืองที่เสียหายได้รับด้วย"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "stability",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ผู้ตกสำรวจไม่พอใจ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "disaster.flood.major",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ปล่อยให้ตลาดและประกันภัยฟื้นตัวเอง",
+      "actions": [
+        {
+          "title": "สินเชื่อดอกเบี้ยต่ำและเร่งจ่ายประกัน",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 4,
+              "note": "กิจกรรมเศรษฐกิจมักฟื้นภายในไม่กี่ปี",
+              "evidence_ids": [
+                "ev.flood.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้สินเชื่อและเงินประกันเร็ว"
+            },
+            {
+              "group": "farmers",
+              "direction": "down",
+              "level": "2",
+              "reason": "ผู้ไม่มีประกันแบกภาระเอง"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "inequality",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "ครัวเรือนยากจนฟื้นตัวช้ากว่า",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "2",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

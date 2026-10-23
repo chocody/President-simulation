@@ -1,0 +1,247 @@
+[
+  {
+    "cardId": "society.crime.surge",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "เพิ่มตำรวจเฉพาะจุดเสี่ยง",
+      "actions": [
+        {
+          "title": "ลาดตระเวนเข้มข้นในจุดเสี่ยง",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "crime",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "การรวมกำลังตำรวจในจุดเสี่ยงลดอาชญากรรมได้เล็กน้อยแต่ชัด",
+              "evidence_ids": [
+                "ev.policing.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "รู้สึกปลอดภัยขึ้น"
+            },
+            {
+              "group": "youth",
+              "direction": "down",
+              "level": "1",
+              "reason": "ความตึงเครียดกับตำรวจในย่าน"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ค่าล่วงเวลาตำรวจ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "5",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "3",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.crime.surge",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "จ้างงานและฝึกอาชีพเยาวชนในย่านเสี่ยง",
+      "actions": [
+        {
+          "title": "งานชั่วคราวและฝึกอาชีพเยาวชน",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "crime",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "งานสำหรับเยาวชนเสี่ยงลดการถูกจับคดีรุนแรง",
+              "evidence_ids": [
+                "ev.policing.002",
+                "ev.employment-crime.001"
+              ]
+            },
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "เยาวชนมีงานทำ",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "2",
+              "reason": "ได้งานและทักษะ"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ผลต่อความปลอดภัยเห็นช้า"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ใช้งบต่อเนื่อง",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.crime.surge",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "เพิ่มโทษและตั้งด่านตรวจทั่วเมือง",
+      "actions": [
+        {
+          "title": "เพิ่มโทษและด่านตรวจ",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": true,
+          "legal_risk": "medium",
+          "effects": [
+            {
+              "indicator": "crime",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ภาพความเด็ดขาด ยังไม่มีหลักฐานในคลัง",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "youth",
+              "direction": "down",
+              "level": "2",
+              "reason": "ถูกตรวจค้นบ่อย"
+            },
+            {
+              "group": "military",
+              "direction": "up",
+              "level": "1",
+              "reason": "เห็นด้วยกับความเด็ดขาด"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "pressFreedom",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "กระทบเสรีภาพของประชาชน",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "stability",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 3,
+              "note": "ความไม่พอใจของเยาวชน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]
