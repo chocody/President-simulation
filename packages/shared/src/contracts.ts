@@ -176,6 +176,8 @@ export const Card = z.object({
   baseWeight: z.number().positive(),
   cooldownQ: z.number().int().min(0),
   ifIgnored: z.array(CardEffect),
+  /** Effects that happen when the card appears, whatever the answer (the windfall of good news). Not scaled by relevance. */
+  onArrival: z.array(CardEffect).optional(),
   sourceIds: z.array(z.string()).min(1),    // what the frequency and effect sizes are based on
   choices: z.array(Choice).length(3),
 });

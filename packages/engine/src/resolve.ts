@@ -90,6 +90,10 @@ export function resolveTurn(
   for (const eff of card.ifIgnored) {
     addSlice(`event:${card.id}`, eff.target, eff.delta * share, q, eff.over_quarters, true);
   }
+  // Good news happens whatever the answer; only the follow-up policies depend on the player.
+  for (const eff of card.onArrival ?? []) {
+    addSlice(`event:${card.id}:arrival`, eff.target, eff.delta, q, eff.over_quarters, true);
+  }
 
   // 5. Inconsistent answer.
   if (Number(scores.consistency) <= 2) {

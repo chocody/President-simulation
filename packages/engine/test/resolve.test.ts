@@ -356,3 +356,18 @@ describe("TURN_CAP is shared between tick and resolve in one quarter", () => {
     expect(state.stats.health - afterTick).toBeLessThanOrEqual(2 + 1e-9);
   });
 });
+
+describe("onArrival (good news)", () => {
+  it("applies in full whatever the answer, and is exempt from the turn cap", async () => {
+    const { fixtureDeck } = await import("./fixtures/cards");
+    const { fixtureCountry } = await import("./fixtures/country");
+    const { newGame, resolveTurn } = await import("../src/index");
+    const base = fixtureDeck[0]!;
+    const card = { ...base, id: "test.windfall", ifIgnored: [], onArrival: [{ target: "health" as const, delta: 12, over_quarters: 1 }] };
+    const s0 = { ...newGame({ country: fixtureCountry, difficulty: "normal", seed: "w" }), phase: "decision" as const, pendingCardId: card.id };
+    const judgment = card.choices[0]!.judgment!;
+    const r = resolveTurn(s0, [card], { kind: "preset", judgment: { ...judgment, scores: { ...judgment.scores, relevance: "5" } } }, { evidence: [] });
+    expect(r.report.immediate["health"] ?? 0).toBeGreaterThanOrEqual(12 - 1e-9 - 10); // windfall present even at relevance 5
+    expect(r.state.stats.health - s0.stats.health).toBeGreaterThan(10);               // 12 from the windfall, not capped at 10
+  });
+});
