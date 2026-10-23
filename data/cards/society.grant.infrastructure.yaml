@@ -1,0 +1,46 @@
+id: society.grant.infrastructure
+category: society
+severity: minor
+titleTh: "ผู้ให้ทุนต่างประเทศเสนอเงินให้เปล่าสร้างโครงสร้างพื้นฐาน"
+situationTh: "กลุ่มประเทศผู้ให้ความช่วยเหลือเสนอเงินให้เปล่าก้อนใหญ่เพื่อพัฒนาโครงสร้างพื้นฐานในชนบท โดยไม่ต้องชำระคืน แต่ต้องใช้ภายในเวลาที่กำหนดและรายงานผลการใช้เงินอย่างโปร่งใส หมู่บ้านห่างไกลยังขาดถนนสายรองและไฟฟ้า เกษตรกรขนผลผลิตออกตลาดลำบาก ผู้รับเหมารายใหญ่ล็อบบี้ขอโครงการขนาดใหญ่ ขณะที่ชุมชนอยากมีส่วนเลือกโครงการ เงินก้อนนี้อาจหลุดมือหากรัฐบาลตัดสินใจล่าช้า"
+conditions: []   # MVP: every card eligible.
+baseWeight: 1
+cooldownQ: 8
+# Windfall: grant money builds assets in rural areas (index level 2 for farmers), young people find construction work.
+onArrival:
+  - { target: gdpGrowth, delta: 0.3, over_quarters: 8 }
+  - { target: "group:farmers", delta: 5, over_quarters: 4 }
+  - { target: "group:youth", delta: 2, over_quarters: 4 }
+# Wasting the chance: the grant lapses or is spent badly, farmers are disappointed and donors lose trust. Both level 1.
+ifIgnored:
+  - { target: "group:farmers", delta: -2, over_quarters: 4 }
+  - { target: foreignRelations, delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.asher-novosad-2020, paper.dinkelman-2011, paper.olken-2007]
+choices:
+  - id: a
+    approach: rural-roads
+    titleTh: "สร้างถนนสายรองเชื่อมหมู่บ้านกับตลาด"
+    descTh: "ใช้เงินสร้างถนนสายรองเพื่อให้คนและสินค้าเดินทางได้สะดวก แต่หลักฐานชี้ว่าถนนช่วยให้คนย้ายออกจากภาคเกษตรมากกว่าเพิ่มรายได้ของเกษตรกร และผู้รับเหมาแย่งงานกันดุเดือด"
+    costHint: L
+    affectedGroups: [farmers, business, youth]
+    evidenceIds: [ev.roads.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: electrification
+    titleTh: "ขยายไฟฟ้าให้ครัวเรือนชนบทที่ยังไม่มี"
+    descTh: "ใช้เงินต่อสายไฟและติดตั้งมิเตอร์ให้ครัวเรือนที่ยังไม่เข้าถึงไฟฟ้า ช่วยให้เกิดงานและธุรกิจเล็กในหมู่บ้าน แต่ต้องมีค่าบำรุงรักษาต่อเนื่องหลังเงินให้เปล่าหมดลง"
+    costHint: M
+    affectedGroups: [farmers, youth, urban]
+    evidenceIds: [ev.electrification.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: audited-small-projects
+    titleTh: "ให้ชุมชนเลือกโครงการเล็กหลายแห่งภายใต้การตรวจสอบสุ่ม"
+    descTh: "กระจายเงินเป็นโครงการเล็กที่ชุมชนเลือก พร้อมการตรวจสอบสุ่มและเปิดเผยบัญชี ลดการรั่วไหลและสร้างความไว้วางใจ แต่ล่าช้ากว่า ผู้รับเหมารายใหญ่ไม่พอใจ และอาจใช้เงินไม่ทันกำหนด"
+    costHint: M
+    affectedGroups: [farmers, business, youth]
+    evidenceIds: [ev.audit.001]
+    judgment: null
+    reviewedBy: null

@@ -289,3 +289,172 @@
   retrievedAt: null
   verifiedBy: null
   note: "Found via web search 2026-10-22, page not opened. Search results: pass-through about 95% for goods priced in non-dollar currencies versus about 25% for dollar-priced goods."
+# --- D3 (good-news cards), found via web search 2026-10-23; pages NOT opened. verifiedBy stays null.
+- id: paper.jones-marinescu-2022
+  kind: research
+  title: "The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund"
+  publisher: "NBER Working Paper 24312 (Jones, Marinescu; later in American Economic Journal: Economic Policy 2022)"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w24312"
+  license: citation
+  commercialOk: true
+  coverage: "Alaska, synthetic control on CPS data"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: no effect on overall employment; part-time work up by 1.8 percentage points (17 percent); authors point to general equilibrium effects."
+- id: review.windfall-managing
+  kind: research
+  title: "Natural resource wealth: the challenge of managing a windfall"
+  publisher: "Annual Review of Economics (2012), listed on the Monash research portal"
+  indicatorCode: null
+  url: "https://research.monash.edu/en/publications/natural-resource-wealth-the-challenge-of-managing-a-windfall/"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results attributed this review to van der Ploeg and Venables (a human must confirm the authors). Search results: countries were hurt by volatile revenues and often failed to save enough or to make high-return investments."
+- id: paper.ferdi-windfall
+  kind: research
+  title: "Optimal fiscal management of resource windfalls"
+  publisher: "Ferdi working paper (title taken from the search-result URL slug; authors not seen)"
+  indicatorCode: null
+  url: "https://ferdi.fr/dl/df-pJdgE1fpWAXhzjgJXxKmFNJ8/ferdi-b130-optimal-fiscal-management-of-resource-windfalls.pdf"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: a rule that puts the whole windfall into safe assets in a sovereign wealth fund can have a high opportunity cost, and public infrastructure investment can have high potential returns. A human must confirm title and authors."
+- id: paper.allcott-keniston-2018
+  kind: research
+  title: "Dutch Disease or Agglomeration? The Local Economic Effects of Natural Resource Booms in Modern America"
+  publisher: "NBER Working Paper 20508 (Allcott, Keniston)"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w20508.pdf"
+  license: citation
+  commercialOk: true
+  coverage: "US oil and gas booms and busts"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: local wages rise during resource booms; some tradable manufacturing subsectors contract but overall manufacturing grows, and productivity is unaffected."
+- id: paper.atkin-2017
+  kind: research
+  title: "Exporting and Firm Performance: Evidence from a Randomized Trial"
+  publisher: "NBER Working Paper 20690 (Atkin, Khandelwal, Osman; Quarterly Journal of Economics 2017)"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w20690.pdf"
+  license: citation
+  commercialOk: true
+  coverage: "Rug producers in Egypt"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: randomized access to foreign markets raised treated firms' profits by about 16-26 percent (the figure differs by draft) with large quality gains, which the authors read as learning by exporting."
+- id: paper.hyman-kovak-leive-2024
+  kind: research
+  title: "Wage Insurance for Displaced Workers"
+  publisher: "NBER Working Paper 32464 (Hyman, Kovak, Leive); NY Fed Staff Report 1105"
+  indicatorCode: null
+  url: "https://www.nber.org/system/files/working_papers/w32464/w32464.pdf"
+  license: citation
+  commercialOk: true
+  coverage: "US Trade Adjustment Assistance wage insurance, age-based regression discontinuity"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: eligibility raised short-run employment and long-run cumulative earnings, mainly through shorter spells without work."
+- id: review.nunkoo-2020
+  kind: research
+  title: "Tourism and Economic Growth: A Meta-regression Analysis"
+  publisher: "Journal of Travel Research (Nunkoo and colleagues, 2020)"
+  indicatorCode: null
+  url: "https://pure.uj.ac.za/en/publications/tourism-and-economic-growth-a-meta-regression-analysis/"
+  license: citation
+  commercialOk: true
+  coverage: null
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: 545 estimates from 113 studies broadly support tourism-led growth, but estimates vary with data and method and publication bias was detected."
+- id: paper.faber-gaubert-2019
+  kind: research
+  title: "Tourism and Economic Development: Evidence from Mexico's Coastline"
+  publisher: "American Economic Review 109(6) (Faber, Gaubert); NBER Working Paper 22300"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w22300"
+  license: citation
+  commercialOk: true
+  coverage: "Coastal regions of one country"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: tourism gave sizeable local gains including spillovers to manufacturing, but these were largely offset nationally by weaker agglomeration in less touristic regions; national gains came mainly from market integration."
+- id: paper.asher-novosad-2020
+  kind: research
+  title: "Rural Roads and Local Economic Development"
+  publisher: "American Economic Review 110(3) (Asher, Novosad)"
+  indicatorCode: null
+  url: "https://www.aeaweb.org/doi/10.1257/aer.20180268"
+  license: citation
+  commercialOk: true
+  coverage: "Rural road programme, fuzzy regression discontinuity"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: four years after a new feeder road, the main effect was workers leaving agriculture; no major change in farm outcomes, income or assets and only a small rise in village firm employment."
+- id: paper.dinkelman-2011
+  kind: research
+  title: "The Effects of Rural Electrification on Employment: New Evidence from South Africa"
+  publisher: "American Economic Review 101(7) (Dinkelman)"
+  indicatorCode: null
+  url: "https://ideas.repec.org/a/aea/aecrev/v101y2011i7p3078-3108.html"
+  license: citation
+  commercialOk: true
+  coverage: "Rural communities, instrument based on land gradient"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: electrification significantly raised female employment within five years (size differs between versions, so no figure is quoted); male results positive but smaller."
+- id: paper.bloom-griffith-vanreenen-2002
+  kind: research
+  title: "Do R&D tax credits work? Evidence from a panel of countries 1979-1997"
+  publisher: "Journal of Public Economics (Bloom, Griffith, Van Reenen)"
+  indicatorCode: null
+  url: "https://researchonline.lse.ac.uk/id/eprint/1353"
+  license: citation
+  commercialOk: true
+  coverage: "Nine OECD countries, 1979-1997"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: a 10 percent fall in the cost of R&D raised R&D by just over 1 percent in the short run and just under 10 percent in the long run."
+- id: review.bloom-toolkit-2019
+  kind: research
+  title: "A Toolkit of Policies to Promote Innovation"
+  publisher: "Journal of Economic Perspectives 33(3) (Bloom, Van Reenen, Williams)"
+  indicatorCode: null
+  url: "https://www.aeaweb.org/doi/10.1257/jep.33.3.163"
+  license: citation
+  commercialOk: true
+  coverage: "Advanced economies"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: in the short run R&D tax credits and direct public funding look most productive; over the longer run, raising the supply of human capital (for example STEM places, immigration) is likely more effective."
+- id: paper.aghion-2005
+  kind: research
+  title: "Competition and Innovation: An Inverted U Relationship"
+  publisher: "Quarterly Journal of Economics 120(2) (Aghion, Bloom, Blundell, Griffith, Howitt); NBER Working Paper 9269"
+  indicatorCode: null
+  url: "https://img.nber.org/papers/w9269"
+  license: citation
+  commercialOk: true
+  coverage: "UK firm patenting"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: innovation and competition follow a hump-shaped relationship; competition pushes neck-and-neck firms to innovate but weakens catch-up incentives for laggards."
+- id: paper.burke-2019
+  kind: research
+  title: "Sell Low and Buy High: Arbitrage and Local Price Effects in Kenyan Markets"
+  publisher: "Quarterly Journal of Economics 134(2) (Burke, Bergquist, Miguel); NBER Working Paper 24476"
+  indicatorCode: null
+  url: "https://www.nber.org/papers/w24476"
+  license: citation
+  commercialOk: true
+  coverage: "Smallholder grain farmers (Kenyan markets)"
+  retrievedAt: null
+  verifiedBy: null
+  note: "Found via web search 2026-10-23, page not opened. Search results: timely loans let farmers store grain until prices rose, with a return on investment of about 29 percent; large-scale storage raised prices just after harvest."

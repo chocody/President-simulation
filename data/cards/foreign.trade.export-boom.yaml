@@ -1,0 +1,46 @@
+id: foreign.trade.export-boom
+category: foreign
+severity: minor
+titleTh: "ข้อตกลงการค้าใหม่ทำให้ส่งออกพุ่ง"
+situationTh: "ข้อตกลงการค้าฉบับใหม่ที่เพิ่งมีผลบังคับใช้ทำให้สินค้าส่งออกของเราเข้าตลาดคู่ค้าได้โดยแทบไม่เสียภาษี คำสั่งซื้อจากต่างประเทศเพิ่มขึ้นอย่างรวดเร็ว โรงงานขยายกะการผลิตและเริ่มรับคนเพิ่ม อย่างไรก็ตามผู้ประกอบการรายเล็กยังขาดความรู้เรื่องมาตรฐานและเอกสารส่งออก ขณะที่สินค้านำเข้าราคาถูกจากคู่ค้าเริ่มแข่งกับผู้ผลิตและเกษตรกรในประเทศ สมาคมการค้าขอให้รัฐบาลรีบวางแนวทางก่อนโอกาสนี้จะหลุดมือ"
+conditions: []   # MVP: every card eligible.
+baseWeight: 1
+cooldownQ: 8
+# Windfall: export orders lift growth and business confidence; the trade partner is pleased (index level 1-2).
+onArrival:
+  - { target: gdpGrowth, delta: 0.3, over_quarters: 6 }
+  - { target: "group:business", delta: 5, over_quarters: 4 }
+  - { target: foreignRelations, delta: 2, over_quarters: 4 }
+# Wasting the chance: import competition hits farmers and young people find few of the new jobs. Both level 1.
+ifIgnored:
+  - { target: "group:farmers", delta: -2, over_quarters: 4 }
+  - { target: "group:youth", delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.atkin-2017, paper.hyman-kovak-leive-2024]
+choices:
+  - id: a
+    approach: export-support
+    titleTh: "ตั้งหน่วยช่วยผู้ส่งออกรายย่อยและยกระดับมาตรฐาน"
+    descTh: "ให้คำปรึกษาเรื่องมาตรฐาน เอกสาร และการหาผู้ซื้อต่างประเทศแก่ผู้ผลิตรายเล็ก ทำให้ได้ประโยชน์จากข้อตกลงมากขึ้น แต่ใช้งบประจำและผู้ผลิตที่ไม่ส่งออกไม่ได้อะไรเลย"
+    costHint: M
+    affectedGroups: [business, youth, urban]
+    evidenceIds: [ev.export.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: worker-adjustment
+    titleTh: "ตั้งกองทุนประกันค่าจ้างและฝึกอาชีพให้ผู้ที่เสียงานจากสินค้านำเข้า"
+    descTh: "ช่วยแรงงานและเกษตรกรที่แพ้การแข่งขันจากสินค้านำเข้าให้เปลี่ยนงานได้เร็วขึ้น ลดความไม่พอใจของคนที่เสียประโยชน์ แต่ต้องมีเงินกองทุนและการคัดผู้มีสิทธิ์ที่ซับซ้อน"
+    costHint: M
+    affectedGroups: [farmers, youth, urban]
+    evidenceIds: [ev.taa.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: market-led
+    titleTh: "ปล่อยให้ตลาดปรับตัวเองและลดภาษีวัตถุดิบนำเข้า"
+    descTh: "ไม่ตั้งโครงการพิเศษ เพียงลดภาษีวัตถุดิบเพื่อให้ผู้ผลิตลดต้นทุน รัฐใช้เงินน้อยที่สุดและเอกชนรายใหญ่ตอบสนองได้เร็ว แต่ผู้ประกอบการรายเล็ก เกษตรกร และคนที่เสียงานต้องปรับตัวกันเอง"
+    costHint: XS
+    affectedGroups: [business, farmers, youth]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
