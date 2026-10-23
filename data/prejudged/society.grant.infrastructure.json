@@ -1,0 +1,263 @@
+[
+  {
+    "cardId": "society.grant.infrastructure",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "สร้างถนนสายรองเชื่อมหมู่บ้านกับตลาด",
+      "actions": [
+        {
+          "title": "ถนนสายรอง",
+          "cost_size": "L",
+          "recurring_cost_size": "none",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "คนย้ายจากภาคเกษตรไปงานอื่น",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "group:farmers",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "หลักฐานพบผลต่อรายได้เกษตรกรน้อย จึงเป็นผลระดับเล็ก",
+              "evidence_ids": [
+                "ev.roads.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ขนส่งสะดวก"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "เดินทางไปทำงานได้"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "corruption",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ผู้รับเหมาแย่งงานกัน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.grant.infrastructure",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ขยายไฟฟ้าให้ครัวเรือนชนบท",
+      "actions": [
+        {
+          "title": "ต่อไฟฟ้าครัวเรือนชนบท",
+          "cost_size": "M",
+          "recurring_cost_size": "XS",
+          "duration_quarters": 6,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ไฟฟ้าชนบทเพิ่มการจ้างงานภายในไม่กี่ปี",
+              "evidence_ids": [
+                "ev.electrification.001"
+              ]
+            },
+            {
+              "indicator": "education",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "เด็กอ่านหนังสือได้กลางคืน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "มีไฟฟ้าใช้"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "ธุรกิจเล็กในหมู่บ้าน"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ค่าบำรุงรักษาจากภาษี"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 4,
+              "lasts_quarters": 8,
+              "note": "ค่าบำรุงรักษาหลังเงินให้เปล่าหมด",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.grant.infrastructure",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "โครงการเล็กที่ชุมชนเลือกพร้อมตรวจสอบสุ่ม",
+      "actions": [
+        {
+          "title": "โครงการชุมชนและสุ่มตรวจ",
+          "cost_size": "M",
+          "recurring_cost_size": "none",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "corruption",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "การสุ่มตรวจลดเงินรั่วไหลในโครงการ",
+              "evidence_ids": [
+                "ev.audit.001"
+              ]
+            },
+            {
+              "indicator": "group:farmers",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ชุมชนได้โครงการที่ต้องการ",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้เลือกโครงการเอง"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ผู้รับเหมารายใหญ่ไม่พอใจ"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "foreignRelations",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 4,
+              "note": "ใช้เงินไม่ทันกำหนดของผู้ให้ทุน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

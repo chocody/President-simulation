@@ -1,0 +1,252 @@
+[
+  {
+    "cardId": "foreign.trade.export-boom",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "หน่วยช่วยผู้ส่งออกรายย่อย",
+      "actions": [
+        {
+          "title": "ที่ปรึกษามาตรฐานและหาผู้ซื้อต่างประเทศ",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "group:business",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "การเข้าถึงผู้ซื้อต่างประเทศเพิ่มกำไรผู้ผลิตรายเล็ก",
+              "evidence_ids": [
+                "ev.export.001"
+              ]
+            },
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 6,
+              "note": "ส่งออกเพิ่มขึ้น",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ผู้ผลิตรายเล็กได้ตลาด"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ผู้ไม่ส่งออกไม่ได้อะไร"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ใช้งบประจำ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "foreign.trade.export-boom",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ประกันค่าจ้างและฝึกอาชีพผู้ที่เสียงานจากการนำเข้า",
+      "actions": [
+        {
+          "title": "กองทุนประกันค่าจ้างและฝึกอาชีพ",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "ประกันค่าจ้างช่วยให้ผู้เสียงานกลับเข้าทำงานเร็วขึ้น",
+              "evidence_ids": [
+                "ev.taa.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ผู้แพ้การแข่งขันได้รับความช่วยเหลือ"
+            },
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้ฝึกอาชีพ"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ภาษีสมทบกองทุน"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ต้องมีเงินกองทุนและการคัดเลือกที่ซับซ้อน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "4",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "foreign.trade.export-boom",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ปล่อยตลาดปรับตัวและลดภาษีวัตถุดิบนำเข้า",
+      "actions": [
+        {
+          "title": "ลดภาษีวัตถุดิบนำเข้า",
+          "cost_size": "XS",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ผู้ผลิตรายใหญ่ลดต้นทุนได้เร็ว",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ต้นทุนวัตถุดิบลดลง"
+            },
+            {
+              "group": "farmers",
+              "direction": "down",
+              "level": "1",
+              "reason": "ต้องปรับตัวเอง"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "รายได้ภาษีนำเข้าลดลง",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "inequality",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "ประโยชน์ตกกับรายใหญ่",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "5",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

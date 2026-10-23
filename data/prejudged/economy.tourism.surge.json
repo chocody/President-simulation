@@ -1,0 +1,255 @@
+[
+  {
+    "cardId": "economy.tourism.surge",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ส่งเสริมการตลาดและปล่อยธุรกิจขยายเอง",
+      "actions": [
+        {
+          "title": "งบโฆษณาท่องเที่ยว",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "หลักฐานส่วนใหญ่สนับสนุนการเติบโตจากการท่องเที่ยว",
+              "evidence_ids": [
+                "ev.tourism.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "รายได้เพิ่มเร็ว"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ค่าครองชีพและความแออัด"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "environment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "ธรรมชาติเสื่อมโทรม",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "inflation",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ค่าครองชีพในพื้นที่สูงขึ้น",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "5",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "economy.tourism.surge",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ค่าธรรมเนียมนักท่องเที่ยวและซื้อของจากผู้ผลิตท้องถิ่น",
+      "actions": [
+        {
+          "title": "ค่าธรรมเนียมและเชื่อมผู้ผลิตท้องถิ่น",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 6,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "การท่องเที่ยวส่งผลบวกต่อการผลิตในท้องถิ่น",
+              "evidence_ids": [
+                "ev.tourism.002"
+              ]
+            },
+            {
+              "indicator": "inequality",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 6,
+              "note": "ประโยชน์กระจายถึงชุมชน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ขายวัตถุดิบให้โรงแรม"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "โรงแรมต้นทุนสูงขึ้น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "นักท่องเที่ยวบางส่วนไปที่อื่น",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "economy.tourism.surge",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "จำกัดผู้เข้าชมและลงทุนระบบรองรับ",
+      "actions": [
+        {
+          "title": "โควตาผู้เข้าชมและสาธารณูปโภค",
+          "cost_size": "L",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "environment",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "ปกป้องแหล่งเปราะบาง ยังไม่มีหลักฐานในคลัง",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ระบบน้ำและขยะดีขึ้น",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "ชีวิตคนท้องถิ่นดีขึ้น"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "รายได้โตช้าลง"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "ใช้งบสูง",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

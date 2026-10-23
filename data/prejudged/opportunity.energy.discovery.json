@@ -1,0 +1,272 @@
+[
+  {
+    "cardId": "opportunity.energy.discovery",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ตั้งกองทุนความมั่งคั่งเก็บออมรายได้",
+      "actions": [
+        {
+          "title": "กองทุนความมั่งคั่งแห่งชาติ",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 8,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "budget",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ออมรายได้ที่ผันผวนช่วยรักษาเสถียรภาพงบประมาณ",
+              "evidence_ids": [
+                "ev.windfall.001"
+              ]
+            },
+            {
+              "indicator": "stability",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ลดความเสี่ยงเมื่อราคาพลังงานตก",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "ความเชื่อมั่นระยะยาว"
+            },
+            {
+              "group": "youth",
+              "direction": "down",
+              "level": "1",
+              "reason": "ไม่เห็นประโยชน์ทันที"
+            }
+          ],
+          "side_effects": []
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "opportunity.energy.discovery",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "ลงทุนโครงสร้างพื้นฐานและบริการสาธารณะ",
+      "actions": [
+        {
+          "title": "ลงทุนถนน ไฟฟ้า โรงเรียน โรงพยาบาล",
+          "cost_size": "L",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "การลงทุนจากรายได้พิเศษเพิ่มการเติบโตเมื่อบริหารดี",
+              "evidence_ids": [
+                "ev.windfall.002",
+                "ev.dutch.001"
+              ]
+            },
+            {
+              "indicator": "health",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 4,
+              "lasts_quarters": 8,
+              "note": "บริการสาธารณะที่ขาดแคลนดีขึ้น",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "education",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 4,
+              "lasts_quarters": 8,
+              "note": "โรงเรียนเพิ่มขึ้น",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ถนนและไฟฟ้าถึงชนบท"
+            },
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "บริการดีขึ้น"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "inflation",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 6,
+              "note": "เศรษฐกิจอาจร้อนแรงเกินไป",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "corruption",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "เสี่ยงโครงการสิ้นเปลือง",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "opportunity.energy.discovery",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "จ่ายเงินปันผลให้ประชาชนทุกคน",
+      "actions": [
+        {
+          "title": "เงินปันผลจากรายได้พลังงาน",
+          "cost_size": "M",
+          "recurring_cost_size": "M",
+          "duration_quarters": 8,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "inequality",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "เงินเท่ากันทุกคนช่วยครัวเรือนรายได้น้อยมากกว่า",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "unemployment",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 1,
+              "lasts_quarters": 8,
+              "note": "เงินปันผลถาวรไม่ทำให้การจ้างงานลดลง",
+              "evidence_ids": [
+                "ev.dividend.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "urban",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้เงินปันผล"
+            },
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้เงินปันผล"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "รัฐลงทุนน้อยลง"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "เมื่อเริ่มจ่ายแล้วเลิกได้ยาก",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

@@ -35,7 +35,7 @@ function testCountry(over: Record<string, unknown> = {}): Record<string, unknown
 describe("loadContent with the real data directory", () => {
   it("loads and validates cards, evidence and sources", () => {
     const c = loadContent({ dataDir: REAL, devFixtures: false });
-    expect(c.cards.length).toBe(12);
+    expect(c.cards.length).toBe(18);
     expect(c.evidence.length).toBeGreaterThanOrEqual(15);
     expect(c.sources.length).toBeGreaterThan(30);
     expect(c.cards.every((card) => card.choices.length === 3)).toBe(true);

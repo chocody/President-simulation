@@ -1,0 +1,257 @@
+[
+  {
+    "cardId": "economy.tech.firm-growth",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "สิทธิประโยชน์ภาษีสำหรับการวิจัยและพัฒนา",
+      "actions": [
+        {
+          "title": "ลดภาษีค่าวิจัยและพัฒนา",
+          "cost_size": "M",
+          "recurring_cost_size": "S",
+          "duration_quarters": 8,
+          "requires_legislation": true,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ลดต้นทุนวิจัยเพิ่มการวิจัยเล็กน้อยในระยะสั้น",
+              "evidence_ids": [
+                "ev.rnd.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "business",
+              "direction": "up",
+              "level": "1",
+              "reason": "บริษัทใหญ่ได้ประโยชน์"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "รัฐเสียรายได้ภาษี"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 8,
+              "note": "รายได้ภาษีลดลง",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "inequality",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "บริษัทใหญ่ได้มากกว่ารายเล็ก",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "economy.tech.firm-growth",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "เพิ่มที่เรียนวิทยาศาสตร์และหลักสูตรทักษะ",
+      "actions": [
+        {
+          "title": "ขยายคณะวิศวกรรมและหลักสูตรสั้น",
+          "cost_size": "L",
+          "recurring_cost_size": "S",
+          "duration_quarters": 12,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "education",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 12,
+              "note": "ผลิตบุคลากรได้มากขึ้น",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 6,
+              "lasts_quarters": 10,
+              "note": "เพิ่มบุคลากรวิทยาศาสตร์ได้ผลในระยะยาว",
+              "evidence_ids": [
+                "ev.rnd.002"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "2",
+              "reason": "ได้ที่เรียนและงาน"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "ยังขาดคนช่วงแรก"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 12,
+              "note": "ใช้งบสูงและเห็นผลหลายปี",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "economy.tech.firm-growth",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "กติกาแข่งขันเป็นธรรม",
+      "actions": [
+        {
+          "title": "ห้ามควบรวมที่ลดการแข่งขัน",
+          "cost_size": "S",
+          "recurring_cost_size": "none",
+          "duration_quarters": 6,
+          "requires_legislation": true,
+          "legal_risk": "low",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "การแข่งขันพอดีกระตุ้นนวัตกรรม",
+              "evidence_ids": [
+                "ev.competition.001"
+              ]
+            },
+            {
+              "indicator": "corruption",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 8,
+              "note": "ลดการผูกขาด",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "youth",
+              "direction": "up",
+              "level": "1",
+              "reason": "สตาร์ทอัพเข้าตลาดได้"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "บริษัทชั้นนำชะลอการลงทุน"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "หน่วยงานกำกับต้องเพิ่มคน",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]

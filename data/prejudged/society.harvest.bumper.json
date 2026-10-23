@@ -1,0 +1,246 @@
+[
+  {
+    "cardId": "society.harvest.bumper",
+    "choiceId": "a",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "รัฐรับซื้อผลผลิตส่วนเกินเข้าสต็อก",
+      "actions": [
+        {
+          "title": "รับซื้อในราคาขั้นต่ำ",
+          "cost_size": "L",
+          "recurring_cost_size": "S",
+          "duration_quarters": 4,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "group:farmers",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 4,
+              "note": "ขายได้ราคาดีขึ้นทันที ยังไม่มีหลักฐานในคลัง",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "2",
+              "reason": "ราคาพยุงไว้"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "อาหารถูกน้อยลง"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "ค่าเก็บรักษาสต็อก",
+              "evidence_ids": []
+            },
+            {
+              "indicator": "corruption",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "เสี่ยงทุจริตในการรับซื้อ",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "3",
+        "specificity": "3",
+        "tradeoffs": "1",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.harvest.bumper",
+    "choiceId": "b",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "สินเชื่อและโกดังเก็บผลผลิต",
+      "actions": [
+        {
+          "title": "สินเชื่อต้นทุนต่ำและโกดังชุมชน",
+          "cost_size": "M",
+          "recurring_cost_size": "none",
+          "duration_quarters": 6,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "group:farmers",
+              "direction": "up",
+              "level": "2",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "สินเชื่อตรงเวลาให้เกษตรกรเก็บผลผลิตรอราคาดี",
+              "evidence_ids": [
+                "ev.storage.001"
+              ]
+            },
+            {
+              "indicator": "inflation",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 2,
+              "lasts_quarters": 4,
+              "note": "ลดการเน่าเสียและราคาผันผวน",
+              "evidence_ids": []
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ขายได้ราคาดีขึ้น"
+            },
+            {
+              "group": "business",
+              "direction": "down",
+              "level": "1",
+              "reason": "พ่อค้าคนกลางกำไรลดลง"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "budget",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 6,
+              "note": "ค่าดำเนินการและหนี้เสีย",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "4",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "3",
+        "consistency": "3"
+      },
+      "event_coverage": "2",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  },
+  {
+    "cardId": "society.harvest.bumper",
+    "choiceId": "c",
+    "judgment": {
+      "input_class": "normal",
+      "interpretation": "จ่ายเงินช่วยเหลือครั้งเดียวให้เกษตรกรรายเล็ก",
+      "actions": [
+        {
+          "title": "โอนเงินสดครั้งเดียว",
+          "cost_size": "M",
+          "recurring_cost_size": "none",
+          "duration_quarters": 1,
+          "requires_legislation": false,
+          "legal_risk": "none",
+          "effects": [
+            {
+              "indicator": "gdpGrowth",
+              "direction": "up",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 3,
+              "note": "เงินหมุนในเศรษฐกิจหมู่บ้าน",
+              "evidence_ids": [
+                "ev.cash-transfer.001"
+              ]
+            }
+          ],
+          "group_impacts": [
+            {
+              "group": "farmers",
+              "direction": "up",
+              "level": "1",
+              "reason": "ได้เงินชดเชยราคาตก"
+            },
+            {
+              "group": "urban",
+              "direction": "down",
+              "level": "1",
+              "reason": "ผู้เสียภาษีรับภาระ"
+            }
+          ],
+          "side_effects": [
+            {
+              "indicator": "stability",
+              "direction": "down",
+              "level": "1",
+              "start_after_quarters": 0,
+              "lasts_quarters": 2,
+              "note": "ผู้ไม่ได้ขึ้นทะเบียนตกหล่น",
+              "evidence_ids": []
+            }
+          ]
+        }
+      ],
+      "overreach": false,
+      "scores": {
+        "relevance": "3",
+        "feasibility": "4",
+        "specificity": "3",
+        "tradeoffs": "2",
+        "consistency": "3"
+      },
+      "event_coverage": "1",
+      "flags": {
+        "impossible_claim": false,
+        "cruelty": false,
+        "rights_violation": false,
+        "unconstitutional": false
+      },
+      "follow_up_hooks": []
+    },
+    "runs": 1,
+    "model": "claude (Lead, Claude Code session) — manual pre-judge, not the API pipeline",
+    "promptVersion": "judge.v1",
+    "createdAt": "2026-10-23"
+  }
+]
