@@ -1,16 +1,13 @@
 {
   "mode": "network",
   "minPassing": 6,
-  "passed": 0,
-  "skipped": 10,
+  "passed": 10,
+  "skipped": 0,
   "countries": [
     {
       "iso3": "THA",
-      "status": "skipped",
-      "reasons": [
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived.",
-        "required code VC.IHR.PSRC.P5 (crime) unavailable: latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -28,10 +25,6 @@
         "SL.UEM.TOTL.ZS": {
           "year": 2025,
           "value": 0.781
-        },
-        "GC.DOD.TOTL.GD.ZS": {
-          "year": 2024,
-          "value": 61.861415782411
         },
         "SI.POV.GINI": {
           "year": 2024,
@@ -56,6 +49,10 @@
         "SE.SEC.ENRR": {
           "year": 2025,
           "value": 92.0872315506486
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2011,
+          "value": 4.79225300638159
         },
         "EN.ATM.PM25.MC.M3": {
           "year": 2023,
@@ -108,22 +105,39 @@
         "MS.MIL.TOTL.TF.ZS": {
           "year": 2020,
           "value": 1.13037257701222
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2024,
+          "value": 61.861415782411
         }
       },
-      "rejected": {
-        "VC.IHR.PSRC.P5": "latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
-      },
-      "notes": [],
-      "composites": {}
+      "rejected": {},
+      "notes": [
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "VNM",
-      "status": "skipped",
-      "reasons": [
-        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: no non-null value in the response",
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived.",
-        "required code VC.IHR.PSRC.P5 (crime) unavailable: latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -165,6 +179,10 @@
         "SE.SEC.ENRR": {
           "year": 2022,
           "value": 93.4123434096522
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2011,
+          "value": 1.53501286347562
         },
         "EN.ATM.PM25.MC.M3": {
           "year": 2023,
@@ -220,19 +238,35 @@
         }
       },
       "rejected": {
-        "GC.DOD.TOTL.GD.ZS": "no non-null value in the response",
-        "VC.IHR.PSRC.P5": "latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
+        "GC.DOD.TOTL.GD.ZS": "no non-null value in the response"
       },
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "debt: GC.DOD.TOTL.GD.ZS unavailable (no non-null value in the response), design value used",
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "IDN",
-      "status": "skipped",
-      "reasons": [
-        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: latest value is from 2009, 16 years before 2025; older than 8 years is rejected",
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -335,15 +369,33 @@
       "rejected": {
         "GC.DOD.TOTL.GD.ZS": "latest value is from 2009, 16 years before 2025; older than 8 years is rejected"
       },
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "debt: GC.DOD.TOTL.GD.ZS unavailable (latest value is from 2009, 16 years before 2025; older than 8 years is rejected), design value used",
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "IND",
-      "status": "skipped",
-      "reasons": [
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -361,10 +413,6 @@
         "SL.UEM.TOTL.ZS": {
           "year": 2025,
           "value": 4.219
-        },
-        "GC.DOD.TOTL.GD.ZS": {
-          "year": 2018,
-          "value": 46.5224986659322
         },
         "SI.POV.GINI": {
           "year": 2023,
@@ -445,19 +493,39 @@
         "MS.MIL.TOTL.TF.ZS": {
           "year": 2020,
           "value": 0.576119558133425
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2018,
+          "value": 46.5224986659322
         }
       },
       "rejected": {},
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "NGA",
-      "status": "skipped",
-      "reasons": [
-        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: no non-null value in the response",
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -560,16 +628,33 @@
       "rejected": {
         "GC.DOD.TOTL.GD.ZS": "no non-null value in the response"
       },
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "debt: GC.DOD.TOTL.GD.ZS unavailable (no non-null value in the response), design value used",
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "KEN",
-      "status": "skipped",
-      "reasons": [
-        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: no non-null value in the response",
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -672,15 +757,33 @@
       "rejected": {
         "GC.DOD.TOTL.GD.ZS": "no non-null value in the response"
       },
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "debt: GC.DOD.TOTL.GD.ZS unavailable (no non-null value in the response), design value used",
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "BRA",
-      "status": "skipped",
-      "reasons": [
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -698,10 +801,6 @@
         "SL.UEM.TOTL.ZS": {
           "year": 2025,
           "value": 5.97
-        },
-        "GC.DOD.TOTL.GD.ZS": {
-          "year": 2024,
-          "value": 81.8554431191023
         },
         "SI.POV.GINI": {
           "year": 2024,
@@ -782,18 +881,39 @@
         "MS.MIL.TOTL.TF.ZS": {
           "year": 2020,
           "value": 0.7619857203876
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2024,
+          "value": 81.8554431191023
         }
       },
       "rejected": {},
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "MEX",
-      "status": "skipped",
-      "reasons": [
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -811,10 +931,6 @@
         "SL.UEM.TOTL.ZS": {
           "year": 2025,
           "value": 2.673
-        },
-        "GC.DOD.TOTL.GD.ZS": {
-          "year": 2024,
-          "value": 50.270950655733
         },
         "SI.POV.GINI": {
           "year": 2024,
@@ -895,19 +1011,39 @@
         "MS.MIL.TOTL.TF.ZS": {
           "year": 2020,
           "value": 0.643924900908266
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2024,
+          "value": 50.270950655733
         }
       },
       "rejected": {},
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "POL",
-      "status": "skipped",
-      "reasons": [
-        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: latest value is from 1994, 31 years before 2025; older than 8 years is rejected",
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -1010,16 +1146,33 @@
       "rejected": {
         "GC.DOD.TOTL.GD.ZS": "latest value is from 1994, 31 years before 2025; older than 8 years is rejected"
       },
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "debt: GC.DOD.TOTL.GD.ZS unavailable (latest value is from 1994, 31 years before 2025; older than 8 years is rejected), design value used",
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     },
     {
       "iso3": "DEU",
-      "status": "skipped",
-      "reasons": [
-        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: latest value is from 1990, 35 years before 2025; older than 8 years is rejected",
-        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
-      ],
+      "status": "ok",
+      "reasons": [],
       "refYear": 2025,
       "codes": {
         "SP.POP.TOTL": {
@@ -1122,8 +1275,28 @@
       "rejected": {
         "GC.DOD.TOTL.GD.ZS": "latest value is from 1990, 35 years before 2025; older than 8 years is rejected"
       },
-      "notes": [],
-      "composites": {}
+      "notes": [
+        "debt: GC.DOD.TOTL.GD.ZS unavailable (latest value is from 1990, 35 years before 2025; older than 8 years is rejected), design value used",
+        "health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used"
+      ],
+      "composites": {
+        "health": [],
+        "education": [
+          "HD.HCI.OVRL"
+        ],
+        "crime": [],
+        "environment": [
+          "AG.LND.FRST.ZS",
+          "EN.GHG.CO2.PC.CE.AR5"
+        ],
+        "youth": [
+          "SP.POP.2024.FE.5Y",
+          "SP.POP.2529.MA.5Y",
+          "SP.POP.2529.FE.5Y",
+          "SP.POP.1564.TO.ZS"
+        ],
+        "urban": []
+      }
     }
   ]
 }

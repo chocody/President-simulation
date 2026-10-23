@@ -1,0 +1,135 @@
+{
+  "iso3": "BRA",
+  "nameTh": "บราซิล",
+  "nameEn": "Brazil",
+  "region": "Latin America & Caribbean ",
+  "population": 212812405,
+  "baseline": {
+    "gdpGrowth": 2.2857464902475,
+    "inflation": 5.01675279604836,
+    "unemployment": 5.97,
+    "budget": 2,
+    "debt": 81.8554431191023,
+    "health": 74.35142857142856,
+    "education": 77.57489681243895,
+    "crime": 64.25098589102632,
+    "inequality": 50.3,
+    "corruption": 59.643787,
+    "pressFreedom": 65.473464,
+    "stability": 58.8687136,
+    "parliament": 55,
+    "environment": 91.33714461306018,
+    "foreignRelations": 50
+  },
+  "baselineSrc": {
+    "gdpGrowth": {
+      "sourceId": "wdi.NY.GDP.MKTP.KD.ZG",
+      "year": 2025,
+      "raw": 2.2857464902475
+    },
+    "inflation": {
+      "sourceId": "wdi.FP.CPI.TOTL.ZG",
+      "year": 2025,
+      "raw": 5.01675279604836
+    },
+    "unemployment": {
+      "sourceId": "wdi.SL.UEM.TOTL.ZS",
+      "year": 2025,
+      "raw": 5.97
+    },
+    "budget": {
+      "sourceId": "design.budget",
+      "year": null,
+      "raw": null
+    },
+    "debt": {
+      "sourceId": "wdi.GC.DOD.TOTL.GD.ZS",
+      "year": 2024,
+      "raw": 81.8554431191023
+    },
+    "health": {
+      "sourceId": "wdi.SP.DYN.LE00.IN",
+      "year": 2024,
+      "raw": 76.023
+    },
+    "education": {
+      "sourceId": "wdi.SE.SEC.ENRR",
+      "year": 2024,
+      "raw": 104.144660949707
+    },
+    "crime": {
+      "sourceId": "wdi.VC.IHR.PSRC.P5",
+      "year": 2023,
+      "raw": 19.2752957673079
+    },
+    "inequality": {
+      "sourceId": "wdi.SI.POV.GINI",
+      "year": 2024,
+      "raw": 50.3
+    },
+    "corruption": {
+      "sourceId": "wgi.GOV_WGI_CC_SC",
+      "year": 2025,
+      "raw": 40.356213
+    },
+    "pressFreedom": {
+      "sourceId": "wgi.GOV_WGI_VA_SC",
+      "year": 2025,
+      "raw": 65.473464
+    },
+    "stability": {
+      "sourceId": "wgi.GOV_WGI_PV_SC",
+      "year": 2025,
+      "raw": 58.8687136
+    },
+    "parliament": {
+      "sourceId": "design.unsourced",
+      "year": null,
+      "raw": null
+    },
+    "environment": {
+      "sourceId": "wdi.EN.ATM.PM25.MC.M3",
+      "year": 2023,
+      "raw": 13.3827173243912
+    },
+    "foreignRelations": {
+      "sourceId": "design.unsourced",
+      "year": null,
+      "raw": null
+    }
+  },
+  "groupShares": {
+    "farmers": 0.07627825927031272,
+    "urban": 0.6578252906320291,
+    "business": 0.04208875364027201,
+    "youth": 0.2161878392535103,
+    "military": 0.007619857203876002
+  },
+  "groupSharesSrc": {
+    "farmers": {
+      "sourceId": "wdi.SL.AGR.EMPL.ZS",
+      "year": 2025,
+      "raw": 7.62782592703127
+    },
+    "urban": {
+      "sourceId": "wdi.SP.RUR.TOTL.ZS",
+      "year": 2025,
+      "raw": 11.8227003512102
+    },
+    "business": {
+      "sourceId": "wdi.SL.EMP.MPYR.ZS",
+      "year": 2025,
+      "raw": 4.2088753640272
+    },
+    "youth": {
+      "sourceId": "wdi.SP.POP.2024.MA.5Y",
+      "year": 2025,
+      "raw": 7.48966813457518
+    },
+    "military": {
+      "sourceId": "wdi.MS.MIL.TOTL.TF.ZS",
+      "year": 2020,
+      "raw": 0.7619857203876
+    }
+  }
+}

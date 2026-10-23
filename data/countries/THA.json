@@ -1,0 +1,135 @@
+{
+  "iso3": "THA",
+  "nameTh": "ประเทศไทย",
+  "nameEn": "Thailand",
+  "region": "East Asia & Pacific",
+  "population": 71619863,
+  "baseline": {
+    "gdpGrowth": 2.44247444990198,
+    "inflation": -0.133634356480206,
+    "unemployment": 0.781,
+    "budget": 2,
+    "debt": 61.861415782411,
+    "health": 75.89714285714284,
+    "education": 76.50916500589985,
+    "crime": 15.974176687938632,
+    "inequality": 33.3,
+    "corruption": 61.949945,
+    "pressFreedom": 48.2280197,
+    "stability": 55.8006398,
+    "parliament": 55,
+    "environment": 72.77849608973372,
+    "foreignRelations": 50
+  },
+  "baselineSrc": {
+    "gdpGrowth": {
+      "sourceId": "wdi.NY.GDP.MKTP.KD.ZG",
+      "year": 2025,
+      "raw": 2.44247444990198
+    },
+    "inflation": {
+      "sourceId": "wdi.FP.CPI.TOTL.ZG",
+      "year": 2025,
+      "raw": -0.133634356480206
+    },
+    "unemployment": {
+      "sourceId": "wdi.SL.UEM.TOTL.ZS",
+      "year": 2025,
+      "raw": 0.781
+    },
+    "budget": {
+      "sourceId": "design.budget",
+      "year": null,
+      "raw": null
+    },
+    "debt": {
+      "sourceId": "wdi.GC.DOD.TOTL.GD.ZS",
+      "year": 2024,
+      "raw": 61.861415782411
+    },
+    "health": {
+      "sourceId": "wdi.SP.DYN.LE00.IN",
+      "year": 2024,
+      "raw": 76.564
+    },
+    "education": {
+      "sourceId": "wdi.SE.SEC.ENRR",
+      "year": 2025,
+      "raw": 92.0872315506486
+    },
+    "crime": {
+      "sourceId": "wdi.VC.IHR.PSRC.P5",
+      "year": 2011,
+      "raw": 4.79225300638159
+    },
+    "inequality": {
+      "sourceId": "wdi.SI.POV.GINI",
+      "year": 2024,
+      "raw": 33.3
+    },
+    "corruption": {
+      "sourceId": "wgi.GOV_WGI_CC_SC",
+      "year": 2025,
+      "raw": 38.050055
+    },
+    "pressFreedom": {
+      "sourceId": "wgi.GOV_WGI_VA_SC",
+      "year": 2025,
+      "raw": 48.2280197
+    },
+    "stability": {
+      "sourceId": "wgi.GOV_WGI_PV_SC",
+      "year": 2025,
+      "raw": 55.8006398
+    },
+    "parliament": {
+      "sourceId": "design.unsourced",
+      "year": null,
+      "raw": null
+    },
+    "environment": {
+      "sourceId": "wdi.EN.ATM.PM25.MC.M3",
+      "year": 2023,
+      "raw": 23.4870743016258
+    },
+    "foreignRelations": {
+      "sourceId": "design.unsourced",
+      "year": null,
+      "raw": null
+    }
+  },
+  "groupShares": {
+    "farmers": 0.285567111694664,
+    "urban": 0.48258643730769263,
+    "business": 0.0271533005546907,
+    "youth": 0.19338942467283052,
+    "military": 0.0113037257701222
+  },
+  "groupSharesSrc": {
+    "farmers": {
+      "sourceId": "wdi.SL.AGR.EMPL.ZS",
+      "year": 2025,
+      "raw": 28.5567111694664
+    },
+    "urban": {
+      "sourceId": "wdi.SP.RUR.TOTL.ZS",
+      "year": 2025,
+      "raw": 37.2006622863704
+    },
+    "business": {
+      "sourceId": "wdi.SL.EMP.MPYR.ZS",
+      "year": 2025,
+      "raw": 2.71533005546907
+    },
+    "youth": {
+      "sourceId": "wdi.SP.POP.2024.MA.5Y",
+      "year": 2025,
+      "raw": 6.8377852529616
+    },
+    "military": {
+      "sourceId": "wdi.MS.MIL.TOTL.TF.ZS",
+      "year": 2020,
+      "raw": 1.13037257701222
+    }
+  }
+}
