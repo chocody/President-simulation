@@ -28,15 +28,18 @@ export const THAI_NAMES: Record<string, string> = {
 export function plannedCodes(): { required: string[]; optional: string[] } {
   const required = [
     POPULATION_CODE,
-    ...Object.values(M.direct).map((d) => d!.code),
-    M.health.lifeExpectancy.code, M.health.uhc.code,
+    ...Object.entries(M.direct).filter(([k]) => !M.optionalDirect.includes(k as StatKey)).map(([, d]) => d!.code),
+    M.health.lifeExpectancy.code,
     M.education.enrollment.code,
     M.crime.code,
     M.environment.pm25.code, M.environment.forest.code, M.environment.co2.code,
     M.groups.agriculture, M.groups.rural, M.groups.employers,
     ...M.groups.youthBands, M.groups.adultTotal,
   ];
-  const optional = [M.education.hci.code, M.groups.armedForces];
+  const optional = [
+    M.education.hci.code, M.groups.armedForces, M.health.uhc.code,
+    ...M.optionalDirect.map((k) => M.direct[k]!.code),
+  ];
   return { required, optional };
 }
 
@@ -101,6 +104,11 @@ export function mapCountry(input: MapInput): MapResult {
 
   // direct stats
   for (const [key, rule] of Object.entries(M.direct) as [StatKey, { code: string; transform: "identity" | "100-minus" }][]) {
+    if (!obs[rule.code] && M.optionalDirect.includes(key) && key in UNSOURCED_DEFAULTS.value) {
+      notes.push(`${key}: ${rule.code} unavailable (${input.unavailable?.[rule.code] ?? "no observation"}), design value used`);
+      setStat(key, UNSOURCED_DEFAULTS.value[key as keyof typeof UNSOURCED_DEFAULTS.value], design("design.unsourced"));
+      continue;
+    }
     const o = need(rule.code, key);
     setStat(key, rule.transform === "100-minus" ? 100 - o.value : o.value, prov(rule.code, o));
   }
@@ -108,9 +116,12 @@ export function mapCountry(input: MapInput): MapResult {
   // health = mean(life expectancy scaled, UHC index)
   {
     const le = need(M.health.lifeExpectancy.code, "health");
-    const uhc = need(M.health.uhc.code, "health");
-    setStat("health", mean([linear(le.value, M.health.lifeExpectancy.linear), clamp(uhc.value, 0, 100)]), prov(M.health.lifeExpectancy.code, le));
-    composites.health = [M.health.uhc.code];
+    const parts = [linear(le.value, M.health.lifeExpectancy.linear)];
+    const uhc = obs[M.health.uhc.code];
+    if (uhc) parts.push(clamp(uhc.value, 0, 100));
+    else notes.push(`health: UHC index (${M.health.uhc.code}) not available, life expectancy alone used`);
+    setStat("health", mean(parts), prov(M.health.lifeExpectancy.code, le));
+    composites.health = uhc ? [M.health.uhc.code] : [];
   }
 
   // education = mean(enrolment capped, HCI x scale), or enrolment alone

@@ -1,7 +1,7 @@
 // Loads game content from the repo's data/ directory and validates it with the contract schemas.
 // Server-only: reads the file system.
 import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { Card, CountryData, Evidence, Judgment, Source } from "@ps/shared";
@@ -135,6 +135,7 @@ export function loadContent(opts: LoadOptions = {}): Content {
   // Countries: one CountryData per data/countries/*.json (a list in one file is also accepted).
   const countries: CountryData[] = [];
   for (const f of files(join(dataDir, "countries"), ".json")) {
+    if (basename(f).startsWith("_")) continue;   // _build-report.json etc. are not country files
     const raw = readJson(f);
     (Array.isArray(raw) ? raw : [raw]).forEach((item, i) => {
       countries.push(validateCountry(parseWith(CountryData, item, `${f}[${i}]`), sourceIds, f));

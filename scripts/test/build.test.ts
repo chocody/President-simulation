@@ -52,11 +52,11 @@ describe("buildCountries on fixtures", () => {
 
   it("passes at least the minimum and skips the two deliberately broken fixtures with clear reasons", () => {
     expect(passed.length).toBeGreaterThanOrEqual(MIN_PASSING);
-    expect(skipped.map((c) => c.iso3).sort()).toEqual(["KEN", "MEX"]);
+    // MEX's stale debt now falls back to the labelled design value (debt is optional), so only KEN is skipped.
+    expect(skipped.map((c) => c.iso3).sort()).toEqual(["KEN"]);
     expect(skipped.find((c) => c.iso3 === "KEN")!.reasons.join(" ")).toContain("SL.UEM.TOTL.ZS");
-    const mex = skipped.find((c) => c.iso3 === "MEX")!.reasons.join(" ");
-    expect(mex).toContain("GC.DOD.TOTL.GD.ZS");
-    expect(mex).toMatch(/older than 8/);
+    const mex = JSON.parse(readFileSync(join(outDir, "MEX.json"), "utf8"));
+    expect(mex.baselineSrc.debt.sourceId).toBe("design.unsourced");
   });
   it("writes one JSON per passing country, a build report, and nothing for skipped ones", () => {
     const files = readdirSync(outDir).sort();
@@ -124,8 +124,9 @@ describe("parseArgs and main", () => {
 });
 
 describe("repository hygiene", () => {
-  it("data/countries has no committed country files (real run comes later)", () => {
+  it("every committed country file parses as CountryData (report files start with _)", () => {
     const dir = join(root, "data/countries");
-    expect(existsSync(dir) ? readdirSync(dir) : []).toEqual([]);
+    const files = existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith(".json") && !f.startsWith("_")) : [];
+    for (const f of files) expect(() => CountryData.parse(JSON.parse(readFileSync(join(dir, f), "utf8"))), f).not.toThrow();
   });
 });

@@ -162,8 +162,18 @@ describe("skip rules", () => {
       if (!r.ok) expect(r.reasons.join(" "), code).toContain(code);
     }
   });
-  it("optional codes are exactly HCI and armed forces", () => {
-    expect([...plannedCodes().optional].sort()).toEqual(["HD.HCI.OVRL", "MS.MIL.TOTL.TF.ZS"].sort());
+  it("optional codes are HCI, armed forces, UHC and the optional direct stats (debt)", () => {
+    expect([...plannedCodes().optional].sort()).toEqual(["HD.HCI.OVRL", "MS.MIL.TOTL.TF.ZS", "SH.UHC.SRVS.CV.XD", "GC.DOD.TOTL.GD.ZS"].sort());
+  });
+  it("missing debt falls back to the labelled design value; missing UHC uses life expectancy alone", () => {
+    const o = base(); delete o["GC.DOD.TOTL.GD.ZS"]; delete o["SH.UHC.SRVS.CV.XD"];
+    const r = run(o);
+    expect(r.ok).toBe(true);
+    if (r.ok) {
+      expect(r.data.baseline.debt).toBe(UNSOURCED_DEFAULTS.value.debt);
+      expect(r.data.baselineSrc.debt).toEqual({ sourceId: "design.unsourced", year: null, raw: null });
+      expect(r.notes.join(" ")).toContain("life expectancy alone");
+    }
   });
   it("lists every code in DATA_MAPPING plus population", () => {
     const all = [...plannedCodes().required, ...plannedCodes().optional];

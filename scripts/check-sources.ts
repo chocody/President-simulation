@@ -160,7 +160,7 @@ export function loadRepoInput(root: string): CheckInput {
     const d = join(root, rel);
     return existsSync(d) ? readdirSync(d).filter((f) => f.endsWith(ext)).sort() : [];
   };
-  const countries = dir("data/countries", ".json").map((f) => {
+  const countries = dir("data/countries", ".json").filter((f) => !f.startsWith("_")).map((f) => {
     const raw = JSON.parse(readFileSync(join(root, "data/countries", f), "utf8")) as unknown;
     const check = CountryData.safeParse(raw);
     if (!check.success) {

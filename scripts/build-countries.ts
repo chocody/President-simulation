@@ -85,7 +85,7 @@ async function buildOne(iso3: string, source: DataSource): Promise<{ report: Cou
     const r = rows[code];
     if (!r) continue;
     if (ref === null) continue;
-    const sel = selectObservation(r, ref, DATA_MAPPING.value.maxDataAgeYears);
+    const sel = selectObservation(r, ref, DATA_MAPPING.value.maxAgeOverride[code] ?? DATA_MAPPING.value.maxDataAgeYears);
     if (sel.ok) {
       observations[code] = sel.obs;
       report.codes[code] = sel.obs;

@@ -145,8 +145,8 @@ export const PILLARS: Record<"economy" | "society" | "politics" | "other", StatK
 };
 
 /** Values with no real-data source yet. Shown in the game with a "design value" label. */
-export const UNSOURCED_DEFAULTS: Param<{ groupSatisfaction: number; parliament: number; foreignRelations: number }> = {
-  value: { groupSatisfaction: 50, parliament: 55, foreignRelations: 50 },
+export const UNSOURCED_DEFAULTS: Param<{ groupSatisfaction: number; parliament: number; foreignRelations: number; debt: number }> = {
+  value: { groupSatisfaction: 50, parliament: 55, foreignRelations: 50, debt: 60 },   // debt: used only when WDI central-government debt is missing or too old
   rationale: "Placeholders until a real source is chosen (see the sources tab of the plan).",
   basedOn: ["design.unsourced"],
   calibration: "Replace with sourced values before launch.",
@@ -204,6 +204,10 @@ export const LEGACY: Param<{ pillarWeight: number; popularityWeight: number; pil
  */
 export const DATA_MAPPING: Param<{
   maxDataAgeYears: number;
+  /** Per-code age limits that replace maxDataAgeYears. The data year is always shown to the player. */
+  maxAgeOverride: Record<string, number>;
+  /** Direct stats that fall back to UNSOURCED_DEFAULTS (labelled as design values) instead of skipping the country. */
+  optionalDirect: StatKey[];
   direct: Partial<Record<StatKey, { code: string; transform: "identity" | "100-minus" }>>;
   health: { lifeExpectancy: { code: string; linear: [number, number] }; uhc: { code: string } };
   education: { enrollment: { code: string; cap: number }; hci: { code: string; scale: number } };
@@ -216,6 +220,10 @@ export const DATA_MAPPING: Param<{
 }> = {
   value: {
     maxDataAgeYears: 8,
+    // Homicide series are updated irregularly (e.g. latest 2011 for some MVP countries); allow 15 years, year shown.
+    maxAgeOverride: { "VC.IHR.PSRC.P5": 15 },
+    // WDI central-government debt is missing or decades old for 7 of 10 MVP countries (first live run, 2026-10-23).
+    optionalDirect: ["debt"],
     direct: {
       gdpGrowth: { code: "NY.GDP.MKTP.KD.ZG", transform: "identity" },
       inflation: { code: "FP.CPI.TOTL.ZG", transform: "identity" },
@@ -244,7 +252,7 @@ export const DATA_MAPPING: Param<{
     },
   },
   rationale:
-    "health = mean(LE scaled 50→85 yrs, UHC index); education = mean(secondary enrollment capped at 100, HCI×100) or enrollment alone when HCI is missing; " +
+    "health = mean(LE scaled 50→85 yrs, UHC index), or LE alone when the UHC index is not served by the WDI API; education = mean(secondary enrollment capped at 100, HCI×100) or enrollment alone when HCI is missing; " +
     "crime = homicides scaled 0→30 per 100k; environment = mean(PM2.5 75→5 µg, forest 0→60 %, CO2 20→0 t per person). " +
     "Groups: farmers ∝ agriculture share of employment, business ∝ employers share, military ∝ armed forces share, youth ∝ ages 20–29 among 15–64 " +
     "(WPP bands via WDI, 18–19 not separable), urban = remainder; shares normalised to 1.",
