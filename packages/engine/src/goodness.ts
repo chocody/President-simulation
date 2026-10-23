@@ -1,4 +1,5 @@
 import { GOODNESS, GROUP_INTERESTS, PILLARS, type GameState, type GroupKey, type StatKey } from "@ps/shared";
+import { TICK } from "@ps/shared";
 import { at } from "./util";
 
 type Stats = Record<StatKey, number>;
@@ -41,4 +42,10 @@ export function popularity(groups: GameState["groups"]): number {
   let total = 0;
   for (const g of Object.values(groups)) total += g.share * g.satisfaction;
   return total;
+}
+
+/** Satisfaction target: 50 plus the change in the group's goodness since the start of the term, scaled. */
+export function relativeGroupTarget(group: GroupKey, stats: Stats, baseline: Stats): number {
+  const t = 50 + TICK.targetScale.value * (groupTarget(group, stats) - groupTarget(group, baseline));
+  return Math.min(100, Math.max(0, t));
 }

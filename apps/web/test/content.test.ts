@@ -1,8 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, rmSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { CountryData } from "@ps/shared";
+import { MVP_COUNTRIES } from "@ps/shared";
 import { ContentError, loadContent } from "../server/content";
 import { FIXTURE_COUNTRY, FIXTURE_LABEL } from "../dev/fixture-country";
 
@@ -11,6 +12,7 @@ const REAL = resolve(import.meta.dirname, "../../../data");
 function tmpData(): string {
   const d = mkdtempSync(join(tmpdir(), "ps-web-data-"));
   cpSync(REAL, d, { recursive: true });
+  rmSync(join(d, "countries"), { recursive: true, force: true });   // tests add their own country files
   return d;
 }
 
@@ -39,9 +41,9 @@ describe("loadContent with the real data directory", () => {
     expect(c.cards.every((card) => card.choices.length === 3)).toBe(true);
   });
 
-  it("has no countries and no fixture without DEV_FIXTURES", () => {
+  it("loads the real MVP countries and no fixture without DEV_FIXTURES", () => {
     const c = loadContent({ dataDir: REAL, devFixtures: false });
-    expect(c.countries).toEqual([]);
+    expect(c.countries.map((x) => x.iso3).sort()).toEqual([...MVP_COUNTRIES.value].sort());
     expect(c.devFixtures).toBe(false);
     expect(c.sources.find((s) => s.id === FIXTURE_COUNTRY.baselineSrc.gdpGrowth.sourceId)).toBeUndefined();
   });

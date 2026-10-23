@@ -4,7 +4,7 @@ import {
 } from "@ps/shared";
 import { EngineError } from "./errors";
 import { pickCard } from "./events";
-import { groupTarget, pillarScores, popularity } from "./goodness";
+import { pillarScores, popularity, relativeGroupTarget } from "./goodness";
 import { runElection } from "./election";
 import { Rng } from "./rng";
 import { applyDelta, capDelta, clamp, sliceSums } from "./util";
@@ -90,7 +90,7 @@ export function advanceQuarter(state: GameState, deck: readonly Card[]): GameSta
   // 5. Group drift toward the goodness of what they care about; popularity; economy history.
   for (const g of Object.keys(s.groups) as (keyof GameState["groups"])[]) {
     const grp = s.groups[g];
-    grp.satisfaction = clamp(grp.satisfaction + TICK.groupDrift.value * (groupTarget(g, s.stats) - grp.satisfaction), 0, 100);
+    grp.satisfaction = clamp(grp.satisfaction + TICK.groupDrift.value * (relativeGroupTarget(g, s.stats, s.baseline) - grp.satisfaction), 0, 100);
   }
   for (const k of STAT_KEYS) {
     const [lo, hi] = STAT_RANGE[k];

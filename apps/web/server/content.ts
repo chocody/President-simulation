@@ -133,8 +133,9 @@ export function loadContent(opts: LoadOptions = {}): Content {
   }
 
   // Countries: one CountryData per data/countries/*.json (a list in one file is also accepted).
+  // DEV_FIXTURES=1 plays only the fictional country, so mock judgments never mix with real data.
   const countries: CountryData[] = [];
-  for (const f of files(join(dataDir, "countries"), ".json")) {
+  for (const f of devFixtures ? [] : files(join(dataDir, "countries"), ".json")) {
     if (basename(f).startsWith("_")) continue;   // _build-report.json etc. are not country files
     const raw = readJson(f);
     (Array.isArray(raw) ? raw : [raw]).forEach((item, i) => {

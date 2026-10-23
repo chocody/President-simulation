@@ -95,7 +95,8 @@ export const GATES = {
 
 export const TICK = {
   meanReversion: { value: 0.05, rationale: "Stats drift 5% of the gap back to the country's baseline each quarter.", basedOn: ["design.tick"], calibration: "A passive bot's stats stay near baseline." },
-  groupDrift: { value: 0.25, rationale: "S ← S + 0.25 (T − S), T = weighted goodness of the stats the group cares about.", basedOn: ["design.tick"], calibration: "Passive bot's popularity stays within 40–60." },
+  groupDrift: { value: 0.25, rationale: "S ← S + 0.25 (T − S), T = 50 + targetScale · (goodness of the group's stats now − at the start of the term). Voters judge change, not the level they already had.", basedOn: ["design.tick", "paper.lewis-beck-stegmaier-2000"], calibration: "Passive bot's popularity stays within 40–60 on the real countries." },
+  targetScale: { value: 3, rationale: "One point of goodness gained moves the group's target 3 satisfaction points.", basedOn: ["design.tick"], calibration: "Passive bot wins 35–55% of elections on the real countries." },
   debtInterest: { value: { threshold: 60, budgetCutPer10: 0.1 }, rationale: "Above 60% of GDP, next year's budget drops 0.1% of GDP per 10 points over.", basedOn: ["design.tick", "paper.herndon-ash-pollin-2013"], calibration: "No hard cliff at 90%." },
 } satisfies Record<string, Param<unknown>>;
 
@@ -154,7 +155,7 @@ export const UNSOURCED_DEFAULTS: Param<{ groupSatisfaction: number; parliament: 
 
 export const ELECTION: Param<{ econWeight: number; econQuarters: number; noise: number; winAbove: number }> = {
   value: { econWeight: 0.15, econQuarters: 4, noise: 3, winAbove: 50 },
-  rationale: "V = Σ w_g S_g + 0.15 (E − 50) + U(−3, 3). Direction from economic-voting research.",
+  rationale: "V = Σ w_g S_g + 0.15 (E − 50) + U(−3, 3), E = 50 + (economy pillar over the last 4 quarters − at the start). Direction from economic-voting research.",
   basedOn: ["paper.lewis-beck-stegmaier-2000"],
   calibration: "Passive bot wins 35–55% of elections.",
 };

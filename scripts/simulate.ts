@@ -1,6 +1,8 @@
 // Bot simulation for the engine. Uses the TEST FIXTURE country and deck (invented values, never shipped).
-// Usage: pnpm tsx scripts/simulate.ts --games 1000
-import { STAT_KEYS, type Card, type Evidence, type GameState, type StatKey } from "@ps/shared";
+// Usage: pnpm tsx scripts/simulate.ts --games 1000 [--real-countries]
+// --real-countries plays the real data/countries/*.json (fixture deck still, since real choices are not pre-judged yet).
+import { readdirSync, readFileSync } from "node:fs";
+import { CountryData, STAT_KEYS, type Card, type Evidence, type GameState, type StatKey } from "@ps/shared";
 import { advanceQuarter, newGame, resolveTurn, uniform } from "../packages/engine/src/index";
 import { fixtureCountry } from "../packages/engine/test/fixtures/country";
 import { fixtureDeck } from "../packages/engine/test/fixtures/cards";
@@ -40,8 +42,15 @@ interface Result {
   yearly: Map<StatKey, number[]>;
 }
 
+const REAL = process.argv.includes("--real-countries");
+const countries: CountryData[] = REAL
+  ? readdirSync("data/countries").filter((f) => f.endsWith(".json") && !f.startsWith("_"))
+      .map((f) => CountryData.parse(JSON.parse(readFileSync(`data/countries/${f}`, "utf8"))))
+  : [fixtureCountry];
+
 function playGame(bot: Bot, game: number, deck: Card[]): Result {
-  let s = newGame({ country: fixtureCountry, difficulty: "normal", seed: `sim-${game}` });
+  const country = countries[game % countries.length]!;
+  let s = newGame({ country, difficulty: "normal", seed: `sim-${game}` });
   const snapshots = new Map<number, GameState["stats"]>();
   for (let guard = 0; guard < 40 && s.phase !== "ended"; guard++) {
     if (s.phase === "decision") {

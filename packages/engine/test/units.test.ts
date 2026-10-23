@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { GROUP_KEYS, LEGACY, PILLARS, type Card, type GameState } from "@ps/shared";
 import {
-  Rng, courtCheck, eligibleCards, goodness, grades, groupTarget, legacyScore, levelToDelta, newGame,
+  Rng, courtCheck, eligibleCards, goodness, grades, groupTarget, relativeGroupTarget, legacyScore, levelToDelta, newGame,
   parliamentVote, pickCard, pillarScores, popularity, protest, costPctGdp, recurringPctGdpPerYear,
   advanceQuarter, runElection,
 } from "@ps/engine";
@@ -242,10 +242,10 @@ describe("tick", () => {
     expect(s.scheduled.some((e) => e.policyId === "p" && e.toQuarter === 6)).toBe(true);
   });
 
-  it("group satisfaction drifts a quarter of the way to its target", () => {
+  it("group satisfaction drifts a quarter of the way to its target (relative to the start)", () => {
     const s0 = fresh();
     const s = advanceQuarter(s0, quiet);
-    const t = groupTarget("urban", s.stats);
+    const t = relativeGroupTarget("urban", s.stats, s.baseline);
     expect(s.groups.urban.satisfaction).toBeCloseTo(50 + 0.25 * (t - 50), 10);
     expect(s.popularity).toBeCloseTo(popularity(s.groups), 10);
   });
@@ -293,7 +293,8 @@ describe("election and endings", () => {
     const s = fresh();
     const groups = structuredClone(s.groups);
     for (const k of GROUP_KEYS) groups[k].satisfaction = sat;
-    return { ...s, quarter: 16, groups, econHistory: [0, 0, 0, econ, econ, econ, econ] };
+    // economy pillar at the start = 50, so E = 50 + (recent − 50) = recent
+    return { ...s, quarter: 16, groups, econHistory: [0, 0, 0, econ, econ, econ, econ], pillarsAtStart: { ...s.pillarsAtStart, economy: 50 } };
   };
 
   it("a loved government wins, a hated one loses; the game ends", () => {

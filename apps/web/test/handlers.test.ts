@@ -11,6 +11,7 @@ import { FIXTURE_COUNTRY } from "../dev/fixture-country";
 const DATA = resolve(import.meta.dirname, "../../../data");
 const content: Content = loadContent({ dataDir: DATA, devFixtures: true });
 const noFixtures: Content = loadContent({ dataDir: DATA, devFixtures: false });
+const noCountries: Content = { ...noFixtures, countries: [] };
 
 function deps(over: Partial<Deps> = {}): Deps {
   return { content, gm: new MockGameMaster(), seed: () => "handler-test-seed", random: () => 0.5, ...over };
@@ -49,9 +50,9 @@ describe("handleInfo", () => {
     expect(b.info.sources.length).toBeGreaterThan(0);
   });
 
-  it("is empty without fixtures", async () => {
+  it("lists the real countries without fixtures", async () => {
     const r = await handleInfo({}, deps({ content: noFixtures }));
-    expect((r.body as Body).countries).toEqual([]);
+    expect((r.body as Body).countries.length).toBe(10);
     expect((r.body as Body).devFixtures).toBe(false);
   });
 
@@ -92,7 +93,7 @@ describe("POST new", () => {
   });
 
   it("says there is no real country data when there are none", async () => {
-    const r = await handleNew({ difficulty: "normal" }, deps({ content: noFixtures }));
+    const r = await handleNew({ difficulty: "normal" }, deps({ content: noCountries }));
     expect(r.status).toBe(409);
     expect((r.body as Body).error).toContain("ยังไม่มีข้อมูลประเทศจริง");
   });
