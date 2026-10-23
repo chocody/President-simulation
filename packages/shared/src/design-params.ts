@@ -196,3 +196,66 @@ export const LEGACY: Param<{ pillarWeight: number; popularityWeight: number; pil
   basedOn: ["design.grades"],
   calibration: "Passive bot scores 40–60.",
 };
+
+/**
+ * How real indicators become game-scale stats (scripts/build-countries.ts).
+ * Each rule lists the WDI/WGI codes it reads. A country missing a required code is left out of the game,
+ * never filled with a guess. `linear: [a, b]` maps raw a → 0 and raw b → 100, clamped.
+ */
+export const DATA_MAPPING: Param<{
+  maxDataAgeYears: number;
+  direct: Partial<Record<StatKey, { code: string; transform: "identity" | "100-minus" }>>;
+  health: { lifeExpectancy: { code: string; linear: [number, number] }; uhc: { code: string } };
+  education: { enrollment: { code: string; cap: number }; hci: { code: string; scale: number } };
+  crime: { code: string; linear: [number, number] };
+  environment: { pm25: { code: string; linear: [number, number] }; forest: { code: string; linear: [number, number] }; co2: { code: string; linear: [number, number] } };
+  groups: {
+    agriculture: string; rural: string; employers: string; armedForces: string;
+    youthBands: string[]; adultTotal: string;
+  };
+}> = {
+  value: {
+    maxDataAgeYears: 8,
+    direct: {
+      gdpGrowth: { code: "NY.GDP.MKTP.KD.ZG", transform: "identity" },
+      inflation: { code: "FP.CPI.TOTL.ZG", transform: "identity" },
+      unemployment: { code: "SL.UEM.TOTL.ZS", transform: "identity" },
+      debt: { code: "GC.DOD.TOTL.GD.ZS", transform: "identity" },
+      inequality: { code: "SI.POV.GINI", transform: "identity" },
+      corruption: { code: "GOV_WGI_CC_SC", transform: "100-minus" },
+      pressFreedom: { code: "GOV_WGI_VA_SC", transform: "identity" },
+      stability: { code: "GOV_WGI_PV_SC", transform: "identity" },
+    },
+    health: { lifeExpectancy: { code: "SP.DYN.LE00.IN", linear: [50, 85] }, uhc: { code: "SH.UHC.SRVS.CV.XD" } },
+    education: { enrollment: { code: "SE.SEC.ENRR", cap: 100 }, hci: { code: "HD.HCI.OVRL", scale: 100 } },
+    crime: { code: "VC.IHR.PSRC.P5", linear: [0, 30] },
+    environment: {
+      pm25: { code: "EN.ATM.PM25.MC.M3", linear: [75, 5] },
+      forest: { code: "AG.LND.FRST.ZS", linear: [0, 60] },
+      co2: { code: "EN.GHG.CO2.PC.CE.AR5", linear: [20, 0] },
+    },
+    groups: {
+      agriculture: "SL.AGR.EMPL.ZS",
+      rural: "SP.RUR.TOTL.ZS",
+      employers: "SL.EMP.MPYR.ZS",
+      armedForces: "MS.MIL.TOTL.TF.ZS",
+      youthBands: ["SP.POP.2024.MA.5Y", "SP.POP.2024.FE.5Y", "SP.POP.2529.MA.5Y", "SP.POP.2529.FE.5Y"],
+      adultTotal: "SP.POP.1564.TO.ZS",
+    },
+  },
+  rationale:
+    "health = mean(LE scaled 50→85 yrs, UHC index); education = mean(secondary enrollment capped at 100, HCI×100) or enrollment alone when HCI is missing; " +
+    "crime = homicides scaled 0→30 per 100k; environment = mean(PM2.5 75→5 µg, forest 0→60 %, CO2 20→0 t per person). " +
+    "Groups: farmers ∝ agriculture share of employment, business ∝ employers share, military ∝ armed forces share, youth ∝ ages 20–29 among 15–64 " +
+    "(WPP bands via WDI, 18–19 not separable), urban = remainder; shares normalised to 1.",
+  basedOn: ["design.mapping"],
+  calibration: "Starting stats of the 10 MVP countries spread across the 0–100 range; check by eye before launch.",
+};
+
+/** MVP country list (ISO3). Five regions, mixed income levels and political systems. The owner may change it. */
+export const MVP_COUNTRIES: Param<string[]> = {
+  value: ["THA", "VNM", "IDN", "IND", "NGA", "KEN", "BRA", "MEX", "POL", "DEU"],
+  rationale: "Proposed by the Lead for regional spread; not yet confirmed by the owner.",
+  basedOn: ["design.mapping"],
+  calibration: "Every country passes the data-completeness check in build-countries.",
+};
