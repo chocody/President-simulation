@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2023",
+      "value": 13.3827173243912,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2022",
+      "value": 14.946073685839,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2021",
+      "value": 13.6869644159129,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2020",
+      "value": 13.6658296866126,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2019",
+      "value": 13.813142449647,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2018",
+      "value": 13.3316911366538,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2017",
+      "value": 13.6049599824881,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2016",
+      "value": 13.4895823334815,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2015",
+      "value": 14.1057649860703,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "BR",
+        "value": "Brazil"
+      },
+      "countryiso3code": "BRA",
+      "date": "2014",
+      "value": 13.1579344238856,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ]
+]

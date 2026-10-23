@@ -1,0 +1,76 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 4,
+    "sourceid": "63",
+    "lastupdated": "2020-09-21"
+  },
+  [
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "MX",
+        "value": "Mexico"
+      },
+      "countryiso3code": "MEX",
+      "date": "2020",
+      "value": 0.612949848175049,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "MX",
+        "value": "Mexico"
+      },
+      "countryiso3code": "MEX",
+      "date": "2018",
+      "value": 0.611657083034515,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "MX",
+        "value": "Mexico"
+      },
+      "countryiso3code": "MEX",
+      "date": "2017",
+      "value": 0.607,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "MX",
+        "value": "Mexico"
+      },
+      "countryiso3code": "MEX",
+      "date": "2010",
+      "value": 0.589118778705597,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

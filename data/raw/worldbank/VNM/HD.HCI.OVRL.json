@@ -1,0 +1,76 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 4,
+    "sourceid": "63",
+    "lastupdated": "2020-09-21"
+  },
+  [
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Vietnam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2020",
+      "value": 0.689964532852173,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Vietnam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2018",
+      "value": 0.687239348888397,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Vietnam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2017",
+      "value": 0.666,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Vietnam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2010",
+      "value": 0.656642436981201,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

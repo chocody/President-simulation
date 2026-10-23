@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2024",
+      "value": 4.26605675468195,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2023",
+      "value": 3.89354026267807,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2022",
+      "value": 3.45101965872917,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2021",
+      "value": 3.39788716841419,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2020",
+      "value": 3.5515331687432,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2019",
+      "value": 3.46316479458409,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2018",
+      "value": 2.93126723532271,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2017",
+      "value": 2.40871172027244,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2016",
+      "value": 2.38090235568537,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EN.GHG.CO2.PC.CE.AR5",
+        "value": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2015",
+      "value": 2.16344818077591,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

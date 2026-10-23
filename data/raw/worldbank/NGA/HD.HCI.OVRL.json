@@ -1,0 +1,60 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 3,
+    "sourceid": "63",
+    "lastupdated": "2020-09-21"
+  },
+  [
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "NG",
+        "value": "Nigeria"
+      },
+      "countryiso3code": "NGA",
+      "date": "2020",
+      "value": 0.360609829425812,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "NG",
+        "value": "Nigeria"
+      },
+      "countryiso3code": "NGA",
+      "date": "2018",
+      "value": 0.354753166437149,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "NG",
+        "value": "Nigeria"
+      },
+      "countryiso3code": "NGA",
+      "date": "2017",
+      "value": 0.342,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

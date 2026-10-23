@@ -1,0 +1,60 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 3,
+    "sourceid": "63",
+    "lastupdated": "2020-09-21"
+  },
+  [
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "KE",
+        "value": "Kenya"
+      },
+      "countryiso3code": "KEN",
+      "date": "2020",
+      "value": 0.546752512454987,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "KE",
+        "value": "Kenya"
+      },
+      "countryiso3code": "KEN",
+      "date": "2018",
+      "value": 0.542186081409454,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "HD.HCI.OVRL",
+        "value": "Human Capital Index (HCI) (scale 0-1)"
+      },
+      "country": {
+        "id": "KE",
+        "value": "Kenya"
+      },
+      "countryiso3code": "KEN",
+      "date": "2017",
+      "value": 0.518,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

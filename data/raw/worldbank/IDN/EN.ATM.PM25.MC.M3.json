@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2023",
+      "value": 20.8444642120249,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2022",
+      "value": 19.7659265420197,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2021",
+      "value": 19.9850538348218,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2020",
+      "value": 18.8647326240401,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2019",
+      "value": 23.9728901300149,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2018",
+      "value": 20.3645339845943,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2017",
+      "value": 17.8027910767602,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2016",
+      "value": 20.9556285202781,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2015",
+      "value": 25.6063125890807,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2014",
+      "value": 23.9061448888613,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ]
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": "50",
+    "total": 1
+  },
+  [
+    {
+      "id": "NGA",
+      "iso2Code": "NG",
+      "name": "Nigeria",
+      "region": {
+        "id": "SSF",
+        "iso2code": "ZG",
+        "value": "Sub-Saharan Africa "
+      },
+      "adminregion": {
+        "id": "SSA",
+        "iso2code": "ZF",
+        "value": "Sub-Saharan Africa (excluding high income)"
+      },
+      "incomeLevel": {
+        "id": "LMC",
+        "iso2code": "XN",
+        "value": "Lower middle income"
+      },
+      "lendingType": {
+        "id": "IDB",
+        "iso2code": "XH",
+        "value": "Blend"
+      },
+      "capitalCity": "Abuja",
+      "longitude": "7.48906",
+      "latitude": "9.05804"
+    }
+  ]
+]

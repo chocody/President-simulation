@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2023",
+      "value": 8.81223056430691,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2022",
+      "value": 9.64877683820048,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2021",
+      "value": 9.90412103549472,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2020",
+      "value": 9.06086572629572,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2019",
+      "value": 9.95772717043857,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2018",
+      "value": 12.2724978426028,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2017",
+      "value": 11.9003757852207,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2016",
+      "value": 11.7952164514446,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2015",
+      "value": 12.1341175742131,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2014",
+      "value": 13.4272572813693,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ]
+]

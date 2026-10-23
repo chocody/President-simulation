@@ -1,0 +1,1129 @@
+{
+  "mode": "network",
+  "minPassing": 6,
+  "passed": 0,
+  "skipped": 10,
+  "countries": [
+    {
+      "iso3": "THA",
+      "status": "skipped",
+      "reasons": [
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived.",
+        "required code VC.IHR.PSRC.P5 (crime) unavailable: latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 71619863
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 2.44247444990198
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": -0.133634356480206
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 0.781
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2024,
+          "value": 61.861415782411
+        },
+        "SI.POV.GINI": {
+          "year": 2024,
+          "value": 33.3
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 38.050055
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 48.2280197
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 55.8006398
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 76.564
+        },
+        "SE.SEC.ENRR": {
+          "year": 2025,
+          "value": 92.0872315506486
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 23.4870743016258
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 38.7275147291981
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 3.96005269352319
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 28.5567111694664
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 37.2006622863704
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 2.71533005546907
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 6.8377852529616
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 6.18968494677939
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 7.27615177961605
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 6.60396033668738
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 69.5683912436415
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.609310984611511
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 1.13037257701222
+        }
+      },
+      "rejected": {
+        "VC.IHR.PSRC.P5": "latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
+      },
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "VNM",
+      "status": "skipped",
+      "reasons": [
+        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: no non-null value in the response",
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived.",
+        "required code VC.IHR.PSRC.P5 (crime) unavailable: latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 101598527
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 8.01882998978245
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 3.30999314219739
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 1.523
+        },
+        "SI.POV.GINI": {
+          "year": 2022,
+          "value": 36.1
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 45.8980852
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 34.4787528
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 67.6596354
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 74.736
+        },
+        "SE.SEC.ENRR": {
+          "year": 2022,
+          "value": 93.4123434096522
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 24.7845479100313
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 47.115965657294
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 4.26605675468195
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 25.0433926775449
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 61.1700839648706
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 1.94966569921606
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 6.58548523063612
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 6.28465783564176
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 6.52391765979
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 6.22334150826495
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 67.6494468271179
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.689964532852173
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.94651623006067
+        }
+      },
+      "rejected": {
+        "GC.DOD.TOTL.GD.ZS": "no non-null value in the response",
+        "VC.IHR.PSRC.P5": "latest value is from 2011, 14 years before 2025; older than 8 years is rejected"
+      },
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "IDN",
+      "status": "skipped",
+      "reasons": [
+        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: latest value is from 2009, 16 years before 2025; older than 8 years is rejected",
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 285721236
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 5.10808904438025
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 1.91333443295079
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 3.237
+        },
+        "SI.POV.GINI": {
+          "year": 2025,
+          "value": 34.4
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 37.6764481
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 54.6705919
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 52.6601047
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 71.288
+        },
+        "SE.SEC.ENRR": {
+          "year": 2025,
+          "value": 97.1701841816
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2022,
+          "value": 0.303768746039586
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 20.8444642120249
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 50.6696830671111
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 2.86503978188758
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 27.2969124578361
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 40.6070936030016
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 3.38060840354322
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 7.86832287304002
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 7.55348558434668
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 7.85746398021887
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 7.56867718443372
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 68.2099803183862
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.540038466453552
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.492082315471498
+        }
+      },
+      "rejected": {
+        "GC.DOD.TOTL.GD.ZS": "latest value is from 2009, 16 years before 2025; older than 8 years is rejected"
+      },
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "IND",
+      "status": "skipped",
+      "reasons": [
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 1463865525
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 7.56666179284244
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 2.39884954182294
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 4.219
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2018,
+          "value": 46.5224986659322
+        },
+        "SI.POV.GINI": {
+          "year": 2023,
+          "value": 23
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 42.4113081
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 54.9286155
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 54.9562467
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 72.235
+        },
+        "SE.SEC.ENRR": {
+          "year": 2025,
+          "value": 79.594985086469
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2022,
+          "value": 2.81530423021647
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 54.0522242217331
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 24.436043441556
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 2.17365173535787
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 41.6251280877573
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 64.310844227604
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 3.31913685181399
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 9.01419529346668
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 8.71051078474726
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 8.7170504270072
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 8.41199454920308
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 68.4281617563294
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.493510901927948
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.576119558133425
+        }
+      },
+      "rejected": {},
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "NGA",
+      "status": "skipped",
+      "reasons": [
+        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: no non-null value in the response",
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 237527782
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 4.01336180700973
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 23.0101235833333
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 3.064
+        },
+        "SI.POV.GINI": {
+          "year": 2022,
+          "value": 33.9
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 26.5008184
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 45.5952622
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 35.142676
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 54.635
+        },
+        "SE.SEC.ENRR": {
+          "year": 2023,
+          "value": 46.8931503295898
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2023,
+          "value": 15.7466808233499
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 65.740618883028
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 18.9475279159393
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 0.566917637661195
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 33.5336954038865
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 36.2245819532128
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 19.6729489852455
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 9.66117630281712
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 9.53369084775383
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 7.72907800605813
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 7.64255096791825
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 56.4107403158649
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.360609829425812
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.22979914071197
+        }
+      },
+      "rejected": {
+        "GC.DOD.TOTL.GD.ZS": "no non-null value in the response"
+      },
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "KEN",
+      "status": "skipped",
+      "reasons": [
+        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: no non-null value in the response",
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 57532493
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 4.63261093844984
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 4.0693076061457
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 5.449
+        },
+        "SI.POV.GINI": {
+          "year": 2022,
+          "value": 38.5
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 30.7933713
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 51.5886595
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 46.0022749
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 63.834
+        },
+        "SE.SEC.ENRR": {
+          "year": 2023,
+          "value": 84.3083880306996
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2022,
+          "value": 4.87166844718499
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 20.252365609383
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 6.62673874122022
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 0.38344092060836
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 45.7884267176803
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 67.7878807128255
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 0.969277107608702
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 9.91801425318489
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 10.0235981648633
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 8.19842955913992
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 8.54255054091648
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 60.7212559059561
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.546752512454987
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.112848311603529
+        }
+      },
+      "rejected": {
+        "GC.DOD.TOTL.GD.ZS": "no non-null value in the response"
+      },
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "BRA",
+      "status": "skipped",
+      "reasons": [
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 212812405
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 2.2857464902475
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 5.01675279604836
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 5.97
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2024,
+          "value": 81.8554431191023
+        },
+        "SI.POV.GINI": {
+          "year": 2024,
+          "value": 50.3
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 40.356213
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 65.473464
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 58.8687136
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 76.023
+        },
+        "SE.SEC.ENRR": {
+          "year": 2024,
+          "value": 104.144660949707
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2023,
+          "value": 19.2752957673079
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 13.3827173243912
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 58.5468405650061
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 2.31826466114939
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 7.62782592703127
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 11.8227003512102
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 4.2088753640272
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 7.48966813457518
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 7.05264821442948
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 7.85626521467198
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 7.49286319386212
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 69.1330392605638
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.551497936248779
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.7619857203876
+        }
+      },
+      "rejected": {},
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "MEX",
+      "status": "skipped",
+      "reasons": [
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 131946900
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 0.561683456144578
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 3.80957950037393
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 2.673
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "year": 2024,
+          "value": 50.270950655733
+        },
+        "SI.POV.GINI": {
+          "year": 2024,
+          "value": 42.6
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 29.0321107
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 52.5456785
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 54.9513053
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 75.264
+        },
+        "SE.SEC.ENRR": {
+          "year": 2024,
+          "value": 103.093322753906
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2023,
+          "value": 24.8589948436701
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 16.6099613756465
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 34.1538414053859
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 3.63738680384754
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 11.4004255375265
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 19.9591069370277
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 5.53528661652543
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 8.7497921512271
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 8.09592913951329
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 8.26833319952137
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 7.84668866936673
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 67.3875047462275
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.612949848175049
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.643924900908266
+        }
+      },
+      "rejected": {},
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "POL",
+      "status": "skipped",
+      "reasons": [
+        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: latest value is from 1994, 31 years before 2025; older than 8 years is rejected",
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 36435861
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 3.5727250346774
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 3.81419531520146
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 2.976
+        },
+        "SI.POV.GINI": {
+          "year": 2023,
+          "value": 28.5
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 65.1570076
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 72.7470787
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 77.7646763
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 78.409756097561
+        },
+        "SE.SEC.ENRR": {
+          "year": 2024,
+          "value": 107.881309509277
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2023,
+          "value": 0.802314721828908
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 16.522574789688
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 31.0021890417225
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 7.55108565871718
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 6.22256646634498
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 39.9146669690629
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 3.91089145653783
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 4.86022441458404
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 4.35822651818036
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 5.60912210919337
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 5.05040884166426
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 64.7857886031795
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.753088593482971
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 1.03859136238184
+        }
+      },
+      "rejected": {
+        "GC.DOD.TOTL.GD.ZS": "latest value is from 1994, 31 years before 2025; older than 8 years is rejected"
+      },
+      "notes": [],
+      "composites": {}
+    },
+    {
+      "iso3": "DEU",
+      "status": "skipped",
+      "reasons": [
+        "required code GC.DOD.TOTL.GD.ZS (debt) unavailable: latest value is from 1990, 35 years before 2025; older than 8 years is rejected",
+        "required code SH.UHC.SRVS.CV.XD (health) unavailable: request failed: World Bank API error: The indicator was not found. It may have been deleted or archived."
+      ],
+      "refYear": 2025,
+      "codes": {
+        "SP.POP.TOTL": {
+          "year": 2025,
+          "value": 83491249
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "year": 2025,
+          "value": 0.239578342117881
+        },
+        "FP.CPI.TOTL.ZG": {
+          "year": 2025,
+          "value": 2.17178770949721
+        },
+        "SL.UEM.TOTL.ZS": {
+          "year": 2025,
+          "value": 3.711
+        },
+        "SI.POV.GINI": {
+          "year": 2022,
+          "value": 33.7
+        },
+        "GOV_WGI_CC_SC": {
+          "year": 2025,
+          "value": 81.8514313
+        },
+        "GOV_WGI_VA_SC": {
+          "year": 2025,
+          "value": 86.0285551
+        },
+        "GOV_WGI_PV_SC": {
+          "year": 2025,
+          "value": 69.2575511
+        },
+        "SP.DYN.LE00.IN": {
+          "year": 2024,
+          "value": 80.7926829268293
+        },
+        "SE.SEC.ENRR": {
+          "year": 2024,
+          "value": 100.243698120117
+        },
+        "VC.IHR.PSRC.P5": {
+          "year": 2023,
+          "value": 0.910722780231795
+        },
+        "EN.ATM.PM25.MC.M3": {
+          "year": 2023,
+          "value": 8.81223056430691
+        },
+        "AG.LND.FRST.ZS": {
+          "year": 2024,
+          "value": 32.8437741464671
+        },
+        "EN.GHG.CO2.PC.CE.AR5": {
+          "year": 2024,
+          "value": 6.94395663386317
+        },
+        "SL.AGR.EMPL.ZS": {
+          "year": 2025,
+          "value": 1.07104516806735
+        },
+        "SP.RUR.TOTL.ZS": {
+          "year": 2025,
+          "value": 17.86177794638
+        },
+        "SL.EMP.MPYR.ZS": {
+          "year": 2025,
+          "value": 3.80498457625901
+        },
+        "SP.POP.2024.MA.5Y": {
+          "year": 2025,
+          "value": 5.13034360211105
+        },
+        "SP.POP.2024.FE.5Y": {
+          "year": 2025,
+          "value": 4.68306880819518
+        },
+        "SP.POP.2529.MA.5Y": {
+          "year": 2025,
+          "value": 5.92182925732323
+        },
+        "SP.POP.2529.FE.5Y": {
+          "year": 2025,
+          "value": 5.25230331067065
+        },
+        "SP.POP.1564.TO.ZS": {
+          "year": 2025,
+          "value": 62.4109003911736
+        },
+        "HD.HCI.OVRL": {
+          "year": 2020,
+          "value": 0.751162469387054
+        },
+        "MS.MIL.TOTL.TF.ZS": {
+          "year": 2020,
+          "value": 0.421924351315519
+        }
+      },
+      "rejected": {
+        "GC.DOD.TOTL.GD.ZS": "latest value is from 1990, 35 years before 2025; older than 8 years is rejected"
+      },
+      "notes": [],
+      "composites": {}
+    }
+  ]
+}

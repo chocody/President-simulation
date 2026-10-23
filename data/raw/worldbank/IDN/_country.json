@@ -1,0 +1,38 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": "50",
+    "total": 1
+  },
+  [
+    {
+      "id": "IDN",
+      "iso2Code": "ID",
+      "name": "Indonesia",
+      "region": {
+        "id": "EAS",
+        "iso2code": "Z4",
+        "value": "East Asia & Pacific"
+      },
+      "adminregion": {
+        "id": "EAP",
+        "iso2code": "4E",
+        "value": "East Asia & Pacific (excluding high income)"
+      },
+      "incomeLevel": {
+        "id": "UMC",
+        "iso2code": "XT",
+        "value": "Upper middle income"
+      },
+      "lendingType": {
+        "id": "IBD",
+        "iso2code": "XF",
+        "value": "IBRD"
+      },
+      "capitalCity": "Jakarta",
+      "longitude": "106.83",
+      "latitude": "-6.19752"
+    }
+  ]
+]

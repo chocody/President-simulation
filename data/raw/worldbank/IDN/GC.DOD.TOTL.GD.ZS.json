@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2009",
+      "value": 29.997306381567,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2008",
+      "value": 34.2250282105616,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2003",
+      "value": 29.7173962466428,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2002",
+      "value": 32.2241265309989,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "1999",
+      "value": 45.2079671076106,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "1998",
+      "value": 55.2040876648634,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "1997",
+      "value": 72.4853185253111,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "1996",
+      "value": 23.92314220907,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "1995",
+      "value": 30.8043248823304,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GC.DOD.TOTL.GD.ZS",
+        "value": "Central government debt, total (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "1994",
+      "value": 36.5705901605804,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

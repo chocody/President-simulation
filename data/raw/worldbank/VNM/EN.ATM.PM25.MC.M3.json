@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2023",
+      "value": 24.7845479100313,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2022",
+      "value": 25.5235044035632,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2021",
+      "value": 25.2349538086608,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2020",
+      "value": 25.2817623512854,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2019",
+      "value": 27.225760121213,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2018",
+      "value": 26.284246279735,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2017",
+      "value": 27.3673512418731,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2016",
+      "value": 27.4655146787653,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2015",
+      "value": 26.4370995849985,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "EN.ATM.PM25.MC.M3",
+        "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2014",
+      "value": 28.8284052890005,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ]
+]
