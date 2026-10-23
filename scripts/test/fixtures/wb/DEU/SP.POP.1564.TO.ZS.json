@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2023",
+      "value": 66.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2022",
+      "value": 66.78,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2021",
+      "value": 66.76,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2020",
+      "value": 66.74,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2019",
+      "value": 66.72,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2018",
+      "value": 66.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2017",
+      "value": 66.68,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2016",
+      "value": 66.66,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2015",
+      "value": 66.64,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.1564.TO.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2014",
+      "value": 66.62,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

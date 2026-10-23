@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 6.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 6.45,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 6.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 6.35,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 6.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 6.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 6.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 6.15,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 6.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "VC.IHR.PSRC.P5",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "India (TEST FIXTURE)"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 6.05,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

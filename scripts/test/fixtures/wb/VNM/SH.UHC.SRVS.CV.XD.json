@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2023",
+      "value": 61,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2022",
+      "value": 60.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2021",
+      "value": 60.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2020",
+      "value": 60.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2019",
+      "value": 60.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2018",
+      "value": 60.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2017",
+      "value": 60.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2016",
+      "value": 60.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2015",
+      "value": 60.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SH.UHC.SRVS.CV.XD",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Vietnam (TEST FIXTURE)"
+      },
+      "countryiso3code": "VNM",
+      "date": "2014",
+      "value": 60.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

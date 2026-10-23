@@ -1,0 +1,22 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 1,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "id": "THA",
+      "iso2Code": "XX",
+      "name": "Thailand (TEST FIXTURE)",
+      "region": {
+        "id": "TST",
+        "iso2code": "XX",
+        "value": "East Asia & Pacific (TEST FIXTURE)"
+      }
+    }
+  ]
+]

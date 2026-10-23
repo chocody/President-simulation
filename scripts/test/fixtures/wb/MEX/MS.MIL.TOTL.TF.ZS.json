@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2023",
+      "value": 1.35,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2022",
+      "value": 1.345,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2021",
+      "value": 1.34,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2020",
+      "value": 1.335,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2019",
+      "value": 1.33,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2018",
+      "value": 1.325,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2017",
+      "value": 1.32,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2016",
+      "value": 1.315,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2015",
+      "value": 1.31,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2014",
+      "value": 1.305,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

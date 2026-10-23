@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2023",
+      "value": 8000000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2022",
+      "value": 7900000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2021",
+      "value": 7800000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2020",
+      "value": 7700000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2019",
+      "value": 7600000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2018",
+      "value": 7500000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2017",
+      "value": 7400000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2016",
+      "value": 7300000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2015",
+      "value": 7200000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Mexico (TEST FIXTURE)"
+      },
+      "countryiso3code": "MEX",
+      "date": "2014",
+      "value": 7100000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

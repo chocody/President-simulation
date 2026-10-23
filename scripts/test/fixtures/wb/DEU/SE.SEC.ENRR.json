@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2023",
+      "value": 93.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2022",
+      "value": 93.35,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2021",
+      "value": 93.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2020",
+      "value": 93.05,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2019",
+      "value": 92.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2018",
+      "value": 92.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2017",
+      "value": 92.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2016",
+      "value": 92.45,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2015",
+      "value": 92.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Germany (TEST FIXTURE)"
+      },
+      "countryiso3code": "DEU",
+      "date": "2014",
+      "value": 92.15,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2023",
+      "value": 3000000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2022",
+      "value": 2900000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2021",
+      "value": 2800000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2020",
+      "value": 2700000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2019",
+      "value": 2600000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2018",
+      "value": 2500000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2017",
+      "value": 2400000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2016",
+      "value": 2300000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2015",
+      "value": 2200000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Indonesia (TEST FIXTURE)"
+      },
+      "countryiso3code": "IDN",
+      "date": "2014",
+      "value": 2100000,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

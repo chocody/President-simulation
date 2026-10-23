@@ -1,0 +1,22 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 1,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "id": "DEU",
+      "iso2Code": "XX",
+      "name": "Germany (TEST FIXTURE)",
+      "region": {
+        "id": "TST",
+        "iso2code": "XX",
+        "value": "Europe & Central Asia (TEST FIXTURE)"
+      }
+    }
+  ]
+]

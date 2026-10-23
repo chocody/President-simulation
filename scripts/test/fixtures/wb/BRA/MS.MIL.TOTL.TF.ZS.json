@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2023",
+      "value": 1.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2022",
+      "value": 1.295,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2021",
+      "value": 1.29,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2020",
+      "value": 1.285,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2019",
+      "value": 1.28,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2018",
+      "value": 1.275,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2017",
+      "value": 1.27,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2016",
+      "value": 1.265,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2015",
+      "value": 1.26,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2014",
+      "value": 1.255,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

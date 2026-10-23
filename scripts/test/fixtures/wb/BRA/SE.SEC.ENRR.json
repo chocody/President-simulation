@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2023",
+      "value": 89,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2022",
+      "value": 88.85,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2021",
+      "value": 88.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2020",
+      "value": 88.55,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2019",
+      "value": 88.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2018",
+      "value": 88.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2017",
+      "value": 88.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2016",
+      "value": 87.95,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2015",
+      "value": 87.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SE.SEC.ENRR",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2014",
+      "value": 87.65,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2023",
+      "value": 1.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2022",
+      "value": 1.395,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2021",
+      "value": 1.39,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2020",
+      "value": 1.385,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2019",
+      "value": 1.38,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2018",
+      "value": 1.375,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2017",
+      "value": 1.37,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2016",
+      "value": 1.365,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2015",
+      "value": 1.36,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2014",
+      "value": 1.355,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

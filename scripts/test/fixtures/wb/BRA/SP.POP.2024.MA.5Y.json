@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2023",
+      "value": 8.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2022",
+      "value": 8.295,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2021",
+      "value": 8.29,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2020",
+      "value": 8.285,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2019",
+      "value": 8.28,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2018",
+      "value": 8.275,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2017",
+      "value": 8.27,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2016",
+      "value": 8.265,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2015",
+      "value": 8.26,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.2024.MA.5Y",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2014",
+      "value": 8.255,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

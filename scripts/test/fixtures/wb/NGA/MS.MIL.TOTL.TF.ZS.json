@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2023",
+      "value": 1.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2022",
+      "value": 1.195,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2021",
+      "value": 1.19,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2020",
+      "value": 1.185,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2019",
+      "value": 1.18,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2018",
+      "value": 1.175,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2017",
+      "value": 1.17,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2016",
+      "value": 1.165,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2015",
+      "value": 1.16,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "MS.MIL.TOTL.TF.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2014",
+      "value": 1.155,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2023",
+      "value": 74,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2022",
+      "value": 73.95,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2021",
+      "value": 73.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2020",
+      "value": 73.85,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2019",
+      "value": 73.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2018",
+      "value": 73.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2017",
+      "value": 73.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2016",
+      "value": 73.65,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2015",
+      "value": 73.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SP.DYN.LE00.IN",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2014",
+      "value": 73.55,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]
