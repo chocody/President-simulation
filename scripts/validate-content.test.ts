@@ -40,9 +40,9 @@ describe("research sources", () => {
 });
 
 describe("evidence", () => {
-  it("has about 20 items", () => {
+  it("has a library of a sensible size", () => {
     expect(evidence.length).toBeGreaterThanOrEqual(15);
-    expect(evidence.length).toBeLessThanOrEqual(30);
+    expect(evidence.length).toBeLessThanOrEqual(50);
   });
   it("ids are unique", () => {
     expect(dup(evidence.map((e) => e.id))).toEqual([]);
@@ -57,9 +57,9 @@ describe("evidence", () => {
 });
 
 describe("cards", () => {
-  it("there are 12 card files, each parsing as Card", () => {
-    expect(cardFiles.length).toBe(12);
-    expect(parsedCards.length).toBe(12);
+  it("there are 18 card files, each parsing as Card", () => {
+    expect(cardFiles.length).toBe(18);
+    expect(parsedCards.length).toBe(18);
   });
   it("card ids are unique and match the file name", () => {
     expect(dup(parsedCards.map((c) => c.id))).toEqual([]);
@@ -74,6 +74,23 @@ describe("cards", () => {
     expect(n("politics")).toBeGreaterThanOrEqual(1);
     expect(n("foreign")).toBeGreaterThanOrEqual(1);
     expect(n("opportunity")).toBeGreaterThanOrEqual(1);
+  });
+  it("good-news cards: onArrival is 1-3 effects and its index-scale total beats ifIgnored", () => {
+    // Index scale = group satisfaction and 0-100 stats where higher is better. Stats with their own scale
+    // (gdpGrowth, inflation, unemployment, budget, debt, inequality) and lower-is-better indices are left out.
+    const own = new Set(["gdpGrowth", "inflation", "unemployment", "budget", "debt", "inequality", "crime", "corruption"]);
+    const indexSum = (es: { target: string; delta: number }[]) =>
+      es.filter((e) => !own.has(e.target)).reduce((a, e) => a + e.delta, 0);
+    const good = parsedCards.filter((c) => c.onArrival !== undefined);
+    expect(good.length).toBeGreaterThanOrEqual(6);
+    for (const c of good) {
+      const arrival = c.onArrival!;
+      expect(arrival.length, c.id).toBeGreaterThanOrEqual(1);
+      expect(arrival.length, c.id).toBeLessThanOrEqual(3);
+      expect(indexSum(arrival), c.id).toBeGreaterThan(indexSum(c.ifIgnored));
+      expect(c.ifIgnored.length, c.id).toBeLessThanOrEqual(2);
+      for (const e of c.ifIgnored) expect(e.delta, `${c.id} ifIgnored ${e.target}`).toBeLessThan(0);
+    }
   });
   it("choice ids are exactly a, b, c", () => {
     for (const c of parsedCards) expect(c.choices.map((x) => x.id)).toEqual(["a", "b", "c"]);

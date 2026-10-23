@@ -290,3 +290,158 @@
   summaryTh: "ข้อมูลธุรกรรมนำเข้าพบว่า การเปลี่ยนแปลงอัตราแลกเปลี่ยนถูกส่งต่อไปยังราคานำเข้ามากน้อยต่างกันตามสกุลเงินที่ใช้ตั้งราคา สินค้าที่ตั้งราคาเป็นสกุลอื่นนอกเหนือจากดอลลาร์ส่งผ่านเกือบเต็มจำนวน (ผลนี้เป็นข้อมูลของประเทศผู้นำเข้ารายใหญ่ ไม่ใช่ประเทศที่ค่าเงินล่ม)"
   summaryEn: "Import transaction data show how far exchange-rate moves reach import prices depends on the currency of pricing: goods priced in non-dollar currencies pass through almost fully (data are from a large importer, not a currency-crisis economy)."
   verifiedBy: null
+# --- D3 (good-news cards). Sources found via web search 2026-10-23, pages not opened.
+- id: ev.dividend.001
+  sourceId: paper.jones-marinescu-2022
+  url: "https://www.nber.org/papers/w24312"
+  policyTags: [resource-dividend, universal-cash-transfer]
+  indicator: unemployment
+  direction: none
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "การจ่ายเงินปันผลถาวรให้ประชาชนทุกคนจากรายได้ทรัพยากรไม่ได้ทำให้การจ้างงานโดยรวมลดลง แต่คนทำงานนอกเวลาเพิ่มขึ้น ผู้วิจัยชี้ว่าเงินที่ประชาชนใช้จ่ายช่วยหนุนเศรษฐกิจท้องถิ่น"
+  summaryEn: "A permanent dividend paid to every resident from resource income did not reduce overall employment, but part-time work rose; the authors point to local spending supporting the economy."
+  verifiedBy: null
+- id: ev.windfall.001
+  sourceId: review.windfall-managing
+  url: "https://research.monash.edu/en/publications/natural-resource-wealth-the-challenge-of-managing-a-windfall/"
+  policyTags: [sovereign-wealth-fund, windfall-saving]
+  indicator: budget
+  direction: up
+  strength: review
+  regionTags: []
+  summaryTh: "บทความทบทวนงานวิจัยชี้ว่าหลายประเทศเสียหายจากรายได้ทรัพยากรที่ผันผวน และมักออมไม่พอหรือไม่ได้ลงทุนที่ให้ผลตอบแทนสูง จึงเห็นประโยชน์ของการวางกติกาออมและบริหารรายได้ก้อนใหญ่"
+  summaryEn: "A review argues that countries were hurt by volatile resource revenues and often saved too little or failed to make high-return investments, which supports rules for saving and managing a windfall."
+  verifiedBy: null
+- id: ev.windfall.002
+  sourceId: paper.ferdi-windfall
+  url: "https://ferdi.fr/dl/df-pJdgE1fpWAXhzjgJXxKmFNJ8/ferdi-b130-optimal-fiscal-management-of-resource-windfalls.pdf"
+  policyTags: [windfall-public-investment, infrastructure-investment]
+  indicator: gdpGrowth
+  direction: up
+  strength: review
+  regionTags: []
+  summaryTh: "เอกสารวิจัยชี้ว่ากติกาที่ให้เก็บรายได้ก้อนใหญ่ทั้งหมดไว้ในสินทรัพย์ปลอดภัยมีต้นทุนค่าเสียโอกาสสูง เพราะการลงทุนโครงสร้างพื้นฐานของรัฐอาจให้ผลตอบแทนสูง"
+  summaryEn: "A working paper notes that putting a whole windfall into safe assets can carry a high opportunity cost, since public infrastructure investment can have high returns."
+  verifiedBy: null
+- id: ev.dutch.001
+  sourceId: paper.allcott-keniston-2018
+  url: "https://www.nber.org/papers/w20508.pdf"
+  policyTags: [resource-boom, dutch-disease]
+  indicator: gdpGrowth
+  direction: mixed
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "ช่วงที่ทรัพยากรบูม ค่าจ้างในพื้นที่สูงขึ้น และการผลิตบางสาขาที่ขายข้ามพื้นที่หดตัว แต่ภาพรวมอุตสาหกรรมการผลิตกลับขยายตัว ผลจึงไม่ชัดเจนเป็นทางเดียว"
+  summaryEn: "During local resource booms wages rose and some tradable manufacturing subsectors shrank, yet overall manufacturing grew, so the effect on the wider economy is mixed."
+  verifiedBy: null
+- id: ev.export.001
+  sourceId: paper.atkin-2017
+  url: "https://www.nber.org/papers/w20690.pdf"
+  policyTags: [export-support, market-access]
+  indicator: "group:business"
+  direction: up
+  strength: rct
+  regionTags: ["Middle East & North Africa"]
+  summaryTh: "การทดลองสุ่มให้ผู้ผลิตกลุ่มหนึ่งเข้าถึงตลาดต่างประเทศพบว่ากำไรของกลุ่มที่ได้เข้าถึงสูงกว่ากลุ่มเปรียบเทียบราวหนึ่งในหกถึงหนึ่งในสี่ และคุณภาพสินค้าดีขึ้นมาก ซึ่งผู้วิจัยอธิบายว่าเป็นการเรียนรู้จากการส่งออก"
+  summaryEn: "A randomized trial that gave one group of producers access to foreign buyers raised their profits by roughly 16-26% (figure differs by draft) and improved product quality, which the authors read as learning by exporting."
+  verifiedBy: null
+- id: ev.taa.001
+  sourceId: paper.hyman-kovak-leive-2024
+  url: "https://www.nber.org/system/files/working_papers/w32464/w32464.pdf"
+  policyTags: [wage-insurance, worker-adjustment]
+  indicator: unemployment
+  direction: down
+  strength: quasi
+  regionTags: [North America]
+  summaryTh: "โครงการประกันค่าจ้างสำหรับแรงงานที่เสียงานเพราะการค้า ช่วยให้คนกลับมามีงานเร็วขึ้นและมีรายได้สะสมระยะยาวสูงขึ้น โดยช่วงที่ไม่มีงานทำสั้นลง"
+  summaryEn: "Wage insurance for workers displaced by trade raised short-run employment and long-run cumulative earnings, mainly by shortening spells without work."
+  verifiedBy: null
+- id: ev.tourism.001
+  sourceId: review.nunkoo-2020
+  url: "https://pure.uj.ac.za/en/publications/tourism-and-economic-growth-a-meta-regression-analysis/"
+  policyTags: [tourism-promotion, tourism-led-growth]
+  indicator: gdpGrowth
+  direction: up
+  strength: review
+  regionTags: []
+  summaryTh: "การวิเคราะห์รวมผลงานวิจัยจำนวนมากส่วนใหญ่สนับสนุนว่าการท่องเที่ยวช่วยหนุนการเติบโต แต่ผลต่างกันตามข้อมูลและวิธีวิเคราะห์ และพบแนวโน้มที่งานที่ให้ผลบวกถูกตีพิมพ์มากกว่า"
+  summaryEn: "A meta-analysis of many studies mostly supports tourism-led growth, but results vary with data and method and publication bias was detected."
+  verifiedBy: null
+- id: ev.tourism.002
+  sourceId: paper.faber-gaubert-2019
+  url: "https://www.nber.org/papers/w22300"
+  policyTags: [tourism-local-linkages, tourism]
+  indicator: gdpGrowth
+  direction: up
+  strength: quasi
+  regionTags: ["Latin America & Caribbean"]
+  summaryTh: "การท่องเที่ยวชายฝั่งสร้างผลดีต่อเศรษฐกิจท้องถิ่นอย่างมาก รวมถึงหนุนอุตสาหกรรมการผลิตในพื้นที่ แต่ผลดีส่วนใหญ่ถูกหักล้างในระดับประเทศ กำไรระดับชาติมาจากการเชื่อมตลาดเป็นหลัก"
+  summaryEn: "Coastal tourism brought large local gains including spillovers to local manufacturing, but these were largely offset nationally; national gains came mainly from market integration."
+  verifiedBy: null
+- id: ev.roads.001
+  sourceId: paper.asher-novosad-2020
+  url: "https://www.aeaweb.org/doi/10.1257/aer.20180268"
+  policyTags: [rural-roads, infrastructure-investment]
+  indicator: "group:farmers"
+  direction: none
+  strength: quasi
+  regionTags: [South Asia]
+  summaryTh: "สี่ปีหลังมีถนนสายรองใหม่ ผลหลักคือแรงงานย้ายออกจากภาคเกษตร ส่วนผลผลิต รายได้ และทรัพย์สินของภาคเกษตรไม่เปลี่ยนมากนัก และการจ้างงานของธุรกิจในหมู่บ้านเพิ่มเพียงเล็กน้อย"
+  summaryEn: "Four years after a new feeder road the main effect was workers leaving agriculture, with no major change in farm outcomes, income or assets and only a small rise in village firm jobs."
+  verifiedBy: null
+- id: ev.electrification.001
+  sourceId: paper.dinkelman-2011
+  url: "https://ideas.repec.org/a/aea/aecrev/v101y2011i7p3078-3108.html"
+  policyTags: [rural-electrification, infrastructure-investment]
+  indicator: unemployment
+  direction: down
+  strength: quasi
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "การขยายไฟฟ้าสู่ชุมชนชนบททำให้การจ้างงานของผู้หญิงเพิ่มขึ้นอย่างมีนัยสำคัญภายในห้าปี โดยผู้ชายก็ทำงานเพิ่มแต่ผลน้อยกว่า"
+  summaryEn: "Extending electricity to rural communities significantly raised female employment within five years; men also worked more, but by less."
+  verifiedBy: null
+- id: ev.rnd.001
+  sourceId: paper.bloom-griffith-vanreenen-2002
+  url: "https://researchonline.lse.ac.uk/id/eprint/1353"
+  policyTags: [rnd-tax-credit, innovation-incentive]
+  indicator: gdpGrowth
+  direction: up
+  strength: observational
+  regionTags: ["Europe & Central Asia", North America]
+  summaryTh: "ข้อมูลหลายประเทศพบว่าเมื่อต้นทุนการวิจัยและพัฒนาลดลงด้วยสิทธิประโยชน์ภาษี การลงทุนวิจัยเพิ่มขึ้นเล็กน้อยในระยะสั้นและมากขึ้นในระยะยาว (ผลที่วัดคือการวิจัย ไม่ใช่การเติบโตโดยตรง)"
+  summaryEn: "Data from several countries show tax cuts that lower the cost of R&D raise R&D a little in the short run and much more in the long run (the outcome measured is R&D, not growth directly)."
+  verifiedBy: null
+- id: ev.rnd.002
+  sourceId: review.bloom-toolkit-2019
+  url: "https://www.aeaweb.org/doi/10.1257/jep.33.3.163"
+  policyTags: [stem-training, human-capital-supply]
+  indicator: gdpGrowth
+  direction: up
+  strength: review
+  regionTags: ["Europe & Central Asia", North America]
+  summaryTh: "บทความทบทวนสรุปว่าระยะสั้นสิทธิประโยชน์ภาษีวิจัยและเงินทุนวิจัยจากรัฐได้ผลมากที่สุด ส่วนระยะยาวการเพิ่มกำลังคนทักษะสูง เช่น ที่เรียนด้านวิทยาศาสตร์และเทคโนโลยี น่าจะได้ผลกว่า"
+  summaryEn: "A review concludes that R&D tax credits and direct funding work best in the short run, while raising the supply of skilled people (for example STEM places) is likely more effective over the longer run."
+  verifiedBy: null
+- id: ev.competition.001
+  sourceId: paper.aghion-2005
+  url: "https://img.nber.org/papers/w9269"
+  policyTags: [competition-policy, innovation]
+  indicator: gdpGrowth
+  direction: mixed
+  strength: quasi
+  regionTags: ["Europe & Central Asia"]
+  summaryTh: "ความสัมพันธ์ระหว่างการแข่งขันกับนวัตกรรมเป็นรูปคว่ำตัวยู คือการแข่งขันระดับปานกลางกระตุ้นให้บริษัทที่สูสีกันพัฒนา แต่การแข่งขันที่รุนแรงมากลดแรงจูงใจของบริษัทที่ตามหลัง"
+  summaryEn: "The link between competition and innovation is hump-shaped: moderate competition pushes evenly matched firms to innovate, while very strong competition weakens the incentive of laggards."
+  verifiedBy: null
+- id: ev.storage.001
+  sourceId: paper.burke-2019
+  url: "https://www.nber.org/papers/w24476"
+  policyTags: [harvest-storage-credit, agricultural-credit]
+  indicator: "group:farmers"
+  direction: up
+  strength: rct
+  regionTags: [Sub-Saharan Africa]
+  summaryTh: "การทดลองสุ่มที่ให้สินเชื่อทันเวลาแก่เกษตรกรรายย่อยช่วยให้เก็บเมล็ดพืชรอขายตอนราคาดีขึ้น ได้ผลตอบแทนราวร้อยละ 29 และการเก็บสต็อกจำนวนมากช่วยให้ราคาช่วงหลังเก็บเกี่ยวสูงขึ้น"
+  summaryEn: "A randomized trial of timely credit let smallholders hold grain until prices rose, earning a return of about 29%, and large-scale storage lifted prices just after harvest."
+  verifiedBy: null

@@ -1,0 +1,46 @@
+id: economy.tech.firm-growth
+category: economy
+severity: minor
+titleTh: "บริษัทเทคโนโลยีในประเทศเติบโตอย่างรวดเร็ว"
+situationTh: "บริษัทซอฟต์แวร์สัญชาติเราเติบโตเร็วจนนักลงทุนต่างประเทศสนใจ บริษัทเปิดรับวิศวกรรุ่นใหม่จำนวนมากและจ่ายค่าจ้างสูงกว่าตลาด บัณฑิตจบใหม่เริ่มมีทางเลือกในประเทศ ทว่าบริษัทบ่นว่าขาดบุคลากรที่มีทักษะพอ และเสนอให้รัฐให้สิทธิประโยชน์ภาษี ขณะที่ธุรกิจเล็กกลัวถูกแย่งคนและถูกบริษัทใหญ่ครอบงำตลาด ผู้เชี่ยวชาญเตือนว่าหากรัฐไม่ทำอะไร บริษัทอาจย้ายฐานไปประเทศอื่น"
+conditions: []   # MVP: every card eligible.
+baseWeight: 1
+cooldownQ: 8
+# Windfall: a fast-growing firm creates skilled jobs and growth (index level 2 for youth).
+onArrival:
+  - { target: gdpGrowth, delta: 0.3, over_quarters: 6 }
+  - { target: "group:youth", delta: 5, over_quarters: 4 }
+  - { target: "group:business", delta: 2, over_quarters: 4 }
+# Wasting the chance: skilled people and the firm look abroad, small firms lose out. Both level 1.
+ifIgnored:
+  - { target: "group:youth", delta: -2, over_quarters: 4 }
+  - { target: "group:business", delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.bloom-griffith-vanreenen-2002, review.bloom-toolkit-2019, paper.aghion-2005]
+choices:
+  - id: a
+    approach: tax-incentive
+    titleTh: "ให้สิทธิประโยชน์ภาษีสำหรับการวิจัยและพัฒนา"
+    descTh: "ลดภาษีให้บริษัทที่ลงทุนวิจัยและพัฒนาเพื่อรักษาบริษัทไว้และกระตุ้นนวัตกรรม แต่รัฐเสียรายได้ภาษี และบริษัทใหญ่ได้ประโยชน์มากกว่าบริษัทเล็ก"
+    costHint: M
+    affectedGroups: [business, youth, urban]
+    evidenceIds: [ev.rnd.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: skills
+    titleTh: "เพิ่มที่เรียนสายวิทยาศาสตร์และเทคโนโลยีและหลักสูตรฝึกทักษะ"
+    descTh: "ขยายคณะวิศวกรรมและหลักสูตรสั้นให้ผลิตบุคลากรได้มากขึ้น แก้ปัญหาขาดแคลนคนระยะยาว แต่ต้องใช้งบสูงและเห็นผลหลายปี ส่วนบริษัทยังต้องแย่งคนกันในช่วงแรก"
+    costHint: L
+    affectedGroups: [youth, business, urban]
+    evidenceIds: [ev.rnd.002]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: competition
+    titleTh: "ออกกติกาแข่งขันเป็นธรรมเพื่อไม่ให้บริษัทใหญ่ครอบงำตลาด"
+    descTh: "ห้ามควบรวมที่ลดการแข่งขันและช่วยให้ธุรกิจเล็กเข้าถึงลูกค้า ทำให้ตลาดเปิดกว้างขึ้น แต่บริษัทชั้นนำอาจชะลอการลงทุนหรือย้ายฐาน และหน่วยงานกำกับต้องมีกำลังคนเพิ่ม"
+    costHint: S
+    affectedGroups: [business, youth, urban]
+    evidenceIds: [ev.competition.001]
+    judgment: null
+    reviewedBy: null

@@ -1,0 +1,46 @@
+id: society.harvest.bumper
+category: society
+severity: minor
+titleTh: "ผลผลิตทางการเกษตรออกมามากเป็นประวัติการณ์"
+situationTh: "สภาพอากาศเป็นใจทำให้ผลผลิตข้าวและธัญพืชปีนี้ออกมามากกว่าปกติมาก คลังสินค้าเต็มและพ่อค้าเริ่มกดราคารับซื้อเพราะของล้นตลาด เกษตรกรรายเล็กที่ต้องการเงินสดรีบขายทันทีหลังเก็บเกี่ยวในราคาต่ำ ผู้บริโภคในเมืองได้ประโยชน์จากอาหารราคาถูกลง แต่ผู้นำชุมชนเตือนว่าหากไม่มีที่เก็บ ผลผลิตส่วนหนึ่งจะเน่าเสีย กระทรวงเกษตรถูกกดดันให้ตัดสินใจก่อนฤดูฝนถัดไป"
+conditions: []   # MVP: every card eligible.
+baseWeight: 1
+cooldownQ: 8
+# Windfall: cheaper food for city households (index level 2), some gain for farmers, lower food prices.
+onArrival:
+  - { target: "group:urban", delta: 5, over_quarters: 4 }
+  - { target: "group:farmers", delta: 2, over_quarters: 4 }
+  - { target: inflation, delta: -0.5, over_quarters: 4 }
+# Wasting the chance: a price crash and spoilage leave farmers worse off and the countryside restless. Both level 1.
+ifIgnored:
+  - { target: "group:farmers", delta: -2, over_quarters: 4 }
+  - { target: stability, delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, paper.burke-2019, paper.egger-2022]
+choices:
+  - id: a
+    approach: state-purchase
+    titleTh: "รัฐรับซื้อผลผลิตส่วนเกินในราคาขั้นต่ำเข้าสต็อก"
+    descTh: "รัฐซื้อผลผลิตเข้าคลังเพื่อพยุงราคาและดึงของออกจากตลาด เกษตรกรขายได้ราคาดีขึ้นทันที แต่ใช้เงินมาก ต้องเสียค่าเก็บรักษา และผู้บริโภคในเมืองได้ประโยชน์จากอาหารถูกน้อยลง"
+    costHint: L
+    affectedGroups: [farmers, urban, business]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: storage-credit
+    titleTh: "ให้สินเชื่อและโกดังเก็บผลผลิตแก่เกษตรกรรายเล็ก"
+    descTh: "ปล่อยสินเชื่อต้นทุนต่ำและสนับสนุนโกดังชุมชน เกษตรกรเก็บผลผลิตรอขายตอนราคาดีขึ้นได้ ลดการเน่าเสีย แต่ต้องมีค่าดำเนินการและความเสี่ยงหนี้เสีย และเกษตรกรที่ไม่มีหลักประกันเข้าถึงยาก"
+    costHint: M
+    affectedGroups: [farmers, business, urban]
+    evidenceIds: [ev.storage.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: cash-support
+    titleTh: "จ่ายเงินช่วยเหลือครั้งเดียวให้เกษตรกรรายเล็ก"
+    descTh: "โอนเงินสดครั้งเดียวให้ครัวเรือนเกษตรรายเล็กชดเชยราคาตกและกระตุ้นการใช้จ่ายในหมู่บ้าน ทำได้เร็ว แต่ไม่แก้ปัญหาของล้นตลาด และผู้ที่ไม่ได้ขึ้นทะเบียนเกษตรกรอาจตกหล่น"
+    costHint: M
+    affectedGroups: [farmers, urban, youth]
+    evidenceIds: [ev.cash-transfer.001]
+    judgment: null
+    reviewedBy: null

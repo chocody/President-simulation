@@ -1,0 +1,46 @@
+id: economy.tourism.surge
+category: economy
+severity: minor
+titleTh: "นักท่องเที่ยวหลั่งไหลเข้าประเทศ"
+situationTh: "จำนวนนักท่องเที่ยวต่างชาติเพิ่มขึ้นอย่างก้าวกระโดดหลังมีกระแสในสื่อสังคมออนไลน์ โรงแรม ร้านอาหารและธุรกิจนำเที่ยวในเมืองท่องเที่ยวมีลูกค้าเต็มทุกวัน คนหนุ่มสาวหางานบริการได้ง่ายขึ้น แต่ค่าเช่าที่พักและราคาสินค้าในเมืองท่องเที่ยวเริ่มสูงขึ้น ชุมชนท้องถิ่นบ่นเรื่องน้ำใช้ ขยะ และการจราจรที่แออัด หน่วยงานดูแลทรัพยากรธรรมชาติเตือนว่าแหล่งท่องเที่ยวบางแห่งเริ่มทรุดโทรม"
+conditions: []   # MVP: every card eligible.
+baseWeight: 1
+cooldownQ: 8
+# Windfall: visitor spending lifts growth, business owners and young people find work (ev.tourism.001, ev.tourism.002).
+onArrival:
+  - { target: gdpGrowth, delta: 0.3, over_quarters: 6 }
+  - { target: "group:business", delta: 5, over_quarters: 4 }
+  - { target: "group:youth", delta: 2, over_quarters: 4 }
+# Wasting the chance: crowding wears down the sites and residents feel the cost. Both level 1.
+ifIgnored:
+  - { target: environment, delta: -2, over_quarters: 4 }
+  - { target: "group:urban", delta: -2, over_quarters: 4 }
+sourceIds: [design.level-scale, review.nunkoo-2020, paper.faber-gaubert-2019]
+choices:
+  - id: a
+    approach: market-led
+    titleTh: "ส่งเสริมการตลาดต่อเนื่องและปล่อยให้ธุรกิจขยายเอง"
+    descTh: "ใช้งบโฆษณาเพื่อดึงนักท่องเที่ยวเพิ่มและไม่ออกกฎใหม่ รายได้และการจ้างงานเพิ่มเร็วที่สุด แต่แหล่งท่องเที่ยวแออัดมากขึ้น ค่าครองชีพของคนท้องถิ่นสูงขึ้น และธรรมชาติเสื่อมโทรม"
+    costHint: S
+    affectedGroups: [business, youth, urban]
+    evidenceIds: [ev.tourism.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: local-linkage
+    titleTh: "เก็บค่าธรรมเนียมนักท่องเที่ยวและส่งเสริมการซื้อสินค้าจากผู้ผลิตท้องถิ่น"
+    descTh: "นำค่าธรรมเนียมไปช่วยชุมชนและกำหนดให้โรงแรมซื้อวัตถุดิบในท้องถิ่นมากขึ้น กระจายประโยชน์สู่ผู้ผลิตและเกษตรกร แต่ผู้ประกอบการโรงแรมเสียเปรียบเรื่องต้นทุนและนักท่องเที่ยวบางส่วนอาจไปที่อื่น"
+    costHint: S
+    affectedGroups: [business, farmers, urban]
+    evidenceIds: [ev.tourism.002]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: capacity-limit
+    titleTh: "จำกัดจำนวนผู้เข้าชมและลงทุนระบบน้ำ ขยะ และขนส่ง"
+    descTh: "กำหนดโควตาผู้เข้าชมแหล่งเปราะบางและสร้างระบบสาธารณูปโภครองรับ ปกป้องธรรมชาติและชีวิตคนท้องถิ่น แต่ต้องใช้งบสูง และรายได้จากนักท่องเที่ยวช่วงแรกจะโตช้าลง"
+    costHint: L
+    affectedGroups: [urban, business, youth]
+    evidenceIds: []
+    judgment: null
+    reviewedBy: null

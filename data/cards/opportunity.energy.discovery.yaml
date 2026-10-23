@@ -1,0 +1,46 @@
+id: opportunity.energy.discovery
+category: opportunity
+severity: major
+titleTh: "พบแหล่งพลังงานขนาดใหญ่"
+situationTh: "การสำรวจยืนยันว่าพบแหล่งก๊าซธรรมชาติขนาดใหญ่ในทะเลของประเทศ บริษัทที่ได้สัมปทานจะเริ่มผลิตในไม่กี่ปีข้างหน้า และรัฐจะได้รายได้ค่าภาคหลวงก้อนใหญ่ ข่าวนี้ทำให้ตลาดหุ้นคึกคักและนักการเมืองหลายฝ่ายเสนอวิธีใช้เงินที่ยังมาไม่ถึง รัฐมนตรีคลังเตือนว่าหลายประเทศเคยเสียโอกาสเพราะใช้เงินก้อนนี้ไม่เป็น ขณะที่ประชาชนในเมืองและเยาวชนอยากเห็นประโยชน์ที่จับต้องได้ ภาคธุรกิจต้องการแรงงานและโครงสร้างพื้นฐานรองรับ"
+conditions: []   # MVP: every card eligible.
+baseWeight: 1
+cooldownQ: 8
+# Windfall: royalty income lifts growth and budget room (ev.windfall.002, ev.dutch.001); business gains first (index level 2).
+onArrival:
+  - { target: gdpGrowth, delta: 0.8, over_quarters: 8 }
+  - { target: budget, delta: 0.3, over_quarters: 8 }
+  - { target: "group:business", delta: 5, over_quarters: 4 }
+# Wasting the chance: young people see no benefit and the money is spent without a plan. Both are level 1 and smaller than the windfall.
+ifIgnored:
+  - { target: "group:youth", delta: -2, over_quarters: 4 }
+  - { target: budget, delta: -0.1, over_quarters: 4 }
+sourceIds: [design.level-scale, review.windfall-managing, paper.ferdi-windfall, paper.allcott-keniston-2018]
+choices:
+  - id: a
+    approach: save-fund
+    titleTh: "ตั้งกองทุนความมั่งคั่งแห่งชาติเก็บออมรายได้"
+    descTh: "นำรายได้ส่วนใหญ่เข้ากองทุนเพื่อสำรองไว้ใช้ยามราคาตกและเพื่อคนรุ่นหลัง ลดความเสี่ยงจากรายได้ผันผวน แต่ประชาชนไม่เห็นผลทันทีและต้องมีกติกาป้องกันการแทรกแซงกองทุน"
+    costHint: S
+    affectedGroups: [youth, urban, business]
+    evidenceIds: [ev.windfall.001]
+    judgment: null
+    reviewedBy: null
+  - id: b
+    approach: public-investment
+    titleTh: "ลงทุนโครงสร้างพื้นฐานและบริการสาธารณะ"
+    descTh: "นำรายได้ไปสร้างถนน ระบบไฟฟ้า โรงเรียนและโรงพยาบาลที่ขาดแคลน เห็นผลต่อเศรษฐกิจและบริการเร็ว แต่ต้องใช้เงินจำนวนมาก เสี่ยงโครงการสิ้นเปลือง และเศรษฐกิจอาจร้อนแรงเกินไป"
+    costHint: L
+    affectedGroups: [urban, farmers, business, youth]
+    evidenceIds: [ev.windfall.002, ev.dutch.001]
+    judgment: null
+    reviewedBy: null
+  - id: c
+    approach: citizen-dividend
+    titleTh: "จ่ายเงินปันผลให้ประชาชนทุกคนโดยตรง"
+    descTh: "แบ่งรายได้ส่วนหนึ่งให้ประชาชนเป็นเงินปันผลสม่ำเสมอ ประชาชนรู้สึกได้ถึงประโยชน์และใช้จ่ายหนุนเศรษฐกิจท้องถิ่น แต่รัฐมีเงินลงทุนและสำรองน้อยลง และเมื่อเริ่มจ่ายแล้วเลิกได้ยาก"
+    costHint: M
+    affectedGroups: [urban, youth, farmers]
+    evidenceIds: [ev.dividend.001]
+    judgment: null
+    reviewedBy: null
