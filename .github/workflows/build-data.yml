@@ -1,0 +1,44 @@
+name: Build country data
+
+# Runs on GitHub because the Claude cloud environment cannot reach api.worldbank.org.
+# Push to the data-build branch to run it; the job commits the results back to that branch.
+on:
+  push:
+    branches: [data-build]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Build countries from the World Bank API
+        id: build
+        # Keep going on failure so the build report and raw responses are still committed for review.
+        continue-on-error: true
+        run: pnpm tsx scripts/build-countries.ts --save-raw data/raw/worldbank 2>&1 | tee data-build.log
+      - name: Check sources
+        continue-on-error: true
+        run: pnpm tsx scripts/check-sources.ts 2>&1 | tee -a data-build.log
+      - name: Commit results
+        run: |
+          mkdir -p data/countries
+          mv data-build.log data/countries/_build-log.txt
+          git config user.name "President Sim Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/countries data/raw
+          git diff --cached --quiet && echo "nothing to commit" && exit 0
+          git commit -m "Country data from World Bank API (build outcome: ${{ steps.build.outcome }})"
+          git push
