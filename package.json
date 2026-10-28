@@ -13,5 +13,6 @@
     "yaml": "^2.6.0",
     "tsx": "^4.19.0",
     "@types/node": "^22.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.28.0"
 }
