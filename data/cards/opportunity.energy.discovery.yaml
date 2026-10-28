@@ -15,6 +15,7 @@ onArrival:
 ifIgnored:
   - { target: "group:youth", delta: -2, over_quarters: 4 }
   - { target: budget, delta: -0.1, over_quarters: 4 }
+traitWeights: { resources: 0.8 }
 sourceIds: [design.level-scale, review.windfall-managing, paper.ferdi-windfall, paper.allcott-keniston-2018]
 choices:
   - id: a

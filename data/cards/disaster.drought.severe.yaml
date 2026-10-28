@@ -10,6 +10,7 @@ ifIgnored:
   - { target: "group:farmers", delta: -8, over_quarters: 4 }
   - { target: gdpGrowth, delta: -0.3, over_quarters: 4 }
   - { target: inflation, delta: 0.5, over_quarters: 3 }
+traitWeights: { agriculture: 0.8 }
 sourceIds: [design.level-scale, paper.knippenberg-hoddinott-2017, wdi.SL.AGR.EMPL.ZS]
 choices:
   - id: a

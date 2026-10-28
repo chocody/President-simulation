@@ -10,6 +10,7 @@ ifIgnored:
   - { target: health, delta: -8, over_quarters: 4 }
   - { target: stability, delta: -5, over_quarters: 3 }
   - { target: "group:urban", delta: -5, over_quarters: 3 }
+traitWeights: { govEffectiveness: -0.5 }
 sourceIds: [design.level-scale, report.cdc-hospital-strain, wdi.SH.UHC.SRVS.CV.XD]
 choices:
   - id: a

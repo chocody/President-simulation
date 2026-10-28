@@ -11,6 +11,7 @@ ifIgnored:
   - { target: "group:business", delta: -5, over_quarters: 3 }
   - { target: "group:farmers", delta: -5, over_quarters: 3 }
   - { target: foreignRelations, delta: -2, over_quarters: 4 }
+traitWeights: { openness: 0.8 }
 sourceIds: [design.level-scale, paper.fajgelbaum-2020, paper.amiti-2019]
 choices:
   - id: a

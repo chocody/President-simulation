@@ -10,6 +10,7 @@ ifIgnored:
   - { target: parliament, delta: -5, over_quarters: 3 }
   - { target: stability, delta: -2, over_quarters: 3 }
   - { target: corruption, delta: 2, over_quarters: 4 }
+traitWeights: { patronage: 0.6 }
 sourceIds: [design.level-scale, paper.olken-2007, eval.jpal-ferraz-finan, wgi.GOV_WGI_CC_SC]
 choices:
   - id: a

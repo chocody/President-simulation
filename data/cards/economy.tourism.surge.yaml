@@ -15,6 +15,7 @@ onArrival:
 ifIgnored:
   - { target: environment, delta: -2, over_quarters: 4 }
   - { target: "group:urban", delta: -2, over_quarters: 4 }
+traitWeights: { tourism: 0.8 }
 sourceIds: [design.level-scale, review.nunkoo-2020, paper.faber-gaubert-2019]
 choices:
   - id: a
