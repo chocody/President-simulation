@@ -133,49 +133,49 @@
     }
   },
   "traits": {
-    "tourism": 6.600612289909699,
-    "agriculture": 43.66515439975933,
-    "resources": 25.78520042258525,
-    "openness": 28.558185373482253,
-    "ruleOfLaw": 54.4365507,
-    "govEffectiveness": 57.5639886,
-    "patronage": 45.5634493
+    "tourism": 23.123258101234672,
+    "agriculture": 42.612353891363064,
+    "resources": 18.12834259997573,
+    "openness": 28.22105690353777,
+    "ruleOfLaw": 55.75082006000001,
+    "govEffectiveness": 58.7896133,
+    "patronage": 44.24917993999999
   },
   "traitsSrc": {
     "tourism": {
       "sourceId": "wdi.ST.INT.RCPT.XP.ZS",
       "year": 2020,
-      "raw": 1.98018368697291
+      "raw": 6.936977430370402
     },
     "agriculture": {
       "sourceId": "wdi.NV.AGR.TOTL.ZS",
       "year": 2025,
-      "raw": 13.0995463199278
+      "raw": 12.78370616740892
     },
     "resources": {
       "sourceId": "wdi.NY.GDP.TOTL.RT.ZS",
       "year": 2021,
-      "raw": 5.15704008451705
+      "raw": 3.625668519995146
     },
     "openness": {
       "sourceId": "wdi.NE.EXP.GNFS.ZS",
       "year": 2025,
-      "raw": 22.8465482987858
+      "raw": 22.57684552283022
     },
     "ruleOfLaw": {
       "sourceId": "wgi.GOV_WGI_RL_SC",
       "year": 2025,
-      "raw": 54.4365507
+      "raw": 55.75082006
     },
     "govEffectiveness": {
       "sourceId": "wgi.GOV_WGI_GE_SC",
       "year": 2025,
-      "raw": 57.5639886
+      "raw": 58.7896133
     },
     "patronage": {
       "sourceId": "wgi.GOV_WGI_RL_SC",
       "year": 2025,
-      "raw": 54.4365507
+      "raw": 55.75082006
     }
   }
 }
