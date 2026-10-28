@@ -4,6 +4,7 @@ import type { GroupKey, MeasureReport, StatKey } from "@ps/shared";
 import { goodness } from "@ps/engine";
 import type { DecideResult, GameInfo } from "../lib/api-types";
 import { formatDelta } from "../lib/format";
+import { frictionLines } from "../lib/friction";
 import { GROUP_LABEL, OUTCOME_LABEL, STAT_LABEL } from "../lib/labels";
 import { Frame, SectionTitle } from "./common";
 
@@ -97,6 +98,7 @@ export function ResultScreen({
     .filter(([k]) => k.startsWith("group:"))
     .map(([k, v]) => ({ group: k.slice(6) as GroupKey, v }));
   const downgraded = report.measures.reduce((a, m) => a + m.downgradedForEvidence, 0);
+  const friction = frictionLines(report);
 
   return (
     <Frame
@@ -132,6 +134,17 @@ export function ResultScreen({
           — ผลระดับ 2–3 ต้องอ้างหลักฐานที่ตรงกับตัวชี้วัดและทิศทางเดียวกัน
         </p>
       )}
+
+      {friction.map((f) => (
+        <p
+          key={f.measure}
+          role="note"
+          data-testid="friction-note"
+          className={`mt-3 rounded border bg-warn px-3 py-2 text-sm ${f.harder ? "border-bad" : "border-good"}`}
+        >
+          {f.text}
+        </p>
+      ))}
 
       <SectionTitle>มาตรการ</SectionTitle>
       {report.measures.length > 0 ? (
