@@ -34,7 +34,14 @@ const courtScene: SceneTemplate = {
   sourceIds: ["test.fixture"],
 };
 
-export const fixtureScenes: SceneTemplate[] = [...deltaScenes, ...outcomeScenes, ...protestScenes, courtScene];
+const crisisScenes: SceneTemplate[] = (["resolved", "eased", "ongoing"] as const).map((status) => ({
+  id: `scene.test.crisis.${status}`,
+  trigger: { kind: "crisis", status },
+  textTh: `TEST FIXTURE crisis ${status} {measure}`,
+  sourceIds: ["test.fixture"],
+}));
+
+export const fixtureScenes: SceneTemplate[] = [...deltaScenes, ...outcomeScenes, ...protestScenes, courtScene, ...crisisScenes];
 
 /** Id of the plain fixture template for a delta trigger. */
 export function deltaSceneId(target: Target, direction: "up" | "down", size: "small" | "large"): string {

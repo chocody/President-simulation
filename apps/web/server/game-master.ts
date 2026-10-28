@@ -164,7 +164,7 @@ export class MockGameMaster implements GameMaster {
     const narration = [
       `${MOCK_TAG} ไตรมาสที่ ${report.quarter}: เมื่อเกิดเหตุการณ์ “${card.titleTh}” คุณเลือก “${answerTitle}”`,
       lines.length > 0 ? lines.join(" ") : "คำตอบนี้ไม่ได้นำไปสู่มาตรการที่ดำเนินการได้",
-      `ผลของเหตุการณ์ที่ยังเกิดขึ้นแม้รัฐบาลตอบสนองแล้วอยู่ที่ราว ${share}% ของที่คาดไว้`,
+      ...(card.ifIgnored.length > 0 ? [`ความเสียหายจาก “${card.titleTh}” ยังเกิดขึ้นราว ${share}% ของกรณีที่รัฐบาลไม่ทำอะไรเลย`] : []),
       ...(scenes.length > 0 ? [scenes.map((s) => s.textTh).join(" ")] : []),
     ].join("\n");
     const headlines = report.measures.length > 0

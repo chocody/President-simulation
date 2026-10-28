@@ -56,6 +56,7 @@ function sameTrigger(a: SceneTrigger, b: SceneTrigger): boolean {
     case "outcome": return a.outcome === (b as Extract<SceneTrigger, { kind: "outcome" }>).outcome;
     case "protest": return a.group === (b as Extract<SceneTrigger, { kind: "protest" }>).group;
     case "court": return true;
+    case "crisis": return a.status === (b as Extract<SceneTrigger, { kind: "crisis" }>).status;
   }
 }
 
@@ -66,6 +67,7 @@ interface Candidate {
   cause: string | null;
   targets: Target[];
   kind: SceneKind;
+  atQuarter?: number;
 }
 
 /** Picks a template for a candidate. Draws one random number only when there is a real choice. */
@@ -113,6 +115,7 @@ function realise(
       templateId: t.id,
       textTh: t.textTh.split(PLACEHOLDER).join(c.cause ?? ""),
       tone: c.tone, cause: c.cause, targets: c.targets, kind: c.kind,
+      ...(c.atQuarter !== undefined ? { atQuarter: c.atQuarter } : {}),
     });
   }
   return out;
@@ -152,6 +155,40 @@ function measureTargets(a: Action | undefined): Target[] {
   return [...new Set<Target>([...a.effects.map((e) => e.indicator), ...a.group_impacts.map((g) => `group:${g.group}` as const)])];
 }
 
+/** How the event card ended, from the share of its damage that still happens (SCENES.crisisBands). */
+export function crisisStatus(eventShare: number): "resolved" | "eased" | "ongoing" {
+  const b = SCENES.value.crisisBands;
+  return eventShare <= b.resolvedMax ? "resolved" : eventShare <= b.easedMax ? "eased" : "ongoing";
+}
+
+const CRISIS_TONE = { resolved: "good", eased: "neutral", ongoing: "bad" } as const;
+
+/**
+ * Expected later effects of this decision's measures: their scheduled slices after `q`, summed per measure and
+ * target, biggest first. Kept only when the total reaches SCENES.followupMinLevelShare of the level-1 step.
+ */
+function upcomingCandidates(state: GameState, q: number): Candidate[] {
+  const titleOf = new Map((state.policies ?? []).filter((p) => p.quarter === q).map((p) => [p.id, p.title]));
+  const totals = new Map<string, { policyId: string; target: Target; total: number; from: number }>();
+  for (const e of state.scheduled) {
+    if (e.fromQuarter <= q || !titleOf.has(e.policyId)) continue;
+    const key = `${e.policyId}|${e.target}`;
+    const cur = totals.get(key) ?? { policyId: e.policyId, target: e.target, total: 0, from: e.fromQuarter };
+    cur.total += e.deltaPerQuarter * (e.toQuarter - e.fromQuarter + 1);
+    cur.from = Math.min(cur.from, e.fromQuarter);
+    totals.set(key, cur);
+  }
+  return [...totals.entries()]
+    .map(([key, f]) => ({ key, f, rank: Math.abs(f.total) / step(f.target, "1") }))
+    .filter((x) => x.rank >= SCENES.value.followupMinLevelShare)
+    .sort((a, b) => b.rank - a.rank || (a.key < b.key ? -1 : 1))
+    .map(({ f }) => ({
+      trigger: { kind: "delta", target: f.target, direction: f.total > 0 ? "up" : "down", size: sizeOf(f.target, Math.abs(f.total)) } as const,
+      tone: sceneTone(f.target, f.total, currentValue(state, f.target) + f.total),
+      cause: titleOf.get(f.policyId) ?? null, targets: [f.target], kind: "upcoming" as const, atQuarter: f.from,
+    }));
+}
+
 export interface BuildTurnScenesInput {
   /** The state returned by resolveTurn (stats already changed; quarter is the decision quarter). */
   state: GameState;
@@ -174,6 +211,12 @@ export function buildTurnScenes(input: BuildTurnScenesInput): { state: GameState
   if (library.length === 0) return { state, scenes: [] };
 
   const cands: Candidate[] = [];
+  // How the crisis itself ended comes first: it answers "did my choice work?".
+  // Only for real crises: opportunity and good-news cards have no "crisis" to end (their ifIgnored is a missed chance).
+  if (card !== null && card.ifIgnored.length > 0 && card.category !== "opportunity" && (card.onArrival ?? []).length === 0) {
+    const status = crisisStatus(report.eventShareApplied);
+    cands.push({ trigger: { kind: "crisis", status }, tone: CRISIS_TONE[status], cause: card.titleTh, targets: card.ifIgnored.map((e) => e.target), kind: "turn" });
+  }
   report.measures.forEach((m, i) => {
     const targets = measureTargets(actions[i]);
     if (m.outcome !== "success") {
@@ -197,13 +240,17 @@ export function buildTurnScenes(input: BuildTurnScenesInput): { state: GameState
     });
   }
 
-  if (cands.length === 0) return { state, scenes: [] };
+  const upcoming = upcomingCandidates(state, report.quarter);
+  if (cands.length === 0 && upcoming.length === 0) return { state, scenes: [] };
   const s = structuredClone(state);
   const rng = new Rng(s.seed, s.rngCursor);
-  const scenes = realise(cands, SCENES.value.maxPerTurn, library, recentIds(s.scenes, report.quarter), traits, rng);
+  const used = recentIds(s.scenes, report.quarter);
+  const now = realise(cands, SCENES.value.maxPerTurn, library, used, traits, rng);
+  // Upcoming scenes are a forecast: shown now, not recorded (the follow-up scene records it when it happens).
+  const later = realise(upcoming, SCENES.value.maxUpcoming, library, used, traits, rng);
   s.rngCursor = rng.cursor;
-  s.scenes = [...(s.scenes ?? []), ...scenes.map((x): SceneRecord => ({ ...x, quarter: report.quarter }))];
-  return { state: s, scenes };
+  s.scenes = [...(s.scenes ?? []), ...now.map((x): SceneRecord => ({ ...x, quarter: report.quarter }))];
+  return { state: s, scenes: [...now, ...later] };
 }
 
 /**

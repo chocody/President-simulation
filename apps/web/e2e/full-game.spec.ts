@@ -63,6 +63,7 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   let decisionShot = false;
   let newsSeen = false;
   let sceneCards = 0;
+  let upcomingCards = 0;
   let followupShot = false;
 
   for (let step = 0; step < 60; step++) {
@@ -100,9 +101,14 @@ test("plays a full term with presets and one typed answer, and reaches the endin
       // The result leads with "เกิดอะไรขึ้น": at least one scene card; the numbers are folded under "ดูตัวเลขละเอียด".
       await expect(page.getByTestId("scenes")).toContainText("เกิดอะไรขึ้น");
       await expect(page.getByTestId("scene-card").first()).toBeVisible();
-      expect(await page.getByTestId("scene-card").count()).toBeLessThanOrEqual(4);
+      expect(await page.getByTestId("scenes").getByTestId("scene-card").count()).toBeLessThanOrEqual(4);
       await expect(page.getByTestId("scene-badge").first()).toContainText("จาก");
-      sceneCards += await page.getByTestId("scene-card").count();
+      // "สิ่งที่จะตามมา": this decision's later effects, when it has any (at most 3)
+      const later = await page.getByTestId("upcoming").getByTestId("scene-card").count();
+      expect(later).toBeLessThanOrEqual(3);
+      if (later > 0) await expect(page.getByTestId("upcoming").getByTestId("scene-badge").first()).toContainText("ราวไตรมาสที่");
+      upcomingCards += later;
+      sceneCards += await page.getByTestId("scenes").getByTestId("scene-card").count();
       await expect(page.getByTestId("numbers-details")).not.toHaveAttribute("open", "");
       if (!resultShot) {
         await shot(page, "04-result");
@@ -143,6 +149,7 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   expect(newsSeen, "the news ticker was checked").toBe(true);
   expect(decisions).toBeGreaterThanOrEqual(2);
   expect(sceneCards, "every result screen showed scene cards").toBeGreaterThanOrEqual(decisions);
+  expect(upcomingCards, "at least one decision previewed its later effects").toBeGreaterThan(0);
 
   // 5. Ending.
   await expect(page.locator("[data-screen=ending]")).toBeVisible();

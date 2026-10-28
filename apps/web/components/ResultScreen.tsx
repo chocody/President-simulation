@@ -100,7 +100,8 @@ export function ResultScreen({
     .map(([k, v]) => ({ group: k.slice(6) as GroupKey, v }));
   const downgraded = report.measures.reduce((a, m) => a + m.downgradedForEvidence, 0);
   const friction = frictionLines(report);
-  const scenes = result.scenes ?? [];
+  const scenes = (result.scenes ?? []).filter((s) => s.kind !== "upcoming");
+  const upcoming = (result.scenes ?? []).filter((s) => s.kind === "upcoming");
 
   return (
     <Frame
@@ -125,6 +126,16 @@ export function ResultScreen({
           <p className="dossier p-4 text-sm text-muted" data-testid="scenes-empty">ไตรมาสนี้ไม่มีเหตุการณ์เด่นที่จับตาได้ ดูตัวเลขละเอียดด้านล่าง</p>
         )}
       </section>
+
+      {upcoming.length > 0 && (
+        <section data-testid="upcoming" aria-labelledby="upcoming-title">
+          <SectionTitle><span id="upcoming-title">สิ่งที่จะตามมา</span></SectionTitle>
+          <p className="mb-2 text-sm text-muted">ผลของการตัดสินใจนี้ที่จะเริ่มเห็นในไตรมาสต่อ ๆ ไป ถ้าไม่มีอะไรเปลี่ยน (เช่น ศาลสั่งระงับ)</p>
+          <ul className="space-y-2">
+            {upcoming.map((s, i) => <SceneCard key={`${s.templateId}-up-${i}`} scene={s} report={report} />)}
+          </ul>
+        </section>
+      )}
 
       <section className="dossier mt-4 p-4" aria-label="เรื่องเล่า">
         {result.narration.split("\n").map((p, i) => (

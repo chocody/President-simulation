@@ -588,3 +588,29 @@
   trigger: { kind: court }
   textTh: "ผู้พิพากษาอ่านคำสั่งระงับ {measure} ในห้องพิจารณาคดีที่แน่นไปด้วยนักข่าว ทนายความของรัฐบอกว่าจะอุทธรณ์"
   sourceIds: [design.scenes]
+
+# ---- crisis scenes: how the event card itself ended ({measure} is the event title here) ----
+- id: scene.crisis.resolved.1
+  trigger: { kind: crisis, status: resolved }
+  textTh: "สถานการณ์ “{measure}” เริ่มคลี่คลาย ผู้คนกลับมาใช้ชีวิตตามปกติ สื่อเลิกพาดหัวเรื่องนี้แล้ว"
+  sourceIds: [design.scenes]
+- id: scene.crisis.resolved.2
+  trigger: { kind: crisis, status: resolved }
+  textTh: "รายงานล่าสุดระบุว่า “{measure}” ควบคุมได้แล้ว ผู้คนเริ่มวางแผนชีวิตต่อ ความกังวลในสังคมลดลงชัดเจน"
+  sourceIds: [design.scenes]
+- id: scene.crisis.eased.1
+  trigger: { kind: crisis, status: eased }
+  textTh: "“{measure}” เบาลงบ้าง แต่ยังมีหลายพื้นที่ที่เดือดร้อน ผู้ได้รับผลกระทบบางส่วนยังรอความช่วยเหลือ"
+  sourceIds: [design.scenes]
+- id: scene.crisis.eased.2
+  trigger: { kind: crisis, status: eased }
+  textTh: "ความเสียหายจาก “{measure}” น้อยกว่าที่กลัว แต่ยังไม่จบ เจ้าหน้าที่ยังต้องทำงานต่อเนื่องอีกหลายเดือน"
+  sourceIds: [design.scenes]
+- id: scene.crisis.ongoing.1
+  trigger: { kind: crisis, status: ongoing }
+  textTh: "“{measure}” ยังลุกลาม ผู้คนเริ่มถามว่ารัฐบาลทำอะไรอยู่ ภาพความเดือดร้อนเต็มหน้าข่าวทุกคืน"
+  sourceIds: [design.scenes]
+- id: scene.crisis.ongoing.2
+  trigger: { kind: crisis, status: ongoing }
+  textTh: "ปัญหา “{measure}” หนักขึ้นเรื่อย ๆ ชาวบ้านต่อแถวขอความช่วยเหลือยาว ผู้นำชุมชนบอกว่ายังไม่เห็นใครมาช่วย"
+  sourceIds: [design.scenes]

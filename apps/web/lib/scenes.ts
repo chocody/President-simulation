@@ -4,7 +4,7 @@ import type { GameState, Scene, SceneRecord, TurnReport } from "@ps/shared";
 /** Most scenes shown in the ending's "เส้นทางวาระของคุณ" (spec E4). */
 export const PATH_MAX_SCENES = 10;
 
-export type SceneBadge = { kind: "measure" | "event" | "followup"; label: string };
+export type SceneBadge = { kind: "measure" | "event" | "followup" | "upcoming"; label: string };
 
 /**
  * Badge for a scene's cause. A turn scene is "จากมาตรการ …" when the cause is one of this turn's measures (or an enacted policy) and
@@ -12,8 +12,12 @@ export type SceneBadge = { kind: "measure" | "event" | "followup"; label: string
  * No cause, no badge.
  */
 export function sceneBadge(
-  scene: Pick<Scene, "kind" | "cause">, known?: { measures?: Pick<TurnReport["measures"][number], "title">[]; policies?: GameState["policies"] },
+  scene: Pick<Scene, "kind" | "cause" | "atQuarter">, known?: { measures?: Pick<TurnReport["measures"][number], "title">[]; policies?: GameState["policies"] },
 ): SceneBadge | null {
+  if (scene.kind === "upcoming") {
+    const when = scene.atQuarter !== undefined ? ` · ราวไตรมาสที่ ${scene.atQuarter}` : "";
+    return { kind: "upcoming", label: `${scene.cause ? `จากมาตรการ ${scene.cause}` : "จากการตัดสินใจนี้"}${when}` };
+  }
   if (scene.cause === null) return scene.kind === "turn" ? null : { kind: "followup", label: "ผลต่อเนื่อง" };
   if (scene.kind !== "turn") return { kind: "followup", label: `ผลต่อเนื่อง · ${scene.cause}` };
   const isMeasure = [...(known?.measures ?? []), ...(known?.policies ?? [])].some((m) => m.title === scene.cause);
@@ -22,7 +26,7 @@ export function sceneBadge(
 
 /** Follow-up and court scenes, newest first: what the news log shows next to the minor news. */
 export function followupScenes(state: Pick<GameState, "scenes">): SceneRecord[] {
-  return (state.scenes ?? []).filter((s) => s.kind !== "turn").reverse();
+  return (state.scenes ?? []).filter((s) => s.kind === "followup" || s.kind === "court").reverse();
 }
 
 /**

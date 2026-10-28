@@ -224,12 +224,17 @@ export async function handleDecide(body: unknown, deps: Deps): Promise<ApiResult
     throw e;
   }
 
+  // The narrator gets what happened, plus the forecast marked as such (it must not narrate it as done).
+  const toNarrate = scenes.map((x) => x.kind === "upcoming"
+    ? { ...x, textTh: `[คาดว่าจะตามมาราวไตรมาสที่ ${x.atQuarter ?? "-"}] ${x.textTh}` }
+    : x);
+  const mockScenes = scenes.filter((x) => x.kind !== "upcoming");
   let narration: { narration: string; headlines: string[] };
   try {
-    narration = await gm.narrate({ state: turn.state, card, report: turn.report, answerTitle, scenes });
+    narration = await gm.narrate({ state: turn.state, card, report: turn.report, answerTitle, scenes: gm instanceof MockGameMaster ? mockScenes : toNarrate });
   } catch {
     // The turn is already resolved; do not lose it. Fall back to the template narration (tagged as such).
-    narration = await new MockGameMaster().narrate({ state: turn.state, card, report: turn.report, answerTitle, scenes });
+    narration = await new MockGameMaster().narrate({ state: turn.state, card, report: turn.report, answerTitle, scenes: mockScenes });
   }
 
   const res: DecideResult = {

@@ -287,12 +287,14 @@ describe("consequence scenes", () => {
       for (const d of ["up", "down"])
         for (const sz of ["small", "large"]) expect(count.get(`${t}|${d}|${sz}`) ?? 0, `${t}|${d}|${sz}`).toBeGreaterThanOrEqual(2);
   });
-  it("outcome (5 x 2), protest (5 groups) and court (2) are covered", () => {
+  it("outcome (5 x 2), protest (5 groups), court (2) and crisis (3 x 2) are covered", () => {
     for (const o of ["blocked", "critical_failure", "great_success", "partial", "failure"])
       expect(scenes.filter((x) => x.trigger.kind === "outcome" && x.trigger.outcome === o).length, o).toBeGreaterThanOrEqual(2);
     for (const g of GROUP_KEYS)
       expect(scenes.filter((x) => x.trigger.kind === "protest" && x.trigger.group === g).length, g).toBeGreaterThanOrEqual(1);
     expect(scenes.filter((x) => x.trigger.kind === "court").length).toBeGreaterThanOrEqual(2);
+    for (const st of ["resolved", "eased", "ongoing"] as const)
+      expect(scenes.filter((x) => x.trigger.kind === "crisis" && x.trigger.status === st).length, st).toBeGreaterThanOrEqual(2);
   });
   it("ids follow the trigger: scene.<kind>.<key parts>", () => {
     for (const x of scenes) {
@@ -301,6 +303,7 @@ describe("consequence scenes", () => {
         tr.kind === "delta" ? `scene.delta.${kebab(tr.target)}.${tr.direction}.${tr.size}.`
         : tr.kind === "outcome" ? `scene.outcome.${tr.outcome.replace("_", "-")}.`
         : tr.kind === "protest" ? `scene.protest.${tr.group}.`
+        : tr.kind === "crisis" ? `scene.crisis.${tr.status}.`
         : "scene.court.";
       expect(x.id.startsWith(prefix), `${x.id} should start with ${prefix}`).toBe(true);
     }

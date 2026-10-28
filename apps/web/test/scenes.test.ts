@@ -40,9 +40,9 @@ describe("scene library in loadContent", () => {
     }
   });
 
-  it("uses {measure} only in outcome, protest and court templates, and has a plain fallback for every key delta trigger", () => {
+  it("uses {measure} only in outcome, protest, court and crisis templates, and has a plain fallback for every key delta trigger", () => {
     for (const s of content.scenes) {
-      if (s.textTh.includes("{measure}")) expect(["outcome", "protest", "court"]).toContain(s.trigger.kind);
+      if (s.textTh.includes("{measure}")) expect(["outcome", "protest", "court", "crisis"]).toContain(s.trigger.kind);
     }
     expect(content.scenes.some((s) => s.trigger.kind === "court")).toBe(true);
     for (const outcome of ["blocked", "critical_failure", "great_success", "partial", "failure"]) {
@@ -79,11 +79,17 @@ describe("handleDecide scenes", () => {
       expect(r.status).toBe(200);
       const b = r.body as Body;
       expect(() => DecideResponse.parse(b)).not.toThrow();
-      expect(b.scenes.length).toBeLessThanOrEqual(SCENES.value.maxPerTurn);
-      expect(b.scenes.length).toBeGreaterThan(0);
+      const now = (b.scenes as Scene[]).filter((x) => x.kind !== "upcoming");
+      const later = (b.scenes as Scene[]).filter((x) => x.kind === "upcoming");
+      expect(now.length).toBeLessThanOrEqual(SCENES.value.maxPerTurn);
+      expect(now.length).toBeGreaterThan(0);
+      expect(later.length).toBeLessThanOrEqual(SCENES.value.maxUpcoming);
+      for (const u of later) expect(u.atQuarter).toBeGreaterThan(b.report.quarter);
       total += b.scenes.length;
+      // what happened is recorded; the forecast is not (its follow-up scene records it when it happens)
       const rec = (b.state as GameState).scenes!;
-      expect(rec.slice(-b.scenes.length).map(({ quarter, ...x }: SceneRecord) => x)).toEqual(b.scenes);
+      expect(rec.slice(-now.length).map(({ quarter, ...x }: SceneRecord) => x)).toEqual(now);
+      expect(rec.some((x) => x.kind === "upcoming")).toBe(false);
       expect(rec.every((x) => x.quarter === b.report.quarter)).toBe(true);
       for (const s of b.scenes as Scene[]) expect(s.textTh).not.toContain("{measure}");
     }
@@ -111,8 +117,14 @@ describe("handleDecide scenes", () => {
     const d = deps({ gm });
     const a = await toDecision(d);
     const b = (await handleDecide({ state: a.state, answer: { kind: "preset", choiceId: "a" } }, d)).body as Body;
-    expect(seen!.scenes).toEqual(b.scenes);
-    for (const s of b.scenes as Scene[]) expect(b.narration).toContain(s.textTh);
+    // what happened goes as is; a forecast is marked so the narrator does not tell it as done
+    const sent = seen!.scenes as Scene[];
+    expect(sent.length).toBe(b.scenes.length);
+    (b.scenes as Scene[]).forEach((s, i) => {
+      if (s.kind === "upcoming") expect(sent[i]!.textTh).toBe(`[คาดว่าจะตามมาราวไตรมาสที่ ${s.atQuarter}] ${s.textTh}`);
+      else expect(sent[i]).toEqual(s);
+    });
+    for (const s of (b.scenes as Scene[]).filter((x) => x.kind !== "upcoming")) expect(b.narration).toContain(s.textTh);
   });
 });
 

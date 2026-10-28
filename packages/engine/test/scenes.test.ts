@@ -1,16 +1,16 @@
 import { describe, expect, it } from "vitest";
 import fc from "fast-check";
 import {
-  GameState, LEVEL_SCALE, SCENES, SceneTemplate, STAT_KEYS, STAT_RANGE,
+  CRISIS_RESPONSE, GameState, LEVEL_SCALE, SCENES, SceneTemplate, STAT_KEYS, STAT_RANGE,
   type Action, type SceneRecord, type StatKey, type Target, type TurnReport,
 } from "@ps/shared";
 import { advanceQuarter, goodness, levelToDelta, newGame, resolveTurn } from "@ps/engine";
-import { buildTurnScenes, sceneTone, SCENE_REPEAT_WINDOW_Q } from "../src/scenes";
+import { buildTurnScenes, crisisStatus, sceneTone, SCENE_REPEAT_WINDOW_Q } from "../src/scenes";
 import { fixtureCountry } from "./fixtures/country";
 import { fixtureEvidence } from "./fixtures/evidence";
 import { deltaSceneId, fixtureScenes } from "./fixtures/scenes";
 import { action, effect, impact, judgment } from "./fixtures/judgments";
-import { QUIET_CARD, SIMPLE_DECK, decisionState } from "./helpers";
+import { QUIET_CARD, SIMPLE_CARD, SIMPLE_DECK, decisionState } from "./helpers";
 
 const ctx = { evidence: fixtureEvidence };
 
@@ -399,5 +399,86 @@ describe("advanceQuarter: follow-up and court scenes", () => {
   it("LEVEL_SCALE and SCENES are the sources of the thresholds", () => {
     expect(STEP1("health")).toBe(LEVEL_SCALE.value.index[0]);
     expect(SCENES.value.followupMinLevelShare).toBeGreaterThan(0);
+  });
+});
+
+describe("a failed response does not hold the crisis back", () => {
+  const strong = (over: Parameters<typeof action>[0] = {}) =>
+    judgment({ actions: [action(over)], scores: { relevance: "5", feasibility: "5", specificity: "5", tradeoffs: "3", consistency: "5" } });
+
+  it("blocked in parliament: CRISIS_RESPONSE.failedLeak of the prevented damage still happens", () => {
+    const st = decisionState(SIMPLE_CARD.id, "blk-crisis");
+    st.stats.parliament = 0;
+    const r = resolveTurn(st, SIMPLE_DECK, { kind: "free", judgment: strong({ requires_legislation: true }) }, ctx);
+    expect(r.report.measures[0]!.outcome).toBe("blocked");
+    expect(r.report.eventShareApplied).toBe(CRISIS_RESPONSE.value.failedLeak);   // relevance 5 -> base share 0
+  });
+
+  it("share = relevance share + (1 - relevance share) x (1 - best multiplier capped at 1) x failedLeak, for every seed", () => {
+    fc.assert(fc.property(fc.string({ minLength: 1, maxLength: 8 }), (seed) => {
+      const r = resolveTurn(decisionState(SIMPLE_CARD.id, seed), SIMPLE_DECK, { kind: "free", judgment: strong() }, ctx);
+      const works = Math.max(...r.report.measures.map((m) => Math.min(Math.max(m.multiplier, 0), 1)));
+      expect(r.report.eventShareApplied).toBeCloseTo((1 - works) * CRISIS_RESPONSE.value.failedLeak, 12);   // relevance 5 -> base 0
+    }), { numRuns: 60 });
+  });
+
+  it("no measures (statement only): relevance alone decides, as before", () => {
+    const j = judgment({ actions: [], scores: { relevance: "5", feasibility: "3", specificity: "3", tradeoffs: "3", consistency: "3" } });
+    const r = resolveTurn(decisionState(SIMPLE_CARD.id, "none"), SIMPLE_DECK, { kind: "free", judgment: j }, ctx);
+    expect(r.report.eventShareApplied).toBe(0);
+  });
+});
+
+describe("crisis and upcoming scenes", () => {
+  it("crisisStatus follows SCENES.crisisBands", () => {
+    const b = SCENES.value.crisisBands;
+    expect(crisisStatus(0)).toBe("resolved");
+    expect(crisisStatus(b.resolvedMax)).toBe("resolved");
+    expect(crisisStatus(b.resolvedMax + 0.01)).toBe("eased");
+    expect(crisisStatus(b.easedMax)).toBe("eased");
+    expect(crisisStatus(b.easedMax + 0.01)).toBe("ongoing");
+    expect(crisisStatus(1)).toBe("ongoing");
+  });
+
+  it("a crisis card leads with how the crisis ended, with the card title as cause and goodness tone", () => {
+    for (const [share, status, tone] of [[0, "resolved", "good"], [0.5, "eased", "neutral"], [1, "ongoing", "bad"]] as const) {
+      const rep = { ...report({}), cardId: SIMPLE_CARD.id, eventShareApplied: share };
+      const { scenes } = buildTurnScenes({ ...input(rep), state: decisionState(SIMPLE_CARD.id, "cr"), card: SIMPLE_CARD });
+      expect(scenes[0]!.templateId).toBe(`scene.test.crisis.${status}`);
+      expect(scenes[0]!.tone).toBe(tone);
+      expect(scenes[0]!.cause).toBe(SIMPLE_CARD.titleTh);
+      expect(scenes[0]!.textTh).toContain(SIMPLE_CARD.titleTh);
+    }
+  });
+
+  it("no crisis scene for a card without damage, an opportunity card or a good-news card", () => {
+    const rep = { ...report({}), cardId: SIMPLE_CARD.id, eventShareApplied: 0 };
+    const cards = [
+      QUIET_CARD,
+      { ...SIMPLE_CARD, category: "opportunity" as const },
+      { ...SIMPLE_CARD, onArrival: [{ target: "gdpGrowth" as const, delta: 0.3, over_quarters: 2 }] },
+    ];
+    for (const card of cards) {
+      const { scenes } = buildTurnScenes({ ...input(rep), state: decisionState(SIMPLE_CARD.id, "nc"), card });
+      expect(scenes.some((x) => x.templateId.startsWith("scene.test.crisis")), card.id).toBe(false);
+    }
+  });
+
+  it("previews this decision's later effects, at most SCENES.maxUpcoming, with their start quarter, and does not record them", () => {
+    let seen = 0;
+    for (let i = 0; i < 20; i++) {
+      const j = judgment({ actions: [action({ effects: [effect({ indicator: "health", level: "3", lasts_quarters: 4, start_after_quarters: 1 }), effect({ indicator: "education", level: "3", lasts_quarters: 4, start_after_quarters: 1 })] })] });
+      const r = resolveTurn(decisionState(QUIET_CARD.id, `up-${i}`), SIMPLE_DECK, { kind: "free", judgment: j }, ctx);
+      const { state, scenes } = buildTurnScenes({ state: r.state, report: r.report, card: QUIET_CARD, actions: j.actions, library: fixtureScenes });
+      const later = scenes.filter((x) => x.kind === "upcoming");
+      expect(later.length).toBeLessThanOrEqual(SCENES.value.maxUpcoming);
+      for (const u of later) {
+        expect(u.atQuarter).toBeGreaterThan(r.report.quarter);
+        expect(u.cause).toBe(r.report.measures[0]!.title);
+      }
+      expect((state.scenes ?? []).some((x) => x.kind === "upcoming")).toBe(false);
+      seen += later.length;
+    }
+    expect(seen).toBeGreaterThan(0);
   });
 });

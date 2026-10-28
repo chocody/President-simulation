@@ -316,9 +316,17 @@ export const MINOR_EVENTS: Param<{ perQuarter: [number, number]; cooldownQ: numb
 };
 
 /** Consequence scenes: how many situations to show, and when a later effect gets its own scene. */
-export const SCENES: Param<{ maxPerTurn: number; minLevelShare: number; followupMinLevelShare: number; maxFollowupsPerQuarter: number; traitStrength: number; repeatWindowQ: number }> = {
-  value: { maxPerTurn: 4, minLevelShare: 0.5, followupMinLevelShare: 1, maxFollowupsPerQuarter: 2, traitStrength: 1, repeatWindowQ: 4 },
-  rationale: "Show up to 4 situations per decision, for changes of at least half a level-1 step; a delayed effect gets a scene when its total reaches a full level-1 step; at most 2 follow-up scenes per quarter so the ticker stays readable; the same template is avoided for 4 quarters (one year) when another fits.",
+export const SCENES: Param<{ maxPerTurn: number; minLevelShare: number; followupMinLevelShare: number; maxFollowupsPerQuarter: number; traitStrength: number; repeatWindowQ: number; maxUpcoming: number; crisisBands: { resolvedMax: number; easedMax: number } }> = {
+  value: { maxPerTurn: 4, minLevelShare: 0.5, followupMinLevelShare: 1, maxFollowupsPerQuarter: 2, traitStrength: 1, repeatWindowQ: 4, maxUpcoming: 3, crisisBands: { resolvedMax: 0.25, easedMax: 0.75 } },
+  rationale: "Show up to 4 situations per decision, for changes of at least half a level-1 step; a delayed effect gets a scene when its total reaches a full level-1 step; at most 2 follow-up scenes per quarter so the ticker stays readable; the same template is avoided for 4 quarters (one year) when another fits. Up to 3 expected later effects are previewed. The crisis counts as resolved when at most a quarter of its damage still happens, eased up to three quarters, ongoing above (matches the relevance bands of SCORE_EFFECTS.relevanceIgnoredShare).",
   basedOn: ["design.scenes"],
   calibration: "Playtest: a result screen shows 2–4 scenes in most turns.",
+};
+
+/** How much of the crisis a response that did not work lets through (of the part its relevance would prevent). */
+export const CRISIS_RESPONSE: Param<{ failedLeak: number }> = {
+  value: { failedLeak: 0.5 },
+  rationale: "A relevant answer only holds a crisis back to the extent its measures work. A failed or blocked response still mobilises some help (staff deployed, attention, private and local action), so it lets through half of the damage it aimed to prevent, not all of it.",
+  basedOn: ["design.rubric"],
+  calibration: "Best-bot win rate stays in 40–60% with the real deck (simulate --real-countries --real-deck).",
 };

@@ -218,13 +218,14 @@ export const SceneTrigger = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("outcome"), outcome: z.enum(["blocked", "critical_failure", "great_success", "partial", "failure"]) }),
   z.object({ kind: z.literal("protest"), group: GroupKey }),
   z.object({ kind: z.literal("court") }),      // a court suspends a measure in a later quarter
+  z.object({ kind: z.literal("crisis"), status: z.enum(["resolved", "eased", "ongoing"]) }),  // how the event card ended
 ]);
 export type SceneTrigger = z.infer<typeof SceneTrigger>;
 
 export const SceneTemplate = z.object({
   id: z.string().regex(/^scene\.[a-z0-9-]+(\.[a-z0-9-]+)*$/),
   trigger: SceneTrigger,
-  textTh: z.string().min(1),                 // may contain {measure}; no digits, no country names
+  textTh: z.string().min(1),                 // may contain {measure} (the cause: measure or event title); no digits, no country names
   traitWeights: z.partialRecord(TraitKey, z.number().min(-1).max(1)).optional(),
   sourceIds: z.array(z.string()).min(1),
 });
@@ -237,7 +238,8 @@ export const Scene = z.object({
   tone: SceneTone,                           // from goodness direction, not from the text
   cause: z.string().nullable(),              // measure title, card title, or null
   targets: z.array(Target),
-  kind: z.enum(["turn", "followup", "court"]),
+  kind: z.enum(["turn", "followup", "court", "upcoming"]),   // upcoming = expected later effect of this decision
+  atQuarter: z.number().int().optional(),    // upcoming: quarter the effect starts
 });
 export type Scene = z.infer<typeof Scene>;
 export const SceneRecord = Scene.extend({ quarter: z.number().int() });

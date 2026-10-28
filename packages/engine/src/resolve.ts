@@ -1,4 +1,5 @@
 import {
+  CRISIS_RESPONSE,
   DICE, META_PENALTY, GROUP_KEYS, PACING, SCORE_EFFECTS,
   type Action, type Card, type Evidence, type GameState, type GroupKey, type Judgment,
   type MeasureReport, type ScheduledEffect, type Target, type TurnReport,
@@ -94,11 +95,8 @@ export function resolveTurn(
     notes.push("meta answer: every group unhappy with a strange public statement");
   }
 
-  // 4. The event itself.
-  const share = at(SCORE_EFFECTS.relevanceIgnoredShare.value, relevance - 1);
-  for (const eff of card.ifIgnored) {
-    addSlice(`event:${card.id}`, eff.target, eff.delta * share, q, eff.over_quarters, true);
-  }
+  // 4. The event itself: its damage (step 6b, once the measures are rolled) and its good news.
+  const relevanceShare = at(SCORE_EFFECTS.relevanceIgnoredShare.value, relevance - 1);
   // Good news happens whatever the answer; only the follow-up policies depend on the player.
   for (const eff of card.onArrival ?? []) {
     addSlice(`event:${card.id}:arrival`, eff.target, eff.delta, q, eff.over_quarters, true);
@@ -189,6 +187,15 @@ export function resolveTurn(
     });
     s.log.push(`q${q}: "${a.title}" ${outcome} (roll ${roll} vs ${P.toFixed(0)}%)`);
   });
+
+  // 6b. A response only holds the crisis back to the extent it works: of the part that relevance would prevent,
+  // (1 - best multiplier, capped at 1) x CRISIS_RESPONSE.failedLeak still happens. A blocked or failed response lets
+  // part of the crisis run; a working one prevents what its relevance earns.
+  const works = measures.length === 0 ? 1 : Math.max(...measures.map((m) => Math.min(Math.max(m.multiplier, 0), 1)));
+  const share = relevanceShare + (1 - relevanceShare) * (1 - works) * CRISIS_RESPONSE.value.failedLeak;
+  for (const eff of card.ifIgnored) {
+    addSlice(`event:${card.id}`, eff.target, eff.delta * share, q, eff.over_quarters, true);
+  }
 
   const downgradedTotal = measures.reduce((a, m) => a + m.downgradedForEvidence, 0);
   if (downgradedTotal > 0) notes.push(`${downgradedTotal} effect(s) cut to level 1 for missing evidence`);
