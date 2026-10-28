@@ -1,7 +1,7 @@
 // FROZEN by the Lead. Every engine constant lives here, labeled with what it is based on.
 // "kind: design" = a game-design value, anchored to research where one exists and tuned by simulation.
 // Source ids refer to data/sources/sources.yaml.
-import type { GroupKey, StatKey } from "./contracts";
+import type { GroupKey, StatKey, TraitKey } from "./contracts";
 
 export const RULES_VERSION = "mvp-0.1";
 
@@ -267,4 +267,42 @@ export const MVP_COUNTRIES: Param<string[]> = {
   rationale: "Proposed by the Lead for regional spread; not yet confirmed by the owner.",
   basedOn: ["design.mapping"],
   calibration: "Every country passes the data-completeness check in build-countries.",
+};
+
+/**
+ * Country traits from real indicators (World Bank API). linear [a, b] maps raw a → 0 and b → 100.
+ * patronage: no clientelism index is served by the World Bank API, so the MVP uses the inverse of WGI Rule of Law
+ * as a proxy; V-Dem's clientelism index is the better source (CC BY-SA) for v1.
+ */
+export const TRAITS: Param<Record<TraitKey, { code: string; linear: [number, number]; invert?: boolean; optional?: boolean }>> = {
+  value: {
+    tourism: { code: "ST.INT.RCPT.XP.ZS", linear: [0, 30], optional: true },        // tourism receipts, % of exports
+    agriculture: { code: "NV.AGR.TOTL.ZS", linear: [0, 30] },                        // agriculture value added, % of GDP
+    resources: { code: "NY.GDP.TOTL.RT.ZS", linear: [0, 20] },                      // natural resource rents, % of GDP
+    openness: { code: "NE.EXP.GNFS.ZS", linear: [0, 80] },                          // exports, % of GDP
+    ruleOfLaw: { code: "GOV_WGI_RL_SC", linear: [0, 100] },
+    govEffectiveness: { code: "GOV_WGI_GE_SC", linear: [0, 100] },
+    patronage: { code: "GOV_WGI_RL_SC", linear: [0, 100], invert: true },          // proxy, see above
+  },
+  rationale: "Each trait is a real indicator rescaled to 0–100 so it can weight events and set institutional friction.",
+  basedOn: ["design.traits"],
+  calibration: "Trait spread across the 10 MVP countries checked by eye against the raw values.",
+};
+
+/** Institutional friction: reforms are harder where patronage is high (and easier where it is low). */
+export const FRICTION: Param<{ reformTargets: StatKey[]; parliamentPerPoint: number; probabilityPerPoint: number }> = {
+  value: { reformTargets: ["corruption", "pressFreedom", "parliament"], parliamentPerPoint: 0.1, probabilityPerPoint: 0.15 },
+  rationale:
+    "An action is a reform when an effect lowers corruption or raises press freedom or parliamentary checks. " +
+    "Its parliament vote changes by −0.1 × (patronage − 50) and its success chance by −0.15 × (patronage − 50) percentage points.",
+  basedOn: ["design.traits", "paper.perez-linan-2007"],
+  calibration: "At patronage 80 an anti-corruption law loses about 3 vote points and 4.5 points of success chance.",
+};
+
+/** Minor events: the news ticker. Small, frequent, shaped by the country's traits. */
+export const MINOR_EVENTS: Param<{ perQuarter: [number, number]; cooldownQ: number; traitStrength: number }> = {
+  value: { perQuarter: [1, 3], cooldownQ: 6, traitStrength: 1 },
+  rationale: "1–3 small news items each quarter; each item cannot repeat within 6 quarters; trait weights at full strength.",
+  basedOn: ["design.minor-events"],
+  calibration: "Minor events move each stat by at most a few points per year on average (simulation).",
 };

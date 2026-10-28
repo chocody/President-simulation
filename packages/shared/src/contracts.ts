@@ -65,6 +65,12 @@ export const Provenance = z.object({
 });
 export type Provenance = z.infer<typeof Provenance>;
 
+// ---------- country traits (derived from real indicators, never from stereotypes) ----------
+
+export const TRAIT_KEYS = ["tourism", "agriculture", "resources", "openness", "ruleOfLaw", "govEffectiveness", "patronage"] as const;
+export const TraitKey = z.enum(TRAIT_KEYS);
+export type TraitKey = z.infer<typeof TraitKey>;
+
 // ---------- country ----------
 
 export const CountryData = z.object({
@@ -77,6 +83,9 @@ export const CountryData = z.object({
   baselineSrc: z.record(StatKey, Provenance),
   groupShares: z.record(GroupKey, z.number().min(0).max(1)),   // sums to 1
   groupSharesSrc: z.record(GroupKey, Provenance),
+  /** 0–100 per trait, mapped from real indicators by DATA_MAPPING/TRAITS. Optional so older files still load. */
+  traits: z.partialRecord(TraitKey, z.number().min(0).max(100)).optional(),
+  traitsSrc: z.partialRecord(TraitKey, Provenance).optional(),
 });
 export type CountryData = z.infer<typeof CountryData>;
 
@@ -178,10 +187,26 @@ export const Card = z.object({
   ifIgnored: z.array(CardEffect),
   /** Effects that happen when the card appears, whatever the answer (the windfall of good news). Not scaled by relevance. */
   onArrival: z.array(CardEffect).optional(),
+  /** Weight multiplier per trait: weight × (1 + k × (trait − 50) / 50). Tourism cards appear more where tourism is big. */
+  traitWeights: z.partialRecord(TraitKey, z.number().min(-1).max(1)).optional(),
   sourceIds: z.array(z.string()).min(1),    // what the frequency and effect sizes are based on
   choices: z.array(Choice).length(3),
 });
 export type Card = z.infer<typeof Card>;
+
+// ---------- minor events (the news ticker: small things that happen every quarter) ----------
+
+export const MinorEvent = z.object({
+  id: z.string(),                           // "news.economy.factory-opens"
+  category: z.enum(["disaster", "economy", "society", "health", "politics", "foreign", "opportunity", "culture"]),
+  textTh: z.string(),                       // one line, under 25 Thai words, no country names
+  effects: z.array(CardEffect).min(1).max(2),   // small: index ±1–3, units within level-1 scale
+  conditions: z.array(Condition),
+  baseWeight: z.number().positive(),
+  traitWeights: z.partialRecord(TraitKey, z.number().min(-1).max(1)).optional(),
+  sourceIds: z.array(z.string()).min(1),
+});
+export type MinorEvent = z.infer<typeof MinorEvent>;
 
 // ---------- game state ----------
 
@@ -232,6 +257,7 @@ export const GameState = z.object({
   econHistory: z.array(z.number()),         // economy pillar score per quarter, for the election
   pillarsAtStart: z.record(z.enum(["economy", "society", "politics", "other"]), z.number()),
   log: z.array(z.string()),                 // short engine log lines, newest last
+  news: z.array(z.object({ quarter: z.number().int(), id: z.string() })).optional(),   // minor events that happened
   endReason: EndReason.nullable(),
   voteShare: z.number().nullable(),
 });
