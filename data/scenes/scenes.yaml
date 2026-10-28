@@ -1,0 +1,590 @@
+# D5 consequence scenes: Thai situation templates the engine picks after each decision and when delayed effects arrive.
+# One or two short sentences each; no digits, country or city names, real people or party names; officials are roles.
+# Delta scenes describe typical, well-documented mechanisms (never one historical event); direction follows the real meaning
+# (inflation, unemployment, crime, corruption, inequality and debt up are bad; budget down is less fiscal room); large is visibly bigger than small.
+# Every key target x up/down x small/large has at least one plain (no traitWeights) template, so the engine always has a fallback.
+# {measure} (the measure title) is used in outcome, protest and court templates only.
+# sourceIds: design.scenes everywhere; a research source only where that study documents the mechanism in the text.
+# traitWeights: only where the country trait (see TRAITS in design-params) makes the link plain.
+
+# ---- delta scenes ----
+- id: scene.delta.gdp-growth.up.small.1
+  trigger: { kind: delta, target: gdpGrowth, direction: up, size: small }
+  textTh: "โรงงานในนิคมเพิ่มกะกลางคืน ร้านอาหารหน้าโรงงานขายดีขึ้นเล็กน้อย"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.up.small.2
+  trigger: { kind: delta, target: gdpGrowth, direction: up, size: small }
+  textTh: "ร้านค้าปลีกเริ่มสั่งสินค้าเข้าร้านมากขึ้น รถขนส่งวิ่งเต็มกว่าเดือนก่อน"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.up.large.1
+  trigger: { kind: delta, target: gdpGrowth, direction: up, size: large }
+  textTh: "โรงงานทั่วนิคมประกาศรับพนักงานเพิ่มพร้อมกัน รถบรรทุกต่อคิวหน้าท่าเรือยาวทั้งวัน เครนทำงานไม่หยุด"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.up.large.2
+  trigger: { kind: delta, target: gdpGrowth, direction: up, size: large }
+  textTh: "ไซต์ก่อสร้างผุดขึ้นทั่วเมือง ร้านค้าและโรงแรมขยายสาขา นักลงทุนแห่ดูที่ดินกันคึกคัก"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.down.small.1
+  trigger: { kind: delta, target: gdpGrowth, direction: down, size: small }
+  textTh: "ร้านค้าปลีกลดการสั่งของเข้าร้าน ลูกค้าเดินดูมากกว่าซื้อ"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.down.small.2
+  trigger: { kind: delta, target: gdpGrowth, direction: down, size: small }
+  textTh: "โรงงานลดชั่วโมงล่วงเวลาลง พนักงานรายได้หายไปเล็กน้อย"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.down.large.1
+  trigger: { kind: delta, target: gdpGrowth, direction: down, size: large }
+  textTh: "โรงงานหลายแห่งหยุดสายการผลิตบางส่วน รถบรรทุกจอดว่างเรียงรายหน้าท่าเรือ ร้านค้าปิดก่อนเวลา"
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.down.large.2
+  trigger: { kind: delta, target: gdpGrowth, direction: down, size: large }
+  textTh: "ไซต์ก่อสร้างหยุดงานกลางคัน ร้านค้าในย่านการค้าติดป้ายเซ้งกิจการ ผู้ประกอบการบอกว่าไม่เคยเงียบแบบนี้"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.up.small.1
+  trigger: { kind: delta, target: inflation, direction: up, size: small }
+  textTh: "แม่ค้าในตลาดบ่นว่าต้นทุนขึ้นทุกสัปดาห์ ลูกค้าเริ่มซื้อของน้อยลง"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.up.small.2
+  trigger: { kind: delta, target: inflation, direction: up, size: small }
+  textTh: "ร้านข้าวแกงขึ้นราคาจานละนิดหน่อย ลูกค้าประจำสังเกตเห็นแต่ยังกินต่อ"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.up.large.1
+  trigger: { kind: delta, target: inflation, direction: up, size: large }
+  textTh: "ป้ายราคาในตลาดและซูเปอร์มาร์เก็ตถูกเปลี่ยนใหม่เกือบทุกสัปดาห์ ครอบครัวลดจำนวนกับข้าวบนโต๊ะ"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.up.large.2
+  trigger: { kind: delta, target: inflation, direction: up, size: large }
+  textTh: "ผู้คนแห่ซื้อของจำเป็นกักตุนก่อนราคาขึ้นอีก ร้านขายของชำต้องจำกัดจำนวนต่อคน"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.down.small.1
+  trigger: { kind: delta, target: inflation, direction: down, size: small }
+  textTh: "ราคาผักและไข่ในตลาดนิ่งกว่าเดิม แม่ค้าไม่ต้องเปลี่ยนป้ายราคาบ่อย"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.down.small.2
+  trigger: { kind: delta, target: inflation, direction: down, size: small }
+  textTh: "ค่าขนส่งสินค้าลดลงเล็กน้อย ร้านขายของชำรับของเข้าร้านด้วยราคาเดิมได้นานขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.down.large.1
+  trigger: { kind: delta, target: inflation, direction: down, size: large }
+  textTh: "ร้านค้าติดป้ายลดราคาสินค้าจำเป็นหลายรายการ ครอบครัวกลับมาซื้อของเข้าบ้านเต็มตะกร้า"
+  sourceIds: [design.scenes]
+- id: scene.delta.inflation.down.large.2
+  trigger: { kind: delta, target: inflation, direction: down, size: large }
+  textTh: "ราคาอาหารและค่าเดินทางถูกลงชัดเจน ลูกจ้างรายวันเหลือเงินเก็บปลายเดือนมากขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.up.small.1
+  trigger: { kind: delta, target: unemployment, direction: up, size: small }
+  textTh: "ป้ายรับสมัครงานหน้าโรงงานน้อยลง ผู้สมัครรุ่นใหม่ต่อแถวรอสัมภาษณ์นานขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.up.small.2
+  trigger: { kind: delta, target: unemployment, direction: up, size: small }
+  textTh: "ร้านค้าบางแห่งลดจำนวนพนักงานชั่วคราว นักศึกษาหางานเสริมยากขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.up.large.1
+  trigger: { kind: delta, target: unemployment, direction: up, size: large }
+  textTh: "คนงานหลายร้อยคนถือซองเอกสารต่อแถวยื่นขอสิทธิว่างงาน โรงงานปิดประตูพร้อมกันหลายแห่ง"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.up.large.2
+  trigger: { kind: delta, target: unemployment, direction: up, size: large }
+  textTh: "ผู้ว่างงานนั่งรวมกันในร้านกาแฟตั้งแต่เช้า ตลาดนัดแรงงานแน่นแต่ตำแหน่งว่างแทบไม่มี"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.down.small.1
+  trigger: { kind: delta, target: unemployment, direction: down, size: small }
+  textTh: "ป้ายรับสมัครงานปรากฏหน้าร้านค้าเพิ่มขึ้น คนหนุ่มสาวได้งานแรกเร็วกว่าเดิม"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.down.small.2
+  trigger: { kind: delta, target: unemployment, direction: down, size: small }
+  textTh: "ศูนย์จัดหางานมีคิวผู้ว่างงานสั้นลง นายจ้างเริ่มโทรตามผู้สมัครเก่า"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.down.large.1
+  trigger: { kind: delta, target: unemployment, direction: down, size: large }
+  textTh: "โรงงานแย่งกันรับแรงงาน นายจ้างเสนอโบนัสแรกเข้า ผู้ว่างงานในหมู่บ้านแทบหาไม่เจอ"
+  sourceIds: [design.scenes]
+- id: scene.delta.unemployment.down.large.2
+  trigger: { kind: delta, target: unemployment, direction: down, size: large }
+  textTh: "ตลาดแรงงานตึงตัว ร้านอาหารขาดพนักงานจนต้องขึ้นค่าจ้าง ป้ายรับสมัครติดอยู่ทุกหัวมุมถนน"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.up.small.1
+  trigger: { kind: delta, target: budget, direction: up, size: small }
+  textTh: "กระทรวงการคลังพบเงินเหลือเพิ่มเล็กน้อยสำหรับโครงการค้างท่อ เจ้าหน้าที่เริ่มเปิดแฟ้มเก่า"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.up.small.2
+  trigger: { kind: delta, target: budget, direction: up, size: small }
+  textTh: "หน่วยงานรัฐได้รับอนุมัติซื้อวัสดุที่รอมานาน การซ่อมถนนบางสายเริ่มต้นได้"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.up.large.1
+  trigger: { kind: delta, target: budget, direction: up, size: large }
+  textTh: "คลังแจ้งว่ามีงบว่างก้อนใหญ่ หลายกระทรวงยื่นของบโครงการใหม่ ผู้รับเหมาเริ่มเตรียมประมูลงาน"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.up.large.2
+  trigger: { kind: delta, target: budget, direction: up, size: large }
+  textTh: "รัฐมนตรีคลังแจ้งว่าปีนี้ไม่ต้องกู้เพิ่ม หน่วยงานท้องถิ่นได้งบซ่อมสร้างก่อนกำหนด"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.down.small.1
+  trigger: { kind: delta, target: budget, direction: down, size: small }
+  textTh: "หน่วยงานรัฐชะลอโครงการเล็กที่ไม่เร่งด่วน เจ้าหน้าที่ต้องรอใบอนุมัติงบนานขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.down.small.2
+  trigger: { kind: delta, target: budget, direction: down, size: small }
+  textTh: "สำนักงบประมาณขอให้ทุกกระทรวงตัดค่าใช้จ่ายเบ็ดเตล็ด การอบรมถูกเลื่อนออกไป"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.down.large.1
+  trigger: { kind: delta, target: budget, direction: down, size: large }
+  textTh: "คลังประกาศแช่แข็งโครงการใหม่ทั้งหมด ผู้รับเหมาถือสัญญาที่ยังไม่ได้รับเงิน หน่วยงานท้องถิ่นหยุดซื้อวัสดุ"
+  sourceIds: [design.scenes]
+- id: scene.delta.budget.down.large.2
+  trigger: { kind: delta, target: budget, direction: down, size: large }
+  textTh: "กระทรวงต่าง ๆ ถูกสั่งให้ส่งแผนตัดงบ ข้าราชการเข้าห้องประชุมเรื่องงบเพียงเรื่องเดียวทั้งสัปดาห์"
+  sourceIds: [design.scenes]
+- id: scene.delta.debt.up.small.1
+  trigger: { kind: delta, target: debt, direction: up, size: small }
+  textTh: "ข่าวการกู้เพิ่มของรัฐบาลถูกพูดถึงในรายการเศรษฐกิจ นักวิเคราะห์เริ่มจับตาภาระดอกเบี้ย"
+  sourceIds: [design.scenes]
+- id: scene.delta.debt.up.large.1
+  trigger: { kind: delta, target: debt, direction: up, size: large }
+  textTh: "นักเศรษฐศาสตร์ออกทีวีเตือนว่าดอกเบี้ยหนี้รัฐกินงบมาก ผู้ซื้อพันธบัตรเรียกผลตอบแทนสูงขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.debt.down.small.1
+  trigger: { kind: delta, target: debt, direction: down, size: small }
+  textTh: "คลังชำระคืนเงินกู้บางก้อนก่อนกำหนด รายการดอกเบี้ยในร่างงบปีหน้าสั้นลงเล็กน้อย"
+  sourceIds: [design.scenes]
+- id: scene.delta.debt.down.large.1
+  trigger: { kind: delta, target: debt, direction: down, size: large }
+  textTh: "รัฐบาลปิดบัญชีเงินกู้ก้อนใหญ่ได้ หน่วยงานจัดอันดับความน่าเชื่อถือพูดถึงด้านบวก ดอกเบี้ยในร่างงบลดลงชัดเจน"
+  sourceIds: [design.scenes]
+- id: scene.delta.health.up.small.1
+  trigger: { kind: delta, target: health, direction: up, size: small }
+  textTh: "คิวหน้าคลินิกชุมชนสั้นลงเล็กน้อย ยาประจำของผู้สูงอายุมาถึงครบกว่าเดิม"
+  sourceIds: [design.scenes]
+- id: scene.delta.health.up.large.1
+  trigger: { kind: delta, target: health, direction: up, size: large }
+  textTh: "โรงพยาบาลเปิดคลินิกนอกเวลาเพิ่ม ผู้ป่วยไม่ต้องนอนรอบนเก้าอี้ทางเดิน พยาบาลได้พักเต็มกะ"
+  sourceIds: [design.scenes]
+- id: scene.delta.health.down.small.1
+  trigger: { kind: delta, target: health, direction: down, size: small }
+  textTh: "ผู้ป่วยรอตรวจที่คลินิกนานขึ้น ผู้สูงอายุบ่นว่ายาบางตัวหมดและต้องไปซื้อเอง"
+  sourceIds: [design.scenes]
+- id: scene.delta.health.down.large.1
+  trigger: { kind: delta, target: health, direction: down, size: large }
+  textTh: "ผู้ป่วยนอนบนเตียงเสริมตามทางเดิน พยาบาลทำงานต่อเนื่องหลายกะ โรงพยาบาลอำเภอส่งต่อผู้ป่วยเป็นระลอก"
+  sourceIds: [design.scenes]
+- id: scene.delta.education.up.small.1
+  trigger: { kind: delta, target: education, direction: up, size: small }
+  textTh: "ครูได้หนังสือเรียนใหม่ก่อนเปิดเทอม เด็กในห้องเรียนชนบทมีหนังสือคนละเล่ม"
+  sourceIds: [design.scenes]
+- id: scene.delta.education.up.large.1
+  trigger: { kind: delta, target: education, direction: up, size: large }
+  textTh: "ห้องเรียนทั่วประเทศมีคอมพิวเตอร์และครูเพิ่ม นักเรียนมัธยมมาเรียนครบ ห้องสมุดโรงเรียนแน่นทุกเย็น"
+  sourceIds: [design.scenes]
+- id: scene.delta.education.down.small.1
+  trigger: { kind: delta, target: education, direction: down, size: small }
+  textTh: "ครูหนึ่งคนต้องสอนหลายชั้นในโรงเรียนเล็ก เด็กบางคนตามบทเรียนไม่ทัน"
+  sourceIds: [design.scenes]
+- id: scene.delta.education.down.large.1
+  trigger: { kind: delta, target: education, direction: down, size: large }
+  textTh: "โรงเรียนชนบทปิดห้องเรียนบางระดับเพราะขาดครู เด็กต้องเดินทางไกลไปเรียนหรือหยุดเรียนไปเลย"
+  sourceIds: [design.scenes]
+- id: scene.delta.crime.up.small.1
+  trigger: { kind: delta, target: crime, direction: up, size: small }
+  textTh: "ร้านสะดวกซื้อหน้าโรงเรียนติดกล้องวงจรปิดเพิ่ม หลังมีเหตุขโมยของบ่อยขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.crime.up.large.1
+  trigger: { kind: delta, target: crime, direction: up, size: large }
+  textTh: "ร้านค้าปิดเร็วขึ้นทุกเย็น ชาวบ้านไม่กล้าเดินผ่านซอยมืด ตำรวจเปิดสายด่วนรับแจ้งเหตุเพิ่ม"
+  sourceIds: [design.scenes]
+- id: scene.delta.crime.down.small.1
+  trigger: { kind: delta, target: crime, direction: down, size: small }
+  textTh: "ตำรวจเดินตรวจจุดเสี่ยงถี่ขึ้น เหตุลักทรัพย์ในย่านตลาดลดลงเล็กน้อย"
+  sourceIds: [design.scenes, review.braga-hotspots]
+- id: scene.delta.crime.down.large.1
+  trigger: { kind: delta, target: crime, direction: down, size: large }
+  textTh: "ร้านค้าเปิดดึกได้เหมือนเดิม ถนนสายตลาดคึกคักถึงค่ำ ตำรวจบอกว่ารับแจ้งเหตุน้อยลงมาก"
+  sourceIds: [design.scenes]
+- id: scene.delta.inequality.up.small.1
+  trigger: { kind: delta, target: inequality, direction: up, size: small }
+  textTh: "รถหรูจอดหน้าร้านอาหารแพงในตัวเมือง ขณะที่คนงานรายวันบ่นว่าค่าแรงไม่พอค่าห้อง"
+  sourceIds: [design.scenes]
+- id: scene.delta.inequality.up.large.1
+  trigger: { kind: delta, target: inequality, direction: up, size: large }
+  textTh: "ช่องว่างระหว่างย่านคนรวยกับชุมชนแออัดกว้างขึ้นชัดเจน ตึกสูงใหม่ผุดขึ้นทุกวัน แต่ค่าเช่าห้องของคนจนก็สูงตาม"
+  sourceIds: [design.scenes]
+- id: scene.delta.inequality.down.small.1
+  trigger: { kind: delta, target: inequality, direction: down, size: small }
+  textTh: "คนงานรายวันเริ่มมีเงินเหลือเก็บเล็กน้อย ช่องว่างกับพนักงานประจำเริ่มแคบลง"
+  sourceIds: [design.scenes]
+- id: scene.delta.inequality.down.large.1
+  trigger: { kind: delta, target: inequality, direction: down, size: large }
+  textTh: "ชุมชนแออัดได้บ้านมั่นคงหลังใหม่และน้ำประปาเข้าทุกซอย ครอบครัวรายได้น้อยเริ่มส่งลูกเรียนต่อมัธยมปลาย"
+  sourceIds: [design.scenes]
+- id: scene.delta.corruption.up.small.1
+  trigger: { kind: delta, target: corruption, direction: up, size: small }
+  textTh: "ชาวบ้านกระซิบกันว่าต้องจ่ายใต้โต๊ะเพื่อให้เอกสารผ่านเร็วขึ้นที่สำนักงานท้องถิ่น"
+  sourceIds: [design.scenes]
+- id: scene.delta.corruption.up.large.1
+  trigger: { kind: delta, target: corruption, direction: up, size: large }
+  textTh: "นักข่าวท้องถิ่นเปิดเผยโครงการถนนที่เบิกเงินครบแต่ไม่เห็นผิวถนน ชาวบ้านรวมตัวถ่ายรูปไซต์งานร้าง"
+  sourceIds: [design.scenes]
+- id: scene.delta.corruption.down.small.1
+  trigger: { kind: delta, target: corruption, direction: down, size: small }
+  textTh: "ผลตรวจสอบโครงการท้องถิ่นถูกติดประกาศให้ชาวบ้านอ่าน เจ้าหน้าที่ระวังการเบิกจ่ายมากขึ้น"
+  sourceIds: [design.scenes, paper.olken-2007]
+- id: scene.delta.corruption.down.large.1
+  trigger: { kind: delta, target: corruption, direction: down, size: large }
+  textTh: "ผู้ตรวจสอบเข้าตรวจหลายโครงการก่อสร้างพร้อมกัน ผลถูกเปิดให้ประชาชนดู ผู้รับเหมาที่เบิกเกินจริงต้องคืนเงิน"
+  sourceIds: [design.scenes, paper.olken-2007]
+- id: scene.delta.press-freedom.up.small.1
+  trigger: { kind: delta, target: pressFreedom, direction: up, size: small }
+  textTh: "หนังสือพิมพ์ท้องถิ่นลงข่าวตรวจสอบการใช้งบของเทศบาลโดยไม่ถูกเรียกไปชี้แจง"
+  sourceIds: [design.scenes]
+- id: scene.delta.press-freedom.up.large.1
+  trigger: { kind: delta, target: pressFreedom, direction: up, size: large }
+  textTh: "สำนักข่าวหลายแห่งเปิดคอลัมน์วิจารณ์รัฐบาลเต็มหน้า วิทยุชุมชนเปิดสายคุยเรื่องนโยบายทุกเย็นโดยไม่มีใครห้าม"
+  sourceIds: [design.scenes]
+- id: scene.delta.press-freedom.down.small.1
+  trigger: { kind: delta, target: pressFreedom, direction: down, size: small }
+  textTh: "บรรณาธิการท้องถิ่นเริ่มตัดข่าวบางเรื่องออกก่อนพิมพ์ เพราะกลัวถูกเรียกไปพบเจ้าหน้าที่"
+  sourceIds: [design.scenes]
+- id: scene.delta.press-freedom.down.large.1
+  trigger: { kind: delta, target: pressFreedom, direction: down, size: large }
+  textTh: "สถานีวิทยุชุมชนถูกสั่งปิด นักข่าวหลายคนเงียบ หนังสือพิมพ์ฉบับหนึ่งเหลือข่าวการเมืองบรรทัดเดียว"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.up.small.1
+  trigger: { kind: delta, target: stability, direction: up, size: small }
+  textTh: "ถนนสายหลักไม่มีการชุมนุมติดต่อกันหลายสัปดาห์ ร้านค้าเปิดปิดตามเวลาปกติ"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.up.small.2
+  trigger: { kind: delta, target: stability, direction: up, size: small }
+  textTh: "ผู้นำชุมชนบอกว่าความตึงเครียดในที่ประชุมหมู่บ้านลดลง ข้อพิพาทเล็ก ๆ ไกล่เกลี่ยได้ก่อนบานปลาย"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.up.large.1
+  trigger: { kind: delta, target: stability, direction: up, size: large }
+  textTh: "ตลาดนัดกลางคืนกลับมาเปิดเต็มรูปแบบ คนในพื้นที่และนักท่องเที่ยวเดินกันแน่นถนน ไม่มีใครกังวลเรื่องความวุ่นวาย"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.up.large.2
+  trigger: { kind: delta, target: stability, direction: up, size: large }
+  textTh: "สภาและรัฐบาลทำงานต่อเนื่องไม่มีเหตุวุ่นวายมาหลายเดือน นักลงทุนวางแผนขยายโรงงานโดยไม่ต้องรอดูสถานการณ์"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.down.small.1
+  trigger: { kind: delta, target: stability, direction: down, size: small }
+  textTh: "ข่าวลือเรื่องการชุมนุมใหญ่ทำให้ร้านค้าแถวที่ว่าการปิดเร็วกว่าปกติ"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.down.small.2
+  trigger: { kind: delta, target: stability, direction: down, size: small }
+  textTh: "การถกเถียงในร้านกาแฟและโซเชียลดุเดือดขึ้น เพื่อนบ้านบางคนเลิกคุยเรื่องการเมืองกัน"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.down.large.1
+  trigger: { kind: delta, target: stability, direction: down, size: large }
+  textTh: "ผู้ชุมนุมปิดถนนหน้าสถานที่ราชการ ร้านค้าปิดประตูเหล็ก ตำรวจตั้งแนวกั้น นักท่องเที่ยวยกเลิกห้องพัก"
+  sourceIds: [design.scenes]
+- id: scene.delta.stability.down.large.2
+  trigger: { kind: delta, target: stability, direction: down, size: large }
+  textTh: "ความวุ่นวายลามหลายจังหวัด รถประจำทางหยุดวิ่งบางเส้นทาง โรงเรียนประกาศเลื่อนเปิดเทอมออกไปหนึ่งสัปดาห์"
+  sourceIds: [design.scenes]
+- id: scene.delta.parliament.up.small.1
+  trigger: { kind: delta, target: parliament, direction: up, size: small }
+  textTh: "ส.ส. ฝ่ายรัฐบาลเข้าประชุมครบองค์ประชุม ร่างกฎหมายผ่านวาระแรกโดยไม่ต้องรอนาน"
+  sourceIds: [design.scenes]
+- id: scene.delta.parliament.up.large.1
+  trigger: { kind: delta, target: parliament, direction: up, size: large }
+  textTh: "ร่างกฎหมายสำคัญผ่านสภาด้วยเสียงข้างมากชัดเจน ส.ส. หลายฝ่ายยกมือสนับสนุน ผู้ประสานงานรัฐบาลยิ้มหน้าห้องประชุม"
+  sourceIds: [design.scenes]
+- id: scene.delta.parliament.down.small.1
+  trigger: { kind: delta, target: parliament, direction: down, size: small }
+  textTh: "ส.ส. บางคนไม่เข้าประชุม ผู้ประสานงานรัฐบาลต้องโทรตามให้ครบองค์ประชุม"
+  sourceIds: [design.scenes]
+- id: scene.delta.parliament.down.large.1
+  trigger: { kind: delta, target: parliament, direction: down, size: large }
+  textTh: "ส.ส. ฝ่ายรัฐบาลหลายคนประกาศไม่ยกมือให้ร่างสำคัญ ผู้ประสานงานรัฐบาลวิ่งหาเสียงสนับสนุนทั้งคืน"
+  sourceIds: [design.scenes]
+- id: scene.delta.environment.up.small.1
+  trigger: { kind: delta, target: environment, direction: up, size: small }
+  textTh: "แม่น้ำสายหลักใสขึ้นเล็กน้อย ชาวบ้านริมคลองเห็นปลากลับมาในจุดที่เคยไม่มี"
+  sourceIds: [design.scenes]
+- id: scene.delta.environment.up.large.1
+  trigger: { kind: delta, target: environment, direction: up, size: large }
+  textTh: "ฝุ่นละอองลดลงชัดเจน ท้องฟ้าเมืองสว่างขึ้น เด็ก ๆ กลับมาวิ่งเล่นกลางแจ้ง ป่าชุมชนมีต้นไม้งอกใหม่"
+  sourceIds: [design.scenes]
+- id: scene.delta.environment.down.small.1
+  trigger: { kind: delta, target: environment, direction: down, size: small }
+  textTh: "กลิ่นเหม็นจากบ่อขยะลอยเข้าหมู่บ้านบางวัน ชาวบ้านร้องเรียนต่อเทศบาล"
+  sourceIds: [design.scenes]
+- id: scene.delta.environment.down.large.1
+  trigger: { kind: delta, target: environment, direction: down, size: large }
+  textTh: "ฝุ่นควันปกคลุมเมืองหลายวัน โรงเรียนงดกิจกรรมกลางแจ้ง คลินิกเต็มไปด้วยผู้ป่วยไอและหอบ"
+  sourceIds: [design.scenes]
+- id: scene.delta.foreign-relations.up.small.1
+  trigger: { kind: delta, target: foreignRelations, direction: up, size: small }
+  textTh: "ทูตจากประเทศเพื่อนบ้านมาเยี่ยมกระทรวงการต่างประเทศ ข้อตกลงด้านการค้าชายแดนเดินหน้าต่อ"
+  sourceIds: [design.scenes]
+- id: scene.delta.foreign-relations.up.large.1
+  trigger: { kind: delta, target: foreignRelations, direction: up, size: large }
+  textTh: "ผู้นำต่างประเทศหลายรายตอบรับคำเชิญเยือน ข้อตกลงการค้าและการศึกษาฉบับใหม่ถูกลงนามหน้ากล้อง"
+  sourceIds: [design.scenes]
+- id: scene.delta.foreign-relations.down.small.1
+  trigger: { kind: delta, target: foreignRelations, direction: down, size: small }
+  textTh: "การประชุมกับคู่ค้าต่างประเทศถูกเลื่อน เจ้าหน้าที่กระทรวงต่างประเทศชี้แจงว่าเป็นเรื่องตารางงาน"
+  sourceIds: [design.scenes]
+- id: scene.delta.foreign-relations.down.large.1
+  trigger: { kind: delta, target: foreignRelations, direction: down, size: large }
+  textTh: "ทูตของประเทศคู่ค้าถูกเรียกเข้าพบเพื่อประท้วง ผู้ซื้อต่างประเทศเลื่อนสัญญา ผู้ส่งออกกังวลว่าออเดอร์จะหาย"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.up.small.1
+  trigger: { kind: delta, target: "group:farmers", direction: up, size: small }
+  textTh: "ชาวสวนคุยกันในร้านกาแฟหมู่บ้านว่าปีนี้พอมีเงินเหลือเก็บ ผู้ใหญ่บ้านเริ่มพูดถึงรัฐบาลในแง่ดี"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.up.small.2
+  trigger: { kind: delta, target: "group:farmers", direction: up, size: small }
+  textTh: "สหกรณ์การเกษตรเปิดรับซื้อผลผลิตตามราคาที่ตกลงไว้ เกษตรกรไม่ต้องรอพ่อค้าคนกลางเสนอราคา"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.up.large.1
+  trigger: { kind: delta, target: "group:farmers", direction: up, size: large }
+  textTh: "ชาวนาและชาวสวนจัดงานเลี้ยงขอบคุณในหมู่บ้าน เกษตรกรหลายรายวางแผนซื้อเครื่องจักรเพิ่ม"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.up.large.2
+  trigger: { kind: delta, target: "group:farmers", direction: up, size: large }
+  textTh: "ลานรับซื้อผลผลิตคึกคักตลอดวัน เกษตรกรถือใบเสร็จยิ้มแย้ม ตัวแทนกลุ่มเกษตรกรกล่าวขอบคุณต่อหน้าชาวบ้าน"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.down.small.1
+  trigger: { kind: delta, target: "group:farmers", direction: down, size: small }
+  textTh: "ชาวนาพูดกันในร้านน้ำชาว่าต้นทุนปุ๋ยสูงเกินไป กลุ่มแชตเกษตรกรเต็มไปด้วยข้อความบ่น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.down.small.2
+  trigger: { kind: delta, target: "group:farmers", direction: down, size: small }
+  textTh: "ตัวแทนกลุ่มเกษตรกรยื่นหนังสือถึงนายอำเภอเรื่องราคาผลผลิต ชาวบ้านมาร่วมเซ็นชื่อ"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.down.large.1
+  trigger: { kind: delta, target: "group:farmers", direction: down, size: large }
+  textTh: "เกษตรกรขับรถแทรกเตอร์มาจอดเรียงหน้าที่ว่าการอำเภอ ตัวแทนกลุ่มขู่ปิดถนนหากไม่ได้คำตอบ"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.down.large.2
+  trigger: { kind: delta, target: "group:farmers", direction: down, size: large }
+  textTh: "ชาวนาหลายหมู่บ้านเทผลผลิตกองหน้าสำนักงานเกษตรจังหวัดเพื่อประท้วง ผู้ใหญ่บ้านบอกว่าไม่ไหวแล้ว"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.up.small.1
+  trigger: { kind: delta, target: "group:urban", direction: up, size: small }
+  textTh: "คนทำงานในเมืองบ่นเรื่องค่าครองชีพน้อยลง รถไฟฟ้ายังแน่นแต่ผู้โดยสารอารมณ์ดีขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.up.small.2
+  trigger: { kind: delta, target: "group:urban", direction: up, size: small }
+  textTh: "ร้านกาแฟย่านออฟฟิศมีลูกค้าสั่งเมนูพิเศษเพิ่ม พนักงานนัดสังสรรค์หลังเลิกงานบ่อยขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.up.large.1
+  trigger: { kind: delta, target: "group:urban", direction: up, size: large }
+  textTh: "คนเมืองเต็มห้างและตลาดนัดตอนเย็นวันศุกร์ โพลบนโซเชียลชี้ว่าคนเมืองมองอนาคตดีขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.up.large.2
+  trigger: { kind: delta, target: "group:urban", direction: up, size: large }
+  textTh: "พนักงานออฟฟิศและพ่อค้าแม่ค้าในเมืองพูดตรงกันว่าชีวิตดีขึ้น คนต่อคิวดูบ้านใหม่และผ่อนรถมากขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.down.small.1
+  trigger: { kind: delta, target: "group:urban", direction: down, size: small }
+  textTh: "คนเมืองบ่นเรื่องรถติดและค่าครองชีพในกลุ่มแชต ร้านอาหารมีลูกค้าสั่งกลับบ้านมากกว่านั่งกิน"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.down.small.2
+  trigger: { kind: delta, target: "group:urban", direction: down, size: small }
+  textTh: "ผู้โดยสารรถไฟฟ้าบ่นเรื่องค่าโดยสารและความแออัด ร้านกาแฟย่านออฟฟิศเงียบลง"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.down.large.1
+  trigger: { kind: delta, target: "group:urban", direction: down, size: large }
+  textTh: "คนเมืองรวมกลุ่มโพสต์ประท้วงค่าครองชีพ ผู้โดยสารรถเมล์เดินเท้ากลับบ้าน ร้านค้าในตัวเมืองติดป้ายขอความเข้าใจ"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-urban.down.large.2
+  trigger: { kind: delta, target: "group:urban", direction: down, size: large }
+  textTh: "ผู้เช่าห้องในเมืองรวมตัวหน้าที่ว่าการเขต ยื่นข้อเรียกร้องเรื่องค่าเช่าและความปลอดภัย สื่อถ่ายทอดสดตลอดบ่าย"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.up.small.1
+  trigger: { kind: delta, target: "group:business", direction: up, size: small }
+  textTh: "สภาหอการค้าประชุมกันด้วยบรรยากาศผ่อนคลาย ผู้ประกอบการเริ่มพูดถึงแผนจ้างงานปีหน้า"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.up.small.2
+  trigger: { kind: delta, target: "group:business", direction: up, size: small }
+  textTh: "เจ้าของกิจการขนาดกลางลงนามสั่งซื้อเครื่องจักรใหม่ที่เลื่อนมานาน"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.up.large.1
+  trigger: { kind: delta, target: "group:business", direction: up, size: large }
+  textTh: "นักธุรกิจจัดงานเปิดโรงงานแห่งใหม่ท่ามกลางแขกเหรื่อ สมาคมอุตสาหกรรมออกแถลงสนับสนุนนโยบายรัฐ"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.up.large.2
+  trigger: { kind: delta, target: "group:business", direction: up, size: large }
+  textTh: "ผู้ประกอบการหลายรายประกาศขยายสาขาและเพิ่มการลงทุนพร้อมกัน ธนาคารเปิดสินเชื่อธุรกิจเพิ่ม งานแสดงสินค้าคนแน่น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.down.small.1
+  trigger: { kind: delta, target: "group:business", direction: down, size: small }
+  textTh: "สมาคมผู้ประกอบการส่งจดหมายถึงกระทรวงเรื่องกฎระเบียบใหม่ เจ้าของร้านเริ่มชะลอการลงทุน"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.down.small.2
+  trigger: { kind: delta, target: "group:business", direction: down, size: small }
+  textTh: "เจ้าของโรงงานขนาดกลางเลื่อนแผนซื้อเครื่องจักรออกไป บอกว่าขอดูสถานการณ์ก่อน"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.down.large.1
+  trigger: { kind: delta, target: "group:business", direction: down, size: large }
+  textTh: "สภาอุตสาหกรรมประกาศคัดค้านนโยบายรัฐต่อสาธารณะ ผู้ประกอบการหลายรายเลื่อนลงทุน บางรายพูดถึงการย้ายฐานการผลิต"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-business.down.large.2
+  trigger: { kind: delta, target: "group:business", direction: down, size: large }
+  textTh: "ผู้ประกอบการรายใหญ่ปิดโครงการขยายโรงงาน แถลงว่าไม่มั่นใจทิศทางนโยบาย หอการค้าเรียกประชุมด่วน"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-youth.up.small.1
+  trigger: { kind: delta, target: "group:youth", direction: up, size: small }
+  textTh: "นักศึกษาเริ่มใช้พื้นที่ทำงานร่วมกันในห้องสมุดเมืองมากขึ้น กลุ่มเยาวชนพอใจกับโครงการฝึกงานใหม่"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-youth.up.large.1
+  trigger: { kind: delta, target: "group:youth", direction: up, size: large }
+  textTh: "เยาวชนจัดเทศกาลดนตรีและงานอาสาสมัครเต็มลานกลางเมือง โพสต์ของนักศึกษาพูดถึงอนาคตด้วยน้ำเสียงมั่นใจ"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-youth.down.small.1
+  trigger: { kind: delta, target: "group:youth", direction: down, size: small }
+  textTh: "บัณฑิตจบใหม่บ่นในกลุ่มแชตว่าสมัครงานเท่าไรก็ไม่มีคนเรียกสัมภาษณ์"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-youth.down.large.1
+  trigger: { kind: delta, target: "group:youth", direction: down, size: large }
+  textTh: "นักศึกษารวมตัวหน้ามหาวิทยาลัยพร้อมป้ายผ้า เยาวชนแชร์แฮชแท็กวิจารณ์รัฐบาล กิจกรรมสังสรรค์ถูกเปลี่ยนเป็นวงถกปัญหา"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-military.up.small.1
+  trigger: { kind: delta, target: "group:military", direction: up, size: small }
+  textTh: "นายทหารชั้นผู้น้อยพอใจที่พักในค่ายที่ปรับปรุงใหม่ ผู้บังคับบัญชาพูดถึงขวัญกำลังพลที่ดีขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-military.up.large.1
+  trigger: { kind: delta, target: "group:military", direction: up, size: large }
+  textTh: "กองทัพจัดพิธีสวนสนามอย่างคึกคัก ผู้บัญชาการหน่วยแถลงสนับสนุนรัฐบาล นายทหารชั้นผู้น้อยพูดถึงขวัญกำลังพลที่ดีขึ้น"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-military.down.small.1
+  trigger: { kind: delta, target: "group:military", direction: down, size: small }
+  textTh: "ทหารเกณฑ์บ่นเรื่องอาหารและเครื่องใช้ในค่าย นายทหารระดับกลางเริ่มซุบซิบกันในห้องอาหาร"
+  sourceIds: [design.scenes]
+- id: scene.delta.group-military.down.large.1
+  trigger: { kind: delta, target: "group:military", direction: down, size: large }
+  textTh: "ผู้บัญชาการหน่วยหลายแห่งนัดหารือกันนอกรอบ ข่าวความไม่พอใจในกองทัพรั่วไหลสู่สื่อ รัฐมนตรีกลาโหมต้องออกมาชี้แจง"
+  sourceIds: [design.scenes]
+# ---- trait-flavoured delta scenes (extra variants; the plain ones above remain the fallback) ----
+- id: scene.delta.gdp-growth.up.large.tourism
+  trigger: { kind: delta, target: gdpGrowth, direction: up, size: large }
+  textTh: "โรงแรมและร้านอาหารในเมืองท่องเที่ยวแน่นตลอดสัปดาห์ โรงงานอาหารและของใช้ในพื้นที่ได้ออเดอร์เพิ่ม"
+  traitWeights: { tourism: 0.8 }
+  sourceIds: [design.scenes, paper.faber-gaubert-2019]
+- id: scene.delta.gdp-growth.down.large.tourism
+  trigger: { kind: delta, target: gdpGrowth, direction: down, size: large }
+  textTh: "ห้องพักว่างเป็นแถบ ร้านอาหารริมชายหาดลดวันเปิด พนักงานชั่วคราวถูกพักงาน"
+  traitWeights: { tourism: 0.8 }
+  sourceIds: [design.scenes]
+- id: scene.delta.gdp-growth.up.small.resources
+  trigger: { kind: delta, target: gdpGrowth, direction: up, size: small }
+  textTh: "เมืองเหมืองและท่าส่งออกวัตถุดิบคึกคัก ค่าแรงช่างและคนขับรถบรรทุกขยับขึ้น"
+  traitWeights: { resources: 0.7 }
+  sourceIds: [design.scenes, paper.allcott-keniston-2018]
+- id: scene.delta.budget.up.large.resources
+  trigger: { kind: delta, target: budget, direction: up, size: large }
+  textTh: "กระทรวงการคลังถกกันว่าจะเก็บรายได้พิเศษจากทรัพยากรไว้ในกองทุนหรือลงทุนสร้างถนนและโรงเรียน"
+  traitWeights: { resources: 0.7 }
+  sourceIds: [design.scenes, review.windfall-managing]
+- id: scene.delta.environment.down.large.resources
+  trigger: { kind: delta, target: environment, direction: down, size: large }
+  textTh: "แม่น้ำใกล้พื้นที่ขุดแร่ขุ่นขึ้น ชาวบ้านร้องเรียนเรื่องฝุ่นและน้ำ ปลาในบ่อลอยตาย"
+  traitWeights: { resources: 0.7 }
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.down.large.agriculture
+  trigger: { kind: delta, target: "group:farmers", direction: down, size: large }
+  textTh: "เกษตรกรขับรถแทรกเตอร์ปิดทางหลวงสายหลัก ผลผลิตกองเต็มไหล่ทาง รถบรรทุกติดยาวหลายกิโลเมตร"
+  traitWeights: { agriculture: 0.8 }
+  sourceIds: [design.scenes]
+- id: scene.delta.group-farmers.up.large.agriculture
+  trigger: { kind: delta, target: "group:farmers", direction: up, size: large }
+  textTh: "ลานตากผลผลิตเต็มทุกหมู่บ้าน ชาวไร่ชาวนาวางแผนซื้อปุ๋ยและเครื่องจักรเพิ่มทั้งตำบล"
+  traitWeights: { agriculture: 0.8 }
+  sourceIds: [design.scenes]
+- id: scene.delta.corruption.up.small.patronage
+  trigger: { kind: delta, target: corruption, direction: up, size: small }
+  textTh: "เจ้าหน้าที่ท้องถิ่นแบ่งงานก่อสร้างให้ผู้รับเหมาที่เป็นเครือญาติ ชาวบ้านรู้กันทั้งตำบล"
+  traitWeights: { patronage: 0.8 }
+  sourceIds: [design.scenes]
+- id: scene.delta.corruption.down.small.rule-of-law
+  trigger: { kind: delta, target: corruption, direction: down, size: small }
+  textTh: "ผู้ตรวจสอบอิสระเปิดผลการตรวจโครงการได้เต็มที่ ศาลรับคดีฉ้อโกงเร็วกว่าเดิม"
+  traitWeights: { ruleOfLaw: 0.6 }
+  sourceIds: [design.scenes]
+- id: scene.delta.foreign-relations.up.small.openness
+  trigger: { kind: delta, target: foreignRelations, direction: up, size: small }
+  textTh: "ผู้ส่งออกได้ออเดอร์ล่วงหน้าจากผู้ซื้อต่างประเทศ ท่าเรือจัดตู้สินค้าเพิ่ม"
+  traitWeights: { openness: 0.8 }
+  sourceIds: [design.scenes]
+- id: scene.delta.foreign-relations.down.small.openness
+  trigger: { kind: delta, target: foreignRelations, direction: down, size: small }
+  textTh: "ผู้ซื้อต่างประเทศเลื่อนการเซ็นสัญญา ผู้ส่งออกกังวลว่าออเดอร์ในไตรมาสหน้าจะหาย"
+  traitWeights: { openness: 0.8 }
+  sourceIds: [design.scenes]
+- id: scene.delta.health.up.small.gov-effectiveness
+  trigger: { kind: delta, target: health, direction: up, size: small }
+  textTh: "โรงพยาบาลชุมชนจัดคิวและยาครบตามระบบ ผู้ป่วยรอตรวจน้อยลง เจ้าหน้าที่ทำงานตามแผนที่วางไว้"
+  traitWeights: { govEffectiveness: 0.6 }
+  sourceIds: [design.scenes]
+# ---- outcome scenes ----
+- id: scene.outcome.blocked.1
+  trigger: { kind: outcome, outcome: blocked }
+  textTh: "สภาไม่ผ่านร่าง {measure} ประธานสภาประกาศผลโหวตท่ามกลางเสียงฮือฮา ผู้ประสานงานรัฐบาลเดินออกจากห้องประชุมเงียบ ๆ"
+  sourceIds: [design.scenes]
+- id: scene.outcome.blocked.2
+  trigger: { kind: outcome, outcome: blocked }
+  textTh: "ที่ประชุมสภาตีตก {measure} หลังอภิปรายยาวทั้งวัน ฝ่ายค้านปรบมือ ทีมงานนโยบายเก็บแฟ้มกลับไปแก้ร่าง"
+  sourceIds: [design.scenes]
+- id: scene.outcome.critical-failure.1
+  trigger: { kind: outcome, outcome: critical_failure }
+  textTh: "{measure} ออกมาแย่กว่าที่กลัว ผู้ปฏิบัติงานภาคสนามรายงานปัญหาพร้อมกันหลายแห่ง รัฐมนตรีต้องแถลงขอโทษ"
+  sourceIds: [design.scenes]
+- id: scene.outcome.critical-failure.2
+  trigger: { kind: outcome, outcome: critical_failure }
+  textTh: "ผลของ {measure} ย้อนกลับเข้าตัว หน่วยงานต้องหยุดโครงการกลางทาง ชาวบ้านเดือดร้อนและสื่อรายงานซ้ำทุกวัน"
+  sourceIds: [design.scenes]
+- id: scene.outcome.great-success.1
+  trigger: { kind: outcome, outcome: great_success }
+  textTh: "{measure} ได้ผลเกินคาด ผู้ปฏิบัติงานภาคสนามรายงานว่าชาวบ้านได้ประโยชน์เร็วกว่ากำหนด รัฐมนตรีเปิดแถลงข่าวด้วยรอยยิ้ม"
+  sourceIds: [design.scenes]
+- id: scene.outcome.great-success.2
+  trigger: { kind: outcome, outcome: great_success }
+  textTh: "หน่วยงานท้องถิ่นขอขยาย {measure} ไปพื้นที่ใกล้เคียง หลังเห็นผลดีกว่าแผนในทุกจุดที่ลงมือ"
+  sourceIds: [design.scenes]
+- id: scene.outcome.partial.1
+  trigger: { kind: outcome, outcome: partial }
+  textTh: "{measure} ได้ผลเพียงบางส่วน บางพื้นที่เห็นการเปลี่ยนแปลง แต่อีกหลายแห่งยังรอ เจ้าหน้าที่ขอเวลาปรับแผน"
+  sourceIds: [design.scenes]
+- id: scene.outcome.partial.2
+  trigger: { kind: outcome, outcome: partial }
+  textTh: "ผลของ {measure} ออกมาครึ่ง ๆ กลาง ๆ ผู้ได้ประโยชน์พอใจ แต่ผู้ที่ยังไม่ได้รับถามว่าจะถึงตาตนเมื่อไร"
+  sourceIds: [design.scenes]
+- id: scene.outcome.failure.1
+  trigger: { kind: outcome, outcome: failure }
+  textTh: "{measure} ไม่ได้ผลตามที่หวัง งบถูกใช้ไปแล้วแต่ชาวบ้านแทบไม่เห็นการเปลี่ยนแปลง ฝ่ายค้านตั้งกระทู้ถาม"
+  sourceIds: [design.scenes]
+- id: scene.outcome.failure.2
+  trigger: { kind: outcome, outcome: failure }
+  textTh: "ผู้ปฏิบัติงานรายงานว่า {measure} ติดขัดตั้งแต่เริ่มต้น ปัญหาเดิมยังอยู่ โครงการต้องกลับไปทบทวน"
+  sourceIds: [design.scenes]
+# ---- protest scenes ----
+- id: scene.protest.farmers.1
+  trigger: { kind: protest, group: farmers }
+  textTh: "เกษตรกรขับรถไถมาปิดถนนหน้าที่ว่าการอำเภอ ชูป้ายคัดค้าน {measure} และขอเจรจากับรัฐมนตรีเกษตร"
+  sourceIds: [design.scenes]
+- id: scene.protest.urban.1
+  trigger: { kind: protest, group: urban }
+  textTh: "คนเมืองรวมตัวหน้าที่ทำการรัฐบาล ถือป้ายคัดค้าน {measure} ผู้โดยสารรถเมล์ต้องลงเดินเพราะถนนปิด"
+  sourceIds: [design.scenes]
+- id: scene.protest.business.1
+  trigger: { kind: protest, group: business }
+  textTh: "ตัวแทนสมาคมผู้ประกอบการแถลงคัดค้าน {measure} หน้าสภาหอการค้า เจ้าของกิจการหลายรายปิดร้านชั่วคราวเพื่อร่วมแสดงพลัง"
+  sourceIds: [design.scenes]
+- id: scene.protest.youth.1
+  trigger: { kind: protest, group: youth }
+  textTh: "นักศึกษาเดินขบวนจากมหาวิทยาลัยเพื่อคัดค้าน {measure} เยาวชนเปิดแคมเปญบนโซเชียลและแขวนป้ายผ้าหน้าอาคารเรียน"
+  sourceIds: [design.scenes]
+- id: scene.protest.military.1
+  trigger: { kind: protest, group: military }
+  textTh: "ทหารนอกราชการและครอบครัวนัดรวมตัวหน้าสโมสรทหาร แสดงความไม่พอใจ {measure} ผู้บังคับบัญชาออกมาขอให้ใจเย็น"
+  sourceIds: [design.scenes]
+# ---- court scenes ----
+- id: scene.court.1
+  trigger: { kind: court }
+  textTh: "ศาลปกครองสั่งระงับ {measure} ชั่วคราวหลังมีผู้ร้อง เจ้าหน้าที่ต้องหยุดงานภาคสนามและรอคำวินิจฉัยฉบับเต็ม"
+  sourceIds: [design.scenes]
+- id: scene.court.2
+  trigger: { kind: court }
+  textTh: "ผู้พิพากษาอ่านคำสั่งระงับ {measure} ในห้องพิจารณาคดีที่แน่นไปด้วยนักข่าว ทนายความของรัฐบอกว่าจะอุทธรณ์"
+  sourceIds: [design.scenes]
