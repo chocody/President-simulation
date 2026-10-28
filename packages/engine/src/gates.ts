@@ -10,8 +10,8 @@ export interface ParliamentResult {
   passed: boolean;
 }
 
-/** Only for measures that need legislation. vote > passAbove passes. */
-export function parliamentVote(state: GameState, action: Action, rng: Rng): ParliamentResult {
+/** Only for measures that need legislation. vote > passAbove passes. `voteAdjust` is institutional friction (default 0). */
+export function parliamentVote(state: GameState, action: Action, rng: Rng, voteAdjust = 0): ParliamentResult {
   if (!action.requires_legislation) return { required: false, vote: null, passed: true };
   const g = GATES.parliament.value;
   const levels = action.group_impacts
@@ -19,7 +19,7 @@ export function parliamentVote(state: GameState, action: Action, rng: Rng): Parl
     .reduce((a, gi) => a + Number(gi.level), 0);
   const conflict = Math.min(g.conflictMax, g.conflictPerLevel * levels);
   const noise = (rng.next() * 2 - 1) * g.noise;
-  const vote = state.stats.parliament + g.popularityWeight * (state.popularity - 50) - conflict + noise;
+  const vote = state.stats.parliament + g.popularityWeight * (state.popularity - 50) - conflict + noise + voteAdjust;
   return { required: true, vote, passed: vote > g.passAbove };
 }
 

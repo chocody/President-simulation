@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2023",
+      "value": 62.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2022",
+      "value": 62.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2021",
+      "value": 62,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2020",
+      "value": 61.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2019",
+      "value": 61.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2018",
+      "value": 61.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2017",
+      "value": 61,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2016",
+      "value": 60.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2015",
+      "value": 60.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Kenya (TEST FIXTURE)"
+      },
+      "countryiso3code": "KEN",
+      "date": "2014",
+      "value": 60.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

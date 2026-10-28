@@ -91,6 +91,56 @@ describe("buildCountries on fixtures", () => {
   });
 });
 
+describe("traits in buildCountries (fixtures)", () => {
+  const read = (iso: string) => CountryData.parse(JSON.parse(readFileSync(join(outDir, `${iso}.json`), "utf8")));
+  const rep = (iso: string) => passed.find((c) => c.iso3 === iso)!;
+  it("every passing country has traits and traitsSrc that cite registered sources", () => {
+    for (const c of passed) {
+      const d = read(c.iso3);
+      expect(Object.keys(d.traits ?? {}).length, c.iso3).toBeGreaterThanOrEqual(4);
+      expect(Object.keys(d.traitsSrc ?? {}).sort(), c.iso3).toEqual(Object.keys(d.traits ?? {}).sort());
+      for (const [k, p] of Object.entries(d.traitsSrc!)) {
+        expect(sourceIds.has(p.sourceId), `${c.iso3} ${k}`).toBe(true);
+        expect(p.year, `${c.iso3} ${k}`).not.toBeNull();
+        expect(p.raw, `${c.iso3} ${k}`).not.toBeNull();
+      }
+      for (const v of Object.values(d.traits!)) { expect(v).toBeGreaterThanOrEqual(0); expect(v).toBeLessThanOrEqual(100); }
+    }
+  });
+  it("THA values follow the mapping (fixture raw 5% tourism of exports -> 5/30, rule of law 45 -> patronage 55)", () => {
+    const d = read("THA");
+    expect(d.traitsSrc!.tourism).toEqual({ sourceId: "wdi.ST.INT.RCPT.XP.ZS", year: 2023, raw: 5 });
+    expect(d.traits!.tourism).toBeCloseTo((5 / 30) * 100, 8);
+    expect(d.traits!.ruleOfLaw).toBeCloseTo(45, 8);
+    expect(d.traits!.patronage).toBeCloseTo(55, 8);
+    expect(d.traitsSrc!.patronage!.sourceId).toBe("wgi.GOV_WGI_RL_SC");
+    expect(rep("THA").codes["NV.AGR.TOTL.ZS"]).toEqual({ year: 2023, value: 12 });
+  });
+  it("a missing optional trait (POL tourism) is left out, with a build-report note", () => {
+    const d = read("POL");
+    expect("tourism" in d.traits!).toBe(false);
+    expect("tourism" in d.traitsSrc!).toBe(false);
+    expect(rep("POL").notes.join("\n")).toMatch(/trait tourism: ST\.INT\.RCPT\.XP\.ZS unavailable.*left out/);
+  });
+  it("a missing trait response (IDN government effectiveness) skips nothing", () => {
+    expect(rep("IDN").status).toBe("ok");
+    const d = read("IDN");
+    expect("govEffectiveness" in d.traits!).toBe(false);
+    expect(d.traits!.ruleOfLaw).toBeDefined();
+    expect(rep("IDN").notes.join("\n")).toMatch(/trait govEffectiveness: GOV_WGI_GE_SC unavailable \(no response\)/);
+  });
+  it("trait values older than the age limit are rejected like stats (VNM resource rents from 2012)", () => {
+    expect(rep("VNM").status).toBe("ok");
+    expect("resources" in read("VNM").traits!).toBe(false);
+    expect(rep("VNM").rejected["NY.GDP.TOTL.RT.ZS"]).toMatch(/2012/);
+    expect(rep("VNM").notes.join("\n")).toMatch(/trait resources: NY\.GDP\.TOTL\.RT\.ZS unavailable \(latest value is from 2012/);
+  });
+  it("the shared rule-of-law code is requested once per country", () => {
+    const urls = planRequests(["THA"]).filter((u) => u.includes("GOV_WGI_RL_SC"));
+    expect(urls.length).toBe(1);
+  });
+});
+
 describe("parseArgs and main", () => {
   it("parses flags", () => {
     expect(parseArgs(["--dry"]).dry).toBe(true);

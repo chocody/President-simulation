@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2023",
+      "value": 50,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2022",
+      "value": 49.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2021",
+      "value": 49.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2020",
+      "value": 49.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2019",
+      "value": 49,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2018",
+      "value": 48.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2017",
+      "value": 48.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2016",
+      "value": 48.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2015",
+      "value": 48,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Thailand (TEST FIXTURE)"
+      },
+      "countryiso3code": "THA",
+      "date": "2014",
+      "value": 47.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

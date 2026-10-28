@@ -1,12 +1,14 @@
 import {
   DISCRETIONARY_BUDGET_PCT_GDP, EARLY_ENDINGS, PACING, STAT_KEYS, STAT_RANGE, TICK,
-  type Card, type EndReason, type GameState,
+  type Card, type EndReason, type GameState, type MinorEvent,
 } from "@ps/shared";
 import { EngineError } from "./errors";
 import { pickCard } from "./events";
 import { pillarScores, popularity, relativeGroupTarget } from "./goodness";
 import { runElection } from "./election";
+import { applyMinorEvents } from "./news";
 import { Rng } from "./rng";
+import type { Traits } from "./traits";
 import { applyDelta, capDelta, clamp, sliceSums } from "./util";
 
 /** Quarters of the term; the last one is the election. */
@@ -35,8 +37,22 @@ function rollEarlyEnding(state: GameState, rng: Rng): EndReason | null {
   return null;
 }
 
-/** Moves the game from the end of one quarter to the next (or runs the election after quarter 16). */
-export function advanceQuarter(state: GameState, deck: readonly Card[]): GameState {
+/** What the engine needs to know about the country besides the state. Optional everywhere; missing = neutral. */
+export interface CountryContext {
+  /** The country's traits (CountryData.traits). Missing traits count as 50. */
+  traits?: Traits;
+}
+
+/**
+ * Moves the game from the end of one quarter to the next (or runs the election after quarter 16).
+ * `minorEvents` is the news deck (default: none, so no news happens); `ctx.traits` weights cards and news.
+ */
+export function advanceQuarter(
+  state: GameState,
+  deck: readonly Card[],
+  minorEvents: readonly MinorEvent[] = [],
+  ctx: CountryContext = {},
+): GameState {
   if (state.phase !== "running") throw new EngineError(`advanceQuarter needs phase "running", got "${state.phase}"`);
   const rng = new Rng(state.seed, state.rngCursor);
 
@@ -99,6 +115,12 @@ export function advanceQuarter(state: GameState, deck: readonly Card[]): GameSta
   s.popularity = popularity(s.groups);
   s.econHistory.push(pillarScores(s.stats).economy);
 
+  // 5b. Minor events (the news ticker): small things that happen every quarter, weighted by the country's traits.
+  if (applyMinorEvents(s, minorEvents, ctx.traits, rng).length > 0) {
+    s.popularity = popularity(s.groups);
+    s.econHistory[s.econHistory.length - 1] = pillarScores(s.stats).economy;
+  }
+
   // 6. Early endings.
   const ending = rollEarlyEnding(s, rng);
   if (ending !== null) {
@@ -112,7 +134,7 @@ export function advanceQuarter(state: GameState, deck: readonly Card[]): GameSta
 
   // 7. Decision quarter: draw an event card if one is eligible.
   if (PACING.value.decisionQuarters.includes(q)) {
-    const card = pickCard(s, deck, rng);
+    const card = pickCard(s, deck, rng, ctx.traits);
     if (card !== null) {
       s.phase = "decision";
       s.pendingCardId = card.id;

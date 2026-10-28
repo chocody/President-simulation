@@ -6,9 +6,11 @@ import {
 import { rollOutcome, successProbability, type Outcome } from "./dice";
 import { EngineError } from "./errors";
 import { effectiveLevel } from "./evidence";
+import { formatFrictionNote, frictionFor } from "./friction";
 import { courtCheck, parliamentVote, protest } from "./gates";
 import { popularity } from "./goodness";
 import { Rng } from "./rng";
+import type { Traits } from "./traits";
 import { costPctGdp, levelToDelta, recurringPctGdpPerYear } from "./scales";
 import { applyDelta, at, capDelta, clamp, clampState, sliceSums } from "./util";
 
@@ -20,6 +22,8 @@ export interface TurnAnswer {
 export interface TurnContext {
   /** The evidence the judge was given (for presets: the choice's evidenceIds). */
   evidence: Evidence[];
+  /** The country's traits; patronage adds friction to reforms. Missing = neutral (no friction). */
+  traits?: Traits;
 }
 
 const LAST_QUARTER = PACING.value.quarters;
@@ -106,7 +110,14 @@ export function resolveTurn(
   const measures: MeasureReport[] = [];
   actions.forEach((a, i) => {
     const policyId = `q${q}.a${i}`;
-    const par = parliamentVote(s, a, rng);
+    const friction = frictionFor(a, ctx.traits);
+    const par = parliamentVote(s, a, rng, friction.voteAdjust);
+    if (friction.reform && (friction.voteAdjust !== 0 || friction.probabilityAdjust !== 0)) {
+      notes.push(formatFrictionNote({
+        measure: i, patronage: friction.patronage,
+        vote: a.requires_legislation ? friction.voteAdjust : 0, probability: friction.probabilityAdjust,
+      }));
+    }
     if (!par.passed) {
       measures.push({
         title: a.title, parliament: par, courtRisk: 0, protest: { group: null, happened: false },
@@ -133,7 +144,7 @@ export function resolveTurn(
     const broke = s.stats.budget < cost;
     const P = successProbability({
       feasibility: scores.feasibility, specificity, corruption: s.stats.corruption,
-      nMeasures: actions.length, broke, difficulty: s.difficulty,
+      nMeasures: actions.length, broke, difficulty: s.difficulty, adjust: friction.probabilityAdjust,
     });
     const roll = rng.int(1, 100);
     const outcome: Outcome = rollOutcome(P, roll);

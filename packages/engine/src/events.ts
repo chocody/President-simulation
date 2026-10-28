@@ -1,5 +1,6 @@
 import type { Card, GameState } from "@ps/shared";
 import type { Rng } from "./rng";
+import { traitMultiplier, type Traits } from "./traits";
 import { currentValue } from "./util";
 
 /**
@@ -18,14 +19,18 @@ export function eligibleCards(state: GameState, deck: readonly Card[]): Card[] {
   });
 }
 
-/** Weighted pick by baseWeight. null when nothing is eligible (and then no random number is used). */
-export function pickCard(state: GameState, deck: readonly Card[], rng: Rng): Card | null {
+/**
+ * Weighted pick by baseWeight × traitMultiplier(traits, card.traitWeights). Without traits every multiplier is 1.
+ * null when nothing is eligible (and then no random number is used).
+ */
+export function pickCard(state: GameState, deck: readonly Card[], rng: Rng, traits?: Traits): Card | null {
   const pool = eligibleCards(state, deck);
   if (pool.length === 0) return null;
-  const total = pool.reduce((a, c) => a + c.baseWeight, 0);
+  const weight = (c: Card) => c.baseWeight * traitMultiplier(traits, c.traitWeights);
+  const total = pool.reduce((a, c) => a + weight(c), 0);
   let r = rng.next() * total;
   for (const c of pool) {
-    r -= c.baseWeight;
+    r -= weight(c);
     if (r < 0) return c;
   }
   return pool[pool.length - 1] ?? null;
