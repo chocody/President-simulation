@@ -3,9 +3,10 @@ import { parse } from "yaml";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  CountryData, DATA_MAPPING, DISCRETIONARY_BUDGET_PCT_GDP, GROUP_KEYS, MVP_COUNTRIES, STAT_KEYS, Source, UNSOURCED_DEFAULTS,
+  CountryData, DATA_MAPPING, DISCRETIONARY_BUDGET_PCT_GDP, GROUP_KEYS, MVP_COUNTRIES, STAT_KEYS, Source, TRAITS, TRAIT_KEYS,
+  UNSOURCED_DEFAULTS,
 } from "@ps/shared";
-import { THAI_NAMES, linear, mapCountry, plannedCodes, type Observations } from "../lib/mapping";
+import { THAI_NAMES, linear, mapCountry, mapTraits, plannedCodes, type Observations } from "../lib/mapping";
 
 const M = DATA_MAPPING.value;
 const root = join(import.meta.dirname, "..", "..");
@@ -162,8 +163,12 @@ describe("skip rules", () => {
       if (!r.ok) expect(r.reasons.join(" "), code).toContain(code);
     }
   });
-  it("optional codes are HCI, armed forces, UHC and the optional direct stats (debt)", () => {
-    expect([...plannedCodes().optional].sort()).toEqual(["HD.HCI.OVRL", "MS.MIL.TOTL.TF.ZS", "SH.UHC.SRVS.CV.XD", "GC.DOD.TOTL.GD.ZS"].sort());
+  it("optional codes are HCI, armed forces, UHC, the optional direct stats (debt) and the trait codes (each once)", () => {
+    const traitCodes = [...new Set(TRAIT_KEYS.map((k) => TRAITS.value[k].code))];
+    expect([...plannedCodes().optional].sort()).toEqual(
+      ["HD.HCI.OVRL", "MS.MIL.TOTL.TF.ZS", "SH.UHC.SRVS.CV.XD", "GC.DOD.TOTL.GD.ZS", ...traitCodes].sort(),
+    );
+    expect(traitCodes.length).toBe(TRAIT_KEYS.length - 1);   // ruleOfLaw and patronage share GOV_WGI_RL_SC
   });
   it("missing debt falls back to the labelled design value; missing UHC uses life expectancy alone", () => {
     const o = base(); delete o["GC.DOD.TOTL.GD.ZS"]; delete o["SH.UHC.SRVS.CV.XD"];
@@ -184,6 +189,84 @@ describe("skip rules", () => {
       ...M.groups.youthBands, M.groups.adultTotal, "SP.POP.TOTL",
     ]) expect(all, c).toContain(c);
     expect(new Set(all).size).toBe(all.length);
+  });
+});
+
+/** TEST numbers for the trait codes, chosen so the expected traits are easy to compute by hand. */
+const withTraits = (): Observations => {
+  const o = base();
+  o["ST.INT.RCPT.XP.ZS"] = { year: 2022, value: 6 };     // 0..30   -> 20
+  o["NV.AGR.TOTL.ZS"] = { year: 2023, value: 15 };       // 0..30   -> 50
+  o["NY.GDP.TOTL.RT.ZS"] = { year: 2021, value: 5 };     // 0..20   -> 25
+  o["NE.EXP.GNFS.ZS"] = { year: 2023, value: 60 };       // 0..80   -> 75
+  o["GOV_WGI_RL_SC"] = { year: 2023, value: 70 };         // 0..100  -> 70; patronage = 100 - 70
+  o["GOV_WGI_GE_SC"] = { year: 2022, value: 55 };         // 0..100  -> 55
+  return o;
+};
+
+describe("traits", () => {
+  it("each trait is its indicator rescaled by TRAITS.linear; patronage is the inverse of rule of law", () => {
+    const { data } = ok(withTraits());
+    const expected = { tourism: 20, agriculture: 50, resources: 25, openness: 75, ruleOfLaw: 70, govEffectiveness: 55, patronage: 30 };
+    expect(Object.keys(data.traits!).sort()).toEqual(Object.keys(expected).sort());
+    for (const [k, v] of Object.entries(expected)) expect(data.traits![k as keyof typeof expected], k).toBeCloseTo(v, 10);
+    expect(CountryData.safeParse(data).success).toBe(true);
+  });
+  it("traitsSrc cites the code's source with year and raw value, for every trait", () => {
+    const { data } = ok(withTraits());
+    expect(data.traitsSrc).toEqual({
+      tourism: { sourceId: "wdi.ST.INT.RCPT.XP.ZS", year: 2022, raw: 6 },
+      agriculture: { sourceId: "wdi.NV.AGR.TOTL.ZS", year: 2023, raw: 15 },
+      resources: { sourceId: "wdi.NY.GDP.TOTL.RT.ZS", year: 2021, raw: 5 },
+      openness: { sourceId: "wdi.NE.EXP.GNFS.ZS", year: 2023, raw: 60 },
+      ruleOfLaw: { sourceId: "wgi.GOV_WGI_RL_SC", year: 2023, raw: 70 },
+      govEffectiveness: { sourceId: "wgi.GOV_WGI_GE_SC", year: 2022, raw: 55 },
+      patronage: { sourceId: "wgi.GOV_WGI_RL_SC", year: 2023, raw: 70 },
+    });
+    for (const p of Object.values(data.traitsSrc!)) expect(sourceIds.has(p.sourceId), p.sourceId).toBe(true);
+  });
+  it("values outside the linear range are clamped to 0-100 and the raw value is kept", () => {
+    const o = withTraits();
+    o["ST.INT.RCPT.XP.ZS"] = { year: 2023, value: 45 };
+    o["GOV_WGI_RL_SC"] = { year: 2023, value: 0 };
+    const { data } = ok(o);
+    expect(data.traits!.tourism).toBe(100);
+    expect(data.traits!.ruleOfLaw).toBe(0);
+    expect(data.traits!.patronage).toBe(100);
+    expect(data.traitsSrc!.tourism!.raw).toBe(45);
+  });
+  it("a missing optional trait (tourism) is left out of traits and traitsSrc, with a note; the country still builds", () => {
+    const o = withTraits(); delete o["ST.INT.RCPT.XP.ZS"];
+    const r = ok(o);
+    expect("tourism" in r.data.traits!).toBe(false);
+    expect("tourism" in r.data.traitsSrc!).toBe(false);
+    expect(Object.keys(r.data.traits!)).toHaveLength(6);
+    expect(r.notes.join("\n")).toMatch(/trait tourism: ST\.INT\.RCPT\.XP\.ZS unavailable.*optional trait.*left out/);
+  });
+  it("a missing non-optional trait skips nothing: it is left out and recorded with the reason", () => {
+    const o = withTraits(); delete o["NE.EXP.GNFS.ZS"];
+    const r = run(o);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect("openness" in r.data.traits!).toBe(false);
+    expect(r.notes.join("\n")).toMatch(/trait openness: NE\.EXP\.GNFS\.ZS unavailable \(no observation\), trait left out/);
+    const r2 = mapCountry({ iso3: "THA", nameEn: "Testland", region: "Test Region", observations: o, unavailable: { "NE.EXP.GNFS.ZS": "too old" } });
+    expect(r2.ok && r2.notes.join("\n")).toMatch(/trait openness: NE\.EXP\.GNFS\.ZS unavailable \(too old\)/);
+  });
+  it("losing the shared rule-of-law code drops both ruleOfLaw and patronage", () => {
+    const o = withTraits(); delete o["GOV_WGI_RL_SC"];
+    const r = ok(o);
+    expect("ruleOfLaw" in r.data.traits!).toBe(false);
+    expect("patronage" in r.data.traits!).toBe(false);
+  });
+  it("with no trait data at all, the country has no traits field (older files stay valid)", () => {
+    const r = ok(base());
+    expect(r.data.traits).toBeUndefined();
+    expect(r.data.traitsSrc).toBeUndefined();
+    expect(r.notes.filter((n) => n.startsWith("trait ")).length).toBe(TRAIT_KEYS.length);
+  });
+  it("mapTraits on its own returns the same numbers", () => {
+    expect(mapTraits(withTraits()).traits.patronage).toBe(30);
   });
 });
 
@@ -235,6 +318,16 @@ describe("sources.yaml additions", () => {
   const all = parse(readFileSync(join(root, "data/sources/sources.yaml"), "utf8")) as unknown[];
   const sources = all.map((s) => Source.parse(s));
   const newCodes = ["HD.HCI.OVRL", "SP.RUR.TOTL.ZS", ...M.groups.youthBands, "SP.POP.1564.TO.ZS"];
+  it("has an unverified CC BY 4.0 entry for every trait code, with the right id prefix", () => {
+    for (const k of TRAIT_KEYS) {
+      const code = TRAITS.value[k].code;
+      const s = sources.find((x) => x.indicatorCode === code);
+      expect(s, code).toBeTruthy();
+      expect(s!.id).toBe(code.startsWith("GOV_WGI_") ? `wgi.${code}` : `wdi.${code}`);
+      expect(s!.license).toBe("CC BY 4.0");
+      expect(s!.verifiedBy).toBeNull();
+    }
+  });
   it("has an unverified CC BY 4.0 entry with the standard note for each new code", () => {
     for (const c of newCodes) {
       const s = sources.find((x) => x.indicatorCode === c);

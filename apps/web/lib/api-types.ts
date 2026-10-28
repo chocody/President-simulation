@@ -1,7 +1,7 @@
 // Shapes exchanged between the API routes and the client. Contract types come from @ps/shared.
 import type { z } from "zod";
 import type {
-  Card, CountryData, DecideResponse as DecideResponseSchema, GameState, GroupKey, Source, TurnReport,
+  Card, CardEffect, CountryData, DecideResponse as DecideResponseSchema, GameState, GroupKey, MinorEvent, Source, TurnReport,
 } from "@ps/shared";
 
 export type PublicChoice = Pick<Card["choices"][number],
@@ -12,10 +12,23 @@ export type PublicCard = Pick<Card, "id" | "category" | "severity" | "titleTh" |
   choices: PublicChoice[];
 };
 
+/** A minor event as the player sees it (no weights, conditions or source ids). */
+export interface PublicMinorEvent {
+  id: string;
+  category: MinorEvent["category"];
+  textTh: string;
+  effects: Pick<CardEffect, "target" | "delta">[];
+}
+
+/** A minor event that happened, with the quarter it happened in. */
+export interface PublicNewsItem extends PublicMinorEvent { quarter: number }
+
 export interface GameInfo {
   country: CountryData;
   sources: Source[];
   devFixtures: boolean;
+  /** Text and effects of every minor event, so `state.news` ids can be shown (absent in older saved games). */
+  minorEvents?: PublicMinorEvent[];
 }
 
 export interface CountrySummary { iso3: string; nameTh: string; nameEn: string }
@@ -27,7 +40,13 @@ export interface InfoResponse {
 }
 
 export interface NewResponse { state: GameState; info: GameInfo }
-export interface AdvanceResponse { state: GameState; log: string[]; card: PublicCard | null }
+export interface AdvanceResponse {
+  state: GameState;
+  log: string[];
+  card: PublicCard | null;
+  /** Minor events that happened while advancing, oldest first. */
+  news: PublicNewsItem[];
+}
 export type DecideResult = z.infer<typeof DecideResponseSchema> & { headlines: string[]; answerTitle: string; interpretation: string | null };
 
 export type Grade = "A" | "B" | "C" | "D" | "F";

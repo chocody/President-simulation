@@ -25,6 +25,20 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   await expect(page.getByTestId("charter")).toContainText("DEV FIXTURE");
   await expect(page.getByTestId("dev-banner")).toBeVisible();
   await shot(page, "01b-charter");
+
+  // 1c. Country traits ("ลักษณะประเทศ"): bars, a source on tap, patronage flagged as a proxy, a missing trait explained.
+  await expect(page.getByTestId("trait-panel")).toBeVisible();
+  await expect(page.getByTestId("trait-panel").getByRole("button")).toHaveCount(7);
+  await page.getByTestId("trait-patronage").click();
+  await expect(page.getByTestId("source-dialog")).toBeVisible();
+  await expect(page.getByTestId("trait-proxy")).toContainText("ค่าประมาณ");
+  await expect(page.getByTestId("source-fixture")).toContainText("DEV FIXTURE — invented values");
+  await shot(page, "01c-trait-source");
+  await page.getByRole("button", { name: "ปิด" }).click();
+  await page.getByTestId("trait-resources").click();
+  await expect(page.getByTestId("trait-missing")).toContainText("ถือเป็นค่ากลาง");
+  await page.keyboard.press("Escape");
+  await expect(page.getByTestId("source-dialog")).toBeHidden();
   await page.getByTestId("accept-charter").click();
 
   // 2. Main screen; a stat opens its source.
@@ -47,6 +61,7 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   let typedUsed = false;
   let resultShot = false;
   let decisionShot = false;
+  let newsSeen = false;
 
   for (let step = 0; step < 60; step++) {
     const screen = await page.locator("[data-screen]").first().getAttribute("data-screen");
@@ -84,13 +99,28 @@ test("plays a full term with presets and one typed answer, and reaches the endin
         await shot(page, "04-result");
         resultShot = true;
       }
+      if (decisions === 2) {
+        // The typed answer is judged as an anti-corruption reform; the fixture country has high patronage.
+        await expect(page.getByTestId("friction-note").first()).toContainText("ระบบอุปถัมภ์ทำให้ปฏิรูปยากขึ้น");
+        await shot(page, "04b-result-friction");
+      }
       await page.getByTestId("continue").click();
+      if (decisions === 1) {
+        // Back on the main screen: the news ticker lists what happened while time moved on, with +/- chips.
+        await expect(page.locator("[data-screen=main]")).toBeVisible();
+        await expect(page.getByTestId("news-ticker")).toBeVisible();
+        expect(await page.getByTestId("news-item").count()).toBeGreaterThanOrEqual(1);
+        expect(await page.getByTestId("news-chip").count()).toBeGreaterThanOrEqual(1);
+        await shot(page, "02c-news");
+        newsSeen = true;
+      }
     } else {
       throw new Error(`unexpected screen: ${screen}`);
     }
   }
 
   expect(typedUsed, "the typed answer was exercised").toBe(true);
+  expect(newsSeen, "the news ticker was checked").toBe(true);
   expect(decisions).toBeGreaterThanOrEqual(2);
 
   // 5. Ending.

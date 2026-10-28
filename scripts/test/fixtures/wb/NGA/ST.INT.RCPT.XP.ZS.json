@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2023",
+      "value": 13,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2022",
+      "value": 12.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2021",
+      "value": 12.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2020",
+      "value": 12.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2019",
+      "value": 12.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2018",
+      "value": 12,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2017",
+      "value": 11.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2016",
+      "value": 11.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2015",
+      "value": 11.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Nigeria (TEST FIXTURE)"
+      },
+      "countryiso3code": "NGA",
+      "date": "2014",
+      "value": 11.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

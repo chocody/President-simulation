@@ -7,10 +7,10 @@ import { formatStat } from "../lib/format";
 import { STAT_LABEL } from "../lib/labels";
 import { describeStatSource } from "../lib/stat-source";
 
-export function StatSourceDialog({
-  stat, value, country, sources, onClose,
-}: { stat: StatKey; value: number; country: CountryData; sources: Source[]; onClose: () => void }) {
-  const info = describeStatSource(stat, country, sources);
+/** The shared modal shell of every "where does this number come from" dialog (stats and country traits). */
+export function SourceShell({
+  title, subtitle, onClose, children,
+}: { title: string; subtitle: string; onClose: () => void; children: React.ReactNode }) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -33,39 +33,62 @@ export function StatSourceDialog({
         onClick={(e) => e.stopPropagation()}
       >
         <p className="label-caps">แหล่งที่มาของตัวเลข</p>
-        <h3 id="source-title" className="text-xl font-extrabold">{STAT_LABEL[stat]}</h3>
-        <p className="mb-3 text-muted">ค่าตอนนี้ {formatStat(stat, value)}</p>
-
-        {info.kind === "dataset" && (
-          <dl className="space-y-2 text-sm">
-            <Row k="ชุดข้อมูล" v={info.title} />
-            <Row k="ผู้เผยแพร่" v={info.publisher} />
-            {info.indicatorCode && <Row k="รหัสตัวชี้วัด" v={<code className="font-mono">{info.indicatorCode}</code>} />}
-            <Row k="ปีของข้อมูล" v={info.year ?? "ไม่ระบุ"} />
-            {info.raw !== null && <Row k="ค่าดิบ" v={info.raw} />}
-            <Row k="สัญญาอนุญาต" v={info.license} />
-            <Row k="ลิงก์" v={<a className="break-all text-politics underline" href={info.url} target="_blank" rel="noreferrer">{info.url}</a>} />
-            {!info.verified && <p className="rounded bg-warn px-2 py-1 text-xs">ยังไม่มีผู้ตรวจสอบหน้าต้นทางด้วยตนเอง</p>}
-          </dl>
-        )}
-
-        {info.kind === "design" && (
-          <div data-testid="source-design" className="space-y-2 text-sm">
-            <p className="stamp">ค่าออกแบบ</p>
-            <p>{info.rationale}</p>
-          </div>
-        )}
-
-        {info.kind === "fixture" && (
-          <div data-testid="source-fixture" className="space-y-2 text-sm">
-            <p className="stamp">{FIXTURE_LABEL}</p>
-            <p>{FIXTURE_BANNER_TH} ค่านี้ถูกสมมุติขึ้นเพื่อทดสอบระบบ ไม่ได้มาจากชุดข้อมูลใด</p>
-          </div>
-        )}
-
+        <h3 id="source-title" className="text-xl font-extrabold">{title}</h3>
+        <p className="mb-3 text-muted">{subtitle}</p>
+        {children}
         <button ref={closeRef} type="button" className="btn mt-5 w-full" onClick={onClose}>ปิด</button>
       </div>
     </div>
+  );
+}
+
+/** Dataset facts shared by the stat and trait dialogs. */
+export function DatasetRows({
+  title, publisher, indicatorCode, year, raw, license, url, verified,
+}: {
+  title: string; publisher: string; indicatorCode: string | null; year: number | null; raw: number | null;
+  license: string; url: string; verified: boolean;
+}) {
+  return (
+    <dl className="space-y-2 text-sm">
+      <Row k="ชุดข้อมูล" v={title} />
+      <Row k="ผู้เผยแพร่" v={publisher} />
+      {indicatorCode && <Row k="รหัสตัวชี้วัด" v={<code className="font-mono">{indicatorCode}</code>} />}
+      <Row k="ปีของข้อมูล" v={year ?? "ไม่ระบุ"} />
+      {raw !== null && <Row k="ค่าดิบ" v={raw} />}
+      <Row k="สัญญาอนุญาต" v={license} />
+      {url && <Row k="ลิงก์" v={<a className="break-all text-politics underline" href={url} target="_blank" rel="noreferrer">{url}</a>} />}
+      {!verified && <p className="rounded bg-warn px-2 py-1 text-xs">ยังไม่มีผู้ตรวจสอบหน้าต้นทางด้วยตนเอง</p>}
+    </dl>
+  );
+}
+
+export function FixtureBlock() {
+  return (
+    <div data-testid="source-fixture" className="space-y-2 text-sm">
+      <p className="stamp">{FIXTURE_LABEL}</p>
+      <p>{FIXTURE_BANNER_TH} ค่านี้ถูกสมมุติขึ้นเพื่อทดสอบระบบ ไม่ได้มาจากชุดข้อมูลใด</p>
+    </div>
+  );
+}
+
+export function StatSourceDialog({
+  stat, value, country, sources, onClose,
+}: { stat: StatKey; value: number; country: CountryData; sources: Source[]; onClose: () => void }) {
+  const info = describeStatSource(stat, country, sources);
+  return (
+    <SourceShell title={STAT_LABEL[stat]} subtitle={`ค่าตอนนี้ ${formatStat(stat, value)}`} onClose={onClose}>
+      {info.kind === "dataset" && <DatasetRows {...info} />}
+
+      {info.kind === "design" && (
+        <div data-testid="source-design" className="space-y-2 text-sm">
+          <p className="stamp">ค่าออกแบบ</p>
+          <p>{info.rationale}</p>
+        </div>
+      )}
+
+      {info.kind === "fixture" && <FixtureBlock />}
+    </SourceShell>
   );
 }
 

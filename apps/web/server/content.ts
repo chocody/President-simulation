@@ -4,8 +4,8 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
-import { Card, CountryData, Evidence, Judgment, Source } from "@ps/shared";
-import { FIXTURE_COUNTRY, FIXTURE_SOURCE } from "../dev/fixture-country";
+import { Card, CountryData, Evidence, Judgment, MinorEvent, Source } from "@ps/shared";
+import { FIXTURE_COUNTRY, FIXTURE_MINOR_EVENTS, FIXTURE_SOURCE } from "../dev/fixture-country";
 
 export class ContentError extends Error {
   constructor(message: string) {
@@ -19,6 +19,8 @@ export interface Content {
   evidence: Evidence[];
   sources: Source[];
   countries: CountryData[];
+  /** The news ticker deck (data/events/minor.yaml). Empty when the file is absent (dev fixtures use invented ones). */
+  minorEvents: MinorEvent[];
   /** True when DEV_FIXTURES=1: the fictional dev country is available and unjudged presets get a mock judgment. */
   devFixtures: boolean;
 }
@@ -119,6 +121,24 @@ export function loadContent(opts: LoadOptions = {}): Content {
     }
   }
 
+  // Minor events (the news ticker): optional file. Under DEV_FIXTURES=1 without the file, invented ones are used.
+  const minorFile = join(dataDir, "events", "minor.yaml");
+  let minorEvents: MinorEvent[] = [];
+  if (existsSync(minorFile)) {
+    const raw = readYaml(minorFile);
+    if (!Array.isArray(raw)) throw new ContentError(`${minorFile}: expected a list of minor events`);
+    minorEvents = raw.map((e, i) => parseWith(MinorEvent, e, `${minorFile}[${i}]`));
+  } else if (devFixtures) {
+    minorEvents = FIXTURE_MINOR_EVENTS;
+  }
+  const dupMinor = duplicates(minorEvents.map((e) => e.id));
+  if (dupMinor.length > 0) throw new ContentError(`duplicate minor event ids: ${dupMinor.join(", ")}`);
+  for (const e of minorEvents) {
+    for (const id of e.sourceIds) {
+      if (!sourceIds.has(id)) throw new ContentError(`minor event ${e.id}: unknown source id ${id}`);
+    }
+  }
+
   // Pre-judged choices are merged into choice.judgment.
   for (const f of files(join(dataDir, "prejudged"), ".json")) {
     const raw = readJson(f);
@@ -146,13 +166,13 @@ export function loadContent(opts: LoadOptions = {}): Content {
   const dupCountries = duplicates(countries.map((c) => c.iso3));
   if (dupCountries.length > 0) throw new ContentError(`duplicate country iso3: ${dupCountries.join(", ")}`);
 
-  return { cards, evidence, sources, countries, devFixtures };
+  return { cards, evidence, sources, countries, minorEvents, devFixtures };
 }
 
 function validateCountry(c: CountryData, sourceIds: Set<string>, where: string): CountryData {
   const total = Object.values(c.groupShares).reduce((a, b) => a + b, 0);
   if (Math.abs(total - 1) > 0.01) throw new ContentError(`${where}: groupShares sum to ${total}, expected 1`);
-  const prov = [...Object.values(c.baselineSrc), ...Object.values(c.groupSharesSrc)];
+  const prov = [...Object.values(c.baselineSrc), ...Object.values(c.groupSharesSrc), ...Object.values(c.traitsSrc ?? {})];
   for (const p of prov) {
     if (!sourceIds.has(p.sourceId)) throw new ContentError(`${where}: unknown source id ${p.sourceId}`);
   }

@@ -11,3 +11,6 @@ export * from "./resolve";
 export * from "./tick";
 export * from "./election";
 export * from "./endings";
+export * from "./traits";
+export * from "./friction";
+export * from "./news";

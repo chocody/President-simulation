@@ -20,5 +20,8 @@ Deliberate gaps, each covered by a test in `scripts/test/build.test.ts`:
 | MEX | debt (`GC.DOD.TOTL.GD.ZS`) stops in 2012 | skipped (older than 8 years) |
 | IND | no `HD.HCI.OVRL` response | education = enrolment alone |
 | DEU | armed forces (`MS.MIL.TOTL.TF.ZS`) null in every year | military share 0 |
+| POL | tourism receipts (`ST.INT.RCPT.XP.ZS`) null in every year | `tourism` trait left out, optional-trait note |
+| IDN | no `GOV_WGI_GE_SC` response | `govEffectiveness` trait left out, country still builds |
+| VNM | natural-resource rents (`NY.GDP.TOTL.RT.ZS`) stop in 2012 | `resources` trait left out (older than 8 years), country still builds |
 
 Regenerate with `pnpm tsx scripts/test/make-fixtures.ts`.

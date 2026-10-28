@@ -25,18 +25,26 @@ const SERIES: Record<string, [number, number]> = {
   "SL.AGR.EMPL.ZS": [20, 1], "SP.RUR.TOTL.ZS": [40, 1], "SL.EMP.MPYR.ZS": [3, 0.1], "MS.MIL.TOTL.TF.ZS": [1, 0.05],
   "SP.POP.2024.MA.5Y": [8, 0.05], "SP.POP.2024.FE.5Y": [8, 0.05], "SP.POP.2529.MA.5Y": [7, 0.05], "SP.POP.2529.FE.5Y": [7, 0.05],
   "SP.POP.1564.TO.ZS": [65, 0.2],
+  // trait codes (TRAITS in design-params)
+  "ST.INT.RCPT.XP.ZS": [5, 2], "NV.AGR.TOTL.ZS": [12, -1], "NY.GDP.TOTL.RT.ZS": [3, 0.5], "NE.EXP.GNFS.ZS": [30, 4],
+  "GOV_WGI_RL_SC": [45, 3], "GOV_WGI_GE_SC": [50, 2.5],
 };
 const round = (x: number): number => Math.round(x * 10_000) / 10_000;
 
 type Case = { years?: [number, number]; nullFrom?: number; allNull?: boolean; absent?: boolean };
 /** Deliberate gaps. THA: latest crime value is in 2022. KEN: no unemployment data. MEX: debt stops in 2012.
- *  IND: no HCI response (optional). DEU: armed forces all null (optional). */
+ *  IND: no HCI response (optional). DEU: armed forces all null (optional).
+ *  Trait gaps: POL tourism (optional trait) null in every year; IDN no WGI government-effectiveness response;
+ *  VNM natural-resource rents stop in 2012 (older than the age limit). */
 const CASES: Record<string, Record<string, Case>> = {
   THA: { "VC.IHR.PSRC.P5": { nullFrom: 2023 } },
   KEN: { "SL.UEM.TOTL.ZS": { allNull: true } },
   MEX: { "GC.DOD.TOTL.GD.ZS": { years: [2010, 2019], nullFrom: 2013 } },
   IND: { "HD.HCI.OVRL": { absent: true } },
   DEU: { "MS.MIL.TOTL.TF.ZS": { allNull: true } },
+  POL: { "ST.INT.RCPT.XP.ZS": { allNull: true } },
+  IDN: { "GOV_WGI_GE_SC": { absent: true } },
+  VNM: { "NY.GDP.TOTL.RT.ZS": { years: [2008, 2017], nullFrom: 2013 } },
 };
 
 mkdirSync(OUT, { recursive: true });

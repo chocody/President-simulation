@@ -6,6 +6,7 @@ import type { GameInfo, InfoResponse } from "../lib/api-types";
 import { DIFFICULTY_LABEL } from "../lib/labels";
 import { ErrorNote, Frame } from "./common";
 import { StatGrid } from "./StatGrid";
+import { TraitPanel } from "./TraitPanel";
 
 const LEVELS: Difficulty[] = ["easy", "normal", "hard"];
 
@@ -106,6 +107,7 @@ export function CharterScreen({
         </p>
       </section>
       <StatGrid state={state} info={info} />
+      <TraitPanel info={info} />
     </Frame>
   );
 }

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2023",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2022",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2021",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2020",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2019",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2018",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2017",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2016",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2015",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Poland (TEST FIXTURE)"
+      },
+      "countryiso3code": "POL",
+      "date": "2014",
+      "value": null,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

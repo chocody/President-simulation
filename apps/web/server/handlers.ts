@@ -14,7 +14,7 @@ import type { Content } from "./content";
 import { MockGameMaster, mockPresetJudgment, type GameMaster } from "./game-master";
 import { GameMasterError } from "./real-game-master";
 import type {
-  AdvanceResponse, DecideResult, EndResponse, GameInfo, InfoResponse, NewResponse, PublicCard,
+  AdvanceResponse, DecideResult, EndResponse, GameInfo, InfoResponse, NewResponse, PublicCard, PublicMinorEvent, PublicNewsItem,
 } from "../lib/api-types";
 
 export interface Deps {
@@ -61,8 +61,25 @@ export function pickCountry(countries: CountryData[], u: number): CountryData | 
 }
 
 function gameInfo(content: Content, country: CountryData): GameInfo {
-  const ids = new Set([...Object.values(country.baselineSrc), ...Object.values(country.groupSharesSrc)].map((p) => p.sourceId));
-  return { country, sources: content.sources.filter((s) => ids.has(s.id)), devFixtures: content.devFixtures };
+  const ids = new Set(
+    [...Object.values(country.baselineSrc), ...Object.values(country.groupSharesSrc), ...Object.values(country.traitsSrc ?? {})]
+      .map((p) => p.sourceId),
+  );
+  return {
+    country,
+    sources: content.sources.filter((s) => ids.has(s.id)),
+    devFixtures: content.devFixtures,
+    minorEvents: content.minorEvents.map(publicMinorEvent),
+  };
+}
+
+function publicMinorEvent(e: Content["minorEvents"][number]): PublicMinorEvent {
+  return { id: e.id, category: e.category, textTh: e.textTh, effects: e.effects.map((x) => ({ target: x.target, delta: x.delta })) };
+}
+
+/** The country behind a saved state. Unknown (e.g. content changed since the save) means neutral traits. */
+function countryOf(content: Content, state: GameState): CountryData | undefined {
+  return content.countries.find((c) => c.iso3 === state.countryIso3);
 }
 
 function publicCard(card: Content["cards"][number]): PublicCard {
@@ -120,19 +137,29 @@ export async function handleAdvance(body: unknown, deps: Deps): Promise<ApiResul
   const { content } = deps;
   if (state.phase === "ended") return fail(400, "เกมจบแล้ว ไม่สามารถเดินเวลาต่อได้");
   const logStart = state.log.length;
+  const newsStart = state.news?.length ?? 0;
+  const traits = countryOf(content, state)?.traits;
   try {
     // Running -> next decision or the end. A pending decision is returned as is (safe to call twice).
-    for (let i = 0; i < 20 && state.phase === "running"; i++) state = advanceQuarter(state, content.cards);
+    for (let i = 0; i < 20 && state.phase === "running"; i++) {
+      state = advanceQuarter(state, content.cards, content.minorEvents, { traits });
+    }
   } catch (e) {
     if (e instanceof EngineError) return fail(400, "สถานะเกมไม่ถูกต้อง ไม่สามารถเดินเวลาต่อได้");
     throw e;
   }
   const card = state.phase === "decision" ? content.cards.find((c) => c.id === state.pendingCardId) : undefined;
   if (state.phase === "decision" && !card) return fail(400, "ไม่พบการ์ดเหตุการณ์ของเกมนี้");
+  const byId = new Map(content.minorEvents.map((e) => [e.id, e]));
+  const news: PublicNewsItem[] = (state.news ?? []).slice(newsStart).flatMap((n) => {
+    const e = byId.get(n.id);
+    return e ? [{ ...publicMinorEvent(e), quarter: n.quarter }] : [];
+  });
   const res: AdvanceResponse = {
     state,
     log: state.log.slice(logStart),
     card: card ? publicCard(card) : null,
+    news,
   };
   return ok(res);
 }
@@ -182,7 +209,7 @@ export async function handleDecide(body: unknown, deps: Deps): Promise<ApiResult
 
   let turn: ReturnType<typeof resolveTurn>;
   try {
-    turn = resolveTurn(state, content.cards, { kind: answer.kind, judgment }, { evidence });
+    turn = resolveTurn(state, content.cards, { kind: answer.kind, judgment }, { evidence, traits: countryOf(content, state)?.traits });
   } catch (e) {
     if (e instanceof EngineError) return fail(400, "สถานะเกมไม่ถูกต้อง ไม่สามารถตัดสินได้");
     throw e;

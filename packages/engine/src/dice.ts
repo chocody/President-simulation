@@ -16,9 +16,11 @@ export interface ProbabilityInput {
   broke: boolean;
   /** Difficulty name, or the adjustment itself. */
   difficulty: Difficulty | number;
+  /** Extra percentage points before clamping, e.g. institutional friction (default 0). */
+  adjust?: number;
 }
 
-/** P = clamp(minP, maxP, Bf + Ms − corruptionWeight·(C − 50) − perExtraMeasure·(n − 1) − brokePenalty·s + D), in %. */
+/** P = clamp(minP, maxP, Bf + Ms − corruptionWeight·(C − 50) − perExtraMeasure·(n − 1) − brokePenalty·s + D + adjust), in %. */
 export function successProbability(i: ProbabilityInput): number {
   const d = DICE.value;
   const bf = at(SCORE_EFFECTS.feasibilityBase.value, Number(i.feasibility) - 1);
@@ -29,7 +31,8 @@ export function successProbability(i: ProbabilityInput): number {
     - d.corruptionWeight * (i.corruption - 50)
     - d.perExtraMeasure * (i.nMeasures - 1)
     - d.brokePenalty * (i.broke ? 1 : 0)
-    + adj;
+    + adj
+    + (i.adjust ?? 0);
   return clamp(p, d.minP, d.maxP);
 }
 

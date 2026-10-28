@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "TEST FIXTURE"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2023",
+      "value": 65,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2022",
+      "value": 64.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2021",
+      "value": 64.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2020",
+      "value": 64.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2019",
+      "value": 64,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2018",
+      "value": 63.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2017",
+      "value": 63.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2016",
+      "value": 63.25,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2015",
+      "value": 63,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_GE_SC",
+        "value": "TEST FIXTURE"
+      },
+      "country": {
+        "id": "XX",
+        "value": "Brazil (TEST FIXTURE)"
+      },
+      "countryiso3code": "BRA",
+      "date": "2014",
+      "value": 62.75,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

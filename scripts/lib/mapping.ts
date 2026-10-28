@@ -1,8 +1,8 @@
 // Turns World Bank observations into a CountryData record by applying DATA_MAPPING from design-params.
 // Pure: no I/O. A country missing a required code is skipped, never filled with a guess.
 import {
-  CountryData, DATA_MAPPING, DISCRETIONARY_BUDGET_PCT_GDP, GROUP_KEYS, STAT_KEYS, STAT_RANGE, UNSOURCED_DEFAULTS,
-  type GroupKey, type Provenance, type StatKey,
+  CountryData, DATA_MAPPING, DISCRETIONARY_BUDGET_PCT_GDP, GROUP_KEYS, STAT_KEYS, STAT_RANGE, TRAITS, TRAIT_KEYS, UNSOURCED_DEFAULTS,
+  type GroupKey, type Provenance, type StatKey, type TraitKey,
 } from "@ps/shared";
 import type { Observation } from "./worldbank";
 
@@ -24,7 +24,7 @@ export const THAI_NAMES: Record<string, string> = {
   DEU: "เยอรมนี",
 };
 
-/** Required codes skip the country when missing; optional ones have a documented fallback. */
+/** Required codes skip the country when missing; optional ones have a documented fallback or are left out (traits). */
 export function plannedCodes(): { required: string[]; optional: string[] } {
   const required = [
     POPULATION_CODE,
@@ -36,10 +36,12 @@ export function plannedCodes(): { required: string[]; optional: string[] } {
     M.groups.agriculture, M.groups.rural, M.groups.employers,
     ...M.groups.youthBands, M.groups.adultTotal,
   ];
-  const optional = [
+  // Trait codes never skip a country: a trait without data is left out of `traits` and noted in the report.
+  const optional = [...new Set([
     M.education.hci.code, M.groups.armedForces, M.health.uhc.code,
     ...M.optionalDirect.map((k) => M.direct[k]!.code),
-  ];
+    ...TRAIT_KEYS.map((k) => TRAITS.value[k].code),
+  ])].filter((c) => !required.includes(c));
   return { required, optional };
 }
 
@@ -56,6 +58,31 @@ export function linear(x: number, [a, b]: [number, number]): number {
 const mean = (xs: number[]): number => xs.reduce((s, x) => s + x, 0) / xs.length;
 
 export type Observations = Record<string, Observation | undefined>;
+
+/**
+ * Traits from TRAITS: each is its indicator rescaled by `linear` (reversed when `invert`), with the code's source,
+ * year and raw value. A trait whose code has no observation is left out and explained in `notes`.
+ */
+export function mapTraits(
+  obs: Observations,
+  unavailable: Record<string, string> = {},
+): { traits: Partial<Record<TraitKey, number>>; traitsSrc: Partial<Record<TraitKey, Provenance>>; notes: string[] } {
+  const traits: Partial<Record<TraitKey, number>> = {};
+  const traitsSrc: Partial<Record<TraitKey, Provenance>> = {};
+  const notes: string[] = [];
+  for (const key of TRAIT_KEYS) {
+    const rule = TRAITS.value[key];
+    const o = obs[rule.code];
+    if (!o) {
+      notes.push(`trait ${key}: ${rule.code} unavailable (${unavailable[rule.code] ?? "no observation"}), ${rule.optional ? "optional trait" : "trait"} left out`);
+      continue;
+    }
+    const scaled = linear(o.value, rule.linear);
+    traits[key] = rule.invert ? 100 - scaled : scaled;
+    traitsSrc[key] = { sourceId: sourceIdFor(rule.code), year: o.year, raw: o.value };
+  }
+  return { traits, traitsSrc, notes };
+}
 
 export type MapInput = {
   iso3: string;
@@ -201,6 +228,10 @@ export function mapCountry(input: MapInput): MapResult {
   composites.youth = [...g.youthBands.slice(1), g.adultTotal];
   composites.urban = [];
 
+  const t = mapTraits(obs, input.unavailable);
+  notes.push(...t.notes);
+  const hasTraits = Object.keys(t.traits).length > 0;
+
   const candidate = {
     iso3,
     nameTh: thai!,
@@ -211,6 +242,7 @@ export function mapCountry(input: MapInput): MapResult {
     baselineSrc,
     groupShares,
     groupSharesSrc,
+    ...(hasTraits ? { traits: t.traits, traitsSrc: t.traitsSrc } : {}),
   };
   const parsed = CountryData.safeParse(candidate);
   if (!parsed.success) {

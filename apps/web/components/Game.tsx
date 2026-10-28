@@ -123,13 +123,13 @@ export default function Game() {
       const res = await api.advance(state);
       if (res.state.phase === "ended") {
         const ending = await api.end(res.state);
-        update({ ...game, state: res.state, screen: "ending", ending, card: null, log: res.log });
+        update({ ...game, state: res.state, screen: "ending", ending, card: null, log: res.log, news: res.news });
       } else if (res.state.phase === "decision" && res.card) {
-        update({ ...game, state: res.state, screen: "decision", card: res.card, log: res.log });
+        update({ ...game, state: res.state, screen: "decision", card: res.card, log: res.log, news: res.news });
       } else {
-        update({ ...game, state: res.state, screen: "main", log: res.log });
+        update({ ...game, state: res.state, screen: "main", log: res.log, news: res.news });
       }
     });
 
-  return <MainScreen state={state} info={info} log={game.log} busy={busy} error={error} onAdvance={advance} />;
+  return <MainScreen state={state} info={info} log={game.log} news={game.news} busy={busy} error={error} onAdvance={advance} />;
 }

@@ -1,6 +1,6 @@
 // Thai UI labels. Pure data, shared by the server (mock narration) and the client.
 import type { z } from "zod";
-import type { Card, CostSize as CostSizeSchema, Difficulty, EndReason, GroupKey, MeasureReport, StatKey, Target } from "@ps/shared";
+import type { Card, CostSize as CostSizeSchema, Difficulty, EndReason, GroupKey, MeasureReport, MinorEvent, StatKey, Target, TraitKey } from "@ps/shared";
 
 export const STAT_LABEL: Record<StatKey, string> = {
   gdpGrowth: "การเติบโตของ GDP",
@@ -84,3 +84,18 @@ export function targetLabel(t: Target | string): string {
   if (t.startsWith("group:")) return `ความพอใจ${GROUP_LABEL[t.slice(6) as GroupKey] ?? t.slice(6)}`;
   return STAT_LABEL[t as StatKey] ?? t;
 }
+
+export const TRAIT_LABEL: Record<TraitKey, string> = {
+  tourism: "การท่องเที่ยว",
+  agriculture: "ภาคเกษตร",
+  resources: "ทรัพยากรธรรมชาติ",
+  openness: "การค้ากับต่างประเทศ",
+  ruleOfLaw: "หลักนิติธรรม",
+  govEffectiveness: "ประสิทธิภาพของรัฐ",
+  patronage: "ระบบอุปถัมภ์ (ค่าประมาณ)",
+};
+
+export const NEWS_CATEGORY_LABEL: Record<MinorEvent["category"], string> = {
+  ...CATEGORY_LABEL,
+  culture: "วัฒนธรรม",
+};

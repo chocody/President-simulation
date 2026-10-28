@@ -1,13 +1,29 @@
 "use client";
 
 import type { GameState } from "@ps/shared";
-import type { GameInfo } from "../lib/api-types";
+import type { GameInfo, PublicNewsItem } from "../lib/api-types";
+import { newsFromState } from "../lib/news";
 import { ErrorNote, Frame, SectionTitle, Timeline } from "./common";
+import { NewsTicker } from "./NewsTicker";
 import { GroupBars, StatGrid } from "./StatGrid";
+import { TraitPanel } from "./TraitPanel";
+
+/** Splits the news into the last advance (`latest`, falling back to the newest quarter) and everything before it. */
+function splitNews(state: GameState, info: GameInfo, news: PublicNewsItem[] | undefined): { latest: PublicNewsItem[]; older: PublicNewsItem[] } {
+  const all = newsFromState(state, info);
+  const key = (n: PublicNewsItem) => `${n.quarter}:${n.id}`;
+  const newest = all.reduce((m, n) => Math.max(m, n.quarter), 0);
+  const latest = news ?? all.filter((n) => n.quarter === newest);
+  const latestKeys = new Set(latest.map(key));
+  return { latest: [...latest].reverse(), older: all.filter((n) => !latestKeys.has(key(n))).reverse() };
+}
 
 export function MainScreen({
-  state, info, log, busy, error, onAdvance,
-}: { state: GameState; info: GameInfo; log: string[]; busy: boolean; error: string | null; onAdvance: () => void }) {
+  state, info, log, news, busy, error, onAdvance,
+}: {
+  state: GameState; info: GameInfo; log: string[]; news?: PublicNewsItem[]; busy: boolean; error: string | null; onAdvance: () => void;
+}) {
+  const { latest, older } = splitNews(state, info, news);
   return (
     <Frame
       screen="main"
@@ -40,7 +56,11 @@ export function MainScreen({
       <SectionTitle>กลุ่มผู้ลงคะแนน</SectionTitle>
       <div className="dossier p-4"><GroupBars state={state} /></div>
 
+      <NewsTicker state={state} info={info} latest={latest} older={older} />
+
       <StatGrid state={state} info={info} />
+
+      <TraitPanel info={info} />
 
       {log.length > 0 && (
         <details className="mt-6 text-sm">
