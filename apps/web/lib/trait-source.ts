@@ -1,4 +1,4 @@
-import { TRAITS, type CountryData, type Source, type TraitKey } from "@ps/shared";
+import { TRAITS, TRAIT_AVERAGING, type CountryData, type Source, type TraitKey } from "@ps/shared";
 import { FIXTURE_SOURCE_ID } from "../dev/fixture-country";
 
 export type TraitSourceInfo =
@@ -53,7 +53,7 @@ export function describeTraitSource(trait: TraitKey, country: CountryData, sourc
   if (prov.sourceId === FIXTURE_SOURCE_ID) return { kind: "fixture" };
   const src = sources.find((s) => s.id === prov.sourceId);
   const fam = family(prov.sourceId);
-  const when = prov.year !== null ? `${fam}, ปี ${prov.year}` : fam;
+  const when = prov.year !== null ? `${fam}, เฉลี่ย ${TRAIT_AVERAGING.value.years} ปีถึงปี ${prov.year}` : fam;
   const sentence = prov.raw !== null ? `${describeRaw(trait, prov.raw)} (${when})` : `ข้อมูลจาก ${when}`;
   const proxy = trait === "patronage";
   return {

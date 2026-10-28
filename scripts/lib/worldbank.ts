@@ -65,6 +65,18 @@ export function latestNonNull(rows: Row[]): Observation | null {
   return best;
 }
 
+/**
+ * Mean of the non-null values in the `years` calendar years ending at the latest observation.
+ * Used for structural traits so one shock year (a pandemic, a commodity crash) does not define a country.
+ */
+export function averageRecent(rows: Row[], years: number): (Observation & { years: number }) | null {
+  const latest = latestNonNull(rows);
+  if (!latest) return null;
+  const inWindow = rows.filter((r): r is { year: number; value: number } => r.value !== null && r.year > latest.year - years && r.year <= latest.year);
+  const value = inWindow.reduce((s, r) => s + r.value, 0) / inWindow.length;
+  return { year: latest.year, value, years: inWindow.length };
+}
+
 /** Newest date across responses (null values included): the "current" year of the response set. */
 export function newestYear(responses: Row[][]): number | null {
   let best: number | null = null;

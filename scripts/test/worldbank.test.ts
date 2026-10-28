@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
   countryUrl, indicatorUrl, parseCountryResponse, parseIndicatorResponse,
-  latestNonNull, newestYear, selectObservation, fixtureSource, savingSource, networkSource,
+  latestNonNull, newestYear, selectObservation, averageRecent, fixtureSource, savingSource, networkSource,
   type DataSource,
 } from "../lib/worldbank";
 
@@ -130,5 +130,22 @@ describe("data sources", () => {
   it("networkSource throws on an HTTP error", async () => {
     const fake = (async () => ({ ok: false, status: 503, json: async () => ({}) })) as unknown as typeof fetch;
     await expect(networkSource(fake, { retries: 0 }).country("THA")).rejects.toThrow(/503/);
+  });
+});
+
+describe("averageRecent (structural traits)", () => {
+  const rows = [
+    { year: 2020, value: 6 }, { year: 2019, value: 20 }, { year: 2018, value: 18 },
+    { year: 2017, value: 18 }, { year: 2016, value: 18 }, { year: 2015, value: 1000 }, { year: 2014, value: null },
+  ];
+  it("averages the non-null values of the last N years up to the latest observation", () => {
+    expect(averageRecent(rows, 5)).toEqual({ year: 2020, value: 16, years: 5 });
+  });
+  it("skips gaps and uses what exists inside the window", () => {
+    expect(averageRecent([{ year: 2019, value: 4 }, { year: 2017, value: 8 }, { year: 2012, value: 99 }], 5))
+      .toEqual({ year: 2019, value: 6, years: 2 });
+  });
+  it("returns null when there is no value", () => {
+    expect(averageRecent([{ year: 2019, value: null }], 5)).toBeNull();
   });
 });

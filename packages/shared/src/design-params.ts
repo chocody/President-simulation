@@ -289,6 +289,14 @@ export const TRAITS: Param<Record<TraitKey, { code: string; linear: [number, num
   calibration: "Trait spread across the 10 MVP countries checked by eye against the raw values.",
 };
 
+/** Traits describe structure, not one year: each trait uses the mean of the last N data years (latest year still subject to maxDataAgeYears). */
+export const TRAIT_AVERAGING: Param<{ years: number }> = {
+  value: { years: 5 },
+  rationale: "A 5-year mean keeps a single shock year from defining a country (tourism receipts fell to about a third in 2020 in tourism-heavy economies) while staying recent.",
+  basedOn: ["design.traits", "wdi.ST.INT.RCPT.XP.ZS"],
+  calibration: "Checked against the raw series of the 10 MVP countries: the mean is within the 2016–2019 range where 2020 is the latest year.",
+};
+
 /** Institutional friction: reforms are harder where patronage is high (and easier where it is low). */
 export const FRICTION: Param<{ reformTargets: StatKey[]; parliamentPerPoint: number; probabilityPerPoint: number }> = {
   value: { reformTargets: ["corruption", "pressFreedom", "parliament"], parliamentPerPoint: 0.1, probabilityPerPoint: 0.15 },

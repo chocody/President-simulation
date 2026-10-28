@@ -91,6 +91,8 @@ export type MapInput = {
   observations: Observations;
   /** Why a code has no observation (no data, too old, no response). Only used to explain skips. */
   unavailable?: Record<string, string>;
+  /** Observations for trait codes (multi-year means, see TRAIT_AVERAGING); falls back to `observations`. */
+  traitObservations?: Observations;
 };
 
 export type MapResult =
@@ -228,7 +230,7 @@ export function mapCountry(input: MapInput): MapResult {
   composites.youth = [...g.youthBands.slice(1), g.adultTotal];
   composites.urban = [];
 
-  const t = mapTraits(obs, input.unavailable);
+  const t = mapTraits(input.traitObservations ?? obs, input.unavailable);
   notes.push(...t.notes);
   const hasTraits = Object.keys(t.traits).length > 0;
 

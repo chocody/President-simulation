@@ -107,12 +107,14 @@ describe("traits in buildCountries (fixtures)", () => {
       for (const v of Object.values(d.traits!)) { expect(v).toBeGreaterThanOrEqual(0); expect(v).toBeLessThanOrEqual(100); }
     }
   });
-  it("THA values follow the mapping (fixture raw 5% tourism of exports -> 5/30, rule of law 45 -> patronage 55)", () => {
+  it("THA values follow the mapping (5-year mean of fixture tourism 4.2..5 = 4.6% of exports -> 4.6/30, rule of law mean 44.4 -> patronage 55.6)", () => {
     const d = read("THA");
-    expect(d.traitsSrc!.tourism).toEqual({ sourceId: "wdi.ST.INT.RCPT.XP.ZS", year: 2023, raw: 5 });
-    expect(d.traits!.tourism).toBeCloseTo((5 / 30) * 100, 8);
-    expect(d.traits!.ruleOfLaw).toBeCloseTo(45, 8);
-    expect(d.traits!.patronage).toBeCloseTo(55, 8);
+    expect(d.traitsSrc!.tourism!.sourceId).toBe("wdi.ST.INT.RCPT.XP.ZS");
+    expect(d.traitsSrc!.tourism!.year).toBe(2023);
+    expect(d.traitsSrc!.tourism!.raw).toBeCloseTo(4.6, 8);   // mean of 2019–2023 (TRAIT_AVERAGING)
+    expect(d.traits!.tourism).toBeCloseTo((4.6 / 30) * 100, 8);
+    expect(d.traits!.ruleOfLaw).toBeCloseTo(44.4, 8);   // fixture 5-year mean
+    expect(d.traits!.patronage).toBeCloseTo(55.6, 8);
     expect(d.traitsSrc!.patronage!.sourceId).toBe("wgi.GOV_WGI_RL_SC");
     expect(rep("THA").codes["NV.AGR.TOTL.ZS"]).toEqual({ year: 2023, value: 12 });
   });

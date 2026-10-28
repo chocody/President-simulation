@@ -170,9 +170,8 @@ describe("handleDecide: institutional friction", () => {
     expect(a.report.measures[0].probability).toBeCloseTo(b.report.measures[0].probability - 4.5, 8);
   });
 
-  it("a country without traits (like the committed country files today) gets no friction", async () => {
-    const real = noFixtures.countries[0]!;
-    expect(real.traits).toBeUndefined();   // data/countries has no traits until the live build is run
+  it("a country without traits (older country files) gets no friction", async () => {
+    const { traits: _t, traitsSrc: _s, ...real } = noFixtures.countries[0]!;
     const c: Content = { ...noFixtures, countries: [real] };
     const d = deps({ content: c });
     const s0 = (await handleNew({ difficulty: "normal" }, d)).body as Body;
@@ -226,7 +225,7 @@ describe("describeTraitSource", () => {
     const d = describeTraitSource("tourism", country, [wdi, wgi]);
     expect(d.kind).toBe("dataset");
     if (d.kind === "dataset") {
-      expect(d.sentence).toBe("รายได้ท่องเที่ยว 12.3% ของการส่งออก (WDI, ปี 2022)");
+      expect(d.sentence).toBe("รายได้ท่องเที่ยว 12.3% ของการส่งออก (WDI, เฉลี่ย 5 ปีถึงปี 2022)");
       expect(d.proxy).toBe(false);
       expect(d.indicatorCode).toBe("ST.INT.RCPT.XP.ZS");
       expect(d.url).toContain("ST.INT.RCPT.XP.ZS");

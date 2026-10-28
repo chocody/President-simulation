@@ -138,7 +138,7 @@ function provenanceIds(country: unknown): string[] {
   const out: string[] = [];
   if (country === null || typeof country !== "object") return out;
   const c = country as Record<string, unknown>;
-  for (const key of ["baselineSrc", "groupSharesSrc"]) {
+  for (const key of ["baselineSrc", "groupSharesSrc", "traitsSrc"]) {
     const rec = c[key];
     if (rec && typeof rec === "object") {
       for (const p of Object.values(rec as Record<string, unknown>)) {

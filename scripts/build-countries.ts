@@ -8,11 +8,11 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { DATA_MAPPING, MVP_COUNTRIES } from "@ps/shared";
+import { DATA_MAPPING, MVP_COUNTRIES, TRAITS, TRAIT_AVERAGING } from "@ps/shared";
 import { mapCountry, plannedCodes, type Observations } from "./lib/mapping";
 import {
   countryUrl, fixtureSource, indicatorUrl, networkSource, newestYear, parseCountryResponse, parseIndicatorResponse,
-  savingSource, selectObservation, type DataSource, type Row,
+  averageRecent, savingSource, selectObservation, type DataSource, type Row,
 } from "./lib/worldbank";
 
 /** The run fails when fewer countries than this pass. */
@@ -95,7 +95,16 @@ async function buildOne(iso3: string, source: DataSource): Promise<{ report: Cou
     }
   }
 
-  const result = mapCountry({ iso3, nameEn: meta.nameEn, region: meta.region, observations, unavailable });
+  // Traits use a multi-year mean ending at the selected (fresh enough) latest year.
+  const traitObservations: Observations = {};
+  for (const code of new Set(Object.values(TRAITS.value).map((t) => t.code))) {
+    const r = rows[code];
+    if (!r || !observations[code]) continue;
+    const avg = averageRecent(r, TRAIT_AVERAGING.value.years);
+    if (avg) traitObservations[code] = { year: avg.year, value: avg.value };
+  }
+
+  const result = mapCountry({ iso3, nameEn: meta.nameEn, region: meta.region, observations, unavailable, traitObservations });
   if (!result.ok) {
     report.reasons.push(...result.reasons);
     return { report };
