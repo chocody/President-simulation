@@ -316,9 +316,9 @@ export const MINOR_EVENTS: Param<{ perQuarter: [number, number]; cooldownQ: numb
 };
 
 /** Consequence scenes: how many situations to show, and when a later effect gets its own scene. */
-export const SCENES: Param<{ maxPerTurn: number; minLevelShare: number; followupMinLevelShare: number; maxFollowupsPerQuarter: number; traitStrength: number }> = {
-  value: { maxPerTurn: 4, minLevelShare: 0.5, followupMinLevelShare: 1, maxFollowupsPerQuarter: 2, traitStrength: 1 },
-  rationale: "Show up to 4 situations per decision, for changes of at least half a level-1 step; a delayed effect gets a scene when its total reaches a full level-1 step; at most 2 follow-up scenes per quarter so the ticker stays readable.",
+export const SCENES: Param<{ maxPerTurn: number; minLevelShare: number; followupMinLevelShare: number; maxFollowupsPerQuarter: number; traitStrength: number; repeatWindowQ: number }> = {
+  value: { maxPerTurn: 4, minLevelShare: 0.5, followupMinLevelShare: 1, maxFollowupsPerQuarter: 2, traitStrength: 1, repeatWindowQ: 4 },
+  rationale: "Show up to 4 situations per decision, for changes of at least half a level-1 step; a delayed effect gets a scene when its total reaches a full level-1 step; at most 2 follow-up scenes per quarter so the ticker stays readable; the same template is avoided for 4 quarters (one year) when another fits.",
   basedOn: ["design.scenes"],
   calibration: "Playtest: a result screen shows 2–4 scenes in most turns.",
 };

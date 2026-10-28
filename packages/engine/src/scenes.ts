@@ -11,9 +11,9 @@ import { currentValue, groupOf } from "./util";
 
 /**
  * A template is not repeated within this many quarters when another one fits (spec E4: "the last 4 quarters").
- * Not in design-params yet (SCENES has no such field); the Lead may move it there.
+ * From SCENES.repeatWindowQ.
  */
-export const SCENE_REPEAT_WINDOW_Q = 4;
+export const SCENE_REPEAT_WINDOW_Q = SCENES.value.repeatWindowQ;
 
 /** Goodness changes smaller than this count as "no change" (floating-point noise, not a design value). */
 const TONE_EPSILON = 1e-9;
