@@ -26,7 +26,7 @@ ok       DEU
            note: debt: GC.DOD.TOTL.GD.ZS unavailable (latest value is from 1990, 35 years before 2025; older than 8 years is rejected), design value used
            note: health: UHC index (SH.UHC.SRVS.CV.XD) not available, life expectancy alone used
 10 passed, 0 skipped; output in /home/runner/work/President-simulation/President-simulation/data/countries
-Warnings (15):
+Warnings (9):
   warning: Source "wdi.EN.GHG.CO2.PC.CE.AR5" is cited nowhere
   warning: Source "wdi.AG.LND.FRST.ZS" is cited nowhere
   warning: Source "un.wpp2024" is cited nowhere
@@ -36,22 +36,16 @@ Warnings (15):
   warning: Source "wdi.SP.POP.2529.FE.5Y" is cited nowhere
   warning: Source "wdi.SP.POP.1564.TO.ZS" is cited nowhere
   warning: Source "wdi.SP.POP.TOTL" is cited nowhere
-  warning: Source "wdi.ST.INT.RCPT.XP.ZS" is cited nowhere
-  warning: Source "wdi.NV.AGR.TOTL.ZS" is cited nowhere
-  warning: Source "wdi.NY.GDP.TOTL.RT.ZS" is cited nowhere
-  warning: Source "wdi.NE.EXP.GNFS.ZS" is cited nowhere
-  warning: Source "wgi.GOV_WGI_RL_SC" is cited nowhere
-  warning: Source "wgi.GOV_WGI_GE_SC" is cited nowhere
 
 Source check summary (plain)
   Sources                     94 (dataset 33, research 44, design 17)
   Evidence items              40
   Cards                       18
   Countries                   10
-  Design-param basedOn lists  35
-  Sources cited               79 of 94 (15 uncited)
+  Design-param basedOn lists  36
+  Sources cited               85 of 94 (9 uncited)
   Evidence cited              40 of 40 (0 uncited)
-  Cited sources unverified    79 of 79
+  Cited sources unverified    85 of 85
   Cited evidence unverified   40 of 40
 
 OK
