@@ -338,7 +338,11 @@ export const Answer = z.discriminatedUnion("kind", [
 ]);
 export type Answer = z.infer<typeof Answer>;
 
-export const NewGameRequest = z.object({ difficulty: Difficulty, iso3: z.string().length(3).optional() });
+export const NewGameRequest = z.object({
+  difficulty: Difficulty,
+  iso3: z.string().length(3).optional(),
+  exclude: z.array(z.string().length(3)).max(50).optional(),   // reroll: countries already offered (ignored once all are used)
+});
 export const DecideRequest = z.object({ state: GameState, answer: Answer });
 export const DecideResponse = z.object({
   state: GameState, report: TurnReport, narration: z.string(),

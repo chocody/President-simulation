@@ -53,12 +53,24 @@ button, textarea { font: inherit; }
   color: var(--color-muted);
 }
 
-.dossier {
-  background: var(--color-card);
-  border: 1px solid var(--color-rule);
-  border-radius: 6px;
-  box-shadow: 0 1px 0 rgb(27 33 48 / 0.04), 0 8px 18px -14px rgb(27 33 48 / 0.35);
+/* In the components layer so utilities (border colour, ring, background) on a dossier card take effect. */
+@layer components {
+  .dossier {
+    background: var(--color-card);
+    border: 1px solid var(--color-rule);
+    border-radius: 6px;
+    box-shadow: 0 1px 0 rgb(27 33 48 / 0.04), 0 8px 18px -14px rgb(27 33 48 / 0.35);
+  }
 }
+
+/* The picked answer on the decision screen: thick seal border, tinted paper, lifted. */
+.choice-picked {
+  border: 3px solid var(--color-seal) !important;
+  background: #fbeeee !important;
+  box-shadow: 0 0 0 3px rgb(155 34 38 / 0.18), 0 10px 22px -12px rgb(155 34 38 / 0.55) !important;
+}
+.choice-dimmed { opacity: 0.55; }
+.choice-dimmed:hover { opacity: 0.85; }
 
 .btn {
   display: inline-flex;

@@ -36,7 +36,7 @@ const post = <T>(path: string, body: unknown): Promise<T> =>
 
 export const api = {
   info: (iso3?: string) => call<InfoResponse>(`/api/game/info${iso3 ? `?iso3=${encodeURIComponent(iso3)}` : ""}`),
-  newGame: (difficulty: Difficulty) => post<NewResponse>("/api/game/new", { difficulty }),
+  newGame: (difficulty: Difficulty, exclude: string[] = []) => post<NewResponse>("/api/game/new", exclude.length > 0 ? { difficulty, exclude } : { difficulty }),
   advance: (state: GameState) => post<AdvanceResponse>("/api/game/advance", { state }),
   decide: (state: GameState, answer: Answer) => post<DecideResult>("/api/game/decide", { state, answer }),
   end: (state: GameState) => post<EndResponse>("/api/game/end", { state }),

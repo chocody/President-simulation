@@ -117,10 +117,13 @@ export async function handleNew(body: unknown, deps: Deps): Promise<ApiResult> {
   if (content.countries.length === 0) {
     return fail(409, "ยังไม่มีข้อมูลประเทศจริง จึงยังเริ่มเกมไม่ได้");
   }
-  const { difficulty, iso3 } = parsed.data;
+  const { difficulty, iso3, exclude = [] } = parsed.data;
+  // Reroll: draw from the countries not offered yet; once every country was offered, draw from all again.
+  const fresh = content.countries.filter((c) => !exclude.includes(c.iso3));
+  const pool = fresh.length > 0 ? fresh : content.countries;
   const country = iso3
     ? content.countries.find((c) => c.iso3 === iso3)
-    : pickCountry(content.countries, (deps.random ?? defaultRandom)());
+    : pickCountry(pool, (deps.random ?? defaultRandom)());
   if (!country) return fail(404, "ไม่พบประเทศที่ระบุ");
   const seed = (deps.seed ?? (() => defaultSeed(content)))();
   const state = newGame({ country, difficulty, seed });

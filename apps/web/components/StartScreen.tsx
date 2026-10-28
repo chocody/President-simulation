@@ -80,17 +80,27 @@ export function StartScreen({
 
 /** "ใบรับตำแหน่ง": the appointment card shown right after the game is created. */
 export function CharterScreen({
-  state, info, onAccept,
-}: { state: GameState; info: GameInfo; onAccept: () => void }) {
+  state, info, busy = false, error = null, onAccept, onReroll,
+}: { state: GameState; info: GameInfo; busy?: boolean; error?: string | null; onAccept: () => void; onReroll?: () => void }) {
   const c = info.country;
   return (
     <Frame
       screen="charter"
       devFixtures={info.devFixtures}
       footer={
-        <button type="button" className="btn btn-primary w-full" onClick={onAccept} data-testid="accept-charter">
-          รับตำแหน่ง
-        </button>
+        <>
+          <ErrorNote message={error} />
+          <div className="flex gap-2">
+            {onReroll && (
+              <button type="button" className="btn flex-1 whitespace-nowrap" onClick={onReroll} aria-label="สุ่มประเทศใหม่" disabled={busy} data-testid="reroll-country">
+                {busy ? "กำลังสุ่ม…" : "🎲 สุ่มใหม่"}
+              </button>
+            )}
+            <button type="button" className="btn btn-primary flex-[2]" onClick={onAccept} disabled={busy} data-testid="accept-charter">
+              รับตำแหน่ง
+            </button>
+          </div>
+        </>
       }
     >
       <section className="dossier border-2 border-ink p-5" aria-labelledby="charter-title" data-testid="charter">

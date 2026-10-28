@@ -302,3 +302,27 @@ describe("POST end", () => {
     }
   });
 });
+
+describe("handleNew reroll (exclude)", () => {
+  const real = (random: number) => deps({ content: noFixtures, random: () => random });
+  it("never offers an excluded country while others are left", async () => {
+    const all = noFixtures.countries.map((c) => c.iso3);
+    for (let k = 0; k < all.length - 1; k++) {
+      const exclude = all.slice(0, k + 1);
+      for (const r of [0, 0.3, 0.6, 0.999]) {
+        const res = await handleNew({ difficulty: "normal", exclude }, real(r));
+        expect(res.status).toBe(200);
+        expect(exclude).not.toContain((res.body as { state: GameState }).state.countryIso3);
+      }
+    }
+  });
+  it("draws from every country again once all were offered", async () => {
+    const all = noFixtures.countries.map((c) => c.iso3);
+    const res = await handleNew({ difficulty: "normal", exclude: all }, real(0.5));
+    expect(res.status).toBe(200);
+    expect(all).toContain((res.body as { state: GameState }).state.countryIso3);
+  });
+  it("rejects a malformed exclude list", async () => {
+    expect((await handleNew({ difficulty: "normal", exclude: ["TOOLONG"] }, real(0.5))).status).toBe(400);
+  });
+});

@@ -49,6 +49,7 @@ export function DecisionScreen({
       <div role="group" aria-label="ตัวเลือก" className="grid gap-3">
         {card.choices.map((c) => {
           const picked = sel.kind === "preset" && sel.choiceId === c.id;
+          const dimmed = sel.kind !== "none" && !picked;
           return (
             <button
               key={c.id}
@@ -57,8 +58,13 @@ export function DecisionScreen({
               aria-pressed={picked}
               disabled={busy}
               onClick={() => setSel({ kind: "preset", choiceId: c.id })}
-              className={`dossier min-h-[64px] w-full p-4 text-left ${picked ? "border-seal ring-2 ring-seal" : "hover:bg-white"}`}
+              className={`dossier min-h-[64px] w-full p-4 text-left transition ${picked ? "choice-picked" : dimmed ? "choice-dimmed hover:bg-white" : "hover:bg-white"}`}
             >
+              {picked && (
+                <span className="mb-2 inline-flex items-center gap-1 rounded-full bg-seal px-2.5 py-0.5 text-xs font-extrabold text-white" data-testid="picked-badge">
+                  ✓ เลือกข้อนี้
+                </span>
+              )}
               <span className="flex items-start justify-between gap-3">
                 <span className="text-base font-extrabold leading-snug">{c.titleTh}</span>
                 <span
@@ -82,7 +88,7 @@ export function DecisionScreen({
           );
         })}
 
-        <div className={`dossier p-4 ${freeOpen ? "border-seal ring-2 ring-seal" : ""}`}>
+        <div className={`dossier p-4 transition ${freeOpen ? "choice-picked" : sel.kind !== "none" ? "choice-dimmed" : ""}`}>
           <button
             type="button"
             data-testid="choice-free"

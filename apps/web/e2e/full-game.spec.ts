@@ -24,6 +24,10 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   await expect(page.getByTestId("charter")).toBeVisible();
   await expect(page.getByTestId("charter")).toContainText("DEV FIXTURE");
   await expect(page.getByTestId("dev-banner")).toBeVisible();
+  // Reroll: a new charter appears (the dev fixture has one country, so it is the same country with a new seed).
+  await page.getByTestId("reroll-country").click();
+  await expect(page.getByTestId("charter")).toBeVisible();
+  await expect(page.getByTestId("reroll-country")).toBeEnabled();
   await shot(page, "01b-charter");
 
   // 1c. Country traits ("ลักษณะประเทศ"): bars, a source on tap, patronage flagged as a proxy, a missing trait explained.
@@ -88,8 +92,16 @@ test("plays a full term with presets and one typed answer, and reaches the endin
         await shot(page, "03b-decision-typed");
         typedUsed = true;
       } else {
-        await page.getByTestId(`choice-${["a", "b", "c"][decisions % 3]}`).click();
+        const pick = ["a", "b", "c"][decisions % 3]!;
+        await page.getByTestId(`choice-${pick}`).click();
         await expect(submit).toBeEnabled();
+        // The picked choice stands out: badge, pressed state, seal border; the others are dimmed.
+        await expect(page.getByTestId(`choice-${pick}`)).toHaveAttribute("aria-pressed", "true");
+        await expect(page.getByTestId(`choice-${pick}`).getByTestId("picked-badge")).toBeVisible();
+        await expect(page.getByTestId("picked-badge")).toHaveCount(1);
+        await expect(page.getByTestId(`choice-${pick}`)).toHaveClass(/choice-picked/);
+        const other = ["a", "b", "c"].find((x) => x !== pick)!;
+        await expect(page.getByTestId(`choice-${other}`)).toHaveClass(/choice-dimmed/);
         if (!decisionShot) {
           await shot(page, "03-decision");
           decisionShot = true;

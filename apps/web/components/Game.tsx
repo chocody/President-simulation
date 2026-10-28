@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Answer, Difficulty } from "@ps/shared";
 import type { InfoResponse } from "../lib/api-types";
 import { api, ApiClientError } from "../lib/client-api";
@@ -20,6 +20,8 @@ export default function Game() {
   const [game, setGame] = useState<SavedGame | null>(null);
   const [meta, setMeta] = useState<InfoResponse | null>(null);
   const [busy, setBusy] = useState(false);
+  // Countries offered on the charter since the last "รับตำแหน่ง", so a reroll shows a new one.
+  const offeredRef = useRef<string[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const update = useCallback((next: SavedGame | null) => {
@@ -75,7 +77,20 @@ export default function Game() {
   };
 
   if (game.screen === "charter") {
-    return <CharterScreen state={state} info={info} onAccept={() => update({ ...game, screen: "main" })} />;
+    const reroll = () =>
+      run(async () => {
+        const offered = [...new Set([...offeredRef.current, state.countryIso3])];
+        const next = await api.newGame(state.difficulty, offered);
+        offeredRef.current = offered.includes(next.state.countryIso3) ? [] : offered;   // every country offered: start over
+        update({ v: 1, state: next.state, info: next.info, screen: "charter", card: null, result: null, ending: null, log: [] });
+      });
+    return (
+      <CharterScreen
+        state={state} info={info} busy={busy} error={error}
+        onAccept={() => { offeredRef.current = []; update({ ...game, screen: "main" }); }}
+        onReroll={reroll}
+      />
+    );
   }
 
   if (game.screen === "decision" && game.card) {
