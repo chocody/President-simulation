@@ -3,14 +3,15 @@
 // --real-countries plays the real data/countries/*.json (fixture deck still, since real choices are not pre-judged yet).
 // --real-deck also loads data/events/minor.yaml (or --minor <file>) when present (the news ticker) and plays each country with its own traits
 // (CountryData.traits, when the file has them). Prints the mean number of news items per quarter and, for the best bot,
-// the win rate per country.
+// the win rate per country. It also loads data/scenes/*.yaml (consequence scenes) and prints scenes per decision (mean, min,
+// max) and follow-up/court scenes per game.
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import YAML from "yaml";
 import {
-  Card as CardSchema, CountryData, Evidence as EvidenceSchema, Judgment, MinorEvent as MinorEventSchema, STAT_KEYS,
-  type Card, type Evidence, type GameState, type MinorEvent, type StatKey,
+  Card as CardSchema, CountryData, Evidence as EvidenceSchema, Judgment, MinorEvent as MinorEventSchema, SceneTemplate as SceneTemplateSchema, STAT_KEYS,
+  type Card, type Evidence, type GameState, type MinorEvent, type SceneTemplate, type StatKey,
 } from "@ps/shared";
-import { advanceQuarter, newGame, resolveTurn, uniform } from "../packages/engine/src/index";
+import { advanceQuarter, buildTurnScenes, newGame, resolveTurn, turnActions, uniform } from "../packages/engine/src/index";
 import { fixtureCountry } from "../packages/engine/test/fixtures/country";
 import { fixtureDeck } from "../packages/engine/test/fixtures/cards";
 import { fixtureEvidence } from "../packages/engine/test/fixtures/evidence";
@@ -60,6 +61,8 @@ interface Result {
   country: string;
   /** Quarters advanced (the news ticker runs once per advanced quarter). */
   quartersAdvanced: number;
+  /** Number of scenes shown after each decision. */
+  turnScenes: number[];
 }
 
 const REAL = process.argv.includes("--real-countries");
@@ -73,6 +76,13 @@ const MINOR_ARG = process.argv.indexOf("--minor");
 const MINOR_PATH = MINOR_ARG >= 0 ? process.argv[MINOR_ARG + 1]! : "data/events/minor.yaml";
 const MINOR: MinorEvent[] = REAL_DECK && existsSync(MINOR_PATH)
   ? (YAML.parse(readFileSync(MINOR_PATH, "utf8")) as unknown[]).map((e) => MinorEventSchema.parse(e))
+  : [];
+
+/** Scene templates: only with --real-deck, when data/scenes exists. */
+const SCENES_DIR = "data/scenes";
+const SCENE_LIBRARY: SceneTemplate[] = REAL_DECK && existsSync(SCENES_DIR)
+  ? readdirSync(SCENES_DIR).filter((f) => f.endsWith(".yaml")).sort()
+      .flatMap((f) => (YAML.parse(readFileSync(`${SCENES_DIR}/${f}`, "utf8")) as unknown[]).map((x) => SceneTemplateSchema.parse(x)))
   : [];
 
 function loadRealDeck(): { deck: Card[]; evidence: Evidence[] } {
@@ -95,18 +105,24 @@ function playGame(bot: Bot, game: number, deck: Card[]): Result {
   let s = newGame({ country, difficulty: "normal", seed: `sim-${game}` });
   const snapshots = new Map<number, GameState["stats"]>();
   let quartersAdvanced = 0;
+  const turnScenes: number[] = [];
   for (let guard = 0; guard < 40 && s.phase !== "ended"; guard++) {
     if (s.phase === "decision") {
       const card = deck.find((c) => c.id === s.pendingCardId)!;
       const choice = card.choices.find((c) => c.id === chooseId(bot, game, s.quarter, card))!;
-      s = resolveTurn(
+      const turn = resolveTurn(
         s, deck, { kind: "preset", judgment: choice.judgment! },
         { evidence: choice.evidenceIds.map((id) => evidenceById.get(id)).filter((e): e is Evidence => e !== undefined), traits: country.traits },
-      ).state;
+      );
+      const built = buildTurnScenes({
+        state: turn.state, report: turn.report, card, actions: turnActions(choice.judgment!), library: SCENE_LIBRARY, traits: country.traits,
+      });
+      s = built.state;
+      turnScenes.push(built.scenes.length);
     }
     snapshots.set(s.quarter, { ...s.stats });
     const wasRunning = s.quarter < 16;
-    s = advanceQuarter(s, deck, MINOR, { traits: country.traits });
+    s = advanceQuarter(s, deck, MINOR, { traits: country.traits }, SCENE_LIBRARY);
     if (wasRunning) quartersAdvanced++;
   }
   const yearly = new Map<StatKey, number[]>(STAT_KEYS.map((k) => [k, []]));
@@ -116,7 +132,7 @@ function playGame(bot: Bot, game: number, deck: Card[]): Result {
     if (!a || !b) continue;
     for (const k of STAT_KEYS) yearly.get(k)!.push(b[k] - a[k]);
   }
-  return { final: s, yearly, country: country.iso3, quartersAdvanced };
+  return { final: s, yearly, country: country.iso3, quartersAdvanced, turnScenes };
 }
 
 function run(bot: Bot, games: number): void {
@@ -125,10 +141,16 @@ function run(bot: Bot, games: number): void {
   let wins = 0;
   let newsItems = 0;
   let quarters = 0;
+  const perDecision: number[] = [];
+  let followups = 0;
+  let courts = 0;
   const byCountry = new Map<string, { games: number; wins: number }>();
   const changes = new Map<StatKey, number[]>(STAT_KEYS.map((k) => [k, []]));
   for (let g = 0; g < games; g++) {
-    const { final, yearly, country, quartersAdvanced } = playGame(bot, g, DECK);
+    const { final, yearly, country, quartersAdvanced, turnScenes } = playGame(bot, g, DECK);
+    perDecision.push(...turnScenes);
+    followups += (final.scenes ?? []).filter((x) => x.kind === "followup").length;
+    courts += (final.scenes ?? []).filter((x) => x.kind === "court").length;
     const reason = final.endReason ?? "none";
     endings.set(reason, (endings.get(reason) ?? 0) + 1);
     if (reason === "won_election") wins++;
@@ -149,6 +171,15 @@ function run(bot: Bot, games: number): void {
   );
   console.log(`mean popularity at the end: ${(popSum / games).toFixed(1)}`);
   if (MINOR.length > 0) console.log(`news items per quarter (mean over ${quarters} advanced quarters): ${(newsItems / Math.max(1, quarters)).toFixed(2)}`);
+  if (SCENE_LIBRARY.length > 0 && perDecision.length > 0) {
+    const mean = perDecision.reduce((a, b) => a + b, 0) / perDecision.length;
+    const zero = perDecision.filter((n) => n === 0).length;
+    console.log(
+      `scenes per decision (${perDecision.length} decisions): mean ${mean.toFixed(2)}, min ${Math.min(...perDecision)}, max ${Math.max(...perDecision)}, ` +
+      `none in ${((100 * zero) / perDecision.length).toFixed(1)}%`,
+    );
+    console.log(`follow-up scenes per game: ${(followups / games).toFixed(2)}, court scenes per game: ${(courts / games).toFixed(2)}`);
+  }
   if (bot === "best" && byCountry.size > 1) {
     console.log("win rate per country (best bot):");
     for (const [iso, c] of [...byCountry.entries()].sort()) console.log(`  ${iso} ${((100 * c.wins) / c.games).toFixed(1)}% (${c.games} games)`);
@@ -163,6 +194,6 @@ function run(bot: Bot, games: number): void {
 const games = argGames();
 console.log(
   `President Sim engine simulation: ${REAL ? "real countries" : "TEST FIXTURE country"}, ${REAL_DECK ? "real deck (pre-judged)" : "TEST FIXTURE deck"}, ` +
-  `${MINOR.length > 0 ? `${MINOR.length} minor events` : "no minor events"}, difficulty normal.`,
+  `${SCENE_LIBRARY.length > 0 ? `${SCENE_LIBRARY.length} scene templates` : "no scenes"}, ${MINOR.length > 0 ? `${MINOR.length} minor events` : "no minor events"}, difficulty normal.`,
 );
 for (const bot of BOTS) run(bot, games);

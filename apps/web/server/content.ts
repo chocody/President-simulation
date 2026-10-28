@@ -4,7 +4,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
-import { Card, CountryData, Evidence, Judgment, MinorEvent, Source } from "@ps/shared";
+import { Card, CountryData, Evidence, Judgment, MinorEvent, SceneTemplate, Source } from "@ps/shared";
 import { FIXTURE_COUNTRY, FIXTURE_MINOR_EVENTS, FIXTURE_SOURCE } from "../dev/fixture-country";
 
 export class ContentError extends Error {
@@ -21,6 +21,8 @@ export interface Content {
   countries: CountryData[];
   /** The news ticker deck (data/events/minor.yaml). Empty when the file is absent (dev fixtures use invented ones). */
   minorEvents: MinorEvent[];
+  /** Consequence scene templates (data/scenes/*.yaml). Empty when the folder is absent. */
+  scenes: SceneTemplate[];
   /** True when DEV_FIXTURES=1: the fictional dev country is available and unjudged presets get a mock judgment. */
   devFixtures: boolean;
 }
@@ -139,6 +141,21 @@ export function loadContent(opts: LoadOptions = {}): Content {
     }
   }
 
+  // Consequence scenes: every data/scenes/*.yaml is a list of SceneTemplate. A missing folder is an empty library.
+  const scenes: SceneTemplate[] = [];
+  for (const f of files(join(dataDir, "scenes"), ".yaml")) {
+    const raw = readYaml(f);
+    if (!Array.isArray(raw)) throw new ContentError(`${f}: expected a list of scene templates`);
+    raw.forEach((s, i) => scenes.push(parseWith(SceneTemplate, s, `${f}[${i}]`)));
+  }
+  const dupScenes = duplicates(scenes.map((s) => s.id));
+  if (dupScenes.length > 0) throw new ContentError(`duplicate scene ids: ${dupScenes.join(", ")}`);
+  for (const s of scenes) {
+    for (const id of s.sourceIds) {
+      if (!sourceIds.has(id)) throw new ContentError(`scene ${s.id}: unknown source id ${id}`);
+    }
+  }
+
   // Pre-judged choices are merged into choice.judgment.
   for (const f of files(join(dataDir, "prejudged"), ".json")) {
     const raw = readJson(f);
@@ -166,7 +183,7 @@ export function loadContent(opts: LoadOptions = {}): Content {
   const dupCountries = duplicates(countries.map((c) => c.iso3));
   if (dupCountries.length > 0) throw new ContentError(`duplicate country iso3: ${dupCountries.join(", ")}`);
 
-  return { cards, evidence, sources, countries, minorEvents, devFixtures };
+  return { cards, evidence, sources, countries, minorEvents, scenes, devFixtures };
 }
 
 function validateCountry(c: CountryData, sourceIds: Set<string>, where: string): CountryData {

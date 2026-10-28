@@ -1,5 +1,5 @@
 // The GameState lives in the browser (no database). Every access is guarded: storage can be blocked.
-import type { GameState } from "@ps/shared";
+import type { GameState, SceneRecord } from "@ps/shared";
 import type { DecideResult, EndResponse, GameInfo, PublicCard, PublicNewsItem } from "./api-types";
 
 export type Screen = "charter" | "main" | "decision" | "result" | "ending";
@@ -15,6 +15,8 @@ export interface SavedGame {
   log: string[];
   /** Minor events from the last advance (absent in older saves). */
   news?: PublicNewsItem[];
+  /** Follow-up and court scenes from the last advance (absent in older saves). */
+  scenes?: SceneRecord[];
 }
 
 const KEY = "president-sim.game.v1";

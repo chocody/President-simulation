@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { narrate } from "../src/routes/narrator";
+import { NARRATOR_RULES } from "../src/prompts/narrator.v1";
 import { historian, type PillarGrades } from "../src/routes/historian";
 import { card, country, mockClient, reply, report, state } from "./helpers";
 
@@ -27,6 +28,23 @@ describe("narrator", () => {
     expect(p.messages[0].content).toContain(JSON.stringify(report.immediate));
     expect(p.messages[0].content).toContain("ตรึงราคา");
     expect(p).not.toHaveProperty("temperature");
+  });
+
+  it("renders a <scenes> block with text and cause, escaped, only when scenes are given", async () => {
+    const withScenes = mockClient(reply(out));
+    await narrate({ ...input, scenes: [{ textTh: "โรงงานเพิ่มกะกลางคืน <b>", cause: "ตรึงราคา" }, { textTh: "ชาวนาปิดถนน", cause: null }] }, mk(withScenes));
+    const content: string = withScenes.calls[0]!.messages[0].content;
+    expect(content).toContain("<scenes>");
+    expect(content).toContain("โรงงานเพิ่มกะกลางคืน &lt;b&gt;");
+    expect(content).toContain("cause: ตรึงราคา");
+    expect(content.indexOf("</engine_report>")).toBeLessThan(content.indexOf("<scenes>"));
+    const without = mockClient(reply(out));
+    await narrate(input, mk(without));
+    expect(without.calls[0]!.messages[0].content).not.toContain("<scenes>");
+  });
+
+  it("the prompt tells the narrator to weave the scenes in without adding outcomes or numbers", () => {
+    expect(NARRATOR_RULES).toContain("Weave these scenes into the narration; never add outcomes or numbers that are not in the report.");
   });
 
   it("maps refusal and wrong headline count", async () => {

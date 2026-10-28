@@ -1,10 +1,11 @@
 "use client";
 
-import type { GameState } from "@ps/shared";
+import type { GameState, SceneRecord } from "@ps/shared";
 import type { GameInfo, PublicNewsItem } from "../lib/api-types";
 import { NEWS_CATEGORY_LABEL } from "../lib/labels";
 import { newsChip } from "../lib/news";
 import { SectionTitle } from "./common";
+import { SceneCard } from "./SceneCard";
 
 const TONE = {
   good: "border-good text-good",
@@ -36,26 +37,52 @@ function NewsRow({ item, state }: { item: PublicNewsItem; state: GameState }) {
   );
 }
 
-/** The news ticker: what happened while time moved on, then older items folded away. */
+type Entry = { quarter: number; news: PublicNewsItem } | { quarter: number; scene: SceneRecord };
+
+/** Minor news and follow-up scenes together, newest quarter first; within a quarter the follow-ups come first. */
+export function mergeEntries(news: PublicNewsItem[], scenes: SceneRecord[]): Entry[] {
+  const all: Entry[] = [...scenes.map((scene) => ({ quarter: scene.quarter, scene })), ...news.map((n) => ({ quarter: n.quarter, news: n }))];
+  return all
+    .map((e, i) => ({ e, i }))
+    .sort((a, b) => b.e.quarter - a.e.quarter || a.i - b.i)
+    .map((x) => x.e);
+}
+
+function Rows({ entries, state }: { entries: Entry[]; state: GameState }) {
+  return (
+    <>
+      {entries.map((e, i) => "scene" in e
+        ? <SceneCard key={`s-${e.scene.templateId}-${e.quarter}-${i}`} scene={e.scene} quarter={e.quarter} />
+        : <NewsRow key={`${e.news.id}-${e.quarter}-${i}`} item={e.news} state={state} />)}
+    </>
+  );
+}
+
+/** The news ticker: what happened while time moved on (minor news and follow-up scenes), then older items folded away. */
 export function NewsTicker({
-  state, info, latest, older,
-}: { state: GameState; info: GameInfo; latest: PublicNewsItem[]; older: PublicNewsItem[] }) {
-  if ((info.minorEvents ?? []).length === 0 && latest.length === 0 && older.length === 0) return null;
+  state, info, latest, older, latestScenes = [], olderScenes = [],
+}: {
+  state: GameState; info: GameInfo; latest: PublicNewsItem[]; older: PublicNewsItem[];
+  latestScenes?: SceneRecord[]; olderScenes?: SceneRecord[];
+}) {
+  const latestEntries = mergeEntries(latest, latestScenes);
+  const olderEntries = mergeEntries(older, olderScenes);
+  if ((info.minorEvents ?? []).length === 0 && latestEntries.length === 0 && olderEntries.length === 0) return null;
   return (
     <section data-testid="news-ticker" aria-labelledby="news-title">
       <SectionTitle><span id="news-title">ข่าวสั้นช่วงที่ผ่านมา</span></SectionTitle>
-      {latest.length > 0 ? (
+      {latestEntries.length > 0 ? (
         <ul className="dossier divide-y divide-rule/70 overflow-hidden" data-testid="news-latest">
-          {latest.map((n, i) => <NewsRow key={`${n.id}-${n.quarter}-${i}`} item={n} state={state} />)}
+          <Rows entries={latestEntries} state={state} />
         </ul>
       ) : (
         <p className="dossier p-4 text-sm text-muted" data-testid="news-empty">ยังไม่มีข่าวใหม่ เดินเวลาต่อเพื่อติดตามเหตุการณ์เล็ก ๆ ในประเทศ</p>
       )}
-      {older.length > 0 && (
+      {olderEntries.length > 0 && (
         <details className="mt-2 text-sm" data-testid="news-older">
-          <summary className="cursor-pointer font-bold">ข่าวก่อนหน้า ({older.length})</summary>
+          <summary className="cursor-pointer font-bold">ข่าวก่อนหน้า ({olderEntries.length})</summary>
           <ul className="dossier mt-2 divide-y divide-rule/70 overflow-hidden">
-            {older.map((n, i) => <NewsRow key={`${n.id}-${n.quarter}-${i}`} item={n} state={state} />)}
+            <Rows entries={olderEntries} state={state} />
           </ul>
         </details>
       )}

@@ -1,7 +1,7 @@
 // Shapes exchanged between the API routes and the client. Contract types come from @ps/shared.
 import type { z } from "zod";
 import type {
-  Card, CardEffect, CountryData, DecideResponse as DecideResponseSchema, GameState, GroupKey, MinorEvent, Source, TurnReport,
+  Card, CardEffect, CountryData, DecideResponse as DecideResponseSchema, GameState, GroupKey, MinorEvent, SceneRecord, Source, TurnReport,
 } from "@ps/shared";
 
 export type PublicChoice = Pick<Card["choices"][number],
@@ -46,6 +46,8 @@ export interface AdvanceResponse {
   card: PublicCard | null;
   /** Minor events that happened while advancing, oldest first. */
   news: PublicNewsItem[];
+  /** Follow-up and court scenes that happened while advancing, oldest first. */
+  scenes: SceneRecord[];
 }
 export type DecideResult = z.infer<typeof DecideResponseSchema> & { headlines: string[]; answerTitle: string; interpretation: string | null };
 
