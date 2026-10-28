@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2020",
+      "value": 1.98018368697291,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2019",
+      "value": 9.19805342441142,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2018",
+      "value": 8.45318976671237,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2017",
+      "value": 7.56448547148604,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2016",
+      "value": 7.48897480226927,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2015",
+      "value": 7.03491461479772,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2014",
+      "value": 5.8177162495611,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2013",
+      "value": 5.02455380642221,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2012",
+      "value": 4.48469357179951,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2011",
+      "value": 4.24325512410961,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

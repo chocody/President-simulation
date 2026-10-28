@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2025",
+      "value": 40.4347738545071,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2024",
+      "value": 41.4340593720908,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2023",
+      "value": 42.9672624196847,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2022",
+      "value": 45.6284043425185,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2021",
+      "value": 42.5198379291429,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2020",
+      "value": 39.1198068808828,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2019",
+      "value": 42.3402444816356,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2018",
+      "value": 42.4968914074717,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2017",
+      "value": 42.2029575981591,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2016",
+      "value": 41.6355419518592,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

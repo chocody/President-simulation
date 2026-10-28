@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2021",
+      "value": 1.8170265297611,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2020",
+      "value": 1.1095683956846,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2019",
+      "value": 1.51242491485513,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2018",
+      "value": 1.81670642609227,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2017",
+      "value": 1.63215260676224,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2016",
+      "value": 1.5532188768547,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2015",
+      "value": 1.93092320697655,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2014",
+      "value": 2.8228271736769,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2013",
+      "value": 2.61852748014065,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.TOTL.RT.ZS",
+        "value": "Total natural resources rents (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2012",
+      "value": 2.90571167294829,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

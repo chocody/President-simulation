@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2025",
+      "value": 8.7468928716046,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2024",
+      "value": 8.89226589240955,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2023",
+      "value": 8.55515003809495,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2022",
+      "value": 8.71589001488812,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2021",
+      "value": 8.69539558179486,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2020",
+      "value": 8.70610471503835,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2019",
+      "value": 8.1285680400948,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2018",
+      "value": 8.20181926195524,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2017",
+      "value": 8.40641258665047,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2016",
+      "value": 8.47807696285562,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2025",
+      "value": 22.8465482987858,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2024",
+      "value": 22.3096487702606,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2023",
+      "value": 21.8085632197562,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2022",
+      "value": 24.5029116862832,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2021",
+      "value": 21.4165556390653,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2020",
+      "value": 17.3311682848923,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2019",
+      "value": 18.5915277970883,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2018",
+      "value": 21.0027464972455,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2017",
+      "value": 20.1773044351106,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2016",
+      "value": 19.0889938536664,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

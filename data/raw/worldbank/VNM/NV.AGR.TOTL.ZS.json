@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2025",
+      "value": 11.6440301326976,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2024",
+      "value": 12.0289339019357,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2023",
+      "value": 11.8713266425191,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2022",
+      "value": 11.8802998248459,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2021",
+      "value": 12.6030904652745,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2020",
+      "value": 12.6554035685556,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2019",
+      "value": 11.7845285540387,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2018",
+      "value": 12.3066684310428,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2017",
+      "value": 12.9298794852362,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "VN",
+        "value": "Viet Nam"
+      },
+      "countryiso3code": "VNM",
+      "date": "2016",
+      "value": 13.8182553730866,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

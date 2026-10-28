@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2025",
+      "value": 54.4365507,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2024",
+      "value": 55.1288191,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2023",
+      "value": 56.9324066,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2022",
+      "value": 56.1913772,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2021",
+      "value": 56.0649467,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2020",
+      "value": 55.8702027,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2019",
+      "value": 55.4367339,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2018",
+      "value": 54.9644205,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2017",
+      "value": 53.4272552,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "GOV_WGI_RL_SC",
+        "value": "Rule of Law - Governance score (0-100)"
+      },
+      "country": {
+        "id": "ID",
+        "value": "Indonesia"
+      },
+      "countryiso3code": "IDN",
+      "date": "2016",
+      "value": 53.3527725,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

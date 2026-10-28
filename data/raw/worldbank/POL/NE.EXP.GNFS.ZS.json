@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2025",
+      "value": 49.9505650987029,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2024",
+      "value": 52.1798133919011,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2023",
+      "value": 57.8812710195434,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2022",
+      "value": 62.3525162455456,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2021",
+      "value": 57.0379760723016,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2020",
+      "value": 52.4338855199248,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2019",
+      "value": 52.6128934811742,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2018",
+      "value": 52.232575443975,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2017",
+      "value": 51.6925275786294,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.ZS",
+        "value": "Exports of goods and services (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2016",
+      "value": 49.906428862355,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

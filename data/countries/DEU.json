@@ -131,5 +131,51 @@
       "year": 2020,
       "raw": 0.421924351315519
     }
+  },
+  "traits": {
+    "tourism": 11.5771452506574,
+    "agriculture": 2.9047564716068104,
+    "resources": 0.385424496569872,
+    "openness": 50.54346731813387,
+    "ruleOfLaw": 85.067519,
+    "govEffectiveness": 82.8363275,
+    "patronage": 14.932480999999996
+  },
+  "traitsSrc": {
+    "tourism": {
+      "sourceId": "wdi.ST.INT.RCPT.XP.ZS",
+      "year": 2019,
+      "raw": 3.47314357519722
+    },
+    "agriculture": {
+      "sourceId": "wdi.NV.AGR.TOTL.ZS",
+      "year": 2025,
+      "raw": 0.871426941482043
+    },
+    "resources": {
+      "sourceId": "wdi.NY.GDP.TOTL.RT.ZS",
+      "year": 2021,
+      "raw": 0.0770848993139744
+    },
+    "openness": {
+      "sourceId": "wdi.NE.EXP.GNFS.ZS",
+      "year": 2025,
+      "raw": 40.4347738545071
+    },
+    "ruleOfLaw": {
+      "sourceId": "wgi.GOV_WGI_RL_SC",
+      "year": 2025,
+      "raw": 85.067519
+    },
+    "govEffectiveness": {
+      "sourceId": "wgi.GOV_WGI_GE_SC",
+      "year": 2025,
+      "raw": 82.8363275
+    },
+    "patronage": {
+      "sourceId": "wgi.GOV_WGI_RL_SC",
+      "year": 2025,
+      "raw": 85.067519
+    }
   }
 }

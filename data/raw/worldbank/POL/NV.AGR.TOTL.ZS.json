@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2025",
+      "value": 2.45366601523879,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2024",
+      "value": 2.54032372848325,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2023",
+      "value": 2.76537109467644,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2022",
+      "value": 2.80606930357805,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2021",
+      "value": 2.24552304361646,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2020",
+      "value": 2.56844423547416,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2019",
+      "value": 2.37029744646443,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2018",
+      "value": 2.41564136866167,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2017",
+      "value": 2.98537285986431,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NV.AGR.TOTL.ZS",
+        "value": "Agriculture, forestry, and fishing, value added (% of GDP)"
+      },
+      "country": {
+        "id": "PL",
+        "value": "Poland"
+      },
+      "countryiso3code": "POL",
+      "date": "2016",
+      "value": 2.6237968659564,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

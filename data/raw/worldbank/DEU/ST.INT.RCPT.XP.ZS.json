@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2019",
+      "value": 3.47314357519722,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2018",
+      "value": 3.4305765922229,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2017",
+      "value": 3.48803033805187,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2016",
+      "value": 3.53769340477986,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2015",
+      "value": 3.46300289762444,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2014",
+      "value": 3.54218428871783,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2013",
+      "value": 3.48620317488872,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2012",
+      "value": 3.35283175172544,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2011",
+      "value": 3.34718370993459,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "DE",
+        "value": "Germany"
+      },
+      "countryiso3code": "DEU",
+      "date": "2010",
+      "value": 3.57607341227399,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]
