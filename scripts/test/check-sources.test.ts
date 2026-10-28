@@ -188,7 +188,10 @@ describe("CI workflow", () => {
   });
   it("uses Node 22 and pnpm 10", () => {
     expect(text).toMatch(/node-version:\s*["']?22/);
-    expect(text).toMatch(/version:\s*["']?10/);
+    // pnpm version comes from package.json packageManager; a second "version" in the action makes setup fail
+    expect(text).not.toMatch(/^\s+version:/m);
+    const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as { packageManager?: string };
+    expect(pkg.packageManager).toMatch(/^pnpm@10\./);
   });
   it("has a separate E2E job that installs chromium with playwright", () => {
     const jobs = Object.keys(wf.jobs);
