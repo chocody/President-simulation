@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 10,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2020",
+      "value": 5.97420015392131,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2019",
+      "value": 19.8750562571006,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2018",
+      "value": 18.6811954534958,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2017",
+      "value": 18.7285709345966,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2016",
+      "value": 17.4769422746326,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2015",
+      "value": 16.5229814613897,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2014",
+      "value": 13.8025822759808,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2013",
+      "value": 14.7966720803756,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2012",
+      "value": 12.6068389436271,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "ST.INT.RCPT.XP.ZS",
+        "value": "International tourism, receipts (% of total exports)"
+      },
+      "country": {
+        "id": "TH",
+        "value": "Thailand"
+      },
+      "countryiso3code": "THA",
+      "date": "2011",
+      "value": 11.7606957917228,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]
