@@ -12,7 +12,7 @@ export const NEWS_POLICY_PREFIX = "event:news:";
  * Most that minor events may move one target in a single quarter, in total (spec E3): 3 points on 0-100 indices
  * (stats and group satisfaction), 0.5 on unit stats. Not in design-params yet; the Lead may move it there.
  */
-export const NEWS_QUARTER_LIMIT = { index: 3, unit: 0.5 } as const;
+export const NEWS_QUARTER_LIMIT = MINOR_EVENTS.value.quarterLimit;
 const UNIT_STATS: readonly StatKey[] = ["gdpGrowth", "inflation", "unemployment", "budget", "debt", "inequality"];
 
 export function newsLimit(target: Target): number {

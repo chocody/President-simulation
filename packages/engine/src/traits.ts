@@ -1,4 +1,4 @@
-import type { Card, MinorEvent, TraitKey } from "@ps/shared";
+import { MINOR_EVENTS, type Card, type MinorEvent, type TraitKey } from "@ps/shared";
 import { clamp } from "./util";
 
 /** A country's traits, 0-100 each. A missing trait counts as NEUTRAL_TRAIT. */
@@ -6,9 +6,9 @@ export type Traits = Partial<Record<TraitKey, number>>;
 export type TraitWeights = NonNullable<Card["traitWeights"] | MinorEvent["traitWeights"]>;
 
 /** Trait value that changes nothing (spec E3: "a missing trait counts as 50"). */
-export const NEUTRAL_TRAIT = 50;
+export const NEUTRAL_TRAIT = MINOR_EVENTS.value.neutralTrait;
 /** Bounds of the combined weight multiplier (spec E3). */
-export const TRAIT_MULTIPLIER_RANGE: readonly [number, number] = [0.1, 3];
+export const TRAIT_MULTIPLIER_RANGE: readonly [number, number] = MINOR_EVENTS.value.traitMultiplierRange;
 
 /**
  * Π over keys of 1 + k × strength × (trait − 50) / 50, clamped to [0.1, 3].

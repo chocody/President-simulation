@@ -300,9 +300,9 @@ export const FRICTION: Param<{ reformTargets: StatKey[]; parliamentPerPoint: num
 };
 
 /** Minor events: the news ticker. Small, frequent, shaped by the country's traits. */
-export const MINOR_EVENTS: Param<{ perQuarter: [number, number]; cooldownQ: number; traitStrength: number }> = {
-  value: { perQuarter: [1, 3], cooldownQ: 6, traitStrength: 1 },
-  rationale: "1–3 small news items each quarter; each item cannot repeat within 6 quarters; trait weights at full strength.",
+export const MINOR_EVENTS: Param<{ perQuarter: [number, number]; cooldownQ: number; traitStrength: number; quarterLimit: { index: number; unit: number }; neutralTrait: number; traitMultiplierRange: [number, number] }> = {
+  value: { perQuarter: [1, 3], cooldownQ: 6, traitStrength: 1, quarterLimit: { index: 3, unit: 0.5 }, neutralTrait: 50, traitMultiplierRange: [0.1, 3] },
+  rationale: "1–3 small news items each quarter; each item cannot repeat within 6 quarters; trait weights at full strength. News may move a target by at most 3 index points (0.5 for % stats) per quarter, below a level-2 step. A trait of 50 is neutral; trait multipliers stay within 0.1–3 so no item vanishes or dominates.",
   basedOn: ["design.minor-events"],
   calibration: "Minor events move each stat by at most a few points per year on average (simulation).",
 };

@@ -14,7 +14,7 @@ import { newsChip, newsFromState } from "../lib/news";
 import type { GameInfo, PublicMinorEvent } from "../lib/api-types";
 
 const REAL = resolve(import.meta.dirname, "../../../data");
-const content: Content = loadContent({ dataDir: REAL, devFixtures: true });
+const content: Content = { ...loadContent({ dataDir: REAL, devFixtures: true }), minorEvents: FIXTURE_MINOR_EVENTS };   // fixture news, so tests do not depend on the real deck
 const noFixtures: Content = loadContent({ dataDir: REAL, devFixtures: false });
 
 type Body = Record<string, any>;
