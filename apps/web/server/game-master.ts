@@ -1,16 +1,22 @@
 // Game master interface used by the API, plus a deterministic MOCK implementation.
 // Lane A builds the real AI game master; the Lead wires it in through getGameMaster().
 import type {
-  Action, Card, Choice, Evidence, GameState, GroupKey, Judgment, Target, TurnReport,
+  Action, Card, Choice, Evidence, GameState, GroupKey, Judgment, Scene, Target, TurnReport,
 } from "@ps/shared";
 import { OUTCOME_LABEL, targetLabel } from "../lib/labels";
 import { createClient } from "@ps/ai-gm";
 import { getContent } from "./content";
 import { RealGameMaster } from "./real-game-master";
 
+export interface NarrateInput {
+  state: GameState; card: Card; report: TurnReport; answerTitle: string;
+  /** Consequence scenes of this turn (engine-built); the narrator weaves them in. */
+  scenes?: Pick<Scene, "textTh" | "cause">[];
+}
+
 export interface GameMaster {
   judge(input: { state: GameState; card: Card; playerText: string; evidence: Evidence[] }): Promise<Judgment>;
-  narrate(input: { state: GameState; card: Card; report: TurnReport; answerTitle: string }): Promise<{ narration: string; headlines: string[] }>;
+  narrate(input: NarrateInput): Promise<{ narration: string; headlines: string[] }>;
   historian(input: { state: GameState; grades: unknown; legacy: number }): Promise<{ archetype: string; line: string }>;
 }
 
@@ -149,8 +155,8 @@ export class MockGameMaster implements GameMaster {
     return mockFreeJudgment(input.playerText);
   }
 
-  async narrate(input: { state: GameState; card: Card; report: TurnReport; answerTitle: string }): Promise<{ narration: string; headlines: string[] }> {
-    const { card, report, answerTitle } = input;
+  async narrate(input: NarrateInput): Promise<{ narration: string; headlines: string[] }> {
+    const { card, report, answerTitle, scenes = [] } = input;
     const lines = report.measures.map(
       (m) => `มาตรการ “${m.title}”: ${OUTCOME_LABEL[m.outcome]} — ${OUTCOME_SENTENCE[m.outcome] ?? ""}`,
     );
@@ -159,6 +165,7 @@ export class MockGameMaster implements GameMaster {
       `${MOCK_TAG} ไตรมาสที่ ${report.quarter}: เมื่อเกิดเหตุการณ์ “${card.titleTh}” คุณเลือก “${answerTitle}”`,
       lines.length > 0 ? lines.join(" ") : "คำตอบนี้ไม่ได้นำไปสู่มาตรการที่ดำเนินการได้",
       `ผลของเหตุการณ์ที่ยังเกิดขึ้นแม้รัฐบาลตอบสนองแล้วอยู่ที่ราว ${share}% ของที่คาดไว้`,
+      ...(scenes.length > 0 ? [scenes.map((s) => s.textTh).join(" ")] : []),
     ].join("\n");
     const headlines = report.measures.length > 0
       ? report.measures.map((m) => `${MOCK_TAG} ${m.title}: ${OUTCOME_LABEL[m.outcome]}`)

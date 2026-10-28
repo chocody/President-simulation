@@ -29,6 +29,11 @@ export interface TurnContext {
 const LAST_QUARTER = PACING.value.quarters;
 const MAX_ACTIONS = 3;
 
+/** The actions the engine enacts for a judgment, in order: none for non-normal input, at most three. */
+export function turnActions(j: Judgment): Action[] {
+  return j.input_class === "normal" ? j.actions.slice(0, MAX_ACTIONS) : [];
+}
+
 function bump(m: Map<Target, number>, k: Target, v: number): void {
   m.set(k, (m.get(k) ?? 0) + v);
 }
@@ -82,7 +87,7 @@ export function resolveTurn(
     ? Math.min(Number(scores.specificity), SCORE_EFFECTS.presetSpecificityMax.value)
     : Number(scores.specificity);
   const relevance = normal ? Number(scores.relevance) : 1;
-  const actions: Action[] = normal ? j.actions.slice(0, MAX_ACTIONS) : [];
+  const actions: Action[] = turnActions(j);
   if (!normal) notes.push(`input_class ${j.input_class}: no actions`);
   if (j.input_class === "meta") {
     allGroups(META_PENALTY.value.allGroups);

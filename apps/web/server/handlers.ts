@@ -7,9 +7,9 @@ import { randomBytes, randomInt } from "node:crypto";
 import { z } from "zod";
 import {
   DecideRequest, GROUP_KEYS, GameState, Judgment, NewGameRequest,
-  type CountryData, type Evidence, type Judgment as JudgmentT,
+  type CountryData, type Evidence, type Judgment as JudgmentT, type Scene,
 } from "@ps/shared";
-import { advanceQuarter, EngineError, grades, legacyScore, newGame, resolveTurn } from "@ps/engine";
+import { advanceQuarter, buildTurnScenes, EngineError, grades, legacyScore, newGame, resolveTurn, turnActions } from "@ps/engine";
 import type { Content } from "./content";
 import { MockGameMaster, mockPresetJudgment, type GameMaster } from "./game-master";
 import { GameMasterError } from "./real-game-master";
@@ -138,11 +138,12 @@ export async function handleAdvance(body: unknown, deps: Deps): Promise<ApiResul
   if (state.phase === "ended") return fail(400, "เกมจบแล้ว ไม่สามารถเดินเวลาต่อได้");
   const logStart = state.log.length;
   const newsStart = state.news?.length ?? 0;
+  const scenesStart = state.scenes?.length ?? 0;
   const traits = countryOf(content, state)?.traits;
   try {
     // Running -> next decision or the end. A pending decision is returned as is (safe to call twice).
     for (let i = 0; i < 20 && state.phase === "running"; i++) {
-      state = advanceQuarter(state, content.cards, content.minorEvents, { traits });
+      state = advanceQuarter(state, content.cards, content.minorEvents, { traits }, content.scenes);
     }
   } catch (e) {
     if (e instanceof EngineError) return fail(400, "สถานะเกมไม่ถูกต้อง ไม่สามารถเดินเวลาต่อได้");
@@ -160,6 +161,7 @@ export async function handleAdvance(body: unknown, deps: Deps): Promise<ApiResul
     log: state.log.slice(logStart),
     card: card ? publicCard(card) : null,
     news,
+    scenes: (state.scenes ?? []).slice(scenesStart),
   };
   return ok(res);
 }
@@ -208,8 +210,15 @@ export async function handleDecide(body: unknown, deps: Deps): Promise<ApiResult
   }
 
   let turn: ReturnType<typeof resolveTurn>;
+  let scenes: Scene[];
   try {
-    turn = resolveTurn(state, content.cards, { kind: answer.kind, judgment }, { evidence, traits: countryOf(content, state)?.traits });
+    const traits = countryOf(content, state)?.traits;
+    turn = resolveTurn(state, content.cards, { kind: answer.kind, judgment }, { evidence, traits });
+    const built = buildTurnScenes({
+      state: turn.state, report: turn.report, card, actions: turnActions(judgment), library: content.scenes, traits,
+    });
+    turn = { state: built.state, report: turn.report };
+    scenes = built.scenes;
   } catch (e) {
     if (e instanceof EngineError) return fail(400, "สถานะเกมไม่ถูกต้อง ไม่สามารถตัดสินได้");
     throw e;
@@ -217,16 +226,17 @@ export async function handleDecide(body: unknown, deps: Deps): Promise<ApiResult
 
   let narration: { narration: string; headlines: string[] };
   try {
-    narration = await gm.narrate({ state: turn.state, card, report: turn.report, answerTitle });
+    narration = await gm.narrate({ state: turn.state, card, report: turn.report, answerTitle, scenes });
   } catch {
     // The turn is already resolved; do not lose it. Fall back to the template narration (tagged as such).
-    narration = await new MockGameMaster().narrate({ state: turn.state, card, report: turn.report, answerTitle });
+    narration = await new MockGameMaster().narrate({ state: turn.state, card, report: turn.report, answerTitle, scenes });
   }
 
   const res: DecideResult = {
     state: turn.state,
     report: turn.report,
     narration: narration.narration,
+    scenes,
     headlines: narration.headlines,
     answerTitle,
     interpretation: answer.kind === "free" ? judgment.interpretation : null,

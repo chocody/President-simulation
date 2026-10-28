@@ -1,7 +1,7 @@
 // Real game master: adapts the lane-A routes (@ps/ai-gm) to the web app's GameMaster interface.
 import { createClient, historian, judge, narrate, type GmClient, type PillarGrades } from "@ps/ai-gm";
 import type { Card, CountryData, Evidence, GameState, Judgment, TurnReport } from "@ps/shared";
-import type { GameMaster } from "./game-master";
+import type { GameMaster, NarrateInput } from "./game-master";
 
 export class GameMasterError extends Error {
   constructor(public readonly reason: string, message: string) { super(message); }
@@ -26,7 +26,7 @@ export class RealGameMaster implements GameMaster {
     return r.value;
   }
 
-  async narrate(input: { state: GameState; card: Card; report: TurnReport; answerTitle: string }) {
+  async narrate(input: NarrateInput) {
     const r = await narrate({ country: this.ctx(input.state), ...input }, { client: this.client });
     if (!r.ok) throw new GameMasterError(r.reason, "ผู้เล่าผลตอบไม่ได้ในตอนนี้");
     return { narration: r.value.narration, headlines: r.value.headlines };
