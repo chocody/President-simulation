@@ -15,6 +15,7 @@ onArrival:
 ifIgnored:
   - { target: "group:farmers", delta: -2, over_quarters: 4 }
   - { target: "group:youth", delta: -2, over_quarters: 4 }
+traitWeights: { openness: 0.8 }
 sourceIds: [design.level-scale, paper.atkin-2017, paper.hyman-kovak-leive-2024]
 choices:
   - id: a

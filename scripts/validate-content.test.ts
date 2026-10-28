@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
-import { Card, Evidence, Source } from "@ps/shared";
+import { Card, Evidence, MinorEvent, Source, TRAIT_KEYS } from "@ps/shared";
 
 const root = join(import.meta.dirname, "..");
 const load = (rel: string): unknown => parse(readFileSync(join(root, rel), "utf8"));
@@ -16,6 +16,9 @@ const research = researchRaw.map((s) => Source.parse(s));
 const allSources = sourcesRaw.map((s) => Source.parse(s));
 const evidence = evidenceRaw.map((e) => Evidence.parse(e));
 const parsedCards = cardFiles.map((f) => Card.parse(load(`data/cards/${f}`)));
+
+const minorRaw = load("data/events/minor.yaml") as unknown[];
+const minor = minorRaw.map((m) => MinorEvent.parse(m));
 
 const dup = (xs: string[]) => xs.filter((x, i) => xs.indexOf(x) !== i);
 
@@ -154,5 +157,94 @@ describe("cards", () => {
         expect(ch.costHint, `${c.id}.${ch.id}`).not.toBe("none");
         expect(ch.affectedGroups.length, `${c.id}.${ch.id}`).toBeGreaterThan(0);
       }
+  });
+});
+
+describe("minor events (news ticker)", () => {
+  // Stats where a higher value is worse for the player; for every other target higher is better.
+  const lowerIsBetter = new Set(["inflation", "unemployment", "debt", "crime", "corruption", "inequality"]);
+  const unitStats = new Set(["gdpGrowth", "inflation", "unemployment", "budget", "debt", "inequality"]);
+  const good = (target: string, delta: number) => (lowerIsBetter.has(target) ? -delta : delta);
+  const sign = (m: MinorEvent) => {
+    const s = m.effects.map((e) => Math.sign(good(e.target, e.delta)));
+    return s.every((x) => x > 0) ? "positive" : s.every((x) => x < 0) ? "negative" : "mixed";
+  };
+
+  it("there are 30-60 events, all parsing as MinorEvent with unique ids", () => {
+    expect(minor.length).toBeGreaterThanOrEqual(30);
+    expect(minor.length).toBeLessThanOrEqual(60);
+    expect(dup(minor.map((m) => m.id))).toEqual([]);
+  });
+  it("ids start with news.<category>.", () => {
+    for (const m of minor) expect(m.id.startsWith(`news.${m.category}.`), m.id).toBe(true);
+  });
+  it("all 8 categories are used", () => {
+    expect(new Set(minor.map((m) => m.category)).size).toBe(8);
+  });
+  it("each event is clearly good or clearly bad, and the signs are balanced (40-60% positive)", () => {
+    expect(minor.filter((m) => sign(m) === "mixed").map((m) => m.id)).toEqual([]);
+    const positive = minor.filter((m) => sign(m) === "positive").length / minor.length;
+    expect(positive).toBeGreaterThanOrEqual(0.4);
+    expect(positive).toBeLessThanOrEqual(0.6);
+  });
+  it("effects are small: index 1-3, units 0.1-0.3, over 1-2 quarters", () => {
+    for (const m of minor)
+      for (const e of m.effects) {
+        const [lo, hi] = unitStats.has(e.target) ? [0.1, 0.3] : [1, 3];
+        const a = Math.abs(e.delta);
+        expect(a, `${m.id} ${e.target}`).toBeGreaterThanOrEqual(lo - 1e-9);
+        expect(a, `${m.id} ${e.target}`).toBeLessThanOrEqual(hi + 1e-9);
+        expect(e.over_quarters, m.id).toBeGreaterThanOrEqual(1);
+        expect(e.over_quarters, m.id).toBeLessThanOrEqual(2);
+      }
+  });
+  it("text is one Thai line under 25 words, with no digits and no country names", () => {
+    const seg = new Intl.Segmenter("th", { granularity: "word" });
+    for (const m of minor) {
+      expect(m.textTh, m.id).toMatch(/[\u0E00-\u0E7F]/);
+      expect(m.textTh, m.id).not.toMatch(/\n/);
+      expect(m.textTh, m.id).not.toMatch(/[0-9\u0E50-\u0E59]/);
+      expect(m.textTh, m.id).not.toMatch(/ไทย|สหรัฐ|จีน|ญี่ปุ่น|รัสเซีย|อินเดีย|ยูเครน|เมียนมา|อเมริกา|ลาว|กัมพูชา|มาเลเซีย|เวียดนาม|อินโดนีเซีย|บราซิล|เม็กซิโก|ไนจีเรีย|อียิปต์|ตุรกี|อังกฤษ|เยอรมนี|ฝรั่งเศส|ฟิลิปปินส์|เกาหลี|ปากีสถาน|บังกลาเทศ|เคนยา|แอฟริกาใต้|อาร์เจนตินา|โคลอมเบีย/);
+      const words = [...seg.segment(m.textTh)].filter((x) => x.isWordLike).length;
+      expect(words, `${m.id} has ${words} words`).toBeLessThan(25);
+    }
+  });
+  it("every sourceId exists and includes design.minor-events", () => {
+    const ids = new Set([...allSources, ...research].map((s) => s.id));
+    for (const m of minor) {
+      expect(m.sourceIds, m.id).toContain("design.minor-events");
+      expect(m.sourceIds.filter((id) => !ids.has(id)), m.id).toEqual([]);
+    }
+  });
+  it("traitWeights use valid trait keys and values in -1..1; the core links are present", () => {
+    const keys = new Set<string>(TRAIT_KEYS);
+    for (const m of minor)
+      for (const [k, v] of Object.entries(m.traitWeights ?? {})) {
+        expect(keys.has(k), `${m.id} ${k}`).toBe(true);
+        expect(v!, `${m.id} ${k}`).toBeGreaterThanOrEqual(-1);
+        expect(v!, `${m.id} ${k}`).toBeLessThanOrEqual(1);
+      }
+    const used = new Set(minor.flatMap((m) => Object.keys(m.traitWeights ?? {})));
+    for (const k of ["tourism", "agriculture", "resources", "openness", "patronage", "govEffectiveness"]) expect(used.has(k), k).toBe(true);
+  });
+  it("a handful of events are about patronage and influence", () => {
+    expect(minor.filter((m) => (m.traitWeights?.patronage ?? 0) > 0).length).toBeGreaterThanOrEqual(3);
+  });
+});
+
+describe("card traitWeights", () => {
+  it("every card traitWeights key is a valid trait and the planned links are present", () => {
+    const keys = new Set<string>(TRAIT_KEYS);
+    for (const c of parsedCards)
+      for (const k of Object.keys(c.traitWeights ?? {})) expect(keys.has(k), `${c.id} ${k}`).toBe(true);
+    const w = (id: string) => parsedCards.find((c) => c.id === id)?.traitWeights ?? {};
+    expect(w("economy.tourism.surge").tourism).toBeGreaterThan(0);
+    expect(w("society.harvest.bumper").agriculture).toBeGreaterThan(0);
+    expect(w("disaster.drought.severe").agriculture).toBeGreaterThan(0);
+    expect(w("opportunity.energy.discovery").resources).toBeGreaterThan(0);
+    expect(w("foreign.trade.export-boom").openness).toBeGreaterThan(0);
+    expect(w("foreign.tariff.raised").openness).toBeGreaterThan(0);
+    expect(w("politics.cabinet.scandal").patronage).toBeGreaterThan(0);
+    expect(w("health.hospitals.overwhelmed").govEffectiveness).toBeLessThan(0);
   });
 });

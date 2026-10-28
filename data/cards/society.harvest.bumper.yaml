@@ -15,6 +15,7 @@ onArrival:
 ifIgnored:
   - { target: "group:farmers", delta: -2, over_quarters: 4 }
   - { target: stability, delta: -2, over_quarters: 4 }
+traitWeights: { agriculture: 0.8 }
 sourceIds: [design.level-scale, paper.burke-2019, paper.egger-2022]
 choices:
   - id: a

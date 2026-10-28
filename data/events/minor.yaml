@@ -1,0 +1,378 @@
+# D4 minor events (the news ticker). Small effects over 1-2 quarters, generic text (no country names, no figures).
+# Effect sizes are design values inside the level-1 scale (design.level-scale); baseWeight 1 for all.
+# traitWeights: only where the link is data-based (see TRAITS in design-params: tourism, agriculture, resources, openness, patronage, govEffectiveness).
+
+- id: news.disaster.rains-refill
+  category: disaster
+  textTh: "ฝนตกตามฤดูกาลช่วยเติมน้ำในอ่างเก็บน้ำ ชาวนาเริ่มเตรียมแปลงปลูกรอบใหม่"
+  effects:
+    - { target: "group:farmers", delta: 3, over_quarters: 2 }
+    - { target: environment, delta: 1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { agriculture: 0.5 }
+  sourceIds: [design.minor-events]
+- id: news.disaster.early-warning-works
+  category: disaster
+  textTh: "ระบบเตือนภัยทำงานทันเวลา ชุมชนริมน้ำอพยพไปศูนย์พักพิงได้ก่อนน้ำหลาก"
+  effects:
+    - { target: stability, delta: 1, over_quarters: 1 }
+    - { target: "group:urban", delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { govEffectiveness: 0.5 }
+  sourceIds: [design.minor-events]
+- id: news.disaster.local-flooding
+  category: disaster
+  textTh: "น้ำท่วมขังในย่านการค้าหลังฝนตกหนัก ถนนหลายสายใช้การไม่ได้ครึ่งวัน"
+  effects:
+    - { target: "group:urban", delta: -2, over_quarters: 1 }
+    - { target: gdpGrowth, delta: -0.1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.disaster.dry-spell-villages
+  category: disaster
+  textTh: "ฝนทิ้งช่วงหลายสัปดาห์ เกษตรกรหลายหมู่บ้านกังวลว่าผลผลิตฤดูนี้จะเสียหาย"
+  effects:
+    - { target: "group:farmers", delta: -3, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { agriculture: 0.6 }
+  sourceIds: [design.minor-events]
+- id: news.disaster.haze-season
+  category: disaster
+  textTh: "หมอกควันปกคลุมหลายเมือง โรงเรียนงดกิจกรรมกลางแจ้งและคลินิกมีผู้ป่วยทางเดินหายใจเพิ่ม"
+  effects:
+    - { target: environment, delta: -2, over_quarters: 2 }
+    - { target: health, delta: -1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.economy.factory-opens
+  category: economy
+  textTh: "โรงงานแห่งใหม่เปิดรับสมัครพนักงานหลายร้อยตำแหน่ง คนหนุ่มสาวในพื้นที่ต่อแถวยื่นใบสมัคร"
+  effects:
+    - { target: unemployment, delta: -0.2, over_quarters: 2 }
+    - { target: "group:youth", delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.economy.export-orders
+  category: economy
+  textTh: "ผู้ซื้อจากต่างประเทศสั่งสินค้าเพิ่ม โรงงานส่งออกเร่งผลิตและเพิ่มกะทำงาน"
+  effects:
+    - { target: gdpGrowth, delta: 0.2, over_quarters: 2 }
+    - { target: "group:business", delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { openness: 0.6 }
+  sourceIds: [design.minor-events, paper.atkin-2017]
+- id: news.economy.commodity-price-up
+  category: economy
+  textTh: "ราคาแร่และพลังงานในตลาดโลกปรับตัวสูงขึ้น รายได้จากการส่งออกวัตถุดิบดีกว่าที่คาด"
+  effects:
+    - { target: gdpGrowth, delta: 0.2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { resources: 0.6 }
+  sourceIds: [design.minor-events]
+- id: news.economy.staple-prices-rise
+  category: economy
+  textTh: "ราคาอาหารสดในตลาดสดปรับขึ้น ผู้ซื้อบ่นว่าเงินเดือนซื้อของได้น้อยลง"
+  effects:
+    - { target: inflation, delta: 0.2, over_quarters: 2 }
+    - { target: "group:urban", delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { agriculture: 0.4 }
+  sourceIds: [design.minor-events]
+- id: news.economy.commodity-price-slump
+  category: economy
+  textTh: "ราคาสินค้าส่งออกหลักร่วงลง ผู้ประกอบการเหมืองและท่าเรือชะลอการจ้างงานชั่วคราว"
+  effects:
+    - { target: gdpGrowth, delta: -0.2, over_quarters: 2 }
+    - { target: "group:business", delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { resources: 0.6 }
+  sourceIds: [design.minor-events]
+- id: news.society.school-meals
+  category: society
+  textTh: "โรงเรียนในพื้นที่ห่างไกลเริ่มโครงการอาหารกลางวัน เด็กมาเรียนสม่ำเสมอขึ้น"
+  effects:
+    - { target: education, delta: 1, over_quarters: 2 }
+    - { target: "group:youth", delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.society.neighbourhood-cleanup
+  category: society
+  textTh: "อาสาสมัครในชุมชนร่วมกันทำความสะอาดคูคลอง ผู้อยู่อาศัยบอกว่าเมืองน่าอยู่ขึ้น"
+  effects:
+    - { target: "group:urban", delta: 2, over_quarters: 1 }
+    - { target: environment, delta: 1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.society.petty-theft-wave
+  category: society
+  textTh: "ตำรวจรับแจ้งคดีลักทรัพย์เล็กน้อยในย่านตลาดเพิ่มขึ้น ชาวบ้านขอให้เพิ่มการตรวจตรา"
+  effects:
+    - { target: crime, delta: 2, over_quarters: 2 }
+    - { target: "group:urban", delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.society.transit-fare-protest
+  category: society
+  textTh: "ผู้โดยสารรวมตัวคัดค้านค่าโดยสารขนส่งสาธารณะที่ปรับขึ้น การจราจรติดขัดตลอดเช้า"
+  effects:
+    - { target: "group:urban", delta: -2, over_quarters: 1 }
+    - { target: stability, delta: -1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.society.teacher-shortage
+  category: society
+  textTh: "โรงเรียนหลายแห่งขาดครูวิชาหลัก นักเรียนต้องรวมห้องเรียนและเรียนผ่านสื่อออนไลน์"
+  effects:
+    - { target: education, delta: -1, over_quarters: 2 }
+    - { target: "group:youth", delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.health.clinic-opens
+  category: health
+  textTh: "คลินิกชุมชนแห่งใหม่เปิดให้บริการ ชาวบ้านไม่ต้องเดินทางไกลเพื่อรับการตรวจรักษา"
+  effects:
+    - { target: health, delta: 2, over_quarters: 2 }
+    - { target: "group:farmers", delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { govEffectiveness: 0.4 }
+  sourceIds: [design.minor-events]
+- id: news.health.vaccination-drive
+  category: health
+  textTh: "ทีมสาธารณสุขเคลื่อนที่ให้วัคซีนเด็กได้ครบตามเป้าหมาย โรงเรียนรายงานเด็กป่วยน้อยลง"
+  effects:
+    - { target: health, delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { govEffectiveness: 0.4 }
+  sourceIds: [design.minor-events]
+- id: news.health.seasonal-flu
+  category: health
+  textTh: "ไข้หวัดใหญ่ตามฤดูกาลระบาดในโรงเรียน ผู้ปกครองต้องลางานดูแลลูก"
+  effects:
+    - { target: health, delta: -1, over_quarters: 1 }
+    - { target: "group:youth", delta: -1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.health.medicine-shortage
+  category: health
+  textTh: "โรงพยาบาลระดับอำเภอแจ้งว่ายาบางรายการขาดแคลน ผู้ป่วยต้องรอรับยาข้ามสัปดาห์"
+  effects:
+    - { target: health, delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { govEffectiveness: -0.5 }
+  sourceIds: [design.minor-events]
+- id: news.health.mosquito-season
+  category: health
+  textTh: "ยุงลายแพร่พันธุ์ในฤดูฝน โรงพยาบาลรายงานผู้ป่วยไข้เลือดออกเพิ่มขึ้นในหลายชุมชน"
+  effects:
+    - { target: health, delta: -1, over_quarters: 2 }
+    - { target: "group:urban", delta: -1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.politics.audit-report-published
+  category: politics
+  textTh: "หน่วยตรวจเงินแผ่นดินเผยแพร่รายงานการใช้งบประมาณ สภาเปิดอภิปรายให้สาธารณะรับชม"
+  effects:
+    - { target: corruption, delta: -2, over_quarters: 2 }
+    - { target: parliament, delta: 1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events, paper.olken-2007]
+- id: news.politics.online-service-counter
+  category: politics
+  textTh: "หน่วยงานรัฐเปิดบริการออกเอกสารออนไลน์ ประชาชนรอคิวสั้นลงและไม่ต้องเดินทางมาติดต่อ"
+  effects:
+    - { target: "group:urban", delta: 2, over_quarters: 2 }
+    - { target: corruption, delta: -1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { govEffectiveness: 0.6 }
+  sourceIds: [design.minor-events]
+- id: news.politics.contract-connected-firm
+  category: politics
+  textTh: "สัญญาก่อสร้างฉบับใหญ่ตกเป็นของบริษัทที่เจ้าหน้าที่ใกล้ชิดถือหุ้น สื่อตั้งคำถามเรื่องการประมูล"
+  effects:
+    - { target: corruption, delta: 2, over_quarters: 2 }
+    - { target: stability, delta: -1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { patronage: 0.8 }
+  sourceIds: [design.minor-events]
+- id: news.politics.reshuffle-allies
+  category: politics
+  textTh: "การปรับตำแหน่งในหน่วยงานรัฐให้ผู้สนับสนุนใกล้ชิดได้ตำแหน่งสำคัญ ฝ่ายค้านแย้งว่าข้ามผู้มีประสบการณ์"
+  effects:
+    - { target: corruption, delta: 2, over_quarters: 2 }
+    - { target: parliament, delta: -1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { patronage: 0.7 }
+  sourceIds: [design.minor-events]
+- id: news.politics.permit-favours
+  category: politics
+  textTh: "มีผู้ร้องเรียนว่าเจ้าหน้าที่ท้องถิ่นเรียกรับสิ่งตอบแทนเพื่อเร่งออกใบอนุญาต"
+  effects:
+    - { target: corruption, delta: 2, over_quarters: 2 }
+    - { target: "group:business", delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { patronage: 0.8 }
+  sourceIds: [design.minor-events]
+- id: news.foreign.trade-delegation
+  category: foreign
+  textTh: "คณะผู้แทนการค้าจากต่างประเทศเยือนเพื่อหารือขยายตลาด ผู้ส่งออกรายย่อยได้พบผู้ซื้อรายใหม่"
+  effects:
+    - { target: foreignRelations, delta: 2, over_quarters: 2 }
+    - { target: gdpGrowth, delta: 0.1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { openness: 0.5 }
+  sourceIds: [design.minor-events]
+- id: news.foreign.regional-meeting
+  category: foreign
+  textTh: "การประชุมระดับภูมิภาคจบลงด้วยข้อตกลงความร่วมมือด้านการขนส่งและความมั่นคงชายแดน"
+  effects:
+    - { target: foreignRelations, delta: 2, over_quarters: 1 }
+    - { target: stability, delta: 1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.foreign.port-delays
+  category: foreign
+  textTh: "ความแออัดที่ท่าเรือต่างประเทศทำให้สินค้าส่งออกล่าช้า ผู้ประกอบการต้องแบกรับค่าจัดเก็บเพิ่ม"
+  effects:
+    - { target: gdpGrowth, delta: -0.2, over_quarters: 2 }
+    - { target: "group:business", delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { openness: 0.5 }
+  sourceIds: [design.minor-events]
+- id: news.foreign.import-inspection
+  category: foreign
+  textTh: "ประเทศผู้ซื้อเข้มงวดการตรวจสินค้าเกษตรนำเข้า ผู้ส่งออกผักผลไม้ต้องรอผลตรวจนานขึ้น"
+  effects:
+    - { target: "group:farmers", delta: -2, over_quarters: 2 }
+    - { target: foreignRelations, delta: -1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { openness: 0.4 }
+  sourceIds: [design.minor-events]
+- id: news.foreign.border-dispute
+  category: foreign
+  textTh: "ข้อพิพาทเรื่องเขตแดนเล็กน้อยกับประเทศเพื่อนบ้านทำให้การเจรจาเรื่องการค้าชายแดนสะดุด"
+  effects:
+    - { target: foreignRelations, delta: -2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.opportunity.local-festival
+  category: opportunity
+  textTh: "เทศกาลท้องถิ่นดึงนักท่องเที่ยวเต็มโรงแรม ร้านอาหารและร้านของที่ระลึกขายดีตลอดสัปดาห์"
+  effects:
+    - { target: "group:business", delta: 2, over_quarters: 1 }
+    - { target: gdpGrowth, delta: 0.1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { tourism: 0.7 }
+  sourceIds: [design.minor-events, paper.faber-gaubert-2019]
+- id: news.opportunity.startup-hub
+  category: opportunity
+  textTh: "ศูนย์บ่มเพาะธุรกิจใหม่เปิดรับผู้ก่อตั้งรุ่นแรก คนหนุ่มสาวหลายสิบทีมเสนอแผนธุรกิจ"
+  effects:
+    - { target: "group:youth", delta: 2, over_quarters: 2 }
+    - { target: unemployment, delta: -0.1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.opportunity.crop-price-good
+  category: opportunity
+  textTh: "ราคาพืชผลหลักสูงกว่าปีก่อน พ่อค้าคนกลางแข่งกันรับซื้อ เกษตรกรขายได้ราคาดี"
+  effects:
+    - { target: "group:farmers", delta: 3, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { agriculture: 0.6 }
+  sourceIds: [design.minor-events]
+- id: news.opportunity.mineral-survey
+  category: opportunity
+  textTh: "การสำรวจพบแหล่งแร่ขนาดเล็กแห่งใหม่ บริษัทเหมืองเริ่มศึกษาความเป็นไปได้ในการลงทุน"
+  effects:
+    - { target: gdpGrowth, delta: 0.1, over_quarters: 2 }
+    - { target: "group:business", delta: 1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  traitWeights: { resources: 0.6 }
+  sourceIds: [design.minor-events]
+- id: news.opportunity.investor-pauses
+  category: opportunity
+  textTh: "นักลงทุนรายหนึ่งชะลอแผนขยายโรงงานเพื่อรอดูทิศทางเศรษฐกิจ การจ้างงานใหม่ในพื้นที่ลดลง"
+  effects:
+    - { target: unemployment, delta: 0.2, over_quarters: 2 }
+    - { target: "group:business", delta: -1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.culture.sports-victory
+  category: culture
+  textTh: "ทีมกีฬาของชาติคว้าชัยในการแข่งขันระดับภูมิภาค ผู้คนออกมาฉลองตามท้องถนนอย่างคึกคัก"
+  effects:
+    - { target: stability, delta: 1, over_quarters: 1 }
+    - { target: "group:youth", delta: 2, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.culture.film-festival
+  category: culture
+  textTh: "ภาพยนตร์ในประเทศได้รับรางวัลจากเทศกาลต่างประเทศ โรงภาพยนตร์ในเมืองมีผู้ชมเพิ่มขึ้น"
+  effects:
+    - { target: "group:urban", delta: 2, over_quarters: 1 }
+    - { target: foreignRelations, delta: 1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.culture.library-reopens
+  category: culture
+  textTh: "ห้องสมุดประจำเมืองเปิดใหม่พร้อมศูนย์เรียนรู้ดิจิทัล นักเรียนใช้บริการแน่นตั้งแต่วันแรก"
+  effects:
+    - { target: education, delta: 1, over_quarters: 2 }
+    - { target: "group:youth", delta: 2, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.culture.heritage-damaged
+  category: culture
+  textTh: "โบราณสถานเก่าแก่ได้รับความเสียหายจากการก่อสร้างใกล้เคียง ชุมชนเรียกร้องให้เร่งซ่อมแซม"
+  effects:
+    - { target: "group:urban", delta: -2, over_quarters: 2 }
+    - { target: environment, delta: -1, over_quarters: 2 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
+- id: news.culture.press-access-dispute
+  category: culture
+  textTh: "สื่อมวลชนและหน่วยงานรัฐโต้แย้งเรื่องการเข้าถึงข้อมูล สมาคมนักข่าวออกแถลงการณ์ร่วม"
+  effects:
+    - { target: pressFreedom, delta: -2, over_quarters: 2 }
+    - { target: stability, delta: -1, over_quarters: 1 }
+  conditions: []
+  baseWeight: 1
+  sourceIds: [design.minor-events]
