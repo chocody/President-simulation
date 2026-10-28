@@ -208,6 +208,41 @@ export const MinorEvent = z.object({
 });
 export type MinorEvent = z.infer<typeof MinorEvent>;
 
+// ---------- consequence scenes ----------
+// A scene turns a number change into a situation the player can picture ("factories add a night shift").
+// Templates are written content; the engine only picks them from what actually happened.
+
+export const SceneSize = z.enum(["small", "large"]);   // large = |delta| >= LEVEL_SCALE level 2
+export const SceneTrigger = z.discriminatedUnion("kind", [
+  z.object({ kind: z.literal("delta"), target: Target, direction: z.enum(["up", "down"]), size: SceneSize }),
+  z.object({ kind: z.literal("outcome"), outcome: z.enum(["blocked", "critical_failure", "great_success", "partial", "failure"]) }),
+  z.object({ kind: z.literal("protest"), group: GroupKey }),
+  z.object({ kind: z.literal("court") }),      // a court suspends a measure in a later quarter
+]);
+export type SceneTrigger = z.infer<typeof SceneTrigger>;
+
+export const SceneTemplate = z.object({
+  id: z.string().regex(/^scene\.[a-z0-9-]+(\.[a-z0-9-]+)*$/),
+  trigger: SceneTrigger,
+  textTh: z.string().min(1),                 // may contain {measure}; no digits, no country names
+  traitWeights: z.partialRecord(TraitKey, z.number().min(-1).max(1)).optional(),
+  sourceIds: z.array(z.string()).min(1),
+});
+export type SceneTemplate = z.infer<typeof SceneTemplate>;
+
+export const SceneTone = z.enum(["good", "bad", "neutral"]);
+export const Scene = z.object({
+  templateId: z.string(),
+  textTh: z.string(),                        // placeholders filled
+  tone: SceneTone,                           // from goodness direction, not from the text
+  cause: z.string().nullable(),              // measure title, card title, or null
+  targets: z.array(Target),
+  kind: z.enum(["turn", "followup", "court"]),
+});
+export type Scene = z.infer<typeof Scene>;
+export const SceneRecord = Scene.extend({ quarter: z.number().int() });
+export type SceneRecord = z.infer<typeof SceneRecord>;
+
 // ---------- game state ----------
 
 export const ScheduledEffect = z.object({
@@ -258,6 +293,8 @@ export const GameState = z.object({
   pillarsAtStart: z.record(z.enum(["economy", "society", "politics", "other"]), z.number()),
   log: z.array(z.string()),                 // short engine log lines, newest last
   news: z.array(z.object({ quarter: z.number().int(), id: z.string() })).optional(),   // minor events that happened
+  policies: z.array(z.object({ id: z.string(), title: z.string(), quarter: z.number().int() })).optional(),  // enacted measures, for later scenes
+  scenes: z.array(SceneRecord).optional(),   // consequence scenes that happened, newest last
   endReason: EndReason.nullable(),
   voteShare: z.number().nullable(),
 });
@@ -301,4 +338,7 @@ export type Answer = z.infer<typeof Answer>;
 
 export const NewGameRequest = z.object({ difficulty: Difficulty, iso3: z.string().length(3).optional() });
 export const DecideRequest = z.object({ state: GameState, answer: Answer });
-export const DecideResponse = z.object({ state: GameState, report: TurnReport, narration: z.string() });
+export const DecideResponse = z.object({
+  state: GameState, report: TurnReport, narration: z.string(),
+  scenes: z.array(Scene).optional(),        // what happened, as situations (engine-built)
+});
