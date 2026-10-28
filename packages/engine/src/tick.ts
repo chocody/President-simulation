@@ -1,12 +1,13 @@
 import {
   DISCRETIONARY_BUDGET_PCT_GDP, EARLY_ENDINGS, PACING, STAT_KEYS, STAT_RANGE, TICK,
-  type Card, type EndReason, type GameState, type MinorEvent,
+  type Card, type EndReason, type GameState, type MinorEvent, type SceneTemplate,
 } from "@ps/shared";
 import { EngineError } from "./errors";
 import { pickCard } from "./events";
 import { pillarScores, popularity, relativeGroupTarget } from "./goodness";
 import { runElection } from "./election";
 import { applyMinorEvents } from "./news";
+import { addQuarterScenes } from "./scenes";
 import { Rng } from "./rng";
 import type { Traits } from "./traits";
 import { applyDelta, capDelta, clamp, sliceSums } from "./util";
@@ -45,13 +46,16 @@ export interface CountryContext {
 
 /**
  * Moves the game from the end of one quarter to the next (or runs the election after quarter 16).
- * `minorEvents` is the news deck (default: none, so no news happens); `ctx.traits` weights cards and news.
+ * `minorEvents` is the news deck (default: none, so no news happens); `ctx.traits` weights cards, news and scenes.
+ * `sceneLibrary` (default: none) adds follow-up and court scenes to `state.scenes`; with no library nothing changes
+ * and no random number is used for scenes.
  */
 export function advanceQuarter(
   state: GameState,
   deck: readonly Card[],
   minorEvents: readonly MinorEvent[] = [],
   ctx: CountryContext = {},
+  sceneLibrary: readonly SceneTemplate[] = [],
 ): GameState {
   if (state.phase !== "running") throw new EngineError(`advanceQuarter needs phase "running", got "${state.phase}"`);
   const rng = new Rng(state.seed, state.rngCursor);
@@ -88,6 +92,7 @@ export function advanceQuarter(
   s.recurring = s.recurring.filter((r) => r.untilQuarter > q);
 
   // 4. Court checks due now.
+  const suspended: string[] = [];
   const due = s.courtChecks.filter((c) => c.atQuarter <= q);
   s.courtChecks = s.courtChecks.filter((c) => c.atQuarter > q);
   for (const c of due) {
@@ -97,6 +102,7 @@ export function advanceQuarter(
         .map((e) => (e.policyId === c.policyId && e.toQuarter > q ? { ...e, toQuarter: q } : e))
         .filter((e) => e.fromQuarter <= e.toQuarter);
       s.recurring = s.recurring.filter((r) => r.policyId !== c.policyId);
+      suspended.push(c.policyId);
       s.log.push(`q${q}: court suspended measure ${c.policyId}`);
     } else {
       s.log.push(`q${q}: court allowed measure ${c.policyId}`);
@@ -114,6 +120,9 @@ export function advanceQuarter(
   }
   s.popularity = popularity(s.groups);
   s.econHistory.push(pillarScores(s.stats).economy);
+
+  // 5a. Consequence scenes for this quarter: court rulings and delayed effects that start now.
+  addQuarterScenes(s, suspended, sceneLibrary, ctx.traits, rng);
 
   // 5b. Minor events (the news ticker): small things that happen every quarter, weighted by the country's traits.
   if (applyMinorEvents(s, minorEvents, ctx.traits, rng).length > 0) {

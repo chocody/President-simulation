@@ -127,6 +127,7 @@ export function resolveTurn(
       return;
     }
 
+    s.policies = [...(s.policies ?? []), { id: policyId, title: a.title, quarter: q }];
     const minStart = a.effects.length === 0 ? 0 : Math.min(...a.effects.map((e) => clamp(e.start_after_quarters, 0, LAST_QUARTER)));
     const court = courtCheck(a, q + minStart, rng, policyId);
     const prot = protest(s, a, mitigation, rng);

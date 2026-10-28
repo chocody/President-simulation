@@ -14,3 +14,4 @@ export * from "./endings";
 export * from "./traits";
 export * from "./friction";
 export * from "./news";
+export * from "./scenes";
