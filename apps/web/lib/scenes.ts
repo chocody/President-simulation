@@ -7,14 +7,16 @@ export const PATH_MAX_SCENES = 10;
 export type SceneBadge = { kind: "measure" | "event" | "followup"; label: string };
 
 /**
- * Badge for a scene's cause. A turn scene is "จากมาตรการ …" when the cause is one of this turn's measures and
+ * Badge for a scene's cause. A turn scene is "จากมาตรการ …" when the cause is one of this turn's measures (or an enacted policy) and
  * "จากเหตุการณ์ …" otherwise (the event card); follow-up and court scenes are "ผลต่อเนื่อง" with the measure title.
  * No cause, no badge.
  */
-export function sceneBadge(scene: Pick<Scene, "kind" | "cause">, report?: Pick<TurnReport, "measures">): SceneBadge | null {
+export function sceneBadge(
+  scene: Pick<Scene, "kind" | "cause">, known?: { measures?: Pick<TurnReport["measures"][number], "title">[]; policies?: GameState["policies"] },
+): SceneBadge | null {
   if (scene.cause === null) return scene.kind === "turn" ? null : { kind: "followup", label: "ผลต่อเนื่อง" };
   if (scene.kind !== "turn") return { kind: "followup", label: `ผลต่อเนื่อง · ${scene.cause}` };
-  const isMeasure = (report?.measures ?? []).some((m) => m.title === scene.cause);
+  const isMeasure = [...(known?.measures ?? []), ...(known?.policies ?? [])].some((m) => m.title === scene.cause);
   return isMeasure ? { kind: "measure", label: `จากมาตรการ ${scene.cause}` } : { kind: "event", label: `จากเหตุการณ์ ${scene.cause}` };
 }
 

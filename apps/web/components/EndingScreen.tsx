@@ -3,7 +3,9 @@
 import type { GameState } from "@ps/shared";
 import type { EndResponse, GameInfo, Grade, PillarKey } from "../lib/api-types";
 import { END_REASON_LABEL, GROUP_LABEL, PILLAR_LABEL } from "../lib/labels";
+import { termPath } from "../lib/scenes";
 import { Bar, Frame, SectionTitle } from "./common";
+import { SceneCard } from "./SceneCard";
 
 const PILLARS: PillarKey[] = ["economy", "society", "politics", "other"];
 const GRADE_COLOR: Record<Grade, string> = {
@@ -14,6 +16,7 @@ export function EndingScreen({
   state, info, ending, onRestart,
 }: { state: GameState; info: GameInfo; ending: EndResponse; onRestart: () => void }) {
   const won = ending.endReason === "won_election";
+  const path = termPath(state);
   return (
     <Frame
       screen="ending"
@@ -35,6 +38,16 @@ export function EndingScreen({
         <p className="mt-2 text-xl font-extrabold leading-snug" data-testid="historian-line">{ending.historian.line}</p>
         <p className="mt-1 text-sm text-muted">แบบฉบับ: {ending.historian.archetype}</p>
       </section>
+
+      {path.length > 0 && (
+        <section data-testid="term-path" aria-labelledby="path-title">
+          <SectionTitle><span id="path-title">เส้นทางวาระของคุณ</span></SectionTitle>
+          <ol className="dossier overflow-hidden">
+            {path.map((s, i) => <SceneCard key={`${s.templateId}-${s.quarter}-${i}`} scene={s} policies={state.policies} quarter={s.quarter} />)}
+          </ol>
+          <p className="mt-2 text-xs text-muted">เหตุการณ์สำคัญที่เกิดขึ้นตลอดวาระ เรียงตามเวลา (สูงสุด 10 เรื่อง)</p>
+        </section>
+      )}
 
       <SectionTitle>คะแนนเสียงเลือกตั้ง</SectionTitle>
       {ending.voteShare !== null ? (

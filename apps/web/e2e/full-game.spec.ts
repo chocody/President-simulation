@@ -62,6 +62,8 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   let resultShot = false;
   let decisionShot = false;
   let newsSeen = false;
+  let sceneCards = 0;
+  let followupShot = false;
 
   for (let step = 0; step < 60; step++) {
     const screen = await page.locator("[data-screen]").first().getAttribute("data-screen");
@@ -95,16 +97,34 @@ test("plays a full term with presets and one typed answer, and reaches the endin
       await submit.click();
       await expect(page.locator("[data-screen=result]")).toBeVisible();
       await expect(page.getByTestId("narration")).toBeVisible();
+      // The result leads with "เกิดอะไรขึ้น": at least one scene card; the numbers are folded under "ดูตัวเลขละเอียด".
+      await expect(page.getByTestId("scenes")).toContainText("เกิดอะไรขึ้น");
+      await expect(page.getByTestId("scene-card").first()).toBeVisible();
+      expect(await page.getByTestId("scene-card").count()).toBeLessThanOrEqual(4);
+      await expect(page.getByTestId("scene-badge").first()).toContainText("จาก");
+      sceneCards += await page.getByTestId("scene-card").count();
+      await expect(page.getByTestId("numbers-details")).not.toHaveAttribute("open", "");
       if (!resultShot) {
         await shot(page, "04-result");
         resultShot = true;
       }
+      // Open the details when the numbers are needed.
+      await page.getByTestId("numbers-toggle").click();
+      await expect(page.getByTestId("stat-changes").or(page.getByText("ยังไม่มีตัวชี้วัดเปลี่ยนทันที"))).toBeVisible();
+      await expect(page.getByTestId("measure").first()).toBeVisible();
+      if (decisions === 1) await shot(page, "04c-result-numbers");
       if (decisions === 2) {
         // The typed answer is judged as an anti-corruption reform; the fixture country has high patronage.
         await expect(page.getByTestId("friction-note").first()).toContainText("ระบบอุปถัมภ์ทำให้ปฏิรูปยากขึ้น");
         await shot(page, "04b-result-friction");
       }
       await page.getByTestId("continue").click();
+      if (!followupShot && (await page.locator("[data-screen=main] [data-testid=scene-card][data-kind=followup], [data-screen=main] [data-testid=scene-card][data-kind=court]").count()) > 0) {
+        // Follow-up and court scenes sit in the news log with a "ผลต่อเนื่อง" badge.
+        await expect(page.locator("[data-screen=main] [data-testid=scene-badge]").first()).toContainText("ผลต่อเนื่อง");
+        await shot(page, "02d-main-followup");
+        followupShot = true;
+      }
       if (decisions === 1) {
         // Back on the main screen: the news ticker lists what happened while time moved on, with +/- chips.
         await expect(page.locator("[data-screen=main]")).toBeVisible();
@@ -122,6 +142,7 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   expect(typedUsed, "the typed answer was exercised").toBe(true);
   expect(newsSeen, "the news ticker was checked").toBe(true);
   expect(decisions).toBeGreaterThanOrEqual(2);
+  expect(sceneCards, "every result screen showed scene cards").toBeGreaterThanOrEqual(decisions);
 
   // 5. Ending.
   await expect(page.locator("[data-screen=ending]")).toBeVisible();
@@ -129,5 +150,11 @@ test("plays a full term with presets and one typed answer, and reaches the endin
   await expect(page.getByTestId("grades").getByRole("listitem")).toHaveCount(4);
   await expect(page.getByTestId("legacy")).toBeVisible();
   await expect(page.getByTestId("dev-banner")).toBeVisible();
+  // "เส้นทางวาระของคุณ": the term's scenes, at most 10.
+  await expect(page.getByTestId("term-path")).toContainText("เส้นทางวาระของคุณ");
+  const pathCount = await page.getByTestId("term-path").getByTestId("scene-card").count();
+  expect(pathCount).toBeGreaterThanOrEqual(1);
+  expect(pathCount).toBeLessThanOrEqual(10);
   await shot(page, "05-ending");
+  console.log(`scene cards on result screens: ${sceneCards}; follow-up seen on main: ${followupShot}; term path: ${pathCount}`);
 });

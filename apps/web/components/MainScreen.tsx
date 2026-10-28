@@ -1,8 +1,9 @@
 "use client";
 
-import type { GameState } from "@ps/shared";
+import type { GameState, SceneRecord } from "@ps/shared";
 import type { GameInfo, PublicNewsItem } from "../lib/api-types";
 import { newsFromState } from "../lib/news";
+import { followupScenes } from "../lib/scenes";
 import { ErrorNote, Frame, SectionTitle, Timeline } from "./common";
 import { NewsTicker } from "./NewsTicker";
 import { GroupBars, StatGrid } from "./StatGrid";
@@ -18,12 +19,24 @@ function splitNews(state: GameState, info: GameInfo, news: PublicNewsItem[] | un
   return { latest: [...latest].reverse(), older: all.filter((n) => !latestKeys.has(key(n))).reverse() };
 }
 
+/** Follow-up and court scenes split like the news: the last advance (`latest`, else the newest quarter) and the rest. */
+function splitScenes(state: GameState, scenes: SceneRecord[] | undefined): { latest: SceneRecord[]; older: SceneRecord[] } {
+  const all = followupScenes(state);
+  const key = (s: SceneRecord) => `${s.quarter}:${s.templateId}:${s.cause}`;
+  const newest = all.reduce((m, s) => Math.max(m, s.quarter), 0);
+  const latest = scenes ?? all.filter((s) => s.quarter === newest);
+  const latestKeys = new Set(latest.map(key));
+  return { latest: [...latest].reverse(), older: all.filter((s) => !latestKeys.has(key(s))) };
+}
+
 export function MainScreen({
-  state, info, log, news, busy, error, onAdvance,
+  state, info, log, news, scenes, busy, error, onAdvance,
 }: {
-  state: GameState; info: GameInfo; log: string[]; news?: PublicNewsItem[]; busy: boolean; error: string | null; onAdvance: () => void;
+  state: GameState; info: GameInfo; log: string[]; news?: PublicNewsItem[]; scenes?: SceneRecord[];
+  busy: boolean; error: string | null; onAdvance: () => void;
 }) {
   const { latest, older } = splitNews(state, info, news);
+  const sceneSplit = splitScenes(state, scenes);
   return (
     <Frame
       screen="main"
@@ -56,7 +69,7 @@ export function MainScreen({
       <SectionTitle>กลุ่มผู้ลงคะแนน</SectionTitle>
       <div className="dossier p-4"><GroupBars state={state} /></div>
 
-      <NewsTicker state={state} info={info} latest={latest} older={older} />
+      <NewsTicker state={state} info={info} latest={latest} older={older} latestScenes={sceneSplit.latest} olderScenes={sceneSplit.older} />
 
       <StatGrid state={state} info={info} />
 

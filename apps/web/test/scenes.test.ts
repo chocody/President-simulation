@@ -166,6 +166,9 @@ describe("sceneBadge", () => {
     expect(sceneBadge({ kind: "turn", cause: "ตรึงราคา" }, report)).toEqual({ kind: "measure", label: "จากมาตรการ ตรึงราคา" });
     expect(sceneBadge({ kind: "turn", cause: "น้ำท่วม" }, report)).toEqual({ kind: "event", label: "จากเหตุการณ์ น้ำท่วม" });
     expect(sceneBadge({ kind: "turn", cause: null }, report)).toBeNull();
+    // later (ending): the enacted policies tell a measure from an event card
+    expect(sceneBadge({ kind: "turn", cause: "ตรึงราคา" }, { policies: [{ id: "q2.a0", title: "ตรึงราคา", quarter: 2 }] })?.kind).toBe("measure");
+    expect(sceneBadge({ kind: "turn", cause: "น้ำท่วม" }, { policies: [] })?.kind).toBe("event");
     expect(sceneBadge({ kind: "followup", cause: "ตรึงราคา" })).toEqual({ kind: "followup", label: "ผลต่อเนื่อง · ตรึงราคา" });
     expect(sceneBadge({ kind: "court", cause: "ตรึงราคา" })?.label).toContain("ผลต่อเนื่อง");
   });

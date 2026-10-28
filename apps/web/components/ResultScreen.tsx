@@ -7,6 +7,7 @@ import { formatDelta } from "../lib/format";
 import { frictionLines } from "../lib/friction";
 import { GROUP_LABEL, OUTCOME_LABEL, STAT_LABEL } from "../lib/labels";
 import { Frame, SectionTitle } from "./common";
+import { SceneCard } from "./SceneCard";
 
 const OUTCOME_TONE: Record<MeasureReport["outcome"], string> = {
   blocked: "text-bad",
@@ -99,6 +100,7 @@ export function ResultScreen({
     .map(([k, v]) => ({ group: k.slice(6) as GroupKey, v }));
   const downgraded = report.measures.reduce((a, m) => a + m.downgradedForEvidence, 0);
   const friction = frictionLines(report);
+  const scenes = result.scenes ?? [];
 
   return (
     <Frame
@@ -112,6 +114,17 @@ export function ResultScreen({
     >
       <p className="label-caps">ผลลัพธ์ · ไตรมาสที่ {report.quarter}</p>
       <h1 className="mt-1 text-2xl font-extrabold leading-snug">คำตอบของคุณ: {result.answerTitle}</h1>
+
+      <section data-testid="scenes" aria-labelledby="scenes-title">
+        <SectionTitle><span id="scenes-title">เกิดอะไรขึ้น</span></SectionTitle>
+        {scenes.length > 0 ? (
+          <ul className="space-y-2">
+            {scenes.map((s, i) => <SceneCard key={`${s.templateId}-${i}`} scene={s} report={report} />)}
+          </ul>
+        ) : (
+          <p className="dossier p-4 text-sm text-muted" data-testid="scenes-empty">ไตรมาสนี้ไม่มีเหตุการณ์เด่นที่จับตาได้ ดูตัวเลขละเอียดด้านล่าง</p>
+        )}
+      </section>
 
       <section className="dossier mt-4 p-4" aria-label="เรื่องเล่า">
         {result.narration.split("\n").map((p, i) => (
@@ -146,6 +159,9 @@ export function ResultScreen({
         </p>
       ))}
 
+      <details className="dossier mt-6" data-testid="numbers-details">
+        <summary className="cursor-pointer px-4 py-3 text-lg font-extrabold" data-testid="numbers-toggle">ดูตัวเลขละเอียด</summary>
+        <div className="px-4 pb-4">
       <SectionTitle>มาตรการ</SectionTitle>
       {report.measures.length > 0 ? (
         <ul className="space-y-3">{report.measures.map((m, i) => <Measure key={i} m={m} />)}</ul>
@@ -174,6 +190,8 @@ export function ResultScreen({
           ))}
         </ul>
       ) : <p className="text-sm text-muted">ไม่มีกลุ่มใดเปลี่ยนทันที</p>}
+        </div>
+      </details>
     </Frame>
   );
 }
